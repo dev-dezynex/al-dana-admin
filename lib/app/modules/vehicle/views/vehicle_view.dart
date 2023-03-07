@@ -13,49 +13,65 @@ class VehicleView extends GetView<VehicleController> {
   const VehicleView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async {
-        if (controller.pageIndex.value > 0) {
-          controller.pageIndex.value = 0;
-          return false;
-        } else {
-          Get.back();
-          return true;
-        }
-      },
-      child: Scaffold(
-          backgroundColor: bgColor1,
-          appBar: AppBar(
-            title: Obx(
-              () => Text(
-                controller.pageTitle.value,
-                style: tsPoppins(
-                    size: 18, weight: FontWeight.w600, color: textDark80),
-              ),
-            ),
-            centerTitle: true,
-            leading: GoBack(
-              onPressed: () {
-                if (controller.pageIndex.value > 0) {
-                  controller.pageIndex.value = 0;
-                } else {
-                  Get.back();
-                }
-              },
-            ),
+    // return WillPopScope(
+    //   onWillPop: () async {
+    //     if (controller.pageIndex.value > 0) {
+    //       controller.pageIndex.value = 0;
+    //       return false;
+    //     } else {
+    //       Get.back();
+    //       return true;
+    //     }
+    //   },
+    //   child: Scaffold(
+    //       backgroundColor: bgColor1,
+    //       appBar: AppBar(
+    //         title: Obx(
+    //           () => Text(
+    //             controller.pageTitle.value,
+    //             style: tsPoppins(
+    //                 size: 18, weight: FontWeight.w600, color: textDark80),
+    //           ),
+    //         ),
+    //         centerTitle: true,
+    //         leading: GoBack(
+    //           onPressed: () {
+    //             if (controller.pageIndex.value > 0) {
+    //               controller.pageIndex.value = 0;
+    //             } else {
+    //               Get.back();
+    //             }
+    //           },
+    //         ),
+    //       ),
+    //       body: Obx(() {
+    //         switch (controller.pageIndex.value) {
+    //           case 1:
+    //             return const BrandView();
+    //           case 2:
+    //             return const ColorsView();
+    //           case 3:
+    //             return const YearView();
+    //           default:
+    //             return manageView();
+    //         }
+    //       })),
+    // );
+
+    return Scaffold(
+      backgroundColor: bgColor1,
+      appBar: AppBar(
+        title: Obx(
+          () => Text(
+            controller.pageTitle.value,
+            style:
+                tsPoppins(size: 18, weight: FontWeight.w600, color: textDark80),
           ),
-          body: Obx(() {
-            switch (controller.pageIndex.value) {
-              case 1:
-                return const BrandView();
-              case 2:
-                return const ColorsView();
-              case 3:
-                return const YearView();
-              default:
-                return manageView();
-            }
-          })),
+        ),
+        centerTitle: true,
+        leading: const GoBack(),
+      ),
+      body:const BrandView(),
     );
   }
 

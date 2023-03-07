@@ -208,7 +208,7 @@ class AddBranchView extends GetView<AddBranchController> {
                                 ElevatedButton(
                                     onPressed: () {
                                       if (formKeyAdd.currentState!.validate()) {
-                                        controller.createBranch();
+                                        controller.updateBranch();
                                       }
                                     },
                                     style: ElevatedButton.styleFrom(

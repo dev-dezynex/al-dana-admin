@@ -29,6 +29,14 @@ abstract class Routes {
   static const SERVICE_MODE = _Paths.SERVICE_MODE;
   static const ADD_SERVICE_MODE = _Paths.ADD_SERVICE_MODE;
   static const TIME_SLOTS = _Paths.TIME_SLOTS;
+  static const OFFER = _Paths.OFFER;
+  static const SPLASH_PAGE = _Paths.SPLASH_PAGE;
+  static const VARIANT = _Paths.VARIANT;
+  static const ADD_VARIANT = _Paths.ADD_VARIANT;
+  static const CAR_MODEL = _Paths.CAR_MODEL;
+  static const ADD_CAR_MODEL = _Paths.ADD_CAR_MODEL;
+  static const BANNER = _Paths.BANNER;
+  static const ADD_BANNER = _Paths.ADD_BANNER;
 }
 
 abstract class _Paths {
@@ -59,4 +67,12 @@ abstract class _Paths {
   static const SERVICE_MODE = '/service-mode';
   static const ADD_SERVICE_MODE = '/add-service-mode';
   static const TIME_SLOTS = '/time-slots';
+  static const OFFER = '/offer';
+  static const SPLASH_PAGE = '/splash-page';
+  static const VARIANT = '/variant';
+  static const ADD_VARIANT = '/add-variant';
+  static const CAR_MODEL = '/car-model';
+  static const ADD_CAR_MODEL = '/add-car-model';
+  static const BANNER = '/banner';
+  static const ADD_BANNER = '/add-banner';
 }

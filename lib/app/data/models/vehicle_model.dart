@@ -48,7 +48,7 @@ class Vehicle {
       this.image});
 
   Vehicle.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
+    id = json['_id'];
     brand = json['brand'] != null ? Brand?.fromJson(json['brand']) : null;
     variant =
         json['variant'] != null ? Variant?.fromJson(json['variant']) : null;
@@ -61,7 +61,7 @@ class Vehicle {
 
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};
-    data['id'] = id;
+    data['_id'] = id;
     if (brand != null) {
       data['brand'] = brand?.toJson();
     }

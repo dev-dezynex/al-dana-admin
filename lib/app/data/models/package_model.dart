@@ -37,7 +37,7 @@ class PackageModel {
       {this.id, this.title, this.services, this.image, this.bgCardColor,this.price});
 
   PackageModel.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
+    id = json['_id'];
     title = json['title'];
     image = json['image'];
     price = json['price'];
@@ -52,7 +52,7 @@ class PackageModel {
 
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};
-    data['id'] = id;
+    data['_id'] = id;
     data['title'] = title;
     data['image'] = image;
     data['price'] = price;

@@ -2,10 +2,16 @@ class BranchResult {
   String? status;
   String? message;
   List<Branch>? branchList;
+  Branch? branch;
 
   BranchResult({this.status, this.message, this.branchList});
 
   BranchResult.fromJson(Map<String, dynamic> json) {
+    status = json['status'];
+    message = json['message'];
+    branch = json['data'] != null ? Branch.fromJson(json['data']) : Branch();
+  }
+  BranchResult.listFromJson(Map<String, dynamic> json) {
     status = json['status'];
     message = json['message'];
     if (json['data'] != null) {
@@ -26,8 +32,9 @@ class BranchResult {
 }
 
 class Branch {
-  late String id, name, location, image, distance;
-  late double latitude, longitude, rating;
+  late String id, name, location, image;
+  late double latitude, longitude, distance, rating;
+  List<String>? serviceList;
 
   Branch(
       {this.id = '',
@@ -37,29 +44,31 @@ class Branch {
       this.longitude = 0.0,
       this.image = '',
       this.rating = 0,
-      this.distance = ''});
+      this.distance = 0.0,
+      this.serviceList});
 
   Branch.fromJson(Map<String, dynamic> json) {
-    id = json['id'] ?? '';
+    id = json['_id'] ?? '';
     name = json['name'] ?? "";
-    location = json['location'] ?? "";
+    location = json['landMark'] ?? "";
     latitude = json['latitude'] ?? 0.0;
     longitude = json['longitude'] ?? 0.0;
     image = json['image'] ?? "";
-    rating = json['rating'] ?? 0;
-    distance = json['distance'] ?? "";
+    rating =
+        json['rating'] != null ? double.parse(json['rating'].toString()) : 0;
+    if (json['serviceId'] != null) {
+      serviceList = json['serviceId'].cast<String>();
+    }
   }
 
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};
-    data['id'] = id;
     data['name'] = name;
-    data['location'] = location;
+    data['landMark'] = location;
     data['longitude'] = longitude;
     data['latitude'] = latitude;
     data['image'] = image;
-    data['rating'] = rating;
-    data['distance'] = distance;
+    data['serviceId'] = serviceList;
     return data;
   }
 }

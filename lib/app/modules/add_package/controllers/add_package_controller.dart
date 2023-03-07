@@ -45,7 +45,7 @@ class AddPackageController extends GetxController {
   }
 
   getServices() async {
-    serviceResult.value = await ServiceProvider().getDummyData();
+    serviceResult.value = await ServiceProvider().getServices();
     serviceResult.refresh();
   }
 

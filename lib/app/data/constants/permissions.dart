@@ -6,10 +6,10 @@ import 'package:permission_handler/permission_handler.dart';
 class Permissions {
   static setup() async {
     try {
-      await Permission.contacts.request();
-      await Permission.camera.request();
-      await Permission.microphone.request();
-      await Permission.phone.request();
+      // await Permission.contacts.request();
+      // await Permission.camera.request();
+      // await Permission.microphone.request();
+      // await Permission.phone.request();
 
       if (Platform.isAndroid) {
         await Permission.storage.request();

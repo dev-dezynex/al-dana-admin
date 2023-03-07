@@ -36,7 +36,7 @@ class Spare {
   Spare({this.id, this.categoryId, this.name, this.price, this.image,this.qty});
 
   Spare.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
+    id = json['_id'];
     categoryId = json['category_id'];
     name = json['name'];
     price = json['price'];
@@ -46,7 +46,7 @@ class Spare {
 
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};
-    data['id'] = id;
+    data['_id'] = id;
     data['category_id'] = categoryId;
     data['name'] = name;
     data['price'] = price;

@@ -4,10 +4,10 @@ import 'package:get/get.dart';
 import '../data.dart';
 
 class BrandTile extends StatelessWidget {
-  const BrandTile({Key? key, required this.brand, this.onTap})
+  const BrandTile({Key? key, required this.brand, this.onTap, this.onEdit})
       : super(key: key);
   final Brand brand;
-  final GestureTapCallback? onTap;
+  final GestureTapCallback? onTap, onEdit;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,8 +24,9 @@ class BrandTile extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Image.network(
-                  brand.image,
+                  '$domainName${brand.image}',
                   fit: BoxFit.contain,
+                  width: Get.width * .1,
                   errorBuilder: (context, error, stackTrace) {
                     return Image.asset(
                       brand.image,
@@ -35,6 +36,7 @@ class BrandTile extends StatelessWidget {
                         return Image.asset(
                           'assets/images/img_placeholder.png',
                           fit: BoxFit.contain,
+                          width: Get.width * .1,
                         );
                       },
                     );
@@ -50,9 +52,12 @@ class BrandTile extends StatelessWidget {
                 )
               ],
             ),
-            const Icon(
-              Icons.arrow_forward_outlined,
-              color: textDark40,
+            IconButton(
+              onPressed: onEdit,
+              icon: const Icon(
+                Icons.edit,
+                color: textDark40,
+              ),
             )
           ],
         ),

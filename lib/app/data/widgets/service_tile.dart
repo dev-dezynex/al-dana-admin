@@ -22,7 +22,7 @@ class ServiceTile extends StatelessWidget {
       onTap: onTap,
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-        color: hexToColor('#09DDBD'),
+        color: hexToColor(service.bgCardColor),
         child: Stack(
           children: [
             Container(
@@ -38,7 +38,7 @@ class ServiceTile extends StatelessWidget {
                         const EdgeInsets.only(top: 18.0, left: 5, right: 5),
                     alignment: Alignment.center,
                     child: Image.network(
-                      service.image,
+                      '$domainName${service.image}',
                       fit: BoxFit.cover,
                       errorBuilder: (context, error, stackTrace) {
                         return Image.asset(
@@ -164,7 +164,7 @@ class ServiceTile2 extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     child: Text(
-                      service.subTitle,
+                      service.desc,
                       textAlign: TextAlign.center,
                       style: tsPoppins(
                         weight: FontWeight.w500,

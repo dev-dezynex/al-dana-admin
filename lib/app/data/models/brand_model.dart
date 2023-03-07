@@ -1,20 +1,23 @@
-
-
 import '../data.dart';
 
 class BrandResult {
   late String status, message;
   late List<Brand> brandList;
+  Brand? brand;
 
   BrandResult({this.status = '', this.message = '', this.brandList = const []});
 
   BrandResult.fromJson(Map<String, dynamic> json) {
     status = json['status'];
     message = json['message'];
+    brand = json['data']!=null? Brand.fromJson(json['data']):Brand();
+  }
+  BrandResult.listFromJson(Map<String, dynamic> json) {
+    status = json['status'];
+    message = json['message'];
     if (json['data'] != null) {
       brandList = <Brand>[];
       json['data'].forEach((v) {
-        print('data123 $v');
         brandList.add(Brand.fromJson(v));
       });
     }
@@ -30,33 +33,24 @@ class BrandResult {
 }
 
 class Brand {
-  late String id, name, image;
-  late List<Variant>? variantList;
+  late String id, name, image,desc;
 
-  Brand(
-      {this.id = '',
-      this.name = '',
-      this.image = '',
-      this.variantList});
+  Brand({this.id = '', this.name = '', this.desc = '', this.image = ''});
 
   Brand.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    name = json['name'];
+    id = json['_id'];
+    name = json['title'];
+    desc = json['description'];
     image = json['image'];
-    if (json['variant'] != null) {
-      variantList = <Variant>[];
-      json['variant'].forEach((e) {
-        variantList?.add(Variant.fromJson(e));
-      });
-    }
+
   }
 
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};
-    data['id'] = id;
-    data['name'] = name;
+    data['_id'] = id;
+    data['title'] = name;
+    data['description'] = desc;
     data['image'] = image;
-    data['variant'] = variantList!.map((v) => v.toJson()).toList();
     return data;
   }
 }

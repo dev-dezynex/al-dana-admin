@@ -1,9 +1,13 @@
 import 'package:get/get.dart';
 
+import '../modules/add_banner/bindings/add_banner_binding.dart';
+import '../modules/add_banner/views/add_banner_view.dart';
 import '../modules/add_branch/bindings/add_branch_binding.dart';
 import '../modules/add_branch/views/add_branch_view.dart';
 import '../modules/add_brand/bindings/add_brand_binding.dart';
 import '../modules/add_brand/views/add_brand_view.dart';
+import '../modules/add_car_model/bindings/add_car_model_binding.dart';
+import '../modules/add_car_model/views/add_car_model_view.dart';
 import '../modules/add_category/bindings/add_category_binding.dart';
 import '../modules/add_category/views/add_category_view.dart';
 import '../modules/add_color_page/bindings/add_color_page_binding.dart';
@@ -20,18 +24,26 @@ import '../modules/add_spare_category/bindings/add_spare_category_binding.dart';
 import '../modules/add_spare_category/views/add_spare_category_view.dart';
 import '../modules/add_users/bindings/add_users_binding.dart';
 import '../modules/add_users/views/add_users_view.dart';
+import '../modules/add_variant/bindings/add_variant_binding.dart';
+import '../modules/add_variant/views/add_variant_view.dart';
 import '../modules/add_work/bindings/add_work_binding.dart';
 import '../modules/add_work/views/add_work_view.dart';
 import '../modules/add_year_page/bindings/add_year_page_binding.dart';
 import '../modules/add_year_page/views/add_year_page_view.dart';
 import '../modules/auth/bindings/auth_binding.dart';
 import '../modules/auth/views/auth_view.dart';
+import '../modules/banner/bindings/banner_binding.dart';
+import '../modules/banner/views/banner_view.dart';
 import '../modules/branch_list/bindings/branch_list_binding.dart';
 import '../modules/branch_list/views/branch_list_view.dart';
+import '../modules/car_model/bindings/car_model_binding.dart';
+import '../modules/car_model/views/car_model_view.dart';
 import '../modules/category_list/bindings/category_list_binding.dart';
 import '../modules/category_list/views/category_list_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/offer/bindings/offer_binding.dart';
+import '../modules/offer/views/offer_view.dart';
 import '../modules/package_list/bindings/package_list_binding.dart';
 import '../modules/package_list/views/package_list_view.dart';
 import '../modules/profile/bindings/profile_binding.dart';
@@ -44,10 +56,16 @@ import '../modules/spare/bindings/spare_binding.dart';
 import '../modules/spare/views/spare_view.dart';
 import '../modules/spare_category/bindings/spare_category_binding.dart';
 import '../modules/spare_category/views/spare_category_view.dart';
+import '../modules/splash_page/bindings/splash_page_binding.dart';
+import '../modules/splash_page/bindings/splash_page_binding.dart';
+import '../modules/splash_page/views/splash_page_view.dart';
+import '../modules/splash_page/views/splash_page_view.dart';
 import '../modules/time_slots/bindings/time_slots_binding.dart';
 import '../modules/time_slots/views/time_slots_view.dart';
 import '../modules/users/bindings/users_binding.dart';
 import '../modules/users/views/users_view.dart';
+import '../modules/variant/bindings/variant_binding.dart';
+import '../modules/variant/views/variant_view.dart';
 import '../modules/vehicle/bindings/vehicle_binding.dart';
 import '../modules/vehicle/views/vehicle_view.dart';
 import '../modules/work/bindings/work_binding.dart';
@@ -58,9 +76,14 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.HOME;
+  static const INITIAL = Routes.SPLASH_PAGE;
 
   static final routes = [
+    GetPage(
+      name: _Paths.SPLASH_PAGE,
+      page: () => SplashPageView(),
+      binding: SplashPageBinding(),
+    ),
     GetPage(
       name: _Paths.HOME,
       page: () => HomeView(),
@@ -73,7 +96,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.AUTH,
-      page: () => const AuthView(),
+      page: () => AuthView(),
       binding: AuthBinding(),
     ),
     GetPage(
@@ -190,6 +213,41 @@ class AppPages {
       name: _Paths.TIME_SLOTS,
       page: () => const TimeSlotsView(),
       binding: TimeSlotsBinding(),
+    ),
+    GetPage(
+      name: _Paths.OFFER,
+      page: () => const OfferView(),
+      binding: OfferBinding(),
+    ),
+    GetPage(
+      name: _Paths.VARIANT,
+      page: () => const VariantView(),
+      binding: VariantBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADD_VARIANT,
+      page: () => AddVariantView(),
+      binding: AddVariantBinding(),
+    ),
+    GetPage(
+      name: _Paths.CAR_MODEL,
+      page: () => const CarModelView(),
+      binding: CarModelBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADD_CAR_MODEL,
+      page: () => AddCarModelView(),
+      binding: AddCarModelBinding(),
+    ),
+    GetPage(
+      name: _Paths.BANNER,
+      page: () => const BannerView(),
+      binding: BannerBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADD_BANNER,
+      page: () =>  AddBannerView(),
+      binding: AddBannerBinding(),
     ),
   ];
 }

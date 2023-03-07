@@ -35,7 +35,7 @@ class SpareCategory {
   SpareCategory({this.id, this.name,this.image, this.spareList});
 
   SpareCategory.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
+    id = json['_id'];
     name = json['name'];
     image = json['image'];
     if (json['spare'] != null) {
@@ -48,7 +48,7 @@ class SpareCategory {
 
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};
-    data['id'] = id;
+    data['_id'] = id;
     data['name'] = name;
     data['image'] = image;
     if (spareList != null) {

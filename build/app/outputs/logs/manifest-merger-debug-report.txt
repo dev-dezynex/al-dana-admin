@@ -39,6 +39,7 @@ MERGED from [:file_picker] /Users/dezynextechnologysolutons/Documents/Developmen
 MERGED from [:google_maps_flutter_android] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/google_maps_flutter_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:image_picker_android] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-21:12
 MERGED from [:flutter_plugin_android_lifecycle] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:geocoding] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/geocoding/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:fluttertoast] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/fluttertoast/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:path_provider_android] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:location] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/location/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-20:12
@@ -145,6 +146,8 @@ MERGED from [:image_picker_android] /Users/dezynextechnologysolutons/Documents/D
 MERGED from [:image_picker_android] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:flutter_plugin_android_lifecycle] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:flutter_plugin_android_lifecycle] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:geocoding] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/geocoding/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:geocoding] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/geocoding/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:fluttertoast] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/fluttertoast/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:fluttertoast] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/fluttertoast/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:path_provider_android] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41

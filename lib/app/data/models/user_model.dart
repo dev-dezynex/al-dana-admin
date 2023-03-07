@@ -63,7 +63,7 @@ class User {
       this.status = false});
 
   User.fromJson(Map<String, dynamic> json) {
-    id = json['id'] ?? '';
+    id = json['_id'] ?? '';
     name = json['name'] ?? '';
     mobile = json['mobile'] ?? 0;
     email = json['email'] ?? '';
@@ -74,7 +74,7 @@ class User {
 
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};
-    data['id'] = id;
+    data['_id'] = id;
     data['name'] = name;
     data['mobile'] = mobile;
     data['email'] = email;

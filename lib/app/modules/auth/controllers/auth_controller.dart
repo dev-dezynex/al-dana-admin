@@ -1,23 +1,40 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class AuthController extends GetxController {
-  //TODO: Implement AuthController
+import '../../../data/data.dart';
+import '../../../routes/app_pages.dart';
 
-  final count = 0.obs;
+class AuthController extends GetxController {
+  var isLoading = false.obs;
+  String contryCode = '971';
+  TextEditingController usernameController =
+      TextEditingController(text: 'amal@gmail.com');
+  TextEditingController passwordController =
+      TextEditingController(text: 'amal@123');
+
   @override
   void onInit() {
     super.onInit();
   }
 
   @override
-  void onReady() {
-    super.onReady();
-  }
+  void onClose() {}
 
-  @override
-  void onClose() {
-    super.onClose();
-  }
+  void verifyUser() async {
+    isLoading.value = true;
+    UserResult result = await UserProvider().verifyUser(
+        username: usernameController.text, password: passwordController.text);
 
-  void increment() => count.value++;
+    if (result.status == 'success') {
+      storage.write(is_login, true);
+      Get.offAllNamed(Routes.HOME);
+    } else {
+      Get.snackbar('Error', result.message,
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: textDark20,
+          colorText: textDark80);
+    }
+
+    isLoading.value = false;
+  }
 }

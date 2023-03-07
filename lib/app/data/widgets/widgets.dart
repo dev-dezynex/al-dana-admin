@@ -19,3 +19,6 @@ export 'spare_category_tile.dart';
 export 'spare_tile.dart';
 export 'user_tile.dart';
 export 'service_mode_tile.dart';
+export 'car_model_tile.dart';
+export 'car_variant_tile.dart';
+export 'banner_tile.dart';

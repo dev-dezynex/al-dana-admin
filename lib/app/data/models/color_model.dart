@@ -32,14 +32,14 @@ class VehicleColor {
   VehicleColor({this.id, this.name, this.code});
 
   VehicleColor.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
+    id = json['_id'];
     name = json['name'];
     code = json['code'];
   }
 
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};
-    data['id'] = id;
+    data['_id'] = id;
     data['name'] = name;
     data['code'] = code;
     return data;

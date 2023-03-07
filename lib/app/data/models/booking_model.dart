@@ -57,7 +57,7 @@ class Booking {
   });
 
   Booking.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
+    id = json['_id'];
     date = json['date'];
     slot = json['slot'];
     approvalStatus = json['approval_status'];
@@ -89,7 +89,7 @@ class Booking {
 
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};
-    data['id'] = id;
+    data['_id'] = id;
     data['date'] = date;
     data['slot'] = slot;
     data['auto_spare_select'] = autoSpareSelect;

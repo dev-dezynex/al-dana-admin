@@ -6,7 +6,7 @@ import '../../../data/data.dart';
 class VehicleController extends GetxController {
   var pageTitle = 'Manage Vehicle'.obs;
   var pageIndex = 0.obs;
-  var brandResult = BrandResult(brandList: [Brand(variantList: [])]).obs;
+  var brandResult = BrandResult(brandList: []).obs;
   var colorList = <VehicleColor>[].obs;
   var yearList = <VehicleYear>[].obs;
 
@@ -46,7 +46,7 @@ class VehicleController extends GetxController {
   }
 
   getbrands() async {
-    brandResult.value = await BrandProvider().getDummyData();
+    brandResult.value = await BrandProvider().getBrandes();
     filterBrands.value = brandResult.value.brandList;
     brandResult.refresh();
     filterBrands.refresh();

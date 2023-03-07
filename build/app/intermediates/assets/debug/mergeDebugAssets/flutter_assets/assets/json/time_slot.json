@@ -3,7 +3,7 @@
     "message": "",
     "data": [
         {
-            "id": "1",
+            "_id": "1",
             "day": "Monday",
             "slotes": [
                 "10 am - 11 am",
@@ -17,7 +17,7 @@
             "created_at": "2022-09-21T04:28:20.470Z"
         },
         {
-            "id": "2",
+            "_id": "2",
             "day": "Tuesday",
             "slotes": [
                 "10 am - 11 am",
@@ -31,7 +31,7 @@
             "created_at": "2022-09-21T04:28:20.470Z"
         },
         {
-            "id": "3",
+            "_id": "3",
             "day": "Wednesday",
             "slotes": [
                 "10 am - 11 am",
@@ -45,7 +45,7 @@
             "created_at": "2022-09-21T04:28:20.470Z"
         },
         {
-            "id": "4",
+            "_id": "4",
             "day": "Thursday",
             "slotes": [
                 "10 am - 11 am",
@@ -59,7 +59,7 @@
             "created_at": "2022-09-21T04:28:20.470Z"
         },
         {
-            "id": "5",
+            "_id": "5",
             "day": "Friday",
             "slotes": [
                 "10 am - 11 am",
@@ -73,7 +73,7 @@
             "created_at": "2022-09-21T04:28:20.470Z"
         },
         {
-            "id": "6",
+            "_id": "6",
             "day": "Saturday",
             "slotes": [
                 "11 am - 12 am",
@@ -85,7 +85,7 @@
             "created_at": "2022-09-21T04:28:20.470Z"
         },
         {
-            "id": "7",
+            "_id": "7",
             "day": "Sunday",
             "slotes": [
                 "11 am - 12 am",

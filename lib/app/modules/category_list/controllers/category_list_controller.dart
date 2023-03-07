@@ -13,7 +13,7 @@ class CategoryListController extends GetxController {
 
 
   void getCategories() async {
-    categoryResult.value = await CategoryProvider().getDummyData();
+    categoryResult.value = await CategoryProvider().getCategories();
     categoryResult.refresh();
   }
 }

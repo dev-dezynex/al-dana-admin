@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import '../../../data/data.dart';
 
 class BranchListController extends GetxController {
+  var isLoading = false.obs;
   var branchResult = BranchResult().obs;
   @override
   void onInit() {
@@ -25,7 +26,9 @@ class BranchListController extends GetxController {
   }
 
   void getBranches() async {
-    branchResult.value = await BranchProvider().getDummyData();
+    isLoading.value = true;
+    branchResult.value = await BranchProvider().getBranches();
     branchResult.refresh();
+    isLoading.value = false;
   }
 }

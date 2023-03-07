@@ -38,7 +38,7 @@ class TimeSlot {
       this.createdAt = ''});
 
   TimeSlot.fromJson(Map<String, dynamic> json) {
-    id = json['id'] ?? '';
+    id = json['_id'] ?? '';
     day = json['day'] ?? '';
     slotes = json['slotes'] != null ? json['slotes'].cast<String>() : [];
     status = json['status'] ?? false;

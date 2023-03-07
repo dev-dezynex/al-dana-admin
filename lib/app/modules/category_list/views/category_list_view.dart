@@ -22,7 +22,8 @@ class CategoryListView extends GetView<CategoryListController> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            Get.toNamed(Routes.ADD_CATEGORY);
+            Get.toNamed(Routes.ADD_CATEGORY)!
+                .then((value) => value ? controller.getCategories() : null);
           },
           backgroundColor: primary,
           child: const Icon(
@@ -32,14 +33,11 @@ class CategoryListView extends GetView<CategoryListController> {
         body: SafeArea(
           child: Obx(
             () => GridView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: Get.width ~/ 166,
-                  crossAxisSpacing: 8,
-                  mainAxisSpacing: 8,
-                  childAspectRatio: 1 / 1.1,
-                ),
+                    crossAxisCount: Get.width ~/ 166,
+                    crossAxisSpacing: 8,
+                    mainAxisSpacing: 8,
+                    childAspectRatio: 1 / 1.1),
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
                 itemCount: controller.categoryResult.value.categoryList.length,
@@ -48,8 +46,10 @@ class CategoryListView extends GetView<CategoryListController> {
                       isManage: true,
                       onEdit: () {
                         Get.toNamed(Routes.ADD_CATEGORY,
-                            arguments: controller
-                                .categoryResult.value.categoryList[i]);
+                                arguments: controller
+                                    .categoryResult.value.categoryList[i])!
+                            .then((value) =>
+                                value ? controller.getCategories() : null);
                       },
                       category:
                           controller.categoryResult.value.categoryList[i]);

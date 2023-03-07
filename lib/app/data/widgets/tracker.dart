@@ -1,13 +1,12 @@
 import '../data.dart';
 import 'package:flutter/material.dart';
 
-
 class TrackerTile extends StatelessWidget {
   final Booking booking;
 
   const TrackerTile({Key? key, required this.booking}) : super(key: key);
 
- @override
+  @override
   Widget build(BuildContext context) {
     return ListView.separated(
       shrinkWrap: true,
@@ -18,7 +17,6 @@ class TrackerTile extends StatelessWidget {
       },
       itemCount: booking.services!.length,
       itemBuilder: (context, serviceIndex) {
-        
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -47,8 +45,7 @@ class TrackerTile extends StatelessWidget {
                   TextSpan(
                     children: [
                       TextSpan(
-                          text:
-                              "${booking.services![serviceIndex].title} ",
+                          text: "${booking.services![serviceIndex].title} ",
                           style: tsPoppins(color: black, size: 13)),
                     ],
                   ),
@@ -61,14 +58,11 @@ class TrackerTile extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 14),
                   child: SizedBox(
                     width: 2,
-                    height: booking.services![serviceIndex].work.isNotEmpty
-                        ? booking.services![serviceIndex].work.length *
-                            30
-                        : 60,
+                    height: 60,
                     child: RotatedBox(
                       quarterTurns: 1,
                       child: LinearProgressIndicator(
-                        value:  0.0,
+                        value: 0.0,
                         backgroundColor: Colors.grey[300],
                         color: textDark40,
                       ),
@@ -88,7 +82,7 @@ class TrackerTile extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              booking.services![serviceIndex].work[index].title,
+                              'Status',
                               style: tsPoppins(),
                             ),
                             const SizedBox(
@@ -102,9 +96,7 @@ class TrackerTile extends StatelessWidget {
                           height: 4,
                         );
                       },
-                      itemCount: booking.services![serviceIndex].work.isNotEmpty
-                          ? booking.services![serviceIndex].work.length
-                          : 0),
+                      itemCount: 0),
                 )
               ],
             ),

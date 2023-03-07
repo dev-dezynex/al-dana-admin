@@ -22,7 +22,8 @@ class ServiceListView extends GetView<ServiceListController> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            Get.toNamed(Routes.ADD_SERVICE);
+            Get.toNamed(Routes.ADD_SERVICE)!
+                .then((value) => value ? controller.getServices() : null);
           },
           backgroundColor: primary,
           child: const Icon(
@@ -32,7 +33,6 @@ class ServiceListView extends GetView<ServiceListController> {
         body: SafeArea(
           child: Obx(
             () => GridView.builder(
-                shrinkWrap: true,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: Get.width ~/ 166,
                   crossAxisSpacing: 8,
@@ -47,8 +47,10 @@ class ServiceListView extends GetView<ServiceListController> {
                       isManage: true,
                       onEdit: () {
                         Get.toNamed(Routes.ADD_SERVICE,
-                            arguments:
-                                controller.serviceResult.value.serviceList[i]);
+                                arguments: controller
+                                    .serviceResult.value.serviceList[i])!
+                            .then((value) =>
+                                value ? controller.getServices() : null);
                       },
                       service: controller.serviceResult.value.serviceList[i]);
                 }),

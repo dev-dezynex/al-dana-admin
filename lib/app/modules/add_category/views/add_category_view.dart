@@ -110,36 +110,38 @@ class AddCategoryView extends GetView<AddCategoryController> {
                           const SizedBox(
                             height: 15,
                           ),
-                          TextFormField(
-                            controller: controller.serviceModeController,
-                            textAlignVertical: TextAlignVertical.center,
-                            keyboardType: TextInputType.text,
-                            readOnly: true,
-                            style: tsPoppins(
-                                size: 14,
-                                weight: FontWeight.w400,
-                                color: textDark80),
-                            decoration: InputDecoration(
-                              contentPadding: const EdgeInsets.only(left: 0),
-                              labelText: "Service Modes",
-                              labelStyle: tsPoppins(
-                                  size: 14,
-                                  weight: FontWeight.w400,
-                                  color: textColor02),
-                              enabledBorder: const UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: borderColor,
-                                ),
-                              ),
-                              focusedBorder: const UnderlineInputBorder(
-                                borderSide: BorderSide(color: borderColor),
-                              ),
-                            ),
-                            onTap: () {
-                              controller.chooseMode(context);
-                            },
-                          ),
-                          const SizedBox(height: 15),
+                          // TextFormField(
+                          //   controller: controller.serviceModeController,
+                          //   textAlignVertical: TextAlignVertical.center,
+                          //   keyboardType: TextInputType.text,
+                          //   readOnly: true,
+                          //   style: tsPoppins(
+                          //       size: 14,
+                          //       weight: FontWeight.w400,
+                          //       color: textDark80),
+                          //   decoration: InputDecoration(
+                          //     contentPadding: const EdgeInsets.only(left: 0),
+                          //     labelText: "Service Modes",
+                          //     labelStyle: tsPoppins(
+                          //         size: 14,
+                          //         weight: FontWeight.w400,
+                          //         color: textColor02),
+                          //     enabledBorder: const UnderlineInputBorder(
+                          //       borderSide: BorderSide(
+                          //         color: borderColor,
+                          //       ),
+                          //     ),
+                          //     focusedBorder: const UnderlineInputBorder(
+                          //       borderSide: BorderSide(color: borderColor),
+                          //     ),
+                          //   ),
+                          //   onTap: () {
+                          //     controller.chooseMode(context);
+                          //   },
+                          // ),
+                          // const SizedBox(height: 15),
+                         
+                         
                           TextFormField(
                             controller: controller.thumbController,
                             textAlignVertical: TextAlignVertical.center,
@@ -288,7 +290,7 @@ class AddCategoryView extends GetView<AddCategoryController> {
                                 ElevatedButton(
                                     onPressed: () {
                                       if (formKeyAdd.currentState!.validate()) {
-                                        controller.createCategory();
+                                        controller.updateCategory();
                                       }
                                     },
                                     style: ElevatedButton.styleFrom(

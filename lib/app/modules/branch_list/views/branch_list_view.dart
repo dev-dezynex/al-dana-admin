@@ -22,7 +22,7 @@ class BranchListView extends GetView<BranchListController> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            Get.toNamed(Routes.ADD_BRANCH);
+            Get.toNamed(Routes.ADD_BRANCH)!.then((value) => value?controller.getDetails():null);
           },
           backgroundColor: primary,
           child: const Icon(
@@ -31,18 +31,22 @@ class BranchListView extends GetView<BranchListController> {
         ),
         body: SafeArea(
           child: Obx(
-            () => ListView.builder(
-                itemCount: controller.branchResult.value.branchList!.length,
-                itemBuilder: (con, i) {
-                  return BranchTile(
-                      isManage: true,
-                      onEdit: () {
-                        Get.toNamed(Routes.ADD_BRANCH,
-                            arguments:
-                                controller.branchResult.value.branchList![i]);
-                      },
-                      branch: controller.branchResult.value.branchList![i]);
-                }),
+            () => controller.isLoading.value
+                ? Center(
+                    child: CircularProgressIndicator(),
+                  )
+                : ListView.builder(
+                    itemCount: controller.branchResult.value.branchList!.length,
+                    itemBuilder: (con, i) {
+                      return BranchTile(
+                          isManage: true,
+                          onEdit: () {
+                            Get.toNamed(Routes.ADD_BRANCH,
+                                arguments: controller
+                                    .branchResult.value.branchList![i])!.then((value) => value?controller.getDetails():null);
+                          },
+                          branch: controller.branchResult.value.branchList![i]);
+                    }),
           ),
         ));
   }

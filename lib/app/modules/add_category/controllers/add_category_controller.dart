@@ -10,7 +10,7 @@ class AddCategoryController extends GetxController {
   TextEditingController titleController = TextEditingController();
   TextEditingController descController = TextEditingController();
   TextEditingController priceController = TextEditingController();
-  TextEditingController serviceModeController = TextEditingController();
+  // TextEditingController serviceModeController = TextEditingController();
   TextEditingController thumbController = TextEditingController();
 
   var bgCardColor = const Color(0xff443a49).obs;
@@ -24,15 +24,74 @@ class AddCategoryController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-
     getDetails();
   }
 
+  Future<String> imageUpload() async {
+    if (thumbFile.value.path.isNotEmpty) {
+      var result = await FileProvider().uploadSingleFile(file: thumbFile.value);
+      if (result['status'] == 'success') {
+        return result['data'][0];
+      }
+    }
+    return selectedCategory.value.image;
+  }
 
+  void createCategory() async {
+    isLoading(true);
+    String imagePath = await imageUpload();
+    var result = await CategoryProvider().addOrUpdateCategory(
+        category: Category(
+      title: titleController.text,
+      desc: descController.text,
+      bgCardColor: colorToHexValue(bgCardColor.value),
+      image: imagePath,
+    ));
+    if (result.status == 'success') {
+      Get.back(result: true);
+    } else {
+      Get.snackbar('Error', result.message,
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: textDark20,
+          colorText: textDark80);
+    }
+    isLoading(false);
+  }
 
-  void createCategory() {}
+  void updateCategory() async {
+    isLoading(true);
+    String imagePath = await imageUpload();
+    var result = await CategoryProvider().addOrUpdateCategory(
+        category: Category(
+            id: selectedCategory.value.id,
+            title: titleController.text,
+            desc: descController.text,
+            bgCardColor: colorToHexValue(bgCardColor.value),
+            image: imagePath));
+    if (result.status == 'success') {
+      Get.back(result: true);
+    } else {
+      Get.snackbar('Error', result.message,
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: textDark20,
+          colorText: textDark80);
+    }
+    isLoading(false);
+  }
 
-  void deleteCategory() {}
+  void deleteCategory() async {
+    final result = await CategoryProvider()
+        .deleteCategory(category: selectedCategory.value);
+    if (result.status == 'success') {
+      Get.back();
+      Get.back(result: true);
+    } else {
+      Get.snackbar('Error', result.message,
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: textDark20,
+          colorText: textDark80);
+    }
+  }
 
   pickThumb() async {
     thumbFile.value = (await FileProvider().pickFile(
@@ -57,8 +116,8 @@ class AddCategoryController extends GetxController {
             selectedModeList.add(mode);
           }
 
-          serviceModeController.text =
-              selectedModeList.value.map((e) => e.title).join(', ');
+          // serviceModeController.text =
+          //     selectedModeList.value.map((e) => e.title).join(', ');
         },
         onSubmit: () {
           Get.back();
@@ -83,16 +142,17 @@ class AddCategoryController extends GetxController {
   void setFields() {
     titleController.text = selectedCategory.value.title;
     descController.text = selectedCategory.value.desc;
-    for (ServiceMode mode in selectedCategory.value.modeList) {
-      if (modeList.firstWhereOrNull((element) => element.id==mode.id)!=null) {
-        print("contains");
-        selectedModeList.add(mode);
-      }else{
-         print("not contains");
-      }
-    }
-    serviceModeController.text =
-        selectedModeList.map((element) => element.title).join(', ');
+    // for (ServiceMode mode in selectedCategory.value.modeList) {
+    //   if (modeList.firstWhereOrNull((element) => element.id == mode.id) !=
+    //       null) {
+    //     print("contains");
+    //     selectedModeList.add(mode);
+    //   } else {
+    //     print("not contains");
+    //   }
+    // }
+    // serviceModeController.text =
+    //     selectedModeList.map((element) => element.title).join(', ');
     thumbController.text = selectedCategory.value.image.split('/').last;
     bgCardColor.value = hexToColor(selectedCategory.value.bgCardColor);
   }

@@ -1,25 +1,69 @@
 import 'package:get/get.dart';
 
-import '../models/variant_model.dart';
+import '../data.dart';
 
 class VariantProvider extends GetConnect {
-  @override
-  void onInit() {
-    httpClient.defaultDecoder = (map) {
-      if (map is Map<String, dynamic>) return VariantResult.fromJson(map);
-      if (map is List) {
-        return map.map((item) => VariantResult.fromJson(item)).toList();
-      }
+//add carVariant id for update else insert
+  Future<VariantResult> addOrUpdateVariant(
+      {required Variant carVariant}) async {
+    final VariantResult result;
+    final Response<dynamic> response;
+    if (carVariant.id.isEmpty) {
+      response = await post(apiAddCarVariant, carVariant.toJson(),
+          headers: Auth.requestHeaders);
+      print('path $apiAddCarVariant');
+    } else {
+      response = await put(
+          '$apiUpdateCarVariant/${carVariant.id}', carVariant.toJson(),
+          headers: Auth.requestHeaders);
+      print('path $apiUpdateCarVariant/${carVariant.id}');
+    }
+    print('body ${carVariant.toJson()}');
+    print('response ${response.body}');
+
+    result = VariantResult.fromJson(response.body);
+
+    return result;
+  }
+
+  Future<VariantResult> getVariantList(String modelId) async {
+    VariantResult result;
+    Map<String, dynamic> qParams = {
+      'filter[status]': 'true',
+      'filter[carModelId]': modelId
     };
-    httpClient.baseUrl = 'YOUR-API-URL';
+    final response = await get(apiListCarVariant,
+        query: qParams, headers: Auth.requestHeaders);
+    print('auth ${Auth.requestHeaders}');
+    print('qparams $qParams');
+    print('path $apiListCarVariant');
+    print('response ${response.body}');
+    if (response.statusCode == 200) {
+      result = VariantResult.listFromJson(response.body);
+    } else {
+      result = VariantResult.listFromJson(
+          {"status": "error", "message": "Server error !", "data": []});
+    }
+
+    return result;
   }
 
-  Future<VariantResult?> getVariant(int id) async {
-    final response = await get('variant/$id');
-    return response.body;
-  }
+  Future<VariantResult> deleteVariant({required Variant carVariant}) async {
+    VariantResult result;
+    final response = await delete(
+      '$apiDeleteCarVariant/${carVariant.id}',
+      headers: Auth.requestHeaders,
+    );
 
-  Future<Response<VariantResult>> postVariant(VariantResult variant) async =>
-      await post('variant', variant);
-  Future<Response> deleteVariant(int id) async => await delete('variant/$id');
+    print('path $apiDeleteCarVariant');
+    print('response ${response.body}');
+    if (response.statusCode == 200) {
+      result = VariantResult.fromJson(response.body);
+    } else {
+      result = VariantResult.fromJson(
+          {"status": "error", "message": "Server error !", "data": []});
+    }
+
+    return result;
+  }
 }

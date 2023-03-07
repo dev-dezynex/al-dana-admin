@@ -141,7 +141,7 @@ variantSelectionBottomSheet(
                                       ),
                                     ),
                                     Text(
-                                      variantList.value[i].name,
+                                      variantList.value[i].title,
                                       style: tsPoppins(
                                           size: 14,
                                           weight: FontWeight.w400,

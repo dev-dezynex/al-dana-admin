@@ -24,7 +24,7 @@ class NavHeader extends StatelessWidget {
                   child: ClipOval(
                     child: SizedBox.fromSize(
                         size: const Size.fromRadius(30.0),
-                        child: Image.network(image,
+                        child: Image.network('$domainName/$image',
                             errorBuilder: (context, error, stackTrace) =>
                                 Image.asset(
                                   "assets/images/img_user_default.png",

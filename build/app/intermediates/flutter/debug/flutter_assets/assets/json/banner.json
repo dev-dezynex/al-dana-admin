@@ -1,0 +1,23 @@
+{
+    "status": "success",
+    "message": "",
+    "data": [
+        {
+            "_id": "6406b904291567cabae48826",
+            "image": "gfhfgh",
+            "deletable": false,
+            "createdAt": "2023-03-07T04:09:40.808Z",
+            "updatedAt": "2023-03-07T04:09:40.808Z",
+            "__v": 0
+        },
+        {
+            "_id": "6406b9989505bbd396e221d7",
+            "image": "gfhfgh",
+            "branchId": "63ff2289dade7b404c83e94d",
+            "deletable": false,
+            "createdAt": "2023-03-07T04:12:08.807Z",
+            "updatedAt": "2023-03-07T04:12:08.807Z",
+            "__v": 0
+        }
+    ]
+}

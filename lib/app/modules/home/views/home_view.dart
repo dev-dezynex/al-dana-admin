@@ -43,9 +43,11 @@ class HomeView extends GetView<HomeController> {
                   style: tsPoppins(
                       size: 9, weight: FontWeight.w400, color: textDark40),
                 ),
-                Text(
-                  'Dubai, Al Ain',
-                  style: tsPoppins(size: 10, color: textDark80),
+                Obx(()=>
+                   Text(
+                    '${controller.currentAddress}',
+                    style: tsPoppins(size: 10, color: textDark80),
+                  ),
                 ),
               ],
             ),
@@ -129,6 +131,14 @@ class HomeView extends GetView<HomeController> {
           //   },
           // ),
           NavItem(
+            title: "Manage Offer",
+            icon: "assets/icons/ic_nav_4.svg",
+            onTap: () {
+              Get.back();
+              Get.toNamed(Routes.OFFER);
+            },
+          ),
+          NavItem(
             title: "Manage Branch",
             icon: "assets/icons/ic_nav_4.svg",
             onTap: () {
@@ -166,6 +176,14 @@ class HomeView extends GetView<HomeController> {
             onTap: () {
               Get.back();
               Get.toNamed(Routes.VEHICLE);
+            },
+          ),
+          NavItem(
+            title: "Manage Banner",
+            icon: "assets/icons/ic_nav_4.svg",
+            onTap: () {
+              Get.back();
+              Get.toNamed(Routes.BANNER);
             },
           ),
           NavItem(

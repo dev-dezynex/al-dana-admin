@@ -47,9 +47,69 @@ class AddBranchController extends GetxController {
     thumbController.text = fileName;
   }
 
-  void createBranch() {}
+  Future<String> imageUpload() async {
+    if (thumbFile.value.path.isNotEmpty) {
+      var result = await FileProvider().uploadSingleFile(file: thumbFile.value);
+      if (result['status'] == 'success') {
+        return result['data'][0];
+      }
+    }
+    return selectedBranch.value.image;
+  }
 
-  void deleteBranch() {}
+  void createBranch() async {
+    String imagePath = await imageUpload();
+    var result = await BranchProvider().addOrUpdateBranch(
+        branch: Branch(
+      name: nameController.text,
+      location: locationController.text,
+      latitude: 11.1876343,
+      longitude: 75.8535077,
+      image: imagePath,
+    ));
+    if (result.status == 'success') {
+      Get.back(result: true);
+    } else {
+      Get.snackbar('Error', result.message!,
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: textDark20,
+          colorText: textDark80);
+    }
+  }
+
+  void updateBranch() async {
+    String imagePath = await imageUpload();
+    var result = await BranchProvider().addOrUpdateBranch(
+        branch: Branch(
+            id: selectedBranch.value.id,
+            name: nameController.text,
+            location: locationController.text,
+            latitude: 11.1876343,
+            longitude: 75.8535077,
+            image: imagePath));
+    if (result.status == 'success') {
+      Get.back(result: true);
+    } else {
+      Get.snackbar('Error', result.message!,
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: textDark20,
+          colorText: textDark80);
+    }
+  }
+
+  void deleteBranch() async {
+    final result =
+        await BranchProvider().deleteBranch(branch: selectedBranch.value);
+    if (result.status == 'success') {
+      Get.back();
+      Get.back(result: true);
+    } else {
+      Get.snackbar('Error', result.message!,
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: textDark20,
+          colorText: textDark80);
+    }
+  }
 
   void setFields() {
     nameController.text = selectedBranch.value.name;

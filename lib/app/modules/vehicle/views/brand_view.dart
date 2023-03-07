@@ -14,7 +14,8 @@ class BrandView extends GetView<VehicleController> {
         backgroundColor: bgColor1,
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            Get.toNamed(Routes.ADD_BRAND);
+            Get.toNamed(Routes.ADD_BRAND)!
+                .then((value) => value ? controller.getDetails() : null);
           },
           backgroundColor: primary,
           child: const Icon(
@@ -49,7 +50,6 @@ class BrandView extends GetView<VehicleController> {
                         fillColor: white),
                   ),
                 ),
-               
                 Obx(
                   () => ListView.builder(
                       physics: const NeverScrollableScrollPhysics(),
@@ -60,8 +60,14 @@ class BrandView extends GetView<VehicleController> {
                       itemBuilder: (con, i) {
                         return BrandTile(
                           onTap: () {
-                            Get.toNamed(Routes.ADD_BRAND,
+                            Get.toNamed(Routes.CAR_MODEL,
                                 arguments: controller.filterBrands[i]);
+                          },
+                          onEdit: () {
+                            Get.toNamed(Routes.ADD_BRAND,
+                                    arguments: controller.filterBrands[i])!
+                                .then((value) =>
+                                    value ? controller.getDetails() : null);
                           },
                           brand: controller.filterBrands[i],
                         );
