@@ -1,12 +1,9 @@
 import 'dart:convert';
-import 'dart:io';
 
-import 'package:al_dana_admin/app/data/constants/api_routes.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import '../data.dart';
-import '../models/branch_model.dart';
 
 class BranchProvider extends GetConnect {
   Future<BranchResult> getDummyData() async {
@@ -22,11 +19,11 @@ class BranchProvider extends GetConnect {
     final Response<dynamic> response;
     if (branch.id.isEmpty) {
       response = await post(apiAddBranch, branch.toJson(),
-          headers: Auth.requestHeaders);
+          headers: Auth().requestHeaders);
       print('path $apiAddBranch');
     } else {
       response = await put('$apiUpdateBranch/${branch.id}', branch.toJson(),
-          headers: Auth.requestHeaders);
+          headers: Auth().requestHeaders);
       print('path $apiUpdateBranch/${branch.id}');
     }
     print('body ${branch.toJson()}');
@@ -61,7 +58,7 @@ class BranchProvider extends GetConnect {
   //     });
   //   }
   //   final response = await put('$apiUpdateBranch/${branch.id}', formData,
-  //       contentType: 'multipart/form-data', headers: Auth.requestHeaders);
+  //       contentType: 'multipart/form-data', headers: Auth().requestHeaders);
   //   print('formdata $formData');
   //   print('path $apiUpdateBranch/${branch.id}');
   //   print('response ${response.body}');
@@ -80,8 +77,8 @@ class BranchProvider extends GetConnect {
     BranchResult result;
     Map<String, dynamic> qParams = {'filter[status]': 'true'};
     final response =
-        await get(apiListBranch, query: qParams, headers: Auth.requestHeaders);
-    print('auth ${Auth.requestHeaders}');
+        await get(apiListBranch, query: qParams, headers: Auth().requestHeaders);
+    print('auth ${Auth().requestHeaders}');
     print('qparams $qParams');
     print('path $apiListBranch');
     print('response ${response.body}');
@@ -99,7 +96,7 @@ class BranchProvider extends GetConnect {
     BranchResult result;
     final response = await delete(
       '$apiDeleteBranch/${branch.id}',
-      headers: Auth.requestHeaders,
+      headers: Auth().requestHeaders,
     );
 
     print('path $apiDeleteBranch');

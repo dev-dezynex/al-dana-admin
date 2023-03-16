@@ -1,8 +1,5 @@
 import '../data.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 
 class ServiceModeTile extends StatelessWidget {
@@ -16,7 +13,7 @@ class ServiceModeTile extends StatelessWidget {
       : super(key: key);
   final ServiceMode mode;
   final GestureTapCallback? onTap;
-  final bool isSelect,isManage;
+  final bool isSelect, isManage;
   final ValueChanged<bool?>? onChanged;
   @override
   Widget build(BuildContext context) {
@@ -49,16 +46,15 @@ class ServiceModeTile extends StatelessWidget {
                   ],
                 ),
               ),
-              if(!isManage)
-              Positioned(
-                top: 0,
-                right: 0,
-                child: Theme(
-                  data: Theme.of(context).copyWith(
-                    unselectedWidgetColor: white,
-                  ),
-                  child: Obx(
-                    () => Radio(
+              if (!isManage)
+                Positioned(
+                  top: 0,
+                  right: 0,
+                  child: Theme(
+                    data: Theme.of(context).copyWith(
+                      unselectedWidgetColor: white,
+                    ),
+                    child: Radio(
                         value: isSelect,
                         groupValue: true,
                         activeColor: white,
@@ -66,7 +62,6 @@ class ServiceModeTile extends StatelessWidget {
                         onChanged: onChanged),
                   ),
                 ),
-              ),
             ],
           ),
         ),

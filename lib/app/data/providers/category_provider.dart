@@ -19,12 +19,12 @@ class CategoryProvider extends GetConnect {
     final Response<dynamic> response;
     if (category.id.isEmpty) {
       response = await post(apiAddCategory, category.toJson(),
-          headers: Auth.requestHeaders);
+          headers: Auth().requestHeaders);
       print('path $apiAddCategory');
     } else {
       response = await put(
           '$apiUpdateCategory/${category.id}', category.toJson(),
-          headers: Auth.requestHeaders);
+          headers: Auth().requestHeaders);
       print('path $apiUpdateCategory/${category.id}');
     }
     print('body ${category.toJson()}');
@@ -37,15 +37,18 @@ class CategoryProvider extends GetConnect {
 
   Future<CategoryResult> getCategories() async {
     CategoryResult result;
-    Map<String, dynamic> qParams = {'filter[status]': 'true'};
+    Map<String, dynamic> qParams = {};
     final response = await get(
       apiListCategory,
       query: qParams,
-      headers: Auth.requestHeaders,
+      headers: Auth().requestHeaders,
     );
     print('qparams $qParams');
     print('path $apiListCategory');
     print('response ${response.body}');
+    if (response.statusCode == 401) {
+      Auth().authFailed(response.body['message']);
+    }
     result = CategoryResult.listFromJson(response.body);
     return result;
   }
@@ -54,7 +57,7 @@ class CategoryProvider extends GetConnect {
     CategoryResult result;
     final response = await delete(
       '$apiDeleteCategory/${category.id}',
-      headers: Auth.requestHeaders,
+      headers: Auth().requestHeaders,
     );
     print('path $apiDeleteCategory');
     print('response ${response.body}');

@@ -72,7 +72,7 @@ class FileProvider extends GetConnect {
     final formData =
         FormData({'image': MultipartFile(file, filename: fileName)});
     final response = await post(apiFileUpload, formData,
-        headers: Auth.requestHeaders, uploadProgress: uploadProgress);
+        headers: Auth().requestHeaders, uploadProgress: uploadProgress);
     print('file response ${response.body}');
     result = response.body;
     return result;

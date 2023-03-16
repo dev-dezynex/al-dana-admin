@@ -1,5 +1,4 @@
 import 'package:al_dana_admin/app/data/data.dart';
-import 'package:al_dana_admin/app/data/providers/car_model_provider.dart';
 import 'package:get/get.dart';
 
 class CarModelController extends GetxController {
@@ -13,15 +12,7 @@ class CarModelController extends GetxController {
     getDetails();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
 
-  @override
-  void onClose() {
-    super.onClose();
-  }
 
   void getDetails() async{
     isLoading(true);

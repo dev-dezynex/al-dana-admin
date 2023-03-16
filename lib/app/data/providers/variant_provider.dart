@@ -10,12 +10,12 @@ class VariantProvider extends GetConnect {
     final Response<dynamic> response;
     if (carVariant.id.isEmpty) {
       response = await post(apiAddCarVariant, carVariant.toJson(),
-          headers: Auth.requestHeaders);
+          headers: Auth().requestHeaders);
       print('path $apiAddCarVariant');
     } else {
       response = await put(
           '$apiUpdateCarVariant/${carVariant.id}', carVariant.toJson(),
-          headers: Auth.requestHeaders);
+          headers: Auth().requestHeaders);
       print('path $apiUpdateCarVariant/${carVariant.id}');
     }
     print('body ${carVariant.toJson()}');
@@ -28,13 +28,15 @@ class VariantProvider extends GetConnect {
 
   Future<VariantResult> getVariantList(String modelId) async {
     VariantResult result;
-    Map<String, dynamic> qParams = {
-      'filter[status]': 'true',
-      'filter[carModelId]': modelId
-    };
+    Map<String, dynamic> qParams;
+    if (modelId.isNotEmpty) {
+      qParams = {'filter[carModelId]': modelId};
+    } else {
+      qParams = {};
+    }
     final response = await get(apiListCarVariant,
-        query: qParams, headers: Auth.requestHeaders);
-    print('auth ${Auth.requestHeaders}');
+        query: qParams, headers: Auth().requestHeaders);
+    print('auth ${Auth().requestHeaders}');
     print('qparams $qParams');
     print('path $apiListCarVariant');
     print('response ${response.body}');
@@ -52,7 +54,7 @@ class VariantProvider extends GetConnect {
     VariantResult result;
     final response = await delete(
       '$apiDeleteCarVariant/${carVariant.id}',
-      headers: Auth.requestHeaders,
+      headers: Auth().requestHeaders,
     );
 
     print('path $apiDeleteCarVariant');

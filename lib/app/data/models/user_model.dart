@@ -49,7 +49,7 @@ class UserResult {
 }
 
 class User {
-  late String id, name, email, image, scope;
+  late String id, name, email, image, scope, username, password;
   late int mobile;
   late bool status;
 
@@ -60,15 +60,19 @@ class User {
       this.email = '',
       this.image = '',
       this.scope = '',
+      this.username = '',
+      this.password = '',
       this.status = false});
 
   User.fromJson(Map<String, dynamic> json) {
     id = json['_id'] ?? '';
     name = json['name'] ?? '';
-    mobile = json['mobile'] ?? 0;
+    username = json['username'] ?? '';
+    password = json['password'] ?? '';
+    mobile = json['phoneNumber'] ?? 0;
     email = json['email'] ?? '';
     image = json['image'] ?? '';
-    scope = json['scope'] ?? '';
+    scope = json['role'] ?? '';
     status = json['status'] ?? false;
   }
 
@@ -76,10 +80,25 @@ class User {
     final data = <String, dynamic>{};
     data['_id'] = id;
     data['name'] = name;
-    data['mobile'] = mobile;
+    data['username'] = username;
+    data['password'] = password;
+    data['phoneNumber'] = mobile;
     data['email'] = email;
     data['image'] = image;
-    data['scope'] = scope;
+    data['role'] = scope;
+    data['status'] = status;
+    return data;
+  }
+
+  Map<String, dynamic> toJsonBody() {
+    final data = <String, dynamic>{};
+    data['name'] = name;
+    data['username'] = username;
+    data['password'] = password;
+    data['phoneNumber'] = mobile;
+    data['email'] = email;
+    data['image'] = image;
+    data['role'] = scope;
     data['status'] = status;
     return data;
   }

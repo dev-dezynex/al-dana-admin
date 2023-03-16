@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:intl/intl.dart';
 
+import '../../routes/app_pages.dart';
 import '../data.dart';
 
 final storage = GetStorage();
@@ -52,11 +53,44 @@ class Common {
   List<dynamic> selectedServiceList = storage.read(selected_service) ?? [];
 }
 
-
 class Auth {
- static Map<String, String> requestHeaders = {
-    'Authorization':'Bearer ${storage.read(auth)}',
+   Map<String, String> requestHeaders = {
+    'Authorization': 'Bearer ${storage.read(auth)}',
   };
+
+  authFailed(message) {
+     Get.dialog(
+        WillPopScope(
+          onWillPop: () async => false,
+          child: AlertDialog(
+            title: Text(
+              "Failure",
+              style:
+                  tsPoppins(color: primary, weight: FontWeight.w600, size: 18),
+            ),
+            content: Text(
+              "$message ",
+              style: tsPoppins(
+                  color: textDark40, weight: FontWeight.w400, size: 12),
+            ),
+            actions: <Widget>[
+              TextButton(
+                child: Text("Ok",
+                    style: tsPoppins(
+                        color: textDark80, weight: FontWeight.w600, size: 14)),
+                onPressed: () {
+                  storage.erase();
+                  Get.offAllNamed(Routes.AUTH);
+                  Get.back();
+                },
+              ),
+            ],
+          ),
+        ),
+        barrierDismissible: false,
+      );
+   
+  }
 }
 
 double calculateDistance(lat1, lon1, lat2, lon2) {

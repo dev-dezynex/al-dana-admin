@@ -28,6 +28,7 @@ dependencies:
   order_tracker: ^0.0.2 
   flutter_colorpicker: ^1.0.3
   geocoding: ^2.0.5
+  path_provider: ^2.0.13
   flutter: 
     sdk: flutter
 

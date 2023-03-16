@@ -41,7 +41,7 @@ class AddSpareCategoryController extends GetxController {
   void deleteSpareCategory() {}
 
   void setFields() {
-    nameController.text = selectedSpareCategory.value.name!;
-    thumbController.text = selectedSpareCategory.value.image!.split('/').last;
+    nameController.text = selectedSpareCategory.value.name;
+    thumbController.text = selectedSpareCategory.value.image.split('/').last;
   }
 }

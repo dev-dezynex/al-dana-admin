@@ -29,7 +29,7 @@ class BannerResult {
     final data = <String, dynamic>{};
     data['status'] = status;
     data['message'] = message;
-    data['data'] = this.bannerList?.map((v) => v.toJson()).toList();
+    data['data'] = bannerList?.map((v) => v.toJson()).toList();
     return data;
   }
 }

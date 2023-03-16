@@ -132,7 +132,7 @@ class ServiceTile2 extends StatelessWidget {
                       padding:
                           const EdgeInsets.only(top: 18.0, left: 5, right: 5),
                       child: Image.network(
-                        service.image,
+                        '$domainName${service.image}',
                         fit: BoxFit.contain,
                         errorBuilder: (context, error, stackTrace) {
                           return Image.asset(

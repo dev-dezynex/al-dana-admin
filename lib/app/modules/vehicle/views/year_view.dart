@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 
 import '../../../data/data.dart';
-import '../../../routes/app_pages.dart';
 import '../controllers/vehicle_controller.dart';
 
 class YearView extends GetView<VehicleController> {
@@ -20,8 +17,8 @@ class YearView extends GetView<VehicleController> {
               context: context,
               builder: (BuildContext context) {
                 return AlertDialog(
-                  title: Text("Select Year"),
-                  content: Container(
+                  title: const Text("Select Year"),
+                  content: SizedBox(
                     // Need to use container to add size constraint.
                     width: 300,
                     height: 300,

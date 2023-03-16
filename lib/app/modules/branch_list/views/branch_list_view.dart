@@ -32,7 +32,7 @@ class BranchListView extends GetView<BranchListController> {
         body: SafeArea(
           child: Obx(
             () => controller.isLoading.value
-                ? Center(
+                ? const Center(
                     child: CircularProgressIndicator(),
                   )
                 : ListView.builder(

@@ -27,15 +27,7 @@ class AddBranchController extends GetxController {
     }
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
 
-  @override
-  void onClose() {
-    super.onClose();
-  }
 
   pickThumb() async {
     thumbFile.value = (await FileProvider().pickFile(

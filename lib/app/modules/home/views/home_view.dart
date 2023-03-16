@@ -18,6 +18,7 @@ class HomeView extends GetView<HomeController> {
     return Scaffold(
       key: _scaffoldKey,
       backgroundColor: bgColor1,
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         systemOverlayStyle: const SystemUiOverlayStyle(
           statusBarColor: Colors.transparent,
@@ -32,9 +33,7 @@ class HomeView extends GetView<HomeController> {
               Icons.location_on_outlined,
               color: primary,
             ),
-            const SizedBox(
-              width: 5,
-            ),
+            const SizedBox(width: 5),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -43,8 +42,8 @@ class HomeView extends GetView<HomeController> {
                   style: tsPoppins(
                       size: 9, weight: FontWeight.w400, color: textDark40),
                 ),
-                Obx(()=>
-                   Text(
+                Obx(
+                  () => Text(
                     '${controller.currentAddress}',
                     style: tsPoppins(size: 10, color: textDark80),
                   ),
@@ -67,7 +66,10 @@ class HomeView extends GetView<HomeController> {
         padding: EdgeInsets.zero,
         shrinkWrap: true,
         children: [
-          const NavHeader(),
+          NavHeader(
+            name: controller.common.currentUser.name,
+            image: controller.common.currentUser.image,
+          ),
           // NavItem(
           //   title: "Work Manager",
           //   icon: "assets/icons/ic_nav_announcement.svg",

@@ -18,8 +18,7 @@ class AddCategoryController extends GetxController {
   var isLoading = false.obs;
   var thumbFile = File('').obs;
 
-  var modeList = <ServiceMode>[].obs;
-  var selectedModeList = <ServiceMode>[].obs;
+
   var selectedCategory = Category().obs;
   @override
   void onInit() {
@@ -103,29 +102,8 @@ class AddCategoryController extends GetxController {
     thumbController.text = fileName;
   }
 
-  void chooseMode(BuildContext context) {
-    modeSelectionBottomSheet(
-        context: context,
-        modeList: modeList,
-        selectedModeList: selectedModeList,
-        isMultiSelect: true,
-        onModeSelected: (ServiceMode mode) {
-          if (selectedModeList.contains(mode)) {
-            selectedModeList.remove(mode);
-          } else {
-            selectedModeList.add(mode);
-          }
-
-          // serviceModeController.text =
-          //     selectedModeList.value.map((e) => e.title).join(', ');
-        },
-        onSubmit: () {
-          Get.back();
-        });
-  }
-
   void getDetails() async {
-    await getModeList();
+
     if (Get.arguments != null) {
       isUpdate.value = true;
       selectedCategory.value = Get.arguments;
@@ -133,11 +111,7 @@ class AddCategoryController extends GetxController {
     }
   }
 
-  getModeList() async {
-    modeList.value =
-        (await ServiceModeProvider().getDummyData()).serviceModeList!;
-    modeList.refresh();
-  }
+
 
   void setFields() {
     titleController.text = selectedCategory.value.title;

@@ -377,7 +377,7 @@ modeSelectionBottomSheet(
                   child: ElevatedButton(
                       onPressed: onSubmit,
                       style: ElevatedButton.styleFrom(
-                          primary: bgColor27,
+                          backgroundColor: bgColor27,
                           minimumSize: Size(Get.width, 50),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8))),
@@ -645,7 +645,7 @@ spareSelectionBottomSheet({
                   child: ElevatedButton(
                       onPressed: onSubmit,
                       style: ElevatedButton.styleFrom(
-                          primary: bgColor27,
+                          backgroundColor: bgColor27,
                           minimumSize: Size(Get.width, 50),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8))),

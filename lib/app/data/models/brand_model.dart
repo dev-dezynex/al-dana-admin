@@ -1,4 +1,3 @@
-import '../data.dart';
 
 class BrandResult {
   late String status, message;

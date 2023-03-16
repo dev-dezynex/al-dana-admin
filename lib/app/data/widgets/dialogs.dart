@@ -88,7 +88,7 @@ getColorPickerWithName({
   VoidCallback? onCancel,
   VoidCallback? onSubmit,
 }) {
-  final GlobalKey<FormState> _formKey = GlobalKey();
+  final GlobalKey<FormState> formKey = GlobalKey();
   return showDialog(
     context: context,
     builder: (BuildContext context) {
@@ -106,7 +106,7 @@ getColorPickerWithName({
         ),
         content: SingleChildScrollView(
           child: Form(
-            key: _formKey,
+            key: formKey,
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -165,7 +165,7 @@ getColorPickerWithName({
           ),
           TextButton(
             onPressed: () {
-              if (_formKey.currentState!.validate()) {
+              if (formKey.currentState!.validate()) {
                 onSubmit!.call();
               }
             },

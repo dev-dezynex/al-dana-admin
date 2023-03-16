@@ -10,8 +10,8 @@ class ServiceResult {
       {this.status = '', this.message = '', this.serviceList = const []});
 
   ServiceResult.fromJson(Map<String, dynamic> json) {
-    status = json['status'];
-    message = json['message'];
+    status = json['status'] ?? '';
+    message = json['message'] ?? '';
     service = json['data'] != null ? Service.fromJson(json['data']) : Service();
   }
   ServiceResult.listFromJson(Map<String, dynamic> json) {
@@ -40,11 +40,12 @@ class Service {
   late String desc;
   late String image;
   late String bgCardColor;
-  late String categoryId;
+  late String categoryId, duration, spareCategory;
   // late List<Branch> branchList;
   late double price;
-  SpareCategory? spareCategory;
-  late List<String> modeList;
+  late int period;
+  // late List<String> modeList;
+  late List<ServiceDetails> serviceDetails;
 
   Service({
     this.id = '',
@@ -53,10 +54,12 @@ class Service {
     this.image = '',
     this.bgCardColor = '',
     this.categoryId = '',
+    this.duration = '',
+    this.period = 0,
     // this.branchList = const [],
     this.price = 0,
-    this.spareCategory,
-    this.modeList = const [],
+    this.spareCategory = '',
+    this.serviceDetails = const [],
   });
 
   Service.fromJson(Map<String, dynamic> json) {
@@ -65,7 +68,9 @@ class Service {
     desc = json['description'];
     image = json['image'];
     bgCardColor = json['bg_card_color'];
-    categoryId = json['categoryId']??'';
+    categoryId = json['categoryId'] ?? '';
+    duration = json['duration'] ?? '';
+    period = json['servicePeriod'] ?? 0;
     // if (json['branch'] != null) {
     //   branchList = <Branch>[];
     //   json['branch'].forEach((v) {
@@ -79,11 +84,13 @@ class Service {
     //     modeList.add(ServiceMode.fromJson(v));
     //   });
     // }
-    if (json['spare_category'] != null) {
-      spareCategory = SpareCategory.fromJson(json['spare_category']);
-    }
-    if (json['serviceModeId'] != null) {
-      modeList = json['serviceModeId'].cast<String>();
+    spareCategory = json['spareCategoryId'] ?? '';
+
+    if (json['serviceDetails'] != null) {
+      serviceDetails = <ServiceDetails>[];
+      json['serviceDetails'].forEach((v) {
+        serviceDetails.add(ServiceDetails.fromJson(v));
+      });
     }
   }
 
@@ -94,9 +101,92 @@ class Service {
     data['image'] = image;
     data['bg_card_color'] = bgCardColor;
     data['categoryId'] = categoryId;
+    data['duration'] = duration;
+    data['servicePeriod'] = period;
+    if (spareCategory.isNotEmpty) {
+      data['spareCategoryId'] = spareCategory;
+    }
     // data['branch'] = branchList.map((v) => v.toJson()).toList();
     data['price'] = price;
-    data['serviceModeId'] = modeList;
+    data['serviceDetails'] = serviceDetails.map((v) => v.toJson()).toList();
+    return data;
+  }
+}
+
+class ServiceDetails {
+  String? id, serviceId, branchId;
+  List<String>? serviceModeIdList;
+  double? price;
+  List<ServicePrice>? servicePriceList;
+
+  ServiceDetails({
+    this.id,
+    this.serviceId,
+    this.branchId,
+    this.serviceModeIdList,
+    this.price,
+    this.servicePriceList,
+  });
+
+  ServiceDetails.fromJson(Map<String, dynamic> json) {
+    id = json['_id'];
+    serviceId = json['serviceId'];
+    branchId = json['branchId'];
+    serviceModeIdList = json['serviceModeId'].cast<String>();
+    price = double.parse(json['price'].toString());
+    if (json['priceArray'] != null) {
+      servicePriceList = <ServicePrice>[];
+      json['priceArray'].forEach((v) {
+        servicePriceList!.add(ServicePrice.fromJson(v));
+      });
+    }
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['_id'] = id;
+    data['serviceId'] = serviceId;
+    data['branchId'] = branchId;
+    data['serviceModeId'] = serviceModeIdList;
+    data['price'] = price;
+    if (servicePriceList != null) {
+      data['priceArray'] = servicePriceList!.map((v) => v.toJson()).toList();
+    } else {
+      data['priceArray'] = [];
+    }
+
+    return data;
+  }
+}
+
+class ServicePrice {
+  String? id, serviceDetailId;
+  double? price;
+  List<String>? variantId, serviceModeId;
+
+  ServicePrice({
+    this.id,
+    this.serviceDetailId,
+    this.serviceModeId,
+    this.variantId,
+    this.price,
+  });
+
+  ServicePrice.fromJson(Map<String, dynamic> json) {
+    id = json['_id'];
+    serviceDetailId = json['serviceDetailId'];
+    serviceModeId = json['serviceModeId'].cast<String>();
+    variantId = json['variantId'].cast<String>();
+    price = double.parse(json['price'].toString());
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['_id'] = id;
+    data['serviceDetailId'] = serviceDetailId;
+    data['serviceModeId'] = serviceModeId;
+    data['variantId'] = variantId;
+    data['price'] = price;
     return data;
   }
 }

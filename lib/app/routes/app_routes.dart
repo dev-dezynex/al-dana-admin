@@ -37,6 +37,7 @@ abstract class Routes {
   static const ADD_CAR_MODEL = _Paths.ADD_CAR_MODEL;
   static const BANNER = _Paths.BANNER;
   static const ADD_BANNER = _Paths.ADD_BANNER;
+  static const CUSTOM_PRICE = _Paths.CUSTOM_PRICE;
 }
 
 abstract class _Paths {
@@ -75,4 +76,5 @@ abstract class _Paths {
   static const ADD_CAR_MODEL = '/add-car-model';
   static const BANNER = '/banner';
   static const ADD_BANNER = '/add-banner';
+  static const CUSTOM_PRICE = '/custom-price';
 }

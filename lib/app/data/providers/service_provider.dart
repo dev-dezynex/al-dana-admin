@@ -26,15 +26,16 @@ class ServiceProvider extends GetConnect {
     final Response<dynamic> response;
     if (service.id.isEmpty) {
       response = await post(apiAddService, service.toJson(),
-          headers: Auth.requestHeaders);
+          headers: Auth().requestHeaders);
       print('path $apiAddService');
     } else {
       response = await put('$apiUpdateService/${service.id}', service.toJson(),
-          headers: Auth.requestHeaders);
+          headers: Auth().requestHeaders);
       print('path $apiUpdateService/${service.id}');
     }
-    print('body ${service.toJson()}');
+    print('body ${jsonEncode(service)}');
     print('response ${response.body}');
+    print('Auth ${Auth().requestHeaders}');
 
     result = ServiceResult.fromJson(response.body);
 
@@ -47,7 +48,7 @@ class ServiceProvider extends GetConnect {
     final response = await get(
       apiListService,
       query: qParams,
-      headers: Auth.requestHeaders,
+      headers: Auth().requestHeaders,
     );
     print('qparams $qParams');
     print('path $apiListService');
@@ -60,7 +61,7 @@ class ServiceProvider extends GetConnect {
     ServiceResult result;
     final response = await delete(
       '$apiDeleteService/${service.id}',
-      headers: Auth.requestHeaders,
+      headers: Auth().requestHeaders,
     );
     print('path $apiDeleteService');
     print('response ${response.body}');
@@ -68,4 +69,5 @@ class ServiceProvider extends GetConnect {
 
     return result;
   }
+
 }

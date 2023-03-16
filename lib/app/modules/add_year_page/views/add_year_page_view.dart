@@ -13,7 +13,7 @@ class AddYearPageView extends GetView<AddYearPageController> {
         title: const Text('AddYearPageView'),
         centerTitle: true,
       ),
-      body: Center(
+      body: const Center(
         child: Text(
           'AddYearPageView is working',
           style: TextStyle(fontSize: 20),

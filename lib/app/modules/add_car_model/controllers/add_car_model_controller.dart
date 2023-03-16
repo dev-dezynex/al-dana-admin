@@ -32,15 +32,7 @@ class AddCarModelController extends GetxController {
     }
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
 
-  @override
-  void onClose() {
-    super.onClose();
-  }
 
   void setFields() {
     nameController.text = selectedModel.value.title!;

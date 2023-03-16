@@ -13,7 +13,7 @@ class AddColorPageView extends GetView<AddColorPageController> {
         title: const Text('AddColorPageView'),
         centerTitle: true,
       ),
-      body: Center(
+      body: const Center(
         child: Text(
           'AddColorPageView is working',
           style: TextStyle(fontSize: 20),

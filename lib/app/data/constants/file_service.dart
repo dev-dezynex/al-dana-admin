@@ -1,7 +1,7 @@
 import 'dart:io';
 
 // import 'package:flutter_downloader/flutter_downloader.dart';
-import 'package:get/get.dart';
+import 'package:flutter/foundation.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -10,7 +10,6 @@ import 'keys.dart';
 
 class FileService {
 
-  static String _extStorage = "";
 
   static Map<String, Future Function()> downloadTasks = {};
 
@@ -32,7 +31,9 @@ class FileService {
    try {
       await baseDir!.create(recursive: true);
     } catch (e) {
-      print('in catch $e');
+      if (kDebugMode) {
+        print('in catch $e');
+      }
     }
     return baseDir!.path;
   }

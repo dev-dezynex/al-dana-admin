@@ -10,6 +10,7 @@ class Permissions {
       // await Permission.camera.request();
       // await Permission.microphone.request();
       // await Permission.phone.request();
+      await Permission.location.request();
 
       if (Platform.isAndroid) {
         await Permission.storage.request();

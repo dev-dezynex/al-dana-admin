@@ -30,7 +30,7 @@ class SpareCategoryView extends GetView<SpareCategoryController> {
         ),
       ),
       body: Obx(
-        () => ListView.builder(
+        () =>controller.isLoading.value? const Center(child: CircularProgressIndicator(),) : ListView.builder(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
             itemCount:
                 controller.spareCategoryResult.value.spareCategoryList!.length,

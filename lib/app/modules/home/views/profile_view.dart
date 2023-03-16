@@ -14,7 +14,6 @@ class ProfileView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      physics: const NeverScrollableScrollPhysics(),
       child: Form(
         key: formKeyProfile,
         autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -305,6 +304,9 @@ class ProfileView extends GetView<HomeController> {
                 ],
               ),
             ),
+            SizedBox(
+              height: Get.height * .4,
+            )
           ],
         ),
       ),

@@ -36,15 +36,7 @@ class AddVariantController extends GetxController {
     }
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
 
-  @override
-  void onClose() {
-    super.onClose();
-  }
 
   void setFields() {
     nameController.text = selectedVariant.value.title;

@@ -20,15 +20,7 @@ class AddServiceModeController extends GetxController {
     }
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
 
-  @override
-  void onClose() {
-    super.onClose();
-  }
 
   void setFields() {
     titleController.text = selectedServiceMode.value.title!;

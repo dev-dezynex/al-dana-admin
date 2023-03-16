@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../data/data.dart';
+import '../../../routes/app_pages.dart';
 import '../controllers/add_service_controller.dart';
 
 class AddServiceView extends GetView<AddServiceController> {
@@ -14,6 +15,7 @@ class AddServiceView extends GetView<AddServiceController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: bgColor1,
         resizeToAvoidBottomInset: true,
         appBar: AppBar(
           title: Text(
@@ -31,8 +33,10 @@ class AddServiceView extends GetView<AddServiceController> {
               children: [
                 Container(
                   width: Get.width,
+                  margin:
+                      const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 15, vertical: 35),
+                      const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                   decoration: BoxDecoration(
                       color: white, borderRadius: BorderRadius.circular(15)),
                   child: Form(
@@ -49,7 +53,7 @@ class AddServiceView extends GetView<AddServiceController> {
                             keyboardType: TextInputType.text,
                             validator: (String? value) {
                               if (value == null || value.isEmpty) {
-                                return "Required Title";
+                                return "*Required";
                               } else {
                                 return null;
                               }
@@ -60,7 +64,7 @@ class AddServiceView extends GetView<AddServiceController> {
                                 color: textDark80),
                             decoration: InputDecoration(
                               contentPadding: const EdgeInsets.only(left: 0),
-                              labelText: "Enter Title",
+                              labelText: "Title",
                               labelStyle: tsPoppins(
                                   size: 14,
                                   weight: FontWeight.w400,
@@ -84,7 +88,7 @@ class AddServiceView extends GetView<AddServiceController> {
                             keyboardType: TextInputType.text,
                             validator: (String? value) {
                               if (value == null || value.isEmpty) {
-                                return "Required Description";
+                                return "*Required";
                               } else {
                                 return null;
                               }
@@ -95,7 +99,7 @@ class AddServiceView extends GetView<AddServiceController> {
                                 color: textDark80),
                             decoration: InputDecoration(
                               contentPadding: const EdgeInsets.only(left: 0),
-                              labelText: "Enter Description",
+                              labelText: "Description",
                               labelStyle: tsPoppins(
                                   size: 14,
                                   weight: FontWeight.w400,
@@ -119,7 +123,72 @@ class AddServiceView extends GetView<AddServiceController> {
                             keyboardType: TextInputType.number,
                             validator: (String? value) {
                               if (value == null || value.isEmpty) {
-                                return "Required Price";
+                                return "*Required";
+                              } else {
+                                return null;
+                              }
+                            },
+                            style: tsPoppins(
+                                size: 14,
+                                weight: FontWeight.w400,
+                                color: textDark80),
+                            decoration: InputDecoration(
+                              contentPadding:
+                                  const EdgeInsets.only(left: 0, bottom: 5),
+                              labelText: "Price (default price for service)",
+                              labelStyle: tsPoppins(
+                                  size: 14,
+                                  weight: FontWeight.w400,
+                                  color: textColor02),
+                              suffix: !controller.isCustomBranch.value
+                                  ? GestureDetector(
+                                      onTap: () {
+                                        Get.toNamed(Routes.CUSTOM_PRICE,
+                                                arguments: controller
+                                                    .selectedService
+                                                    .value
+                                                    .serviceDetails[0]
+                                                    .servicePriceList)!
+                                            .then((value) => value != null
+                                                ? controller.addCustomPriceList(
+                                                    0, value)
+                                                : null);
+                                      },
+                                      child: Text(
+                                        'Customize',
+                                        style: tsPoppins(
+                                            color: controller
+                                                    .selectedService
+                                                    .value
+                                                    .serviceDetails[0]
+                                                    .servicePriceList!
+                                                    .isNotEmpty
+                                                ? Colors.green
+                                                : Colors.blue),
+                                      ),
+                                    )
+                                  : null,
+                              enabledBorder: const UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: borderColor,
+                                ),
+                              ),
+                              focusedBorder: const UnderlineInputBorder(
+                                borderSide: BorderSide(color: borderColor),
+                              ),
+                            ),
+                          ),
+
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          TextFormField(
+                            controller: controller.durationController,
+                            textAlignVertical: TextAlignVertical.center,
+                            keyboardType: TextInputType.text,
+                            validator: (String? value) {
+                              if (value == null || value.isEmpty) {
+                                return "*Required";
                               } else {
                                 return null;
                               }
@@ -130,7 +199,8 @@ class AddServiceView extends GetView<AddServiceController> {
                                 color: textDark80),
                             decoration: InputDecoration(
                               contentPadding: const EdgeInsets.only(left: 0),
-                              labelText: "Enter Price",
+                              labelText:
+                                  "Duration (time taken for the service)",
                               labelStyle: tsPoppins(
                                   size: 14,
                                   weight: FontWeight.w400,
@@ -145,37 +215,115 @@ class AddServiceView extends GetView<AddServiceController> {
                               ),
                             ),
                           ),
+
                           const SizedBox(
                             height: 15,
                           ),
-                          Autocomplete<Branch>(
+                          TextFormField(
+                            controller: controller.periodController,
+                            textAlignVertical: TextAlignVertical.center,
+                            keyboardType: TextInputType.text,
+                            validator: (String? value) {
+                              if (value == null || value.isEmpty) {
+                                return "*Required";
+                              } else {
+                                return null;
+                              }
+                            },
+                            style: tsPoppins(
+                                size: 14,
+                                weight: FontWeight.w400,
+                                color: textDark80),
+                            decoration: InputDecoration(
+                              contentPadding: const EdgeInsets.only(left: 0),
+                              labelText: "Period (service validity)",
+                              labelStyle: tsPoppins(
+                                  size: 14,
+                                  weight: FontWeight.w400,
+                                  color: textColor02),
+                              enabledBorder: const UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: borderColor,
+                                ),
+                              ),
+                              focusedBorder: const UnderlineInputBorder(
+                                borderSide: BorderSide(color: borderColor),
+                              ),
+                            ),
+                          ),
+                          if (!controller.isCustomBranch.value)
+                            const SizedBox(
+                              height: 15,
+                            ),
+                          if (!controller.isCustomBranch.value)
+                            TextFormField(
+                              controller: controller.serviceModeController,
+                              textAlignVertical: TextAlignVertical.center,
+                              keyboardType: TextInputType.text,
+                              readOnly: true,
+                              style: tsPoppins(
+                                  size: 14,
+                                  weight: FontWeight.w400,
+                                  color: textDark80),
+                              decoration: InputDecoration(
+                                contentPadding: const EdgeInsets.only(left: 0),
+                                labelText: "Service Modes",
+                                labelStyle: tsPoppins(
+                                    size: 14,
+                                    weight: FontWeight.w400,
+                                    color: textColor02),
+                                enabledBorder: const UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: borderColor,
+                                  ),
+                                ),
+                                focusedBorder: const UnderlineInputBorder(
+                                  borderSide: BorderSide(color: borderColor),
+                                ),
+                              ),
+                              onTap: () {
+                                controller.chooseMode(context,
+                                    selectedModesList:
+                                        controller.selectedModeList,
+                                    textEditingController:
+                                        controller.serviceModeController);
+                              },
+                            ),
+                          const SizedBox(height: 15),
+
+                          Autocomplete<SpareCategory>(
+                            initialValue: TextEditingValue(
+                                text: controller.spareCategoryController.text),
                             optionsBuilder:
                                 (TextEditingValue textEditingValue) {
-                              return controller.branchResult.value.branchList!
-                                  .where((Branch branch) => branch.name
-                                      .toLowerCase()
-                                      .startsWith(
-                                          textEditingValue.text.toLowerCase()))
+                              return controller
+                                  .spareCategoryResult.value.spareCategoryList!
+                                  .where((SpareCategory spareCategory) =>
+                                      spareCategory.name
+                                          .toLowerCase()
+                                          .startsWith(textEditingValue.text
+                                              .toLowerCase()))
                                   .toList();
                             },
-                            displayStringForOption: (Branch option) =>
+                            displayStringForOption: (SpareCategory option) =>
                                 option.name,
                             fieldViewBuilder: (BuildContext context,
                                 TextEditingController tec,
                                 FocusNode fieldFocusNode,
                                 VoidCallback onFieldSubmitted) {
-                              controller.branchController = tec;
-                              focusNode1 = fieldFocusNode;
+                              controller.spareCategoryController = tec;
+                              focusNode2 = fieldFocusNode;
                               return TextFormField(
                                 controller: tec,
                                 focusNode: fieldFocusNode,
-                                validator: (value) {
-                                  if (controller.selectedBranch.isEmpty) {
-                                    return "Please select at least one branch";
-                                  } else {
-                                    return null;
-                                  }
-                                },
+                                // validator: (value) {
+                                //   if (controller.selectedSpareCategory.value.id!
+                                //       .isEmpty) {
+                                //     return "Please select a spareCategory";
+                                //   } else {
+                                //     return null;
+                                //   }
+                                // },
                                 style: tsPoppins(
                                     size: 14,
                                     weight: FontWeight.w400,
@@ -183,7 +331,7 @@ class AddServiceView extends GetView<AddServiceController> {
                                 decoration: InputDecoration(
                                   contentPadding:
                                       const EdgeInsets.only(left: 0),
-                                  labelText: "Branch",
+                                  labelText: "SpareCategory",
                                   labelStyle: tsPoppins(
                                       size: 14,
                                       weight: FontWeight.w400,
@@ -199,14 +347,15 @@ class AddServiceView extends GetView<AddServiceController> {
                                 ),
                               );
                             },
-                            onSelected: (Branch selection) {
+                            onSelected: (SpareCategory selection) {
                               print('Selected: ${selection.name}');
-                              controller.branchController.text = '';
-                              focusNode1.unfocus();
+                              controller.spareCategoryController.text = '';
+                              focusNode2.nextFocus();
                             },
                             optionsViewBuilder: (BuildContext context,
-                                AutocompleteOnSelected<Branch> onSelected,
-                                Iterable<Branch> options) {
+                                AutocompleteOnSelected<SpareCategory>
+                                    onSelected,
+                                Iterable<SpareCategory> options) {
                               return Align(
                                 alignment: Alignment.topLeft,
                                 child: Material(
@@ -219,21 +368,17 @@ class AddServiceView extends GetView<AddServiceController> {
                                       itemCount: options.length,
                                       itemBuilder:
                                           (BuildContext context, int index) {
-                                        final Branch option =
+                                        final SpareCategory option =
                                             options.elementAt(index);
 
                                         return GestureDetector(
                                           onTap: () {
                                             onSelected(option);
-                                            if (!controller.selectedBranch
-                                                .contains(option)) {
-                                              // controller.branchController.text =
-                                              //     '';
-                                              controller.selectedBranch
-                                                  .add(option);
-                                              controller.selectedBranch
-                                                  .refresh();
-                                            }
+
+                                            controller.spareCategoryController
+                                                .text = option.name;
+                                            controller.selectedSpareCategory
+                                                .value = option;
                                           },
                                           child: ListTile(
                                             title: Text(option.name,
@@ -250,54 +395,11 @@ class AddServiceView extends GetView<AddServiceController> {
                               );
                             },
                           ),
-                          if (controller.selectedBranch.isNotEmpty)
-                            const SizedBox(
-                              height: 8,
-                            ),
-                          if (controller.selectedBranch.isNotEmpty)
-                            SingleChildScrollView(
-                              scrollDirection: Axis.horizontal,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: List.generate(
-                                    controller.selectedBranch.length,
-                                    (i) => Container(
-                                          padding: const EdgeInsets.symmetric(
-                                              vertical: 5, horizontal: 8),
-                                          margin:
-                                              const EdgeInsets.only(right: 5),
-                                          decoration: BoxDecoration(
-                                              color: textDark10,
-                                              borderRadius:
-                                                  BorderRadius.circular(5)),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.min,
-                                            children: [
-                                              Text(
-                                                '${controller.selectedBranch[i].name}  ',
-                                                style: tsPoppins(
-                                                    color: textDark80),
-                                              ),
-                                              GestureDetector(
-                                                onTap: () {
-                                                  controller.selectedBranch
-                                                      .remove(controller
-                                                          .selectedBranch[i]);
-                                                },
-                                                child: const Icon(
-                                                  Icons.close,
-                                                  color: textDark40,
-                                                ),
-                                              )
-                                            ],
-                                          ),
-                                        )),
-                              ),
-                            ),
 
                           const SizedBox(
                             height: 15,
                           ),
+
                           Autocomplete<Category>(
                             initialValue: TextEditingValue(
                                 text: controller.categoryController.text),
@@ -318,7 +420,7 @@ class AddServiceView extends GetView<AddServiceController> {
                                 FocusNode fieldFocusNode,
                                 VoidCallback onFieldSubmitted) {
                               controller.categoryController = tec;
-                              focusNode1 = fieldFocusNode;
+                              focusNode2 = fieldFocusNode;
                               return TextFormField(
                                 controller: tec,
                                 focusNode: fieldFocusNode,
@@ -356,7 +458,7 @@ class AddServiceView extends GetView<AddServiceController> {
                             onSelected: (Category selection) {
                               print('Selected: ${selection.title}');
                               controller.categoryController.text = '';
-                              focusNode1.unfocus();
+                              focusNode2.nextFocus();
                             },
                             optionsViewBuilder: (BuildContext context,
                                 AutocompleteOnSelected<Category> onSelected,
@@ -604,52 +706,87 @@ class AddServiceView extends GetView<AddServiceController> {
                           const SizedBox(
                             height: 15,
                           ),
-                          Column(
+                          Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                'Card BG color',
-                                style: tsPoppins(color: textDark),
-                              ),
-                              const SizedBox(
-                                height: 15,
-                              ),
-                              Row(
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  InkWell(
-                                    onTap: () {
-                                      getColorPicker(
-                                          context: context,
-                                          pickerColor:
-                                              controller.bgCardColor.value,
-                                          onColorChanged: (value) {
-                                            controller.bgCardColor.value =
-                                                value;
-                                          },
-                                          displayThumbColor2: false,
-                                          enableAlpha2: false);
-                                    },
-                                    child: Container(
-                                      width: 35,
-                                      height: 35,
-                                      decoration: BoxDecoration(
-                                          color: controller.bgCardColor.value,
-                                          borderRadius:
-                                              BorderRadius.circular(10)),
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    width: 10,
-                                  ),
                                   Text(
-                                    colorToHexValue(
-                                        controller.bgCardColor.value),
+                                    'Card BG color',
                                     style: tsPoppins(color: textDark),
                                   ),
+                                  const SizedBox(
+                                    height: 15,
+                                  ),
+                                  Row(
+                                    children: [
+                                      InkWell(
+                                        onTap: () {
+                                          getColorPicker(
+                                              context: context,
+                                              pickerColor:
+                                                  controller.bgCardColor.value,
+                                              onColorChanged: (value) {
+                                                controller.bgCardColor.value =
+                                                    value;
+                                              },
+                                              displayThumbColor2: false,
+                                              enableAlpha2: false);
+                                        },
+                                        child: Container(
+                                          width: 35,
+                                          height: 35,
+                                          decoration: BoxDecoration(
+                                              color:
+                                                  controller.bgCardColor.value,
+                                              borderRadius:
+                                                  BorderRadius.circular(10)),
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        width: 10,
+                                      ),
+                                      Text(
+                                        colorToHexValue(
+                                            controller.bgCardColor.value),
+                                        style: tsPoppins(color: textDark),
+                                      ),
+                                    ],
+                                  )
                                 ],
-                              )
+                              ),
+                              const Spacer(
+                                flex: 1,
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Customize Branch',
+                                    style: tsPoppins(color: textDark),
+                                  ),
+                                  const SizedBox(
+                                    height: 1,
+                                  ),
+                                  Switch(
+                                      value: controller.isCustomBranch.value,
+                                      onChanged: (bool v) {
+                                        controller.isCustomBranch.value = v;
+                                      })
+                                ],
+                              ),
+                              const Spacer(
+                                flex: 1,
+                              ),
                             ],
                           ),
+                          if (controller.isCustomBranch.value)
+                            const SizedBox(
+                              height: 15,
+                            ),
+                          if (controller.isCustomBranch.value)
+                            customServiceBranch(context),
                           const SizedBox(
                             height: 35,
                           ),
@@ -740,4 +877,326 @@ class AddServiceView extends GetView<AddServiceController> {
           ),
         ));
   }
+
+  customServiceBranch(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.end,
+      children: [
+        Obx(
+          () => ListView.builder(
+              physics: const NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: controller.selectedService.value.serviceDetails.length,
+              itemBuilder: (con, i) {
+                return Container(
+                  padding:
+                      const EdgeInsets.only(left: 10, right: 10, bottom: 15),
+                  margin: const EdgeInsets.only(bottom: 15),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(color: textDark40)),
+                  child: Stack(
+                    children: [
+                      if (controller
+                              .selectedService.value.serviceDetails.length >
+                          1)
+                        Positioned(
+                          top: 10,
+                          right: 5,
+                          child: Container(
+                            decoration: BoxDecoration(
+                                border: Border.all(color: textDark80)),
+                            child: GestureDetector(
+                              onTap: () {
+                                controller.removeBranch(i);
+                              },
+                              child: const Icon(
+                                Icons.close,
+                                color: textDark80,
+                                size: 15,
+                              ),
+                            ),
+                          ),
+                        ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const SizedBox(
+                            height: 15,
+                          ),
+
+                          Autocomplete<Branch>(
+                            initialValue: TextEditingValue(text: controller.branchControllerList[i].text),
+                            optionsBuilder:
+                                (TextEditingValue textEditingValue) {
+                              return controller.branchResult.value.branchList!
+                                  .where((Branch branch) => branch.name
+                                      .toLowerCase()
+                                      .startsWith(
+                                          textEditingValue.text.toLowerCase()))
+                                  .toList();
+                            },
+                            displayStringForOption: (Branch option) =>
+                                option.name,
+                            fieldViewBuilder: (BuildContext context,
+                                TextEditingController tec,
+                                FocusNode fieldFocusNode,
+                                VoidCallback onFieldSubmitted) {
+                              controller.branchControllerList[i] = tec;
+                              focusNode1 = fieldFocusNode;
+                              return TextFormField(
+                                controller: tec,
+                                focusNode: fieldFocusNode,
+                                validator: (value) {
+                                  if (value!.isEmpty) {
+                                    return "Please select a branch";
+                                  } else {
+                                    return null;
+                                  }
+                                },
+                                style: tsPoppins(
+                                    size: 14,
+                                    weight: FontWeight.w400,
+                                    color: textDark80),
+                                decoration: InputDecoration(
+                                  contentPadding:
+                                      const EdgeInsets.only(left: 0),
+                                  labelText: "Branch",
+                                  labelStyle: tsPoppins(
+                                      size: 14,
+                                      weight: FontWeight.w400,
+                                      color: textColor02),
+                                  enabledBorder: const UnderlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: borderColor,
+                                    ),
+                                  ),
+                                  focusedBorder: const UnderlineInputBorder(
+                                    borderSide: BorderSide(color: borderColor),
+                                  ),
+                                ),
+                              );
+                            },
+                            onSelected: (Branch selection) {
+                              print('Selected: ${selection.name}');
+                              controller.branchControllerList[i].text = '';
+                              focusNode1.nextFocus();
+                            },
+                            optionsViewBuilder: (BuildContext context,
+                                AutocompleteOnSelected<Branch> onSelected,
+                                Iterable<Branch> options) {
+                              return Align(
+                                alignment: Alignment.topLeft,
+                                child: Material(
+                                  child: Container(
+                                    width: 300,
+                                    color: Colors.white,
+                                    child: ListView.builder(
+                                      shrinkWrap: true,
+                                      padding: const EdgeInsets.all(10.0),
+                                      itemCount: options.length,
+                                      itemBuilder:
+                                          (BuildContext context, int index) {
+                                        final Branch option =
+                                            options.elementAt(index);
+
+                                        return GestureDetector(
+                                          onTap: () {
+                                            onSelected(option);
+                                            if (!controller.selectedBranchList
+                                                .contains(option)) {
+                                              controller.branchControllerList[i]
+                                                  .text = option.name;
+                                              controller.selectedBranchList
+                                                  .insert(i, option);
+                                              controller.selectedBranchList
+                                                  .refresh();
+                                            } else {
+                                              Get.snackbar(
+                                                  'Branch already added',
+                                                  'The selected branch is already added',
+                                                  snackPosition:
+                                                      SnackPosition.BOTTOM,
+                                                  backgroundColor: textDark20,
+                                                  colorText: textDark80);
+                                            }
+                                          },
+                                          child: ListTile(
+                                            title: Text(option.name,
+                                                style: tsPoppins(
+                                                  color: textDark40,
+                                                  size: 14,
+                                                )),
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
+                          // if (controller.selectedBranch.isNotEmpty)
+                          //   const SizedBox(
+                          //     height: 8,
+                          //   ),
+                          // if (controller.selectedBranch.isNotEmpty)
+                          //   SingleChildScrollView(
+                          //     scrollDirection: Axis.horizontal,
+                          //     child: Row(
+                          //       mainAxisAlignment: MainAxisAlignment.start,
+                          //       children: List.generate(
+                          //           controller.selectedBranch.length,
+                          //           (i) => Container(
+                          //                 padding: const EdgeInsets.symmetric(
+                          //                     vertical: 5, horizontal: 8),
+                          //                 margin: const EdgeInsets.only(right: 5),
+                          //                 decoration: BoxDecoration(
+                          //                     color: textDark10,
+                          //                     borderRadius: BorderRadius.circular(5)),
+                          //                 child: Row(
+                          //                   mainAxisSize: MainAxisSize.min,
+                          //                   children: [
+                          //                     Text(
+                          //                       '${controller.selectedBranch[i].name}  ',
+                          //                       style: tsPoppins(color: textDark80),
+                          //                     ),
+                          //                     GestureDetector(
+                          //                       onTap: () {
+                          //                         controller.selectedBranch.remove(
+                          //                             controller.selectedBranch[i]);
+                          //                       },
+                          //                       child: const Icon(
+                          //                         Icons.close,
+                          //                         color: textDark40,
+                          //                       ),
+                          //                     )
+                          //                   ],
+                          //                 ),
+                          //               )),
+                          //     ),
+                          //   ),
+                          const SizedBox(height: 15),
+
+                          TextFormField(
+                            controller: controller.serviceModeControllerList[i],
+                            textAlignVertical: TextAlignVertical.center,
+                            keyboardType: TextInputType.text,
+                            readOnly: true,
+                            validator: (value) {
+                              if (value!.isEmpty) {
+                                return "Please select the service modes";
+                              } else {
+                                return null;
+                              }
+                            },
+                            style: tsPoppins(
+                                size: 14,
+                                weight: FontWeight.w400,
+                                color: textDark80),
+                            decoration: InputDecoration(
+                              contentPadding: const EdgeInsets.only(left: 0),
+                              labelText: "Service Modes",
+                              labelStyle: tsPoppins(
+                                  size: 14,
+                                  weight: FontWeight.w400,
+                                  color: textColor02),
+                              enabledBorder: const UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: borderColor,
+                                ),
+                              ),
+                              focusedBorder: const UnderlineInputBorder(
+                                borderSide: BorderSide(color: borderColor),
+                              ),
+                            ),
+                            onTap: () {
+                              controller.chooseMode(context,
+                                  selectedModesList:
+                                      controller.selectedModeLists[i],
+                                  textEditingController:
+                                      controller.serviceModeControllerList[i]);
+                            },
+                          ),
+                          const SizedBox(height: 15),
+                          TextFormField(
+                            controller: controller.priceControllerList[i],
+                            textAlignVertical: TextAlignVertical.center,
+                            keyboardType: TextInputType.number,
+                            validator: (String? value) {
+                              if (value == null || value.isEmpty) {
+                                return "*Required";
+                              } else {
+                                return null;
+                              }
+                            },
+                            style: tsPoppins(
+                                size: 14,
+                                weight: FontWeight.w400,
+                                color: textDark80),
+                            decoration: InputDecoration(
+                              contentPadding: const EdgeInsets.only(left: 0),
+                              labelText:
+                                  "Price (default price for service in branch)",
+                              labelStyle: tsPoppins(
+                                  size: 14,
+                                  weight: FontWeight.w400,
+                                  color: textColor02),
+                              suffixIcon: GestureDetector(
+                                onTap: () {
+                                  Get.toNamed(Routes.CUSTOM_PRICE,
+                                          arguments: controller
+                                              .selectedService
+                                              .value
+                                              .serviceDetails[i]
+                                              .servicePriceList)!
+                                      .then((value) => value != null
+                                          ? controller.addCustomPriceList(
+                                              i, value)
+                                          : null);
+                                },
+                                child: Text(
+                                  'Customize',
+                                  style: tsPoppins(
+                                      color: controller
+                                              .selectedService
+                                              .value
+                                              .serviceDetails[i]
+                                              .servicePriceList!
+                                              .isNotEmpty
+                                          ? Colors.green
+                                          : Colors.blue),
+                                ),
+                              ),
+                              enabledBorder: const UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: borderColor,
+                                ),
+                              ),
+                              focusedBorder: const UnderlineInputBorder(
+                                borderSide: BorderSide(color: borderColor),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 15),
+                        ],
+                      ),
+                    ],
+                  ),
+                );
+              }),
+        ),
+        ElevatedButton(
+            onPressed: () {
+              controller.addBranch();
+            },
+            child: Text(
+              'Add +',
+              style: tsPoppins(),
+            ))
+      ],
+    );
+  }
+
+  customServicePrice() {}
 }

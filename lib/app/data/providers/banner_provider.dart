@@ -9,11 +9,11 @@ class BannerProvider extends GetConnect {
     final Response<dynamic> response;
     if (banner.sId!.isEmpty) {
       response = await post(apiAddBanner, banner.toJson(),
-          headers: Auth.requestHeaders);
+          headers: Auth().requestHeaders);
       print('path $apiAddBanner');
     } else {
       response = await put('$apiUpdateBanner/${banner.sId}', banner.toJson(),
-          headers: Auth.requestHeaders);
+          headers: Auth().requestHeaders);
       print('path $apiUpdateBanner/${banner.sId}');
     }
     print('body ${banner.toJson()}');
@@ -28,8 +28,8 @@ class BannerProvider extends GetConnect {
     BannerResult result;
     Map<String, dynamic> qParams = {'filter[status]': 'true'};
     final response =
-        await get(apiListBanner, query: qParams, headers: Auth.requestHeaders);
-    print('auth ${Auth.requestHeaders}');
+        await get(apiListBanner, query: qParams, headers: Auth().requestHeaders);
+    print('auth ${Auth().requestHeaders}');
     print('qparams $qParams');
     print('path $apiListBanner');
     print('response ${response.body}');
@@ -47,7 +47,7 @@ class BannerProvider extends GetConnect {
     BannerResult result;
     final response = await delete(
       '$apiDeleteBanner/${banner.sId}',
-      headers: Auth.requestHeaders,
+      headers: Auth().requestHeaders,
     );
 
     print('path $apiDeleteBanner');

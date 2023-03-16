@@ -29,7 +29,7 @@ class WorkTile extends StatelessWidget {
                       style: tsPoppins(),
                     ),
                     Text(
-                      '${work.desc}',
+                      work.desc,
                       style: tsPoppins(),
                     )
                   ],

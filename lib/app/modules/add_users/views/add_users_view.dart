@@ -14,7 +14,7 @@ class AddUsersView extends GetView<AddUsersController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomInset: true,
         appBar: AppBar(
           title: Text(
             'Add User',
@@ -211,6 +211,78 @@ class AddUsersView extends GetView<AddUsersController> {
                                 controller.selectedUserType.value = value!;
                               }),
                           const SizedBox(
+                            height: 15,
+                          ),
+                          TextFormField(
+                            controller: controller.usernameController,
+                            textAlignVertical: TextAlignVertical.center,
+                            keyboardType: TextInputType.text,
+                            validator: (String? value) {
+                              if (value == null || value.isEmpty) {
+                                return "*Required";
+                              } else {
+                                return null;
+                              }
+                            },
+                            style: tsPoppins(
+                                size: 14,
+                                weight: FontWeight.w400,
+                                color: textDark80),
+                            decoration: InputDecoration(
+                              contentPadding: const EdgeInsets.only(left: 0),
+                              labelText: "Username",
+                              labelStyle: tsPoppins(
+                                  size: 14,
+                                  weight: FontWeight.w400,
+                                  color: textColor02),
+                              enabledBorder: const UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: borderColor,
+                                ),
+                              ),
+                              focusedBorder: const UnderlineInputBorder(
+                                borderSide: BorderSide(color: borderColor),
+                              ),
+                            ),
+                          ),
+                          if (!controller.isUpdate.value)
+                            const SizedBox(
+                              height: 15,
+                            ),
+                          if (!controller.isUpdate.value)
+                            TextFormField(
+                              controller: controller.passwordController,
+                              textAlignVertical: TextAlignVertical.center,
+                              keyboardType: TextInputType.text,
+                              validator: (String? value) {
+                                if (value == null || value.isEmpty) {
+                                  return "*Required";
+                                } else {
+                                  return null;
+                                }
+                              },
+                              style: tsPoppins(
+                                  size: 14,
+                                  weight: FontWeight.w400,
+                                  color: textDark80),
+                              decoration: InputDecoration(
+                                contentPadding: const EdgeInsets.only(left: 0),
+                                labelText: "Password",
+                                labelStyle: tsPoppins(
+                                    size: 14,
+                                    weight: FontWeight.w400,
+                                    color: textColor02),
+                                enabledBorder: const UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: borderColor,
+                                  ),
+                                ),
+                                focusedBorder: const UnderlineInputBorder(
+                                  borderSide: BorderSide(color: borderColor),
+                                ),
+                              ),
+                            ),
+                          const SizedBox(
                             height: 35,
                           ),
                           if (controller.isLoading.value)
@@ -224,7 +296,7 @@ class AddUsersView extends GetView<AddUsersController> {
                                   }
                                 },
                                 style: ElevatedButton.styleFrom(
-                                    primary: primary,
+                                    backgroundColor: primary,
                                     minimumSize: Size(Get.width, 50),
                                     shape: RoundedRectangleBorder(
                                         borderRadius:
@@ -253,7 +325,7 @@ class AddUsersView extends GetView<AddUsersController> {
                                           });
                                     },
                                     style: ElevatedButton.styleFrom(
-                                        primary: white,
+                                        backgroundColor: white,
                                         minimumSize: Size(Get.width * .4, 50),
                                         shape: RoundedRectangleBorder(
                                             borderRadius:
@@ -268,11 +340,11 @@ class AddUsersView extends GetView<AddUsersController> {
                                 ElevatedButton(
                                     onPressed: () {
                                       if (formKey.currentState!.validate()) {
-                                        controller.createUser();
+                                        controller.updateUser();
                                       }
                                     },
                                     style: ElevatedButton.styleFrom(
-                                        primary: primary,
+                                        backgroundColor: primary,
                                         minimumSize: Size(Get.width * .4, 50),
                                         shape: RoundedRectangleBorder(
                                             borderRadius:

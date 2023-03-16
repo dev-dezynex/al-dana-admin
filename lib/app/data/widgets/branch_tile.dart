@@ -74,7 +74,7 @@ class _BranchTileState extends State<BranchTile> {
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                     )),
-                padding: EdgeInsets.all(8),
+                padding: const EdgeInsets.all(8),
                 child: Stack(
                   children: [
                     Positioned(

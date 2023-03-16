@@ -1,8 +1,11 @@
+import 'dart:convert';
+
 import 'package:get/get.dart';
 
 import '../../../data/data.dart';
 
 class UsersController extends GetxController {
+  var isLoading = false.obs;
   var userResult = UserResult.list().obs;
   var managerList = <User>[].obs;
   var technicianList = <User>[].obs;
@@ -15,24 +18,25 @@ class UsersController extends GetxController {
     getDetails();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  void getDetails() async {
+    isLoading(true);
+    await getUsers();
+    isLoading(false);
   }
 
-  @override
-  void onClose() {
-    super.onClose();
+  clearLists() {
+    adminList.clear();
+    managerList.clear();
+    technicianList.clear();
+    customerList.clear();
   }
 
-  void getDetails() {
-    getUsers();
-  }
-
-  void getUsers() async {
-    userResult.value = await UserProvider().getUserList();
+  getUsers() async {
+    clearLists();
+    userResult.value = await UserProvider().getActiveUsers();
+    print('userList ${jsonEncode(userResult.value.userList)}');
     for (User user in userResult.value.userList) {
-      switch (user.scope) {
+      switch (user.scope.toLowerCase()) {
         case "admin":
           adminList.add(user);
           break;

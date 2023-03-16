@@ -21,15 +21,7 @@ class AddBannerController extends GetxController {
     getDetails();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
 
-  @override
-  void onClose() {
-    super.onClose();
-  }
 
   Future<String> imageUpload() async {
     if (thumbFile.value.path.isNotEmpty) {
@@ -99,7 +91,7 @@ class AddBannerController extends GetxController {
 
   pickThumb() async {
     thumbFile.value = (await FileProvider().pickFile(
-        fileType: FileType.custom, allowedExtensions: ['png', 'jpeg']))!;
+        fileType: FileType.custom, allowedExtensions: ['png', 'jpeg','webp']))!;
     String fileName = thumbFile.value.path.split('/').last;
     print('file url path ${thumbFile.value.path}');
     print('file picked path $fileName');

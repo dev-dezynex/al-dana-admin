@@ -110,36 +110,7 @@ class AddCategoryView extends GetView<AddCategoryController> {
                           const SizedBox(
                             height: 15,
                           ),
-                          // TextFormField(
-                          //   controller: controller.serviceModeController,
-                          //   textAlignVertical: TextAlignVertical.center,
-                          //   keyboardType: TextInputType.text,
-                          //   readOnly: true,
-                          //   style: tsPoppins(
-                          //       size: 14,
-                          //       weight: FontWeight.w400,
-                          //       color: textDark80),
-                          //   decoration: InputDecoration(
-                          //     contentPadding: const EdgeInsets.only(left: 0),
-                          //     labelText: "Service Modes",
-                          //     labelStyle: tsPoppins(
-                          //         size: 14,
-                          //         weight: FontWeight.w400,
-                          //         color: textColor02),
-                          //     enabledBorder: const UnderlineInputBorder(
-                          //       borderSide: BorderSide(
-                          //         color: borderColor,
-                          //       ),
-                          //     ),
-                          //     focusedBorder: const UnderlineInputBorder(
-                          //       borderSide: BorderSide(color: borderColor),
-                          //     ),
-                          //   ),
-                          //   onTap: () {
-                          //     controller.chooseMode(context);
-                          //   },
-                          // ),
-                          // const SizedBox(height: 15),
+                         
                          
                          
                           TextFormField(
@@ -246,7 +217,7 @@ class AddCategoryView extends GetView<AddCategoryController> {
                                   }
                                 },
                                 style: ElevatedButton.styleFrom(
-                                    primary: primary,
+                                    backgroundColor: primary,
                                     minimumSize: Size(Get.width, 50),
                                     shape: RoundedRectangleBorder(
                                         borderRadius:
@@ -275,7 +246,7 @@ class AddCategoryView extends GetView<AddCategoryController> {
                                           });
                                     },
                                     style: ElevatedButton.styleFrom(
-                                        primary: white,
+                                        backgroundColor: white,
                                         minimumSize: Size(Get.width * .4, 50),
                                         shape: RoundedRectangleBorder(
                                             borderRadius:
@@ -294,7 +265,7 @@ class AddCategoryView extends GetView<AddCategoryController> {
                                       }
                                     },
                                     style: ElevatedButton.styleFrom(
-                                        primary: primary,
+                                        backgroundColor: primary,
                                         minimumSize: Size(Get.width * .4, 50),
                                         shape: RoundedRectangleBorder(
                                             borderRadius:

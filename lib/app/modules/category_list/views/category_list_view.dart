@@ -32,28 +32,31 @@ class CategoryListView extends GetView<CategoryListController> {
         ),
         body: SafeArea(
           child: Obx(
-            () => GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: Get.width ~/ 166,
-                    crossAxisSpacing: 8,
-                    mainAxisSpacing: 8,
-                    childAspectRatio: 1 / 1.1),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
-                itemCount: controller.categoryResult.value.categoryList.length,
-                itemBuilder: (con, i) {
-                  return CategoryTile(
-                      isManage: true,
-                      onEdit: () {
-                        Get.toNamed(Routes.ADD_CATEGORY,
-                                arguments: controller
-                                    .categoryResult.value.categoryList[i])!
-                            .then((value) =>
-                                value ? controller.getCategories() : null);
-                      },
-                      category:
-                          controller.categoryResult.value.categoryList[i]);
-                }),
+            () => controller.isLoading.value
+                ? const Center(child: CircularProgressIndicator())
+                : GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: Get.width ~/ 166,
+                        crossAxisSpacing: 8,
+                        mainAxisSpacing: 8,
+                        childAspectRatio: 1 / 1.1),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
+                    itemCount:
+                        controller.categoryResult.value.categoryList.length,
+                    itemBuilder: (con, i) {
+                      return CategoryTile(
+                          isManage: true,
+                          onEdit: () {
+                            Get.toNamed(Routes.ADD_CATEGORY,
+                                    arguments: controller
+                                        .categoryResult.value.categoryList[i])!
+                                .then((value) =>
+                                    value ? controller.getCategories() : null);
+                          },
+                          category:
+                              controller.categoryResult.value.categoryList[i]);
+                    }),
           ),
         ));
   }

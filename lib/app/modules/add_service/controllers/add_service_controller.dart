@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:file_picker/file_picker.dart';
@@ -7,24 +8,45 @@ import 'package:get/get.dart';
 import '../../../data/data.dart';
 
 class AddServiceController extends GetxController {
+  //main form fields
   TextEditingController titleController = TextEditingController();
   TextEditingController descController = TextEditingController();
   TextEditingController priceController = TextEditingController();
-  TextEditingController branchController = TextEditingController();
+  TextEditingController durationController = TextEditingController();
+  TextEditingController periodController = TextEditingController();
+  TextEditingController spareCategoryController = TextEditingController();
+  // TextEditingController branchController = TextEditingController();
   TextEditingController categoryController = TextEditingController();
-  // TextEditingController workController = TextEditingController();
+  TextEditingController serviceModeController = TextEditingController();
   TextEditingController thumbController = TextEditingController();
-  var branchResult = BranchResult().obs;
-  var categoryResult = CategoryResult().obs;
-  var workResult = WorkResult().obs;
+
+//main conditions
+  var isCustomBranch = false.obs;
   var isUpdate = false.obs;
   var isLoading = false.obs;
+//api datas
+  var branchResult = BranchResult().obs;
+  var categoryResult = CategoryResult().obs;
+  var spareCategoryResult = SpareCategoryResult().obs;
+//selected Elements
   var thumbFile = File('').obs;
   var bgCardColor = const Color(0xff09DDBD).obs;
-  var selectedBranch = <Branch>[].obs;
-  var selectedWork = <Work>[].obs;
-  var selectedService = Service(spareCategory: SpareCategory()).obs;
   var selectedCategory = Category().obs;
+  var selectedSpareCategory = SpareCategory().obs;
+//multi selected elements
+  var selectedBranchList = <Branch>[].obs;
+  var selectedService = Service(serviceDetails: [
+    ServiceDetails(servicePriceList: [], serviceModeIdList: [])
+  ]).obs;
+  var modeList = <ServiceMode>[].obs;
+  var selectedModeList = <ServiceMode>[].obs;
+  RxList<RxList<ServiceMode>> selectedModeLists = [RxList(<ServiceMode>[])].obs;
+  var branchControllerList =
+      <TextEditingController>[TextEditingController()].obs;
+  var serviceModeControllerList =
+      <TextEditingController>[TextEditingController()].obs;
+  var priceControllerList =
+      <TextEditingController>[TextEditingController()].obs;
   @override
   void onInit() {
     super.onInit();
@@ -43,33 +65,72 @@ class AddServiceController extends GetxController {
   }
 
   void setFields() {
+    print(
+        'In###########################################################################');
     titleController.text = selectedService.value.title;
     descController.text = selectedService.value.desc;
     priceController.text = selectedService.value.price.toString();
     thumbController.text = selectedService.value.image.split('/').last;
-    for (Branch branch in branchResult.value.branchList!) {
-      if (branch.serviceList!.contains(selectedService.value.id)) {
-        selectedBranch.add(branch);
-      }
-    }
-    selectedBranch.refresh();
+    durationController.text = selectedService.value.duration;
+    periodController.text = selectedService.value.period.toString();
+    bgCardColor.value = hexToColor(selectedService.value.bgCardColor);
     selectedCategory.value = categoryResult.value.categoryList.firstWhere(
         (element) => element.id == selectedService.value.categoryId);
     categoryController.text = selectedCategory.value.title;
-    // selectedBranch.value = selectedService.value.branchList;
-    // selectedWork.value = selectedService.value.work;
+    selectedSpareCategory.value = spareCategoryResult.value.spareCategoryList!
+        .firstWhere(
+            (element) => element.id == selectedService.value.spareCategory,
+            orElse: () => SpareCategory());
+    spareCategoryController.text = selectedSpareCategory.value.name;
+
+    if (selectedService.value.serviceDetails.isNotEmpty) {
+      isCustomBranch(true);
+      branchControllerList.clear();
+      serviceModeControllerList.clear();
+      priceControllerList.clear();
+      selectedBranchList.clear();
+      selectedModeLists.clear();
+      List<ServiceMode> modes = [];
+      for (int i = 0; i < selectedService.value.serviceDetails.length; i++) {
+        modes.clear();
+        modeList.forEach((element) {
+          if (selectedService.value.serviceDetails[i].serviceModeIdList!
+              .contains(element.id)) {
+            modes.add(element);
+          }
+        });
+        selectedModeLists.add(RxList(modes));
+        selectedBranchList.add(branchResult.value.branchList!.firstWhere(
+            (element) =>
+                element.id ==
+                selectedService.value.serviceDetails[i].branchId));
+        branchControllerList
+            .add(TextEditingController(text: selectedBranchList[i].name));
+        //filling branch form
+        serviceModeControllerList.add(TextEditingController(
+            text: selectedModeLists[i]
+                .map((element) => element.title)
+                .join(', ')));
+        priceControllerList.add(TextEditingController(
+            text: selectedService.value.serviceDetails[i].price.toString()));
+      }
+    }
+    selectedService.refresh();
   }
 
   void getDetails() async {
+    isLoading(true);
     await getBranches();
     await getCategories();
-    //getWorks();
+    await getSpareCategories();
+    await getServiceMode();
 
     if (Get.arguments != null) {
       isUpdate.value = true;
       selectedService.value = Get.arguments;
       setFields();
     }
+    isLoading(false);
   }
 
   getBranches() async {
@@ -82,9 +143,10 @@ class AddServiceController extends GetxController {
     categoryResult.refresh();
   }
 
-  void getWorks() async {
-    workResult.value = await WorkProvider().getDummyData();
-    workResult.refresh();
+  getSpareCategories() async {
+    spareCategoryResult.value =
+        await SpareCategoryProvider().listActiveSpareCategory();
+    spareCategoryResult.refresh();
   }
 
   Future<String> imageUpload() async {
@@ -98,19 +160,23 @@ class AddServiceController extends GetxController {
   }
 
   void createService() async {
-    isLoading(true);
+    // isLoading(true);
     String imagePath = await imageUpload();
     var result = await ServiceProvider().addOrUpdateService(
         service: Service(
-      title: titleController.text,
-      categoryId: selectedCategory.value.id,
-      desc: descController.text,
-      bgCardColor: colorToHexValue(bgCardColor.value),
-      image: imagePath,
-      price: double.parse(priceController.text),
-    ));
+            title: titleController.text,
+            categoryId: selectedCategory.value.id,
+            desc: descController.text,
+            bgCardColor: colorToHexValue(bgCardColor.value),
+            image: imagePath,
+            price: double.parse(priceController.text),
+            duration: durationController.text,
+            period: periodController.text.isNotEmpty
+                ? int.parse(periodController.text)
+                : 0,
+            spareCategory: selectedSpareCategory.value.id,
+            serviceDetails: getServiceDetails()));
     if (result.status == 'success') {
-      await updateBranchServices(result.service!);
       Get.back(result: true);
     } else {
       Get.snackbar('Error', result.message,
@@ -119,15 +185,6 @@ class AddServiceController extends GetxController {
           colorText: textDark80);
     }
     isLoading(false);
-  }
-
-  updateBranchServices(Service service) async {
-    for (Branch branch in selectedBranch) {
-      if (!branch.serviceList!.contains(service.id)) {
-        branch.serviceList!.add(service.id);
-        await BranchProvider().addOrUpdateBranch(branch: branch);
-      }
-    }
   }
 
   void updateService() async {
@@ -142,9 +199,14 @@ class AddServiceController extends GetxController {
       bgCardColor: colorToHexValue(bgCardColor.value),
       image: imagePath,
       price: double.parse(priceController.text),
+      duration: durationController.text,
+      period: periodController.text.isNotEmpty
+          ? int.parse(periodController.text)
+          : 0,
+      spareCategory: selectedSpareCategory.value.id,
+      serviceDetails: getServiceDetails(),
     ));
     if (result.status == 'success') {
-      await updateBranchServices(selectedService.value);
       Get.back(result: true);
     } else {
       Get.snackbar('Error', result.message,
@@ -153,6 +215,51 @@ class AddServiceController extends GetxController {
           colorText: textDark80);
     }
     isLoading(false);
+  }
+
+  List<ServiceDetails> getServiceDetails() {
+    List<ServiceDetails> serviceDetails = [];
+    if (isCustomBranch.value) {
+      for (int i = 0; i < selectedService.value.serviceDetails.length; i++) {
+        selectedService.value.serviceDetails[i].branchId =
+            selectedBranchList[i].id;
+        selectedService.value.serviceDetails[i].price =
+            double.parse(priceControllerList[i].text);
+        selectedService.value.serviceDetails[i].serviceModeIdList =
+            selectedModeLists[i].map((element) => element.id!).toList();
+        serviceDetails.add(selectedService.value.serviceDetails[i]);
+      }
+    } else {
+      for (int i = 0; i < branchResult.value.branchList!.length; i++) {
+        if (selectedService.value.serviceDetails.length <= i) {
+          selectedService.value.serviceDetails.add(ServiceDetails());
+        }
+        selectedService.value.serviceDetails[i].branchId =
+            branchResult.value.branchList![i].id;
+        selectedService.value.serviceDetails[i].price =
+            double.parse(priceController.text);
+        selectedService.value.serviceDetails[i].serviceModeIdList =
+            selectedModeList.map((element) => element.id!).toList();
+        if (selectedService
+            .value.serviceDetails[0].servicePriceList!.isNotEmpty) {
+          addCustomPriceList(
+              i, selectedService.value.serviceDetails[0].servicePriceList!,
+              refresh: false);
+        }
+        serviceDetails.add(selectedService.value.serviceDetails[i]);
+      }
+    }
+
+    return serviceDetails;
+  }
+
+  addCustomPriceList(int position, List<ServicePrice> servicePrice,
+      {bool refresh = true}) {
+    selectedService.value.serviceDetails[position].servicePriceList =
+        servicePrice;
+    if (refresh) {
+      selectedService.refresh();
+    }
   }
 
   void deleteService() async {
@@ -167,5 +274,51 @@ class AddServiceController extends GetxController {
           backgroundColor: textDark20,
           colorText: textDark80);
     }
+  }
+
+  void chooseMode(BuildContext context,
+      {required RxList<ServiceMode> selectedModesList,
+      required TextEditingController textEditingController}) {
+    modeSelectionBottomSheet(
+        context: context,
+        modeList: modeList,
+        selectedModeList: selectedModesList,
+        isMultiSelect: true,
+        onModeSelected: (ServiceMode mode) {
+          if (selectedModesList.contains(mode)) {
+            selectedModesList.remove(mode);
+          } else {
+            selectedModesList.add(mode);
+          }
+
+          textEditingController.text =
+              selectedModesList.map((e) => e.title).join(', ');
+        },
+        onSubmit: () {
+          Get.back();
+        });
+  }
+
+  getServiceMode() async {
+    modeList.value = (await ServiceModeProvider().getModes()).serviceModeList!;
+    modeList.refresh();
+  }
+
+  addBranch({ServiceDetails? serviceDetails}) {
+    selectedService.value.serviceDetails.add(ServiceDetails(serviceModeIdList: [],servicePriceList: []));
+    selectedModeLists.add(RxList(<ServiceMode>[]));
+    branchControllerList.add(TextEditingController());
+    serviceModeControllerList.add(TextEditingController());
+    priceControllerList.add(TextEditingController());
+    selectedService.refresh();
+  }
+
+  void removeBranch(int position) {
+    selectedService.value.serviceDetails.removeAt(position);
+    selectedModeLists.removeAt(position);
+    branchControllerList.removeAt(position);
+    serviceModeControllerList.removeAt(position);
+    priceControllerList.removeAt(position);
+    selectedService.refresh();
   }
 }

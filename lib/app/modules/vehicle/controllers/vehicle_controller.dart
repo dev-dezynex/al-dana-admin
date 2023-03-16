@@ -21,15 +21,7 @@ class VehicleController extends GetxController {
     getDetails();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
 
-  @override
-  void onClose() {
-    super.onClose();
-  }
 
   void search({required String key}) {
     filterBrands.value = brandResult.value.brandList

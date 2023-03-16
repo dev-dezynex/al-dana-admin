@@ -27,15 +27,7 @@ class AddBrandController extends GetxController {
     }
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
 
-  @override
-  void onClose() {
-    super.onClose();
-  }
 
   void setFields() {
     nameController.text = selectedBrand.value.name;

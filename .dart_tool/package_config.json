@@ -351,7 +351,7 @@
     },
     {
       "name": "path_provider",
-      "rootUri": "file:///Users/dezynextechnologysolutons/.pub-cache/hosted/pub.dev/path_provider-2.0.12",
+      "rootUri": "file:///Users/dezynextechnologysolutons/.pub-cache/hosted/pub.dev/path_provider-2.0.13",
       "packageUri": "lib/",
       "languageVersion": "2.14"
     },
@@ -524,7 +524,7 @@
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2023-03-02T06:38:29.668448Z",
+  "generated": "2023-03-08T10:12:02.242214Z",
   "generator": "pub",
   "generatorVersion": "2.19.2"
 }

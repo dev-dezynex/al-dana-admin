@@ -154,7 +154,7 @@ class BookingTile extends StatelessWidget {
                   ),
                   ElevatedButton(
                       onPressed: onTap,
-                      style: ElevatedButton.styleFrom(primary: bgColor27),
+                      style: ElevatedButton.styleFrom(backgroundColor: bgColor27),
                       child: Text(
                         'Track >>',
                         style: tsPoppins(weight: FontWeight.w600, color: white),
@@ -272,21 +272,21 @@ class BookingTile2 extends StatelessWidget {
                 children: [
                   ElevatedButton(
                       onPressed: () {},
-                      style: ElevatedButton.styleFrom(primary: bgColor29),
+                      style: ElevatedButton.styleFrom(backgroundColor: bgColor29),
                       child: Text(
                         '   Cancel   ',
                         style: tsPoppins(weight: FontWeight.w600, color: white),
                       )),
                   ElevatedButton(
                       onPressed: () {},
-                      style: ElevatedButton.styleFrom(primary: bgColor37),
+                      style: ElevatedButton.styleFrom(backgroundColor: bgColor37),
                       child: Text(
                         '  Reassign  ',
                         style: tsPoppins(weight: FontWeight.w600, color: white),
                       )),
                   ElevatedButton(
                       onPressed: () {},
-                      style: ElevatedButton.styleFrom(primary: bgColor38),
+                      style: ElevatedButton.styleFrom(backgroundColor: bgColor38),
                       child: Text(
                         '   Accept   ',
                         style: tsPoppins(weight: FontWeight.w600, color: white),

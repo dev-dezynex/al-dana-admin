@@ -26,7 +26,8 @@ class UsersView extends GetView<UsersController> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            Get.toNamed(Routes.ADD_USERS);
+            Get.toNamed(Routes.ADD_USERS)!
+                .then((value) => value ? controller.getDetails() : null);
           },
           backgroundColor: primary,
           child: const Icon(
@@ -124,7 +125,10 @@ class UsersView extends GetView<UsersController> {
                               return UserTile(
                                 onEdit: () {
                                   Get.toNamed(Routes.ADD_USERS,
-                                      arguments: controller.managerList[i]);
+                                      arguments: controller.managerList[i])!
+                                      .then((value) => value
+                                          ? controller.getDetails()
+                                          : null);
                                 },
                                 user: controller.managerList[i],
                               );
@@ -138,7 +142,11 @@ class UsersView extends GetView<UsersController> {
                               return UserTile(
                                 onEdit: () {
                                   Get.toNamed(Routes.ADD_USERS,
-                                      arguments: controller.technicianList[i]);
+                                          arguments:
+                                              controller.technicianList[i])!
+                                      .then((value) => value
+                                          ? controller.getDetails()
+                                          : null);
                                 },
                                 user: controller.technicianList[i],
                               );
@@ -152,7 +160,10 @@ class UsersView extends GetView<UsersController> {
                               return UserTile(
                                 onEdit: () {
                                   Get.toNamed(Routes.ADD_USERS,
-                                      arguments: controller.customerList[i]);
+                                      arguments: controller.customerList[i])!
+                                      .then((value) => value
+                                          ? controller.getDetails()
+                                          : null);
                                 },
                                 user: controller.customerList[i],
                               );
@@ -166,7 +177,10 @@ class UsersView extends GetView<UsersController> {
                               return UserTile(
                                 onEdit: () {
                                   Get.toNamed(Routes.ADD_USERS,
-                                      arguments: controller.adminList[i]);
+                                      arguments: controller.adminList[i])!
+                                      .then((value) => value
+                                          ? controller.getDetails()
+                                          : null);
                                 },
                                 user: controller.adminList[i],
                               );

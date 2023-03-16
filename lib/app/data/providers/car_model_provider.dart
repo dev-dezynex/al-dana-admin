@@ -10,12 +10,12 @@ class CarModelProvider extends GetConnect {
     final Response<dynamic> response;
     if (carModel.sId!.isEmpty) {
       response = await post(apiAddCarModel, carModel.toJson(),
-          headers: Auth.requestHeaders);
+          headers: Auth().requestHeaders);
       print('path $apiAddCarModel');
     } else {
       response = await put(
           '$apiUpdateCarModel/${carModel.sId}', carModel.toJson(),
-          headers: Auth.requestHeaders);
+          headers: Auth().requestHeaders);
       print('path $apiUpdateCarModel/${carModel.sId}');
     }
     print('body ${carModel.toJson()}');
@@ -32,8 +32,8 @@ Future<CarModelResult> getCarModelList(String brandId)async{
       'filter[carBrandId]': brandId
     };
     final response = await get(apiListCarModel,
-        query: qParams, headers: Auth.requestHeaders);
-    print('auth ${Auth.requestHeaders}');
+        query: qParams, headers: Auth().requestHeaders);
+    print('auth ${Auth().requestHeaders}');
     print('qparams $qParams');
     print('path $apiListCarModel');
     print('response ${response.body}');
@@ -51,7 +51,7 @@ Future<CarModelResult> getCarModelList(String brandId)async{
     CarModelResult result;
     final response = await delete(
       '$apiDeleteCarModel/${carModel.sId}',
-      headers: Auth.requestHeaders,
+      headers: Auth().requestHeaders,
     );
 
     print('path $apiDeleteCarModel');

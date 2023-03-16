@@ -40,6 +40,8 @@ import '../modules/car_model/bindings/car_model_binding.dart';
 import '../modules/car_model/views/car_model_view.dart';
 import '../modules/category_list/bindings/category_list_binding.dart';
 import '../modules/category_list/views/category_list_view.dart';
+import '../modules/custom_price/bindings/custom_price_binding.dart';
+import '../modules/custom_price/views/custom_price_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/offer/bindings/offer_binding.dart';
@@ -57,8 +59,6 @@ import '../modules/spare/views/spare_view.dart';
 import '../modules/spare_category/bindings/spare_category_binding.dart';
 import '../modules/spare_category/views/spare_category_view.dart';
 import '../modules/splash_page/bindings/splash_page_binding.dart';
-import '../modules/splash_page/bindings/splash_page_binding.dart';
-import '../modules/splash_page/views/splash_page_view.dart';
 import '../modules/splash_page/views/splash_page_view.dart';
 import '../modules/time_slots/bindings/time_slots_binding.dart';
 import '../modules/time_slots/views/time_slots_view.dart';
@@ -246,8 +246,13 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.ADD_BANNER,
-      page: () =>  AddBannerView(),
+      page: () => AddBannerView(),
       binding: AddBannerBinding(),
+    ),
+    GetPage(
+      name: _Paths.CUSTOM_PRICE,
+      page: () =>  CustomPriceView(),
+      binding: CustomPriceBinding(),
     ),
   ];
 }

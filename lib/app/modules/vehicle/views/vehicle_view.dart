@@ -1,11 +1,8 @@
-import 'package:al_dana_admin/app/modules/vehicle/views/colors_view.dart';
-import 'package:al_dana_admin/app/modules/vehicle/views/year_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
 import '../../../data/data.dart';
-import '../../../routes/app_pages.dart';
 import '../controllers/vehicle_controller.dart';
 import 'brand_view.dart';
 

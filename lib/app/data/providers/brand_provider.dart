@@ -24,11 +24,11 @@ class BrandProvider extends GetConnect {
     final Response<dynamic> response;
     if (brand.id.isEmpty) {
       response = await post(apiAddCarBrand, brand.toJson(),
-          headers: Auth.requestHeaders);
+          headers: Auth().requestHeaders);
       print('path $apiAddCarBrand');
     } else {
       response = await put('$apiUpdateCarBrand/${brand.id}', brand.toJson(),
-          headers: Auth.requestHeaders);
+          headers: Auth().requestHeaders);
       print('path $apiUpdateCarBrand/${brand.id}');
     }
     print('body ${brand.toJson()}');
@@ -43,8 +43,8 @@ class BrandProvider extends GetConnect {
     BrandResult result;
     Map<String, dynamic> qParams = {'filter[status]': 'true'};
     final response =
-        await get(apiListCarBrand, query: qParams, headers: Auth.requestHeaders);
-    print('auth ${Auth.requestHeaders}');
+        await get(apiListCarBrand, query: qParams, headers: Auth().requestHeaders);
+    print('auth ${Auth().requestHeaders}');
     print('qparams $qParams');
     print('path $apiListCarBrand');
     print('response ${response.body}');
@@ -62,7 +62,7 @@ class BrandProvider extends GetConnect {
     BrandResult result;
     final response = await delete(
       '$apiDeleteCarBrand/${brand.id}',
-      headers: Auth.requestHeaders,
+      headers: Auth().requestHeaders,
     );
 
     print('path $apiDeleteCarBrand');
