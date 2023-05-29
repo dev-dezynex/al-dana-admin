@@ -2,6 +2,7 @@ import 'package:al_dana_admin/app/data/data.dart';
 import 'package:get/get.dart';
 
 class ServiceModeController extends GetxController {
+  var isLoading = false.obs;
   var serviceModeResult = ServiceModeResult().obs;
   @override
   void onInit() {
@@ -9,14 +10,14 @@ class ServiceModeController extends GetxController {
     getDetails();
   }
 
-
-
   void getDetails() {
     getServiceModes();
   }
 
   void getServiceModes() async {
-    serviceModeResult.value = await ServiceModeProvider().getDummyData();
+    isLoading(true);
+    serviceModeResult.value = await ServiceModeProvider().getModes();
     serviceModeResult.refresh();
+    isLoading(false);
   }
 }

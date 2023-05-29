@@ -32,8 +32,6 @@ class AddCarModelController extends GetxController {
     }
   }
 
-
-
   void setFields() {
     nameController.text = selectedModel.value.title!;
     descController.text = selectedModel.value.description!;
@@ -57,7 +55,7 @@ class AddCarModelController extends GetxController {
         return result['data'][0];
       }
     }
-    return selectedModel.value.image!;
+    return selectedModel.value.image ?? '';
   }
 
   void createBrand() async {

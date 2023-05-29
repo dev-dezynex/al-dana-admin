@@ -124,7 +124,9 @@ class AddSpareCategoryView extends GetView<AddSpareCategoryController> {
                             height: 35,
                           ),
                           if (controller.isLoading.value)
-                            const CircularProgressIndicator(color: primary),
+                            const Center(
+                                child:
+                                    CircularProgressIndicator(color: primary)),
                           if (!controller.isLoading.value &&
                               !controller.isUpdate.value)
                             ElevatedButton(
@@ -178,7 +180,7 @@ class AddSpareCategoryView extends GetView<AddSpareCategoryController> {
                                 ElevatedButton(
                                     onPressed: () {
                                       if (formKey.currentState!.validate()) {
-                                        controller.createSpareCategory();
+                                        controller.updateSpareCategory();
                                       }
                                     },
                                     style: ElevatedButton.styleFrom(

@@ -16,6 +16,12 @@ const String selected_vehicle = "selected_vehicle";
 const String selected_mode = "selected_mode";
 //selected service list
 const String selected_service = "selected_service";
+//user roles
+//'superAdmin', 'admin', 'serviceManager','technician'
+const String role_superAdmin = "superAdmin";
+const String role_admin = "admin";
+const String role_serviceManager = "serviceManager";
+const String role_technician = "technician";
 
 //google api key
 const googleApiKey = 'AIzaSyBaZF1ks831cshYzJ7sWQ8sz-LsgrgFF9Y';

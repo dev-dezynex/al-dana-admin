@@ -11,6 +11,7 @@ class AddUsersView extends GetView<AddUsersController> {
   AddUsersView({Key? key}) : super(key: key);
 
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+   late FocusNode focusNode1,focusNode2;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -213,6 +214,215 @@ class AddUsersView extends GetView<AddUsersController> {
                           const SizedBox(
                             height: 15,
                           ),
+                          Autocomplete<Branch>(
+                            initialValue: TextEditingValue(
+                                text: controller.branchController.text),
+                            optionsBuilder:
+                                (TextEditingValue textEditingValue) {
+                              return controller.branchResult.value.branchList!
+                                  .where((Branch branch) => branch.name
+                                      .toLowerCase()
+                                      .startsWith(
+                                          textEditingValue.text.toLowerCase()))
+                                  .toList();
+                            },
+                            displayStringForOption: (Branch option) =>
+                                option.name,
+                            fieldViewBuilder: (BuildContext context,
+                                TextEditingController tec,
+                                FocusNode fieldFocusNode,
+                                VoidCallback onFieldSubmitted) {
+                              controller.branchController = tec;
+                              focusNode1 = fieldFocusNode;
+                              return TextFormField(
+                                controller: tec,
+                                focusNode: fieldFocusNode,
+                                validator: (value) {
+                                  if (value!.isEmpty) {
+                                    return "Please select a branch";
+                                  } else {
+                                    return null;
+                                  }
+                                },
+                                style: tsPoppins(
+                                    size: 14,
+                                    weight: FontWeight.w400,
+                                    color: textDark80),
+                                decoration: InputDecoration(
+                                  contentPadding:
+                                      const EdgeInsets.only(left: 0),
+                                  labelText: "Branch",
+                                  labelStyle: tsPoppins(
+                                      size: 14,
+                                      weight: FontWeight.w400,
+                                      color: textColor02),
+                                  enabledBorder: const UnderlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: borderColor,
+                                    ),
+                                  ),
+                                  focusedBorder: const UnderlineInputBorder(
+                                    borderSide: BorderSide(color: borderColor),
+                                  ),
+                                ),
+                              );
+                            },
+                            onSelected: (Branch selection) {
+                              print('Selected: ${selection.name}');
+                              controller.branchController.text = '';
+                              focusNode1.nextFocus();
+                            },
+                            optionsViewBuilder: (BuildContext context,
+                                AutocompleteOnSelected<Branch> onSelected,
+                                Iterable<Branch> options) {
+                              return Align(
+                                alignment: Alignment.topLeft,
+                                child: Material(
+                                  child: Container(
+                                    width: 300,
+                                    color: Colors.white,
+                                    child: ListView.builder(
+                                      shrinkWrap: true,
+                                      padding: const EdgeInsets.all(10.0),
+                                      itemCount: options.length,
+                                      itemBuilder:
+                                          (BuildContext context, int index) {
+                                        final Branch option =
+                                            options.elementAt(index);
+
+                                        return GestureDetector(
+                                          onTap: () {
+                                            onSelected(option);
+
+                                            controller.branchController.text =
+                                                option.name;
+                                            controller.selectedBranch.value =
+                                                option;
+                                            controller.selectedBranch.refresh();
+                                          },
+                                          child: ListTile(
+                                            title: Text(option.name,
+                                                style: tsPoppins(
+                                                  color: textDark40,
+                                                  size: 14,
+                                                )),
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
+                          const SizedBox(height: 15),
+                                                  
+                                            Autocomplete<Category>(
+                            initialValue: TextEditingValue(
+                                text: controller.categoryController.text),
+                            optionsBuilder:
+                                (TextEditingValue textEditingValue) {
+                              return controller
+                                  .categoryResult.value.categoryList
+                                  .where((Category category) => category.title
+                                      .toLowerCase()
+                                      .startsWith(
+                                          textEditingValue.text.toLowerCase()))
+                                  .toList();
+                            },
+                            displayStringForOption: (Category option) =>
+                                option.title,
+                            fieldViewBuilder: (BuildContext context,
+                                TextEditingController tec,
+                                FocusNode fieldFocusNode,
+                                VoidCallback onFieldSubmitted) {
+                              controller.categoryController = tec;
+                              focusNode2 = fieldFocusNode;
+                              return TextFormField(
+                                controller: tec,
+                                focusNode: fieldFocusNode,
+                                validator: (value) {
+                                  if (controller
+                                      .selectedCategory.value.id.isEmpty) {
+                                    return "Please select a category";
+                                  } else {
+                                    return null;
+                                  }
+                                },
+                                style: tsPoppins(
+                                    size: 14,
+                                    weight: FontWeight.w400,
+                                    color: textDark80),
+                                decoration: InputDecoration(
+                                  contentPadding:
+                                      const EdgeInsets.only(left: 0),
+                                  labelText: "Category",
+                                  labelStyle: tsPoppins(
+                                      size: 14,
+                                      weight: FontWeight.w400,
+                                      color: textColor02),
+                                  enabledBorder: const UnderlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: borderColor,
+                                    ),
+                                  ),
+                                  focusedBorder: const UnderlineInputBorder(
+                                    borderSide: BorderSide(color: borderColor),
+                                  ),
+                                ),
+                              );
+                            },
+                            onSelected: (Category selection) {
+                              print('Selected: ${selection.title}');
+                              controller.categoryController.text = '';
+                              focusNode2.nextFocus();
+                            },
+                            optionsViewBuilder: (BuildContext context,
+                                AutocompleteOnSelected<Category> onSelected,
+                                Iterable<Category> options) {
+                              return Align(
+                                alignment: Alignment.topLeft,
+                                child: Material(
+                                  child: Container(
+                                    width: 300,
+                                    color: Colors.white,
+                                    child: ListView.builder(
+                                      shrinkWrap: true,
+                                      padding: const EdgeInsets.all(10.0),
+                                      itemCount: options.length,
+                                      itemBuilder:
+                                          (BuildContext context, int index) {
+                                        final Category option =
+                                            options.elementAt(index);
+
+                                        return GestureDetector(
+                                          onTap: () {
+                                            onSelected(option);
+
+                                            controller.categoryController.text =
+                                                option.title;
+                                            controller.selectedCategory.value =
+                                                option;
+                                          },
+                                          child: ListTile(
+                                            title: Text(option.title,
+                                                style: tsPoppins(
+                                                  color: textDark40,
+                                                  size: 14,
+                                                )),
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
+
+
+
+                          const SizedBox(height: 15),
                           TextFormField(
                             controller: controller.usernameController,
                             textAlignVertical: TextAlignVertical.center,

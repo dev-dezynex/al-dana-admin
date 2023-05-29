@@ -15,13 +15,10 @@ class ServiceModeProvider extends GetConnect {
 
   Future<ServiceModeResult> getModes() async {
     ServiceModeResult result;
-    Map<String, dynamic> qParams = {'filter[status]': 'true'};
     final response = await get(
       apiListServiceMode,
-      query: qParams,
       headers: Auth().requestHeaders,
     );
-    print('qparams $qParams');
     print('path $apiListServiceMode');
     print('response ${response.body}');
     if (response.statusCode == 401) {

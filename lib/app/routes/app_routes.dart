@@ -29,7 +29,6 @@ abstract class Routes {
   static const SERVICE_MODE = _Paths.SERVICE_MODE;
   static const ADD_SERVICE_MODE = _Paths.ADD_SERVICE_MODE;
   static const TIME_SLOTS = _Paths.TIME_SLOTS;
-  static const OFFER = _Paths.OFFER;
   static const SPLASH_PAGE = _Paths.SPLASH_PAGE;
   static const VARIANT = _Paths.VARIANT;
   static const ADD_VARIANT = _Paths.ADD_VARIANT;
@@ -38,6 +37,10 @@ abstract class Routes {
   static const BANNER = _Paths.BANNER;
   static const ADD_BANNER = _Paths.ADD_BANNER;
   static const CUSTOM_PRICE = _Paths.CUSTOM_PRICE;
+  static const MAP_PAGE = _Paths.MAP_PAGE;
+  static const COUPON = _Paths.COUPON;
+  static const ADD_COUPON = _Paths.ADD_COUPON;
+  static const REWARD = _Paths.REWARD;
 }
 
 abstract class _Paths {
@@ -68,7 +71,6 @@ abstract class _Paths {
   static const SERVICE_MODE = '/service-mode';
   static const ADD_SERVICE_MODE = '/add-service-mode';
   static const TIME_SLOTS = '/time-slots';
-  static const OFFER = '/offer';
   static const SPLASH_PAGE = '/splash-page';
   static const VARIANT = '/variant';
   static const ADD_VARIANT = '/add-variant';
@@ -77,4 +79,8 @@ abstract class _Paths {
   static const BANNER = '/banner';
   static const ADD_BANNER = '/add-banner';
   static const CUSTOM_PRICE = '/custom-price';
+  static const MAP_PAGE = '/map-page';
+  static const COUPON = '/coupon';
+  static const ADD_COUPON = '/add-coupon';
+  static const REWARD = '/reward';
 }

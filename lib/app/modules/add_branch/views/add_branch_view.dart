@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../data/data.dart';
+import '../../../routes/app_pages.dart';
 import '../controllers/add_branch_controller.dart';
 
 class AddBranchView extends GetView<AddBranchController> {
@@ -79,6 +80,7 @@ class AddBranchView extends GetView<AddBranchController> {
                             controller: controller.locationController,
                             textAlignVertical: TextAlignVertical.center,
                             keyboardType: TextInputType.text,
+                            readOnly: true,
                             validator: (String? value) {
                               if (value == null || value.isEmpty) {
                                 return "Required Location";
@@ -86,13 +88,26 @@ class AddBranchView extends GetView<AddBranchController> {
                                 return null;
                               }
                             },
+                            onTap: () {
+                              Get.toNamed(Routes.MAP_PAGE,
+                                      arguments: controller.isUpdate.value
+                                          ? controller.detachAddress()
+                                          : null)!
+                                  .then((value) => value != null
+                                      ? controller.attachAddress(value)
+                                      : null);
+                            },
                             style: tsPoppins(
                                 size: 14,
                                 weight: FontWeight.w400,
                                 color: textDark80),
                             decoration: InputDecoration(
                               contentPadding: const EdgeInsets.only(left: 0),
-                              labelText: "Enter Location",
+                              labelText: "Pick Location",
+                              prefixIcon: const Icon(
+                                Icons.location_on,
+                                color: textDark60,
+                              ),
                               labelStyle: tsPoppins(
                                   size: 14,
                                   weight: FontWeight.w400,

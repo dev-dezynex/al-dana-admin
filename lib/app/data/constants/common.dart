@@ -42,6 +42,7 @@ pickDate({
 
 final DateFormat outputDateFormat = DateFormat('dd-MM-yyyy');
 final DateFormat outputDateFormat2 = DateFormat('EEE, dd MMM yyyy');
+final DateFormat outputDateFormat3 = DateFormat('dd MMM yyyy, HH:mm:ss');
 
 class Common {
   User currentUser = User.fromJson(storage.read(user_details) ?? {});
@@ -54,42 +55,43 @@ class Common {
 }
 
 class Auth {
-   Map<String, String> requestHeaders = {
+  Map<String, String> requestHeaders = {
+    'Connection': 'keep-alive',
+    'Accept': '*/*',
+    'Accept-Encoding': 'gzip, deflate, br',
     'Authorization': 'Bearer ${storage.read(auth)}',
   };
 
   authFailed(message) {
-     Get.dialog(
-        WillPopScope(
-          onWillPop: () async => false,
-          child: AlertDialog(
-            title: Text(
-              "Failure",
-              style:
-                  tsPoppins(color: primary, weight: FontWeight.w600, size: 18),
-            ),
-            content: Text(
-              "$message ",
-              style: tsPoppins(
-                  color: textDark40, weight: FontWeight.w400, size: 12),
-            ),
-            actions: <Widget>[
-              TextButton(
-                child: Text("Ok",
-                    style: tsPoppins(
-                        color: textDark80, weight: FontWeight.w600, size: 14)),
-                onPressed: () {
-                  storage.erase();
-                  Get.offAllNamed(Routes.AUTH);
-                  Get.back();
-                },
-              ),
-            ],
+    Get.dialog(
+      WillPopScope(
+        onWillPop: () async => false,
+        child: AlertDialog(
+          title: Text(
+            "Failure",
+            style: tsPoppins(color: primary, weight: FontWeight.w600, size: 18),
           ),
+          content: Text(
+            "$message ",
+            style:
+                tsPoppins(color: textDark40, weight: FontWeight.w400, size: 12),
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: Text("Ok",
+                  style: tsPoppins(
+                      color: textDark80, weight: FontWeight.w600, size: 14)),
+              onPressed: () {
+                storage.erase();
+                Get.offAllNamed(Routes.AUTH);
+                Get.back();
+              },
+            ),
+          ],
         ),
-        barrierDismissible: false,
-      );
-   
+      ),
+      barrierDismissible: false,
+    );
   }
 }
 

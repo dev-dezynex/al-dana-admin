@@ -30,7 +30,7 @@ class AddBannerController extends GetxController {
         return result['data'][0];
       }
     }
-    return selectedBanner.value.image!;
+    return selectedBanner.value.image??'';
   }
 
   void createBanner() async {

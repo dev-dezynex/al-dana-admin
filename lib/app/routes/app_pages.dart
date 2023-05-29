@@ -12,6 +12,8 @@ import '../modules/add_category/bindings/add_category_binding.dart';
 import '../modules/add_category/views/add_category_view.dart';
 import '../modules/add_color_page/bindings/add_color_page_binding.dart';
 import '../modules/add_color_page/views/add_color_page_view.dart';
+import '../modules/add_coupon/bindings/add_coupon_binding.dart';
+import '../modules/add_coupon/views/add_coupon_view.dart';
 import '../modules/add_package/bindings/add_package_binding.dart';
 import '../modules/add_package/views/add_package_view.dart';
 import '../modules/add_service/bindings/add_service_binding.dart';
@@ -40,16 +42,20 @@ import '../modules/car_model/bindings/car_model_binding.dart';
 import '../modules/car_model/views/car_model_view.dart';
 import '../modules/category_list/bindings/category_list_binding.dart';
 import '../modules/category_list/views/category_list_view.dart';
+import '../modules/coupon/bindings/coupon_binding.dart';
+import '../modules/coupon/views/coupon_view.dart';
 import '../modules/custom_price/bindings/custom_price_binding.dart';
 import '../modules/custom_price/views/custom_price_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
-import '../modules/offer/bindings/offer_binding.dart';
-import '../modules/offer/views/offer_view.dart';
+import '../modules/map_page/bindings/map_page_binding.dart';
+import '../modules/map_page/views/map_page_view.dart';
 import '../modules/package_list/bindings/package_list_binding.dart';
 import '../modules/package_list/views/package_list_view.dart';
 import '../modules/profile/bindings/profile_binding.dart';
 import '../modules/profile/views/profile_view.dart';
+import '../modules/reward/bindings/reward_binding.dart';
+import '../modules/reward/views/reward_view.dart';
 import '../modules/service_list/bindings/service_list_binding.dart';
 import '../modules/service_list/views/service_list_view.dart';
 import '../modules/service_mode/bindings/service_mode_binding.dart';
@@ -215,11 +221,6 @@ class AppPages {
       binding: TimeSlotsBinding(),
     ),
     GetPage(
-      name: _Paths.OFFER,
-      page: () => const OfferView(),
-      binding: OfferBinding(),
-    ),
-    GetPage(
       name: _Paths.VARIANT,
       page: () => const VariantView(),
       binding: VariantBinding(),
@@ -251,8 +252,28 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.CUSTOM_PRICE,
-      page: () =>  CustomPriceView(),
+      page: () => CustomPriceView(),
       binding: CustomPriceBinding(),
+    ),
+    GetPage(
+      name: _Paths.MAP_PAGE,
+      page: () => MapPageView(),
+      binding: MapPageBinding(),
+    ),
+    GetPage(
+      name: _Paths.COUPON,
+      page: () => const CouponView(),
+      binding: CouponBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADD_COUPON,
+      page: () => AddCouponView(),
+      binding: AddCouponBinding(),
+    ),
+    GetPage(
+      name: _Paths.REWARD,
+      page: () => RewardView(),
+      binding: RewardBinding(),
     ),
   ];
 }

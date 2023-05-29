@@ -49,16 +49,17 @@ class UserResult {
 }
 
 class User {
-  late String id, name, email, image, scope, username, password;
-  late int mobile;
+  late String id, name, email, image, branchId, scope, username, password;
+  late String mobile;
   late bool status;
 
   User(
       {this.id = '',
       this.name = '',
-      this.mobile = 0,
+      this.mobile = '',
       this.email = '',
       this.image = '',
+      this.branchId = '',
       this.scope = '',
       this.username = '',
       this.password = '',
@@ -69,9 +70,10 @@ class User {
     name = json['name'] ?? '';
     username = json['username'] ?? '';
     password = json['password'] ?? '';
-    mobile = json['phoneNumber'] ?? 0;
+    mobile = json['phoneNumber'] ?? '';
     email = json['email'] ?? '';
     image = json['image'] ?? '';
+    branchId = json['branchId'] ?? '';
     scope = json['role'] ?? '';
     status = json['status'] ?? false;
   }
@@ -85,6 +87,7 @@ class User {
     data['phoneNumber'] = mobile;
     data['email'] = email;
     data['image'] = image;
+    data['branchId'] = branchId;
     data['role'] = scope;
     data['status'] = status;
     return data;
@@ -98,6 +101,7 @@ class User {
     data['phoneNumber'] = mobile;
     data['email'] = email;
     data['image'] = image;
+    data['branchId'] = branchId;
     data['role'] = scope;
     data['status'] = status;
     return data;

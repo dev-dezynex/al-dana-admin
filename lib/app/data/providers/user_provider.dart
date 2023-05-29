@@ -36,8 +36,8 @@ class UserProvider extends GetConnect {
   Future<UserResult> signUp({required User user}) async {
     final UserResult result;
     final Response<dynamic> response;
-    response =
-        await post(apiSignup, user.toJsonBody(), headers: Auth().requestHeaders);
+    response = await post(apiSignup, user.toJsonBody(),
+        headers: Auth().requestHeaders);
     print('path $apiSignup');
     print('body ${user.toJsonBody()}');
     print('response ${response.body}');
@@ -47,14 +47,30 @@ class UserProvider extends GetConnect {
     return result;
   }
 
-  Future<UserResult> getActiveUsers() async {
-    UserResult result;
-    final response = await get(apiListActiveUser, headers: Auth().requestHeaders);
+  Future<UserResult> getActiveUsers({String? role}) async {
+    Map<String, dynamic> qParams = {};
+    if (role != null) {
+      qParams['filter[role]'] = role;
+    }
+    final response =
+        await get(apiListActiveUser, headers: Auth().requestHeaders);
     print('auth ${Auth().requestHeaders}');
     print('path $apiListActiveUser');
     print('response ${response.body}');
-    result = UserResult.listFromJson(response.body);
-    return result;
+
+    return UserResult.listFromJson(response.body);
+  }
+
+  Future<UserResult> getActiveCustomers() async {
+    Map<String, String> qParams = {'filter[deletable]': 'false'};
+
+    final response = await get(apiListActiveCustomers,
+        headers: Auth().requestHeaders, query: qParams);
+    print('auth ${Auth().requestHeaders}');
+    print('path $apiListActiveUser');
+    print('response ${response.body}');
+
+    return UserResult.listFromJson(response.body);
   }
 
   Future<UserResult> getInactiveUsers() async {

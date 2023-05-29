@@ -18,11 +18,11 @@ class BranchProvider extends GetConnect {
     final BranchResult result;
     final Response<dynamic> response;
     if (branch.id.isEmpty) {
-      response = await post(apiAddBranch, branch.toJson(),
+      response = await post(apiAddBranch, branch.toPost(),
           headers: Auth().requestHeaders);
       print('path $apiAddBranch');
     } else {
-      response = await put('$apiUpdateBranch/${branch.id}', branch.toJson(),
+      response = await put('$apiUpdateBranch/${branch.id}', branch.toPost(),
           headers: Auth().requestHeaders);
       print('path $apiUpdateBranch/${branch.id}');
     }

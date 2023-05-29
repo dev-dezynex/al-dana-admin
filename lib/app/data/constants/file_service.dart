@@ -9,8 +9,6 @@ import 'keys.dart';
 
 
 class FileService {
-
-
   static Map<String, Future Function()> downloadTasks = {};
 
 
@@ -57,8 +55,9 @@ class FileService {
         return newPath;
       }
     } else {
-      if (await _requestPermission(Permission.photos)) {
-        baseDir = await getTemporaryDirectory();
+      if (await _requestPermission(Permission.storage)) {
+        // baseDir = await getTemporaryDirectory();
+        baseDir = await getApplicationDocumentsDirectory();
         return baseDir.path;
       }
     }

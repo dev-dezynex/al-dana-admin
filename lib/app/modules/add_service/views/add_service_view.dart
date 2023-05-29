@@ -786,7 +786,7 @@ class AddServiceView extends GetView<AddServiceController> {
                               height: 15,
                             ),
                           if (controller.isCustomBranch.value)
-                            customServiceBranch(context),
+                            customServiceForBranch(context),
                           const SizedBox(
                             height: 35,
                           ),
@@ -878,7 +878,7 @@ class AddServiceView extends GetView<AddServiceController> {
         ));
   }
 
-  customServiceBranch(BuildContext context) {
+  customServiceForBranch(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [

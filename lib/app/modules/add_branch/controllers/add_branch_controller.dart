@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:file_picker/file_picker.dart';
@@ -27,8 +28,6 @@ class AddBranchController extends GetxController {
     }
   }
 
-
-
   pickThumb() async {
     thumbFile.value = (await FileProvider().pickFile(
         fileType: FileType.custom, allowedExtensions: ['png', 'jpeg']))!;
@@ -52,13 +51,8 @@ class AddBranchController extends GetxController {
   void createBranch() async {
     String imagePath = await imageUpload();
     var result = await BranchProvider().addOrUpdateBranch(
-        branch: Branch(
-      name: nameController.text,
-      location: locationController.text,
-      latitude: 11.1876343,
-      longitude: 75.8535077,
-      image: imagePath,
-    ));
+        branch: selectedBranch.value
+            .copyWith(name: nameController.text, image: imagePath));
     if (result.status == 'success') {
       Get.back(result: true);
     } else {
@@ -72,13 +66,8 @@ class AddBranchController extends GetxController {
   void updateBranch() async {
     String imagePath = await imageUpload();
     var result = await BranchProvider().addOrUpdateBranch(
-        branch: Branch(
-            id: selectedBranch.value.id,
-            name: nameController.text,
-            location: locationController.text,
-            latitude: 11.1876343,
-            longitude: 75.8535077,
-            image: imagePath));
+        branch: selectedBranch.value
+            .copyWith(name: nameController.text, image: imagePath));
     if (result.status == 'success') {
       Get.back(result: true);
     } else {
@@ -107,5 +96,27 @@ class AddBranchController extends GetxController {
     nameController.text = selectedBranch.value.name;
     locationController.text = selectedBranch.value.location;
     thumbController.text = selectedBranch.value.image.split('/').last;
+  }
+
+  attachAddress(Address address) {
+    print("Address added ${jsonEncode(address)}");
+    locationController.text = address.location;
+    selectedBranch.value = selectedBranch.value.copyWith(
+      location: address.location,
+      landmark: address.landmark,
+      latitude: address.latitude,
+      longitude: address.longitude,
+      addressType: address.addressType,
+    );
+  }
+
+  detachAddress() {
+    return Address(
+      location: selectedBranch.value.location,
+      landmark: selectedBranch.value.landmark,
+      latitude: selectedBranch.value.latitude,
+      longitude: selectedBranch.value.longitude,
+      addressType: selectedBranch.value.addressType,
+    );
   }
 }

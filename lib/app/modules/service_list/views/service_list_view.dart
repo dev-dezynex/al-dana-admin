@@ -32,7 +32,7 @@ class ServiceListView extends GetView<ServiceListController> {
         ),
         body: SafeArea(
           child: Obx(
-            () => GridView.builder(
+            () => controller.isLoading.value? const Center(child: CircularProgressIndicator(),): GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: Get.width ~/ 166,
                   crossAxisSpacing: 8,

@@ -22,7 +22,8 @@ class PackageListView extends GetView<PackageListController> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            Get.toNamed(Routes.ADD_PACKAGE);
+            Get.toNamed(Routes.ADD_PACKAGE)!
+                .then((value) => value ? controller.getPackages() : null);
           },
           backgroundColor: primary,
           child: const Icon(
@@ -31,24 +32,29 @@ class PackageListView extends GetView<PackageListController> {
         ),
         body: SafeArea(
           child: Obx(
-            () => ListView.builder(
-                shrinkWrap: true,
-                scrollDirection: Axis.vertical,
-                physics: const NeverScrollableScrollPhysics(),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
-                itemCount: controller.packageResult.value.packageList!.length,
-                itemBuilder: (con, i) {
-                  return PackageTile(
-                    isManage: true,
-                    onEdit: () {
-                      Get.toNamed(Routes.ADD_PACKAGE,
-                          arguments:
-                              controller.packageResult.value.packageList![i]);
-                    },
-                    package: controller.packageResult.value.packageList![i],
-                  );
-                }),
+            () => controller.isLoading.value
+                ? const Center(
+                    child: CircularProgressIndicator(),
+                  )
+                : ListView.builder(
+                    scrollDirection: Axis.vertical,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 10, vertical: 20),
+                    itemCount:
+                        controller.packageResult.value.packageList!.length,
+                    itemBuilder: (con, i) {
+                      return PackageTile(
+                        isManage: true,
+                        onEdit: () {
+                          Get.toNamed(Routes.ADD_PACKAGE,
+                                  arguments: controller
+                                      .packageResult.value.packageList![i])!
+                              .then((value) =>
+                                  value ? controller.getPackages() : null);
+                        },
+                        package: controller.packageResult.value.packageList![i],
+                      );
+                    }),
           ),
         ));
   }

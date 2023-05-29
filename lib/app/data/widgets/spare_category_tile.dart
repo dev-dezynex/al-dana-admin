@@ -22,13 +22,13 @@ class SpareCategoryTile extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '${spareCategory.name}',
+                      '${spareCategory.name} ',
                       style: tsPoppins(size: 14, color: textDark80),
                     ),
-                    Text(
-                      'spare types: ${spareCategory.spareList!.length}',
-                      style: tsPoppins(color: textDark40),
-                    ),
+                    // Text(
+                    //   'spare types: ${spareCategory.spareList!.length}',
+                    //   style: tsPoppins(color: textDark40),
+                    // ),
                   ],
                 ),
                 IconButton(

@@ -20,37 +20,39 @@ class ServiceModeView extends GetView<ServiceModeController> {
           centerTitle: true,
           leading: const GoBack(),
         ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Get.toNamed(Routes.ADD_SERVICE_MODE);
-          },
-          backgroundColor: primary,
-          child: const Icon(
-            Icons.add,
-          ),
-        ),
+        // floatingActionButton: FloatingActionButton(
+        //   onPressed: () {
+        //     Get.toNamed(Routes.ADD_SERVICE_MODE);
+        //   },
+        //   backgroundColor: primary,
+        //   child: const Icon(
+        //     Icons.add,
+        //   ),
+        // ),
         body: SafeArea(
           child: Obx(
-            () => ListView.builder(
-                shrinkWrap: true,
-                scrollDirection: Axis.vertical,
-                physics: const NeverScrollableScrollPhysics(),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
-                itemCount:
-                    controller.serviceModeResult.value.serviceModeList!.length,
-                itemBuilder: (con, i) {
-                  return ServiceModeTile(
-                    isManage: true,
-                    onTap: () {
-                      Get.toNamed(Routes.ADD_SERVICE_MODE,
-                          arguments: controller
-                              .serviceModeResult.value.serviceModeList![i]);
-                    },
-                    mode:
-                        controller.serviceModeResult.value.serviceModeList![i],
-                  );
-                }),
+            () => controller.isLoading.value
+                ? const Center(child: CircularProgressIndicator())
+                : ListView.builder(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.vertical,
+                    physics: const NeverScrollableScrollPhysics(),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
+                    itemCount: controller
+                        .serviceModeResult.value.serviceModeList!.length,
+                    itemBuilder: (con, i) {
+                      return ServiceModeTile(
+                        isManage: true,
+                        onTap: () {
+                          // Get.toNamed(Routes.ADD_SERVICE_MODE,
+                          //     arguments: controller
+                          //         .serviceModeResult.value.serviceModeList![i]);
+                        },
+                        mode: controller
+                            .serviceModeResult.value.serviceModeList![i],
+                      );
+                    }),
           ),
         ));
   }

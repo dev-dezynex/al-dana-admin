@@ -58,7 +58,7 @@ class PackageTile extends StatelessWidget {
                   ListView.builder(
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
-                      itemCount: package.services!.length,
+                      itemCount: package.packageDetailList![0].services!.length,
                       itemBuilder: (con, i) {
                         return Row(
                           children: [
@@ -67,7 +67,7 @@ class PackageTile extends StatelessWidget {
                               color: white,
                             ),
                             Text(
-                              package.services![i].title,
+                              '${package.packageDetailList![0].services![i].title}',
                               style: tsPoppins(
                                   color: white, weight: FontWeight.w400),
                             )
@@ -98,22 +98,22 @@ class PackageTile extends StatelessWidget {
                         onChanged: onChanged,
                       ),
                     Container(
-                      height: Get.width * .3,
-                      width: Get.width * .4,
+                      constraints: BoxConstraints(
+                          maxHeight: Get.height * .1, maxWidth: Get.width * .4),
                       alignment: Alignment.bottomCenter,
                       padding:
                           const EdgeInsets.only(top: 18.0, left: 5, right: 5),
                       child: Image.network(
-                        package.image!,
+                        '$domainName${package.image!}',
                         fit: BoxFit.cover,
                         errorBuilder: (context, error, stackTrace) {
                           return Image.asset(
                             package.image!,
-                            fit: BoxFit.cover,
+                            fit: BoxFit.contain,
                             errorBuilder: (context, error, stackTrace) {
                               return Image.asset(
                                 'assets/images/img_placeholder.png',
-                                fit: BoxFit.cover,
+                                fit: BoxFit.contain,
                               );
                             },
                           );

@@ -163,6 +163,7 @@ class ServicePrice {
   String? id, serviceDetailId;
   double? price;
   List<String>? variantId, serviceModeId;
+  bool? status;
 
   ServicePrice({
     this.id,
@@ -170,6 +171,7 @@ class ServicePrice {
     this.serviceModeId,
     this.variantId,
     this.price,
+    this.status,
   });
 
   ServicePrice.fromJson(Map<String, dynamic> json) {
@@ -178,6 +180,7 @@ class ServicePrice {
     serviceModeId = json['serviceModeId'].cast<String>();
     variantId = json['variantId'].cast<String>();
     price = double.parse(json['price'].toString());
+    status = json['deletable'] ?? false;
   }
 
   Map<String, dynamic> toJson() {
@@ -187,6 +190,7 @@ class ServicePrice {
     data['serviceModeId'] = serviceModeId;
     data['variantId'] = variantId;
     data['price'] = price;
+    data['deletable'] = status;
     return data;
   }
 }

@@ -6,6 +6,7 @@ class CustomPriceController extends GetxController {
   var isLoading = false.obs;
   var isUpdate = false.obs;
   var selectedPriceList = <ServicePrice>[ServicePrice()].obs;
+  var priceList = <ServicePrice>[ServicePrice()].obs;
   var modeList = <ServiceMode>[].obs;
   var serviceModeControllerList =
       <TextEditingController>[TextEditingController()].obs;
@@ -84,6 +85,8 @@ class CustomPriceController extends GetxController {
 
   void createPrice() {
     for (int i = 0; i < selectedPriceList.length; i++) {
+      selectedPriceList[i].serviceDetailId =
+          selectedPriceList[0].serviceDetailId;
       selectedPriceList[i].serviceModeId =
           selectedModeLists[i].map((element) => element.id!).toList();
       selectedPriceList[i].price = double.parse(priceControllerList[i].text);

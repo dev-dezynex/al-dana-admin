@@ -24,8 +24,6 @@ class AddSpareCategoryController extends GetxController {
     }
   }
 
-
-
   pickThumb() async {
     thumbFile.value = (await FileProvider().pickFile(
         fileType: FileType.custom, allowedExtensions: ['png', 'jpeg']))!;
@@ -36,9 +34,75 @@ class AddSpareCategoryController extends GetxController {
     thumbController.text = fileName;
   }
 
-  void createSpareCategory() {}
+  void createSpareCategory() async {
+    isLoading(true);
+    String imagePath = await imageUpload();
+    var result = await SpareCategoryProvider().addSpareCategory(
+        SpareCategory(name: nameController.text, image: imagePath));
+    if (result.status == 'success') {
+      Get.back(result: true);
+    } else {
+      Get.snackbar(
+        'Error',
+        result.message!,
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: textDark20,
+      );
+    }
 
-  void deleteSpareCategory() {}
+    isLoading(false);
+  }
+
+  void updateSpareCategory() async {
+    isLoading(true);
+    String imagePath = await imageUpload();
+    var result = await SpareCategoryProvider().updateSpareCategory(
+        SpareCategory(
+            id: selectedSpareCategory.value.id,
+            name: nameController.text,
+            image: imagePath));
+    if (result.status == 'success') {
+      Get.back(result: true);
+    } else {
+      Get.snackbar(
+        'Error',
+        result.message!,
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: textDark20,
+      );
+    }
+
+    isLoading(false);
+  }
+
+  Future<String> imageUpload() async {
+    if (thumbFile.value.path.isNotEmpty) {
+      var result = await FileProvider().uploadSingleFile(file: thumbFile.value);
+      if (result['status'] == 'success') {
+        return result['data'][0];
+      }
+    }
+    return selectedSpareCategory.value.image;
+  }
+
+  void deleteSpareCategory() async {
+    isLoading(true);
+    var result = await SpareCategoryProvider()
+        .deleteSpareCategory(spareCategoryId: selectedSpareCategory.value.id);
+    if (result.status == 'success') {
+      Get.back();
+      Get.back(result: true);
+    } else {
+      Get.snackbar(
+        'Error',
+        result.message!,
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: textDark20,
+      );
+    }
+
+    isLoading(false);
+  }
 
   void setFields() {
     nameController.text = selectedSpareCategory.value.name;

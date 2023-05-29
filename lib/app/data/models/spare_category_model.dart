@@ -65,4 +65,10 @@ class SpareCategory {
     }
     return data;
   }
+  Map<String, dynamic> toPost() {
+    final data = <String, dynamic>{};
+    data['name'] = name;
+    data['image'] = image;
+    return data;
+  }
 }

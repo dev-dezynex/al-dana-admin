@@ -132,14 +132,7 @@ class HomeView extends GetView<HomeController> {
           //     Get.toNamed(Routes.BOOKING_PAGE);
           //   },
           // ),
-          NavItem(
-            title: "Manage Offer",
-            icon: "assets/icons/ic_nav_4.svg",
-            onTap: () {
-              Get.back();
-              Get.toNamed(Routes.OFFER);
-            },
-          ),
+
           NavItem(
             title: "Manage Branch",
             icon: "assets/icons/ic_nav_4.svg",
@@ -240,6 +233,15 @@ class HomeView extends GetView<HomeController> {
             icon: "assets/icons/ic_nav_6.svg",
             onTap: () {
               Get.back();
+              Get.toNamed(Routes.REWARD);
+            },
+          ),
+          NavItem(
+            title: "Manage Coupon",
+            icon: "assets/icons/ic_nav_4.svg",
+            onTap: () {
+              Get.back();
+              Get.toNamed(Routes.COUPON);
             },
           ),
           NavItem(

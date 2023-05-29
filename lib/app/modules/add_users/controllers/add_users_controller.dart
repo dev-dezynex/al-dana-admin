@@ -12,6 +12,8 @@ class AddUsersController extends GetxController {
   TextEditingController mobController = TextEditingController();
   TextEditingController mailController = TextEditingController();
   TextEditingController imageController = TextEditingController();
+  TextEditingController branchController = TextEditingController();
+  TextEditingController categoryController = TextEditingController();
   TextEditingController usernameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
@@ -22,15 +24,15 @@ class AddUsersController extends GetxController {
   var selectedUserType = 'manager'.obs;
   var selectedUser = User().obs;
 
+  var branchResult = BranchResult().obs;
+  var categoryResult = CategoryResult().obs;
+  var selectedBranch = Branch().obs;
+  var selectedCategory = Category().obs;
+
   @override
   void onInit() {
     super.onInit();
-    if (Get.arguments != null) {
-      isUpdate(true);
-      selectedUser.value = Get.arguments;
-      print('user ${jsonEncode(selectedUser.value)}');
-      setFields();
-    }
+    getDetails();
   }
 
   pickThumb() async {
@@ -50,6 +52,9 @@ class AddUsersController extends GetxController {
     usernameController.text = selectedUser.value.username;
     passwordController.text = selectedUser.value.password;
     selectedUserType.value = selectedUser.value.scope;
+    selectedBranch.value = branchResult.value.branchList!
+        .firstWhere((element) => element.id == selectedUser.value.branchId);
+    branchController.text = selectedBranch.value.name;
   }
 
   Future<String> imageUpload() async {
@@ -69,11 +74,12 @@ class AddUsersController extends GetxController {
         user: User(
       name: nameController.text,
       email: mailController.text,
-      mobile: mobController.text.isNotEmpty ? int.parse(mobController.text) : 0,
+      mobile: mobController.text,
       image: imagePath,
       scope: selectedUserType.value,
       username: usernameController.text,
       password: passwordController.text,
+      branchId: selectedBranch.value.id,
     ));
 
     if (result.status == 'success') {
@@ -94,11 +100,12 @@ class AddUsersController extends GetxController {
       id: selectedUser.value.id,
       name: nameController.text,
       email: mailController.text,
-      mobile: mobController.text.isNotEmpty ? int.parse(mobController.text) : 0,
+      mobile: mobController.text,
       image: imagePath,
       scope: selectedUserType.value,
       username: usernameController.text,
       password: passwordController.text,
+      branchId: selectedBranch.value.id,
     ));
 
     if (result.status == 'success') {
@@ -124,5 +131,26 @@ class AddUsersController extends GetxController {
           backgroundColor: textDark20,
           colorText: textDark80);
     }
+  }
+
+  void getDetails() async {
+    await getBranches();
+    await getCategory();
+    if (Get.arguments != null) {
+      isUpdate(true);
+      selectedUser.value = Get.arguments;
+      print('user ${jsonEncode(selectedUser.value)}');
+      setFields();
+    }
+  }
+
+  getBranches() async {
+    branchResult.value = await BranchProvider().getBranches();
+    branchResult.refresh();
+  }
+
+  getCategory() async {
+    categoryResult.value = await CategoryProvider().getCategories();
+    categoryResult.refresh();
   }
 }

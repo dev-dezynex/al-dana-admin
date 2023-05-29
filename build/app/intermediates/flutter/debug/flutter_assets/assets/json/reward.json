@@ -1,0 +1,16 @@
+{
+    "status": "success",
+    "message": "",
+    "data": [
+        {
+            "_id": "6430086c0b290a5e461d523a",
+            "point": 1,
+            "amount": 100,
+            "redeemAmount": 10,
+            "deletable": false,
+            "createdAt": "2023-04-07T12:11:24.003Z",
+            "updatedAt": "2023-04-07T12:11:24.003Z",
+            "__v": 0
+        }
+    ]
+}

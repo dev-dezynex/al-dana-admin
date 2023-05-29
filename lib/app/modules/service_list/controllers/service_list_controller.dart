@@ -14,7 +14,9 @@ class ServiceListController extends GetxController {
   }
 
   getServices() async {
+    isLoading(true);
     serviceResult.value = await ServiceProvider().getServices();
     serviceResult.refresh();
+    isLoading(false);
   }
 }

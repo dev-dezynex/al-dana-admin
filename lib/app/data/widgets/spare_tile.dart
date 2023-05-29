@@ -22,7 +22,7 @@ class SpareTile extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '${spare.name}',
+                      '${spare.name} ',
                       style: tsPoppins(),
                     ),
                     Text(

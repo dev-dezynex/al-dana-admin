@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -34,6 +35,7 @@ class ServiceProvider extends GetConnect {
       print('path $apiUpdateService/${service.id}');
     }
     print('body ${jsonEncode(service)}');
+    log('body ${jsonEncode(service)}');
     print('response ${response.body}');
     print('Auth ${Auth().requestHeaders}');
 
@@ -44,15 +46,19 @@ class ServiceProvider extends GetConnect {
 
   Future<ServiceResult> getServices() async {
     ServiceResult result;
-    Map<String, dynamic> qParams = {'filter[status]': 'true'};
+
     final response = await get(
       apiListService,
-      query: qParams,
       headers: Auth().requestHeaders,
-    );
-    print('qparams $qParams');
+    ).timeout(Duration(minutes: 1));
+
+    print('auth ${Auth().requestHeaders}');
     print('path $apiListService');
+    print('responseCode ${response.statusCode}');
     print('response ${response.body}');
+    if (response.statusCode == 401) {
+      Auth().authFailed(response.body['message']);
+    }
     result = ServiceResult.listFromJson(response.body);
     return result;
   }
@@ -69,5 +75,4 @@ class ServiceProvider extends GetConnect {
 
     return result;
   }
-
 }

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -25,8 +24,9 @@ class AdminHomeView extends GetView<HomeController> {
                     pinned: true,
                     snap: false,
                     floating: false,
-                    expandedHeight: 170,
+                    expandedHeight: 180,
                     automaticallyImplyLeading: false,
+                    backgroundColor: white,
                     centerTitle: true,
                     bottom: PreferredSize(
                         preferredSize: Size(Get.width, 60),

@@ -62,7 +62,7 @@ class BookingTile extends StatelessWidget {
                   ListView.builder(
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
-                      itemCount: booking.packageList![0].services!.length,
+                      itemCount: booking.packageList![0].packageDetailList![0].services!.length,
                       itemBuilder: (con, i) {
                         return Row(
                           children: [
@@ -71,7 +71,7 @@ class BookingTile extends StatelessWidget {
                               color: textDark80,
                             ),
                             Text(
-                              booking.packageList![0].services![i].title,
+                              booking.packageList![0].packageDetailList![0].services![i].title,
                               style: tsPoppins(
                                   color: textDark80, weight: FontWeight.w400),
                             )

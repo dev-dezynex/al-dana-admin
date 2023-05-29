@@ -1,3 +1,6 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'address_model.dart';
+
 class BranchResult {
   String? status;
   String? message;
@@ -32,25 +35,30 @@ class BranchResult {
 }
 
 class Branch {
-  late String id, name, location, image;
+  late String id, name, location, landmark, addressType, image;
   late double latitude, longitude, distance, rating;
   List<String>? serviceList;
 
-  Branch(
-      {this.id = '',
-      this.name = '',
-      this.location = '',
-      this.latitude = 0.0,
-      this.longitude = 0.0,
-      this.image = '',
-      this.rating = 0,
-      this.distance = 0.0,
-      this.serviceList});
+  Branch({
+    this.id = '',
+    this.name = '',
+    this.location = '',
+    this.landmark = '',
+    this.addressType = '',
+    this.latitude = 0.0,
+    this.longitude = 0.0,
+    this.image = '',
+    this.rating = 0,
+    this.distance = 0.0,
+    this.serviceList = const [],
+  });
 
   Branch.fromJson(Map<String, dynamic> json) {
     id = json['_id'] ?? '';
     name = json['name'] ?? "";
-    location = json['landMark'] ?? "";
+    location = json['location'] ?? "";
+    landmark = json['landMark'] ?? "";
+    addressType = json['addressType'] ?? "";
     latitude = json['latitude'] ?? 0.0;
     longitude = json['longitude'] ?? 0.0;
     image = json['image'] ?? "";
@@ -64,11 +72,44 @@ class Branch {
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};
     data['name'] = name;
-    data['landMark'] = location;
+    data['location'] = location;
+    data['landMark'] = landmark;
     data['longitude'] = longitude;
     data['latitude'] = latitude;
     data['image'] = image;
     data['serviceId'] = serviceList;
     return data;
+  }
+
+  Map<String, dynamic> toPost() {
+    final data = <String, dynamic>{};
+    data['name'] = name;
+    data['addressType'] = addressType;
+    data['location'] = location;
+    data['landMark'] = landmark;
+    data['latitude'] = latitude;
+    data['longitude'] = longitude;
+    data['image'] = image;
+    return data;
+  }
+
+  Branch copyWith({
+     String? id, name, location, landmark, addressType, image,
+     double? latitude, longitude, distance, rating,
+    List<String>? serviceList,
+  }) {
+    return Branch(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      location: location ?? this.location,
+      landmark: landmark ?? this.landmark,
+      addressType: addressType ?? this.addressType,
+      image: image ?? this.image,
+      latitude: latitude ?? this.latitude,
+      longitude: longitude ?? this.longitude,
+      distance: distance ?? this.distance,
+      rating: rating ?? this.rating,
+      serviceList: serviceList ?? this.serviceList,
+    );
   }
 }

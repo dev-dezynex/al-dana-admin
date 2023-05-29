@@ -160,7 +160,7 @@ class AddServiceController extends GetxController {
   }
 
   void createService() async {
-    // isLoading(true);
+    isLoading(true);
     String imagePath = await imageUpload();
     var result = await ServiceProvider().addOrUpdateService(
         service: Service(
@@ -221,6 +221,8 @@ class AddServiceController extends GetxController {
     List<ServiceDetails> serviceDetails = [];
     if (isCustomBranch.value) {
       for (int i = 0; i < selectedService.value.serviceDetails.length; i++) {
+        selectedService.value.serviceDetails[i].serviceId =
+            selectedService.value.id;
         selectedService.value.serviceDetails[i].branchId =
             selectedBranchList[i].id;
         selectedService.value.serviceDetails[i].price =
@@ -253,10 +255,16 @@ class AddServiceController extends GetxController {
     return serviceDetails;
   }
 
+//this function will add a custom price aganist servicemode and variant
   addCustomPriceList(int position, List<ServicePrice> servicePrice,
       {bool refresh = true}) {
     selectedService.value.serviceDetails[position].servicePriceList =
         servicePrice;
+    selectedService.value.serviceDetails[position].servicePriceList!
+        .forEach((element) {
+      element.serviceDetailId =
+          selectedService.value.serviceDetails[position].id;
+    });
     if (refresh) {
       selectedService.refresh();
     }
@@ -305,7 +313,8 @@ class AddServiceController extends GetxController {
   }
 
   addBranch({ServiceDetails? serviceDetails}) {
-    selectedService.value.serviceDetails.add(ServiceDetails(serviceModeIdList: [],servicePriceList: []));
+    selectedService.value.serviceDetails
+        .add(ServiceDetails(serviceModeIdList: [], servicePriceList: []));
     selectedModeLists.add(RxList(<ServiceMode>[]));
     branchControllerList.add(TextEditingController());
     serviceModeControllerList.add(TextEditingController());

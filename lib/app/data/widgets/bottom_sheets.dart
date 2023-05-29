@@ -365,7 +365,7 @@ modeSelectionBottomSheet(
                                 modeList.refresh();
                               },
                               isSelect: isMultiSelect
-                                  ? selectedModeList!.contains(modeList[i])
+                                  ? selectedModeList!.any((e)=> modeList[i].id==e.id)
                                   : selectedMode!.value == modeList[i],
                               mode: modeList[i]);
                         }),
@@ -621,7 +621,7 @@ spareSelectionBottomSheet({
                                 items: spareList.value!.map((value) {
                                   return DropdownMenuItem<Spare>(
                                     value: value,
-                                    child: Text(value.name!,
+                                    child: Text(value.name,
                                         maxLines: 1,
                                         overflow: TextOverflow.clip,
                                         style: tsPoppins(

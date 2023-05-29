@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import '../../../data/data.dart';
 
 class PackageListController extends GetxController {
+  var isLoading = false.obs;
   var packageResult = PackageResult().obs;
   @override
   void onInit() {
@@ -10,10 +11,10 @@ class PackageListController extends GetxController {
     getPackages();
   }
 
-
-
   void getPackages() async {
-    packageResult.value = await PackageProvider().getDummyData();
+    isLoading(true);
+    packageResult.value = await PackageProvider().getActivePackageList();
     packageResult.refresh();
+    isLoading(false);
   }
 }

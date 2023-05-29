@@ -17,3 +17,5 @@ export 'booking_provider.dart';
 export 'spare_category_provider.dart';
 export 'car_model_provider.dart';
 export 'banner_provider.dart';
+export 'address_provider.dart';
+export 'coupon_provider.dart';

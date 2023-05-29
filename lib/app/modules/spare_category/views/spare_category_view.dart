@@ -22,7 +22,8 @@ class SpareCategoryView extends GetView<SpareCategoryController> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Get.toNamed(Routes.ADD_SPARE_CATEGORY);
+          Get.toNamed(Routes.ADD_SPARE_CATEGORY)!
+              .then((value) => value ? controller.getDetails() : null);
         },
         backgroundColor: primary,
         child: const Icon(
@@ -30,25 +31,32 @@ class SpareCategoryView extends GetView<SpareCategoryController> {
         ),
       ),
       body: Obx(
-        () =>controller.isLoading.value? const Center(child: CircularProgressIndicator(),) : ListView.builder(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
-            itemCount:
-                controller.spareCategoryResult.value.spareCategoryList!.length,
-            itemBuilder: (con, i) {
-              return SpareCategoryTile(
-                  onEdit: () {
-                    Get.toNamed(Routes.ADD_SPARE_CATEGORY,
-                        arguments: controller
-                            .spareCategoryResult.value.spareCategoryList![i]);
-                  },
-                  onTap: () {
+        () => controller.isLoading.value
+            ? const Center(
+                child: CircularProgressIndicator(),
+              )
+            : ListView.builder(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
+                itemCount: controller
+                    .spareCategoryResult.value.spareCategoryList!.length,
+                itemBuilder: (con, i) {
+                  return SpareCategoryTile(
+                      onEdit: () {
+                        Get.toNamed(Routes.ADD_SPARE_CATEGORY,
+                                arguments: controller.spareCategoryResult.value
+                                    .spareCategoryList![i])!
+                            .then((value) =>
+                                value ? controller.getDetails() : null);
+                      },
+                      onTap: () {
                         Get.toNamed(Routes.SPARE,
-                        arguments: controller
-                            .spareCategoryResult.value.spareCategoryList![i]);
-                  },
-                  spareCategory: controller
-                      .spareCategoryResult.value.spareCategoryList![i]);
-            }),
+                            arguments: controller.spareCategoryResult.value
+                                .spareCategoryList![i]);
+                      },
+                      spareCategory: controller
+                          .spareCategoryResult.value.spareCategoryList![i]);
+                }),
       ),
     );
   }
