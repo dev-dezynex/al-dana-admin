@@ -26,8 +26,8 @@ const String role_technician = "technician";
 //google api key
 const googleApiKey = 'AIzaSyBaZF1ks831cshYzJ7sWQ8sz-LsgrgFF9Y';
 
-
-
+//One signal app id
+const String oneSignalAppId = "4cb3ebf4-1256-4314-be73-61d0f911c3b7";
 
 //file paths
 const String path_main = 'AlDana';
