@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import '../data.dart';
-import '../models/time_slot_model.dart';
 
 class TimeSlotProvider extends GetConnect {
   Future<TimeSlotResult> getDummyData() async {
@@ -32,6 +31,7 @@ class TimeSlotProvider extends GetConnect {
 
     return result;
   }
+
   Future<TimeSlotResult> getCustomTimeSlots() async {
     TimeSlotResult result;
     Map<String, dynamic> qParams = {'filter[status]': 'true'};
