@@ -2,7 +2,6 @@ export 'category_provider.dart';
 export 'file_provider.dart';
 export 'spare_provider.dart';
 export 'service_provider.dart';
-export 'time_slot_provider.dart';
 export 'user_provider.dart';
 export 'work_provider.dart';
 export 'variant_provider.dart';

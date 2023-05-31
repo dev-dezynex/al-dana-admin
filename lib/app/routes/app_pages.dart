@@ -66,8 +66,6 @@ import '../modules/spare_category/bindings/spare_category_binding.dart';
 import '../modules/spare_category/views/spare_category_view.dart';
 import '../modules/splash_page/bindings/splash_page_binding.dart';
 import '../modules/splash_page/views/splash_page_view.dart';
-import '../modules/time_slots/bindings/time_slots_binding.dart';
-import '../modules/time_slots/views/time_slots_view.dart';
 import '../modules/users/bindings/users_binding.dart';
 import '../modules/users/views/users_view.dart';
 import '../modules/variant/bindings/variant_binding.dart';
@@ -215,11 +213,7 @@ class AppPages {
       page: () => AddServiceModeView(),
       binding: AddServiceModeBinding(),
     ),
-    GetPage(
-      name: _Paths.TIME_SLOTS,
-      page: () => const TimeSlotsView(),
-      binding: TimeSlotsBinding(),
-    ),
+    
     GetPage(
       name: _Paths.VARIANT,
       page: () => const VariantView(),

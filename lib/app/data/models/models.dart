@@ -1,7 +1,6 @@
 export 'category_model.dart';
 export 'spare_model.dart';
 export 'service_model.dart';
-export 'time_slot_model.dart';
 export 'user_model.dart';
 export 'work_model.dart';
 export 'variant_model.dart';
