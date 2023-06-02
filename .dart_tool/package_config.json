@@ -213,9 +213,9 @@
     },
     {
       "name": "http",
-      "rootUri": "file:///Users/dezynextechnologysolutons/.pub-cache/hosted/pub.dev/http-0.13.5",
+      "rootUri": "file:///Users/dezynextechnologysolutons/.pub-cache/hosted/pub.dev/http-0.13.6",
       "packageUri": "lib/",
-      "languageVersion": "2.14"
+      "languageVersion": "2.19"
     },
     {
       "name": "http_parser",
@@ -334,6 +334,12 @@
     {
       "name": "meta",
       "rootUri": "file:///Users/dezynextechnologysolutons/.pub-cache/hosted/pub.dev/meta-1.8.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "nested",
+      "rootUri": "file:///Users/dezynextechnologysolutons/.pub-cache/hosted/pub.dev/nested-1.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -458,6 +464,12 @@
       "languageVersion": "2.14"
     },
     {
+      "name": "provider",
+      "rootUri": "file:///Users/dezynextechnologysolutons/.pub-cache/hosted/pub.dev/provider-6.0.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "sky_engine",
       "rootUri": "file:///Users/dezynextechnologysolutons/Documents/Development/sdk/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
@@ -542,7 +554,7 @@
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2023-05-29T09:41:44.830513Z",
+  "generated": "2023-05-31T12:40:36.253802Z",
   "generator": "pub",
   "generatorVersion": "2.19.2"
 }

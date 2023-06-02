@@ -61,31 +61,34 @@ const String apiDeleteServiceMode = "${apiBase}users/deleteServiceMode";
 //spare category
 const String apiAddSpareCategory = "${apiBase}users/addSpareCategory";
 const String apiListActiveSpareCategory = "${apiBase}users/listSpareCategory";
-const String apiListInactiveSpareCategory = "${apiBase}users/listInActivateSpare";
+const String apiListInactiveSpareCategory =
+    "${apiBase}users/listInActivateSpare";
 const String apiUpdateSpareCategory = "${apiBase}users/editSpareCategory";
 const String apiDeleteSpareCategory = "${apiBase}users/deleteSpareCategory";
 const String apiReadSpareCategory = "${apiBase}users/getSpareCategory";
-//spare 
+//spare
 const String apiAddSpare = "${apiBase}users/addSpare";
 const String apiListActiveSpare = "${apiBase}users/listSpare";
 const String apiListInactiveSpare = "${apiBase}users/listInActivateSpare";
 const String apiUpdateSpare = "${apiBase}users/editSpare";
 const String apiDeleteSpare = "${apiBase}users/deleteSpare";
 const String apiReadSpare = "${apiBase}users/getSpare";
-//spare 
+//spare
 const String apiAddPackage = "${apiBase}users/addPackage";
 const String apiListActivePackage = "${apiBase}users/listPackage";
 const String apiListInactivePackage = "${apiBase}users/listInActivatePackage";
 const String apiUpdatePackage = "${apiBase}users/editPackage";
 const String apiDeletePackage = "${apiBase}users/deletePackage";
 const String apiReadPackage = "${apiBase}users/getPackage";
-//time slot 
+//time slot
 const String apiAddTimeSlot = "${apiBase}users/addTimeSlot";
 const String apiListActiveTimeSlot = "${apiBase}users/listTimeSlot";
 const String apiListInactiveTimeSlot = "${apiBase}users/listInActivateTimeSlot";
 const String apiUpdateTimeSlot = "${apiBase}users/editTimeSlot";
 const String apiDeleteTimeSlot = "${apiBase}users/deleteTimeSlot";
 const String apiReadTimeSlot = "${apiBase}users/getTimeSlot";
+//defautl time slot
+const String apiGetDefaultTimeSlot = "${apiBase}users/listDefaultTimeSlot?";
 //coupons
 const String apiListCoupon = "${apiBase}users/listCoupon";
 const String apipostCoupon = "${apiBase}users/addCoupon";

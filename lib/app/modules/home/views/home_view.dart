@@ -1,4 +1,5 @@
 import 'package:al_dana_admin/app/modules/home/views/admin_home.dart';
+import 'package:al_dana_admin/app/modules/time_slot/views/time_slot_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
@@ -154,7 +155,8 @@ class HomeView extends GetView<HomeController> {
             icon: "assets/icons/ic_nav_4.svg",
             onTap: () {
               Get.back();
-              Get.toNamed(Routes.TIME_SLOTS);
+              // Get.toNamed(Routes.TIME_SLOTS);
+              Get.to(() => const TimeSlotScreen());
             },
           ),
           NavItem(

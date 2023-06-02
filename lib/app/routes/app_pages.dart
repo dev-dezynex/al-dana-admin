@@ -269,5 +269,6 @@ class AppPages {
       page: () => RewardView(),
       binding: RewardBinding(),
     ),
+    
   ];
 }

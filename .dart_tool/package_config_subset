@@ -127,9 +127,9 @@ google_maps_flutter_platform_interface
 file:///Users/dezynextechnologysolutons/.pub-cache/hosted/pub.dev/google_maps_flutter_platform_interface-2.2.5/
 file:///Users/dezynextechnologysolutons/.pub-cache/hosted/pub.dev/google_maps_flutter_platform_interface-2.2.5/lib/
 http
-2.14
-file:///Users/dezynextechnologysolutons/.pub-cache/hosted/pub.dev/http-0.13.5/
-file:///Users/dezynextechnologysolutons/.pub-cache/hosted/pub.dev/http-0.13.5/lib/
+2.19
+file:///Users/dezynextechnologysolutons/.pub-cache/hosted/pub.dev/http-0.13.6/
+file:///Users/dezynextechnologysolutons/.pub-cache/hosted/pub.dev/http-0.13.6/lib/
 http_parser
 2.12
 file:///Users/dezynextechnologysolutons/.pub-cache/hosted/pub.dev/http_parser-4.0.2/
@@ -210,6 +210,10 @@ meta
 2.12
 file:///Users/dezynextechnologysolutons/.pub-cache/hosted/pub.dev/meta-1.8.0/
 file:///Users/dezynextechnologysolutons/.pub-cache/hosted/pub.dev/meta-1.8.0/lib/
+nested
+2.12
+file:///Users/dezynextechnologysolutons/.pub-cache/hosted/pub.dev/nested-1.0.0/
+file:///Users/dezynextechnologysolutons/.pub-cache/hosted/pub.dev/nested-1.0.0/lib/
 onesignal_flutter
 2.12
 file:///Users/dezynextechnologysolutons/.pub-cache/hosted/pub.dev/onesignal_flutter-3.5.1/
@@ -290,6 +294,10 @@ process
 2.14
 file:///Users/dezynextechnologysolutons/.pub-cache/hosted/pub.dev/process-4.2.4/
 file:///Users/dezynextechnologysolutons/.pub-cache/hosted/pub.dev/process-4.2.4/lib/
+provider
+2.12
+file:///Users/dezynextechnologysolutons/.pub-cache/hosted/pub.dev/provider-6.0.5/
+file:///Users/dezynextechnologysolutons/.pub-cache/hosted/pub.dev/provider-6.0.5/lib/
 source_span
 2.14
 file:///Users/dezynextechnologysolutons/.pub-cache/hosted/pub.dev/source_span-1.9.1/

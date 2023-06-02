@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:al_dana_admin/app/modules/time_slot/default/providers/default_time_slot_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
@@ -7,6 +8,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
+import 'package:provider/provider.dart';
 import 'app/data/data.dart';
 import 'app/routes/app_pages.dart';
 
@@ -32,15 +34,22 @@ class MyApp extends StatelessWidget {
       DeviceOrientation.portraitDown,
     ]);
     debugPaintSizeEnabled = false;
-    return GetMaterialApp(
-      title: "Al Dana Admin",
-      debugShowCheckedModeBanner: false,
-      theme: MyTheme.themeData(isDarkTheme: false, context: context),
-      darkTheme: MyTheme.themeData(isDarkTheme: true, context: context),
-      themeMode: ThemeMode.light,
-      initialRoute: AppPages.INITIAL,
-      getPages: AppPages.routes,
-      unknownRoute: AppPages.routes[0],
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => DefaultProvider(),
+        ),
+      ],
+      child: GetMaterialApp(
+        title: "Al Dana Admin",
+        debugShowCheckedModeBanner: false,
+        theme: MyTheme.themeData(isDarkTheme: false, context: context),
+        darkTheme: MyTheme.themeData(isDarkTheme: true, context: context),
+        themeMode: ThemeMode.light,
+        initialRoute: AppPages.INITIAL,
+        getPages: AppPages.routes,
+        unknownRoute: AppPages.routes[0],
+      ),
     );
   }
 }
