@@ -66,6 +66,7 @@ class CouponView extends GetView<CouponController> {
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
+                                
                                 Text(
                                     '${controller.couponResult.value.couponList![i].title}',
                                     textAlign: TextAlign.center,

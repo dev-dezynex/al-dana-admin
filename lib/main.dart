@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:al_dana_admin/app/data/providers/default_time_slot_provider.dart';
 import 'package:al_dana_admin/app/modules/time_slot/default/providers/default_time_slot_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -39,6 +40,9 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (_) => DefaultProvider(),
         ),
+        ChangeNotifierProvider(
+          create: (_) => DefaultTimeSlotProvider(),
+        )
       ],
       child: GetMaterialApp(
         title: "Al Dana Admin",

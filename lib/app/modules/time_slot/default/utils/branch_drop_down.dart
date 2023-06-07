@@ -21,18 +21,19 @@ class _BranchDropDownState extends State<BranchDropDown> {
     super.initState();
     futureGetBranches = BranchProvider().getBranches();
   }
+
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<BranchResult>(
       future: futureGetBranches,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const CircularProgressIndicator();
+          return const Center(child: CircularProgressIndicator());
         } else if (snapshot.hasError) {
           return const Text('Error loading Branch dropdown');
         } else {
           final branches = snapshot.data?.branchList ?? [];
-
+          
           return DropdownButtonFormField<String>(
             items: branches.map<DropdownMenuItem<String>>((branch) {
               return DropdownMenuItem<String>(
@@ -49,12 +50,6 @@ class _BranchDropDownState extends State<BranchDropDown> {
                     .setIsBranchSelected(true);
               }
             },
-            // validator: (value) {
-            //   if (value == null || value.isEmpty) {
-            //     return 'Please select a branch';
-            //   }
-            //   return null;
-            // },
             decoration: const InputDecoration(
               labelText: 'Select Branch',
               border: OutlineInputBorder(),
