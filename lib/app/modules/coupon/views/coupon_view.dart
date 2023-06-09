@@ -1,4 +1,5 @@
 import 'package:al_dana_admin/app/data/data.dart';
+import 'package:al_dana_admin/app/modules/coupon/views/update_view.dart';
 import 'package:coupon_uikit/coupon_uikit.dart';
 import 'package:flutter/material.dart';
 
@@ -66,7 +67,6 @@ class CouponView extends GetView<CouponController> {
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                
                                 Text(
                                     '${controller.couponResult.value.couponList![i].title}',
                                     textAlign: TextAlign.center,
@@ -88,6 +88,63 @@ class CouponView extends GetView<CouponController> {
                                         color: Colors.black38,
                                         weight: FontWeight.bold,
                                         size: 18)),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    TextButton(
+                                      onPressed: () {
+                                        Get.to(
+                                          UpdateCouponView(
+                                            id: controller.couponResult.value
+                                                    .couponList?[i].sId ??
+                                                '',
+                                          ),
+                                        )!
+                                            .then((value) => value
+                                                ? controller.getDetails()
+                                                : null);
+                                      },
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: const [
+                                          Text(
+                                            'Update',
+                                            style:
+                                                TextStyle(color: Colors.white),
+                                          ),
+                                          Icon(
+                                            Icons.edit_document,
+                                            color: Colors.white,
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    TextButton(
+                                      onPressed: () {
+                                        controller.deletCoupon(controller
+                                                .couponResult
+                                                .value
+                                                .couponList?[i]
+                                                .sId ??
+                                            '');
+                                      },
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: const [
+                                          Text(
+                                            'Delete',
+                                            style:
+                                                TextStyle(color: Colors.white),
+                                          ),
+                                          Icon(
+                                            Icons.delete,
+                                            color: Colors.white,
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                )
                               ],
                             ),
                           )),

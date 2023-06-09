@@ -108,15 +108,25 @@ class Coupon {
     return data;
   }
 
-  Coupon copyWith({
-    String? sId,
-    String? title,
-    double? discountAmount,
-    double? amount,
-    String? startDate,
-    String? endDate,
-    String? customerId,
-  }) {
+  Map<String, dynamic> toUpdate() {
+    final data = <String, dynamic>{};
+    data['amount'] = amount;
+    data['discountAmount'] = discountAmount;
+    data['couponType'] = couponType;
+    data['startDate'] = startDate;
+    data['endDate'] = endDate;
+    return data;
+  }
+
+  Coupon copyWith(
+      {String? sId,
+      String? title,
+      double? discountAmount,
+      double? amount,
+      String? startDate,
+      String? endDate,
+      String? customerId,
+      String? couponType}) {
     return Coupon(
       sId: sId ?? this.sId,
       title: title ?? this.title,
@@ -124,6 +134,7 @@ class Coupon {
       amount: amount ?? this.amount,
       startDate: startDate ?? this.startDate,
       endDate: endDate ?? this.endDate,
+      couponType: couponType,
       customerId: customerId ?? this.customerId,
     );
   }

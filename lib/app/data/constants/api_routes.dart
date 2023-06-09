@@ -1,6 +1,6 @@
 // change the domain name if you want
-const String domainName = "http://192.168.1.17:4000";
-
+// const String domainName = "http://192.168.1.17:4000";
+const String domainName = "http://3.110.151.156:3000";
 const String apiVersion = "/api/v1/";
 
 const String apiBase = domainName + apiVersion;
@@ -87,12 +87,14 @@ const String apiListInactiveTimeSlot = "${apiBase}users/listInActivateTimeSlot";
 const String apiUpdateTimeSlot = "${apiBase}users/editTimeSlot";
 const String apiDeleteTimeSlot = "${apiBase}users/deleteTimeSlot";
 const String apiReadTimeSlot = "${apiBase}users/getTimeSlot";
-const String  apiListDays = "${apiBase}users/listDays";
+const String apiListDays = "${apiBase}users/listDays";
 //defautl time slot
 const String apiGetDefaultTimeSlot = "${apiBase}users/listDefaultTimeSlot?";
 //coupons
 const String apiListCoupon = "${apiBase}users/listCoupon";
 const String apipostCoupon = "${apiBase}users/addCoupon";
+const String apiDeleteCoupon = "${apiBase}users/deleteCoupon/";
+const String apiUpdateCoupon = "${apiBase}users/editCoupon/";
 //reward
 const String apiListReward = "${apiBase}users/listReward";
 const String apiPostReward = "${apiBase}users/addReward";

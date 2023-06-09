@@ -3,7 +3,7 @@
     "message": "",
     "data": [
         {
-            "id": "1",
+            "_id": "1",
             "name": "Al Dana Station 1",
             "location": "Ras Al Khaimah",
             "latitude": 8.5908657,
@@ -13,7 +13,7 @@
             "distance": "6 Km"
         },
         {
-            "id": "2",
+            "_id": "2",
             "name": "Al Dana Station 2",
             "location": "Ras Al Khaimah",
             "latitude": 8.5714731,
@@ -23,7 +23,7 @@
             "distance": "8 Km"
         },
         {
-            "id": "3",
+            "_id": "3",
             "name": "Al Dana Station 3",
             "location": "Ras Al Khaimah",
             "latitude": 8.5678277,

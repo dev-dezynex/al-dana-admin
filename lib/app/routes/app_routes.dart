@@ -41,6 +41,7 @@ abstract class Routes {
   static const COUPON = _Paths.COUPON;
   static const ADD_COUPON = _Paths.ADD_COUPON;
   static const REWARD = _Paths.REWARD;
+  static const UPLOAD_COUPON = _Paths.UPLOAD_COUPON;
 }
 
 abstract class _Paths {
@@ -83,4 +84,5 @@ abstract class _Paths {
   static const COUPON = '/coupon';
   static const ADD_COUPON = '/add-coupon';
   static const REWARD = '/reward';
+  static const UPLOAD_COUPON = '/upload-coupon';
 }

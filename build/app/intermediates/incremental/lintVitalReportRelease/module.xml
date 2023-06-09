@@ -6,9 +6,9 @@
     maven="android:app:"
     gradle="7.1.2"
     buildFolder="/Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/app"
-    bootClassPath="/Users/dezynextechnologysolutons/Library/Android/sdk/platforms/android-31/android.jar:/Users/dezynextechnologysolutons/Library/Android/sdk/build-tools/30.0.3/core-lambda-stubs.jar"
+    bootClassPath="/Users/dezynextechnologysolutons/Library/Android/sdk/platforms/android-33/android.jar:/Users/dezynextechnologysolutons/Library/Android/sdk/build-tools/30.0.3/core-lambda-stubs.jar"
     javaSourceLevel="1.8"
-    compileTarget="android-31">
+    compileTarget="android-33">
   <lintOptions
       abortOnError="true"
       absolutePaths="true"

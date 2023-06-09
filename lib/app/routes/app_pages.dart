@@ -1,3 +1,4 @@
+import 'package:al_dana_admin/app/modules/coupon/views/update_view.dart';
 import 'package:get/get.dart';
 
 import '../modules/add_banner/bindings/add_banner_binding.dart';
@@ -264,6 +265,7 @@ class AppPages {
       page: () => AddCouponView(),
       binding: AddCouponBinding(),
     ),
+    
     GetPage(
       name: _Paths.REWARD,
       page: () => RewardView(),

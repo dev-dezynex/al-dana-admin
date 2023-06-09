@@ -1,4 +1,4 @@
-#Wed Feb 01 20:04:21 IST 2023
+#Thu Jun 08 13:19:55 IST 2023
 base.0=/Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

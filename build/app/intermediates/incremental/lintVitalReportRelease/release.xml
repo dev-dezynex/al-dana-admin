@@ -2,7 +2,7 @@
     name="release"
     package="com.dezynex.al_dana_admin"
     minSdkVersion="21"
-    targetSdkVersion="31"
+    targetSdkVersion="33"
     shrinking="true"
     mergedManifest="/Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/app/intermediates/merged_manifest/release/AndroidManifest.xml"
     manifestMergeReport="/Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/app/outputs/logs/manifest-merger-release-report.txt"
