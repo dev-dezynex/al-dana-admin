@@ -25,6 +25,7 @@ class _BranchTileState extends State<BranchTile> {
   @override
   void initState() {
     super.initState();
+    print('$domainName${widget.branch.image}');
     bgCardImage = NetworkImage('$domainName${widget.branch.image}');
     widget.branch.distance = calculateDistance(
         widget.branch.latitude,

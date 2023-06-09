@@ -8,7 +8,7 @@ import '../../../data/data.dart';
 class CouponController extends GetxController {
   var isLoading = false.obs;
   var couponResult = CouponResult().obs;
-  TextEditingController discountAmountController = TextEditingController();
+  TextEditingController discountAmountController = TextEditingController(text: '12');
   TextEditingController amountController = TextEditingController();
   TextEditingController startDateController = TextEditingController();
   TextEditingController endDateController = TextEditingController();

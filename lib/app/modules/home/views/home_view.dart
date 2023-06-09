@@ -3,11 +3,10 @@ import 'package:al_dana_admin/app/modules/time_slot/views/time_slot_screen.dart'
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
-
 import 'package:get/get.dart';
-
 import '../../../data/data.dart';
 import '../../../routes/app_pages.dart';
+import '../../default_custom_time_slot/views/default_custom_time_slot_screen.dart';
 import '../controllers/home_controller.dart';
 import 'profile_view.dart';
 
@@ -151,12 +150,20 @@ class HomeView extends GetView<HomeController> {
             },
           ),
           NavItem(
-            title: "Manage Time slot",
+            title: 'Manage Time Slot',
+            icon: "assets/icons/ic_nav_4.svg",
+            onTap: () {
+              Get.back();
+              Get.to(() => const TimeSlotScreen());
+            },
+          ),
+          NavItem(
+            title: "Manage Default & Custom Time slot",
             icon: "assets/icons/ic_nav_4.svg",
             onTap: () {
               Get.back();
               // Get.toNamed(Routes.TIME_SLOTS);
-              Get.to(() => const TimeSlotScreen());
+              Get.to(() => const DefaultCustomTimeSlotScreen());
             },
           ),
           NavItem(
