@@ -1,12 +1,10 @@
-
-import 'package:al_dana_admin/app/data/providers/list_days_provider.dart';
+import 'package:al_dana_admin/app/data/data.dart';
 import 'package:al_dana_admin/app/modules/default_custom_time_slot/default/providers/default_time_slot_provider.dart';
+import 'package:al_dana_admin/app/modules/default_custom_time_slot/default/views/add_default_time_slot_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../data/models/list_days.dart';
 import '../custom/views/custom_time_view.dart';
-import '../default/utils/add_default_time_slot_bottom_sheet.dart';
 import '../default/views/default_time_view.dart';
 
 class DefaultCustomTimeSlotScreen extends StatefulWidget {
@@ -19,11 +17,10 @@ class DefaultCustomTimeSlotScreen extends StatefulWidget {
 
 class _DefaultCustomTimeSlotScreenState
     extends State<DefaultCustomTimeSlotScreen> {
-  late Future<ListDays> futureListDays;
   @override
   void initState() {
     super.initState();
-    futureListDays = ListDaysProvider.fetchListDays();
+    Provider.of<DefaultProvider>(context, listen: false).clearAll();
   }
 
   @override
@@ -44,6 +41,7 @@ class _DefaultCustomTimeSlotScreenState
               )),
           title: const Text('Default & Custom Time Slot'),
           bottom: TabBar(
+            indicatorColor: primary2,
             labelColor: Colors.black,
             tabs: const [
               Tab(text: 'Default'),
@@ -64,18 +62,19 @@ class _DefaultCustomTimeSlotScreenState
         floatingActionButton: Consumer<DefaultProvider>(
           builder: (context, tabBar, child) {
             if (tabBar.tabBarIndex == 0) {
-              return Visibility(
-                visible: tabBar.isBranchSelected && tabBar.isCategorySelected,
-                child: FloatingActionButton.small(
-                  onPressed: () {
-                    addDefaultTimeSlotBottomSheet(
-                        context, height, width, futureListDays);
-                  },
-                  child: const Icon(Icons.add),
-                ),
+              return FloatingActionButton.small(
+                backgroundColor: primary,
+                onPressed: () {
+                  print('Default time slot');
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const AddDefaultTimeSlotScreen(),
+                  ));
+                },
+                child: const Icon(Icons.add),
               );
             } else {
               return FloatingActionButton.small(
+                backgroundColor: primary,
                 onPressed: () {
                   print('Custom time slot');
                 },

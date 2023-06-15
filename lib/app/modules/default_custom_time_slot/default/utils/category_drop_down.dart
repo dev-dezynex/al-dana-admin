@@ -29,26 +29,40 @@ class _CategroryDropDownState extends State<CategroryDropDown> {
         } else if (snapshot.hasError) {
           return const Text('Error in loading category dropdown');
         } else {
+          final width = MediaQuery.of(context).size.width;
           final categories = snapshot.data?.categoryList ?? [];
-          return DropdownButtonFormField<String>(
-            items: categories.map<DropdownMenuItem<String>>((category) {
-              return DropdownMenuItem<String>(
-                value: category.id,
-                child: Text(category.title),
-              );
-            }).toList(),
-            onChanged: (value) {
-              String categoryId = value ?? '';
-              Provider.of<DefaultProvider>(context, listen: false)
-                  .setCategoryId(categoryId);
-              if (categoryId != '' || categoryId.isNotEmpty) {
-                Provider.of<DefaultProvider>(context, listen: false)
-                    .setIsCategorySelected(true);
-              }
-            },
-            decoration: const InputDecoration(
-              labelText: 'Select Category',
-              border: OutlineInputBorder(),
+          return Center(
+            child: SizedBox(
+              width: width * 0.7,
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 6),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(6),
+                  border: Border.all(
+                    width: 1,
+                    color: primary2,
+                  ),
+                ),
+                child: DropdownButtonFormField<String>(
+                  items: categories.map<DropdownMenuItem<String>>((category) {
+                    return DropdownMenuItem<String>(
+                      value: category.id,
+                      child: Text(category.title),
+                    );
+                  }).toList(),
+                  onChanged: (value) {
+                    String categoryId = value ?? '';
+                    Provider.of<DefaultProvider>(context, listen: false)
+                        .setCategoryId(categoryId);
+                    if (categoryId != '' || categoryId.isNotEmpty) {
+                      Provider.of<DefaultProvider>(context, listen: false)
+                          .setIsCategorySelected(true);
+                    }
+                  },
+                  decoration:
+                      const InputDecoration(hintText: 'Select Category'),
+                ),
+              ),
             ),
           );
         }

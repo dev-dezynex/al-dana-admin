@@ -1,9 +1,9 @@
-import 'package:al_dana_admin/app/data/models/default_time_slot.dart';
+import 'package:al_dana_admin/app/data/data.dart';
 import 'package:al_dana_admin/app/data/providers/default_time_slot_provider.dart';
 import 'package:al_dana_admin/app/modules/default_custom_time_slot/default/providers/default_time_slot_provider.dart';
 import 'package:al_dana_admin/app/modules/default_custom_time_slot/default/utils/category_drop_down.dart';
+import 'package:al_dana_admin/app/modules/default_custom_time_slot/default/utils/list_days_drop_down.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import '../utils/branch_drop_down.dart';
 
@@ -15,29 +15,6 @@ class DefaultTimeSlotView extends StatefulWidget {
 }
 
 class _DefaultTimeSlotViewState extends State<DefaultTimeSlotView> {
-  final TextEditingController _dateController = TextEditingController();
-  Future<DefaultTimeSlot>? futureDefaultTimeSlot;
-
-  Future<void> _selectDate(BuildContext context) async {
-    final DateTime? selectedDate = await showDatePicker(
-      context: context,
-      initialDate: DateTime.now(),
-      firstDate: DateTime(1900),
-      lastDate: DateTime(2100),
-    );
-
-    if (selectedDate != null) {
-      final DateFormat formatter = DateFormat('dd/MM/yyyy');
-      final String formattedDate = formatter.format(selectedDate);
-      _dateController.text = formattedDate;
-      if (!mounted) return;
-      Provider.of<DefaultProvider>(context, listen: false)
-          .setPickedDate(formattedDate);
-      Provider.of<DefaultProvider>(context, listen: false)
-          .setIsDatePicked(true);
-    }
-  }
-
   @override
   void initState() {
     super.initState();
@@ -49,29 +26,28 @@ class _DefaultTimeSlotViewState extends State<DefaultTimeSlotView> {
       Provider.of<DefaultProvider>(context, listen: false)
           .setIsCategorySelected(false);
       Provider.of<DefaultProvider>(context, listen: false)
-          .setIsDatePicked(false);
+          .setIsListDaySelected(false);
       Provider.of<DefaultProvider>(context, listen: false).setBranchId('');
       Provider.of<DefaultProvider>(context, listen: false).setCategoryId('');
-      Provider.of<DefaultProvider>(context, listen: false).setPickedDate('');
       Provider.of<DefaultProvider>(context, listen: false).setIsLoading(false);
-      Provider.of<DefaultProvider>(context, listen: false).startTimeHour = '01';
-      Provider.of<DefaultProvider>(context, listen: false).startTimeMinute =
-          '00';
     });
   }
 
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     final defaultTimeSlotProvider =
         Provider.of<DefaultTimeSlotProvider>(context);
     bool isBranchSelected =
         Provider.of<DefaultProvider>(context).isBranchSelected;
     bool isCategorySelected =
         Provider.of<DefaultProvider>(context).isCategorySelected;
+    bool isListDaySelected =
+        Provider.of<DefaultProvider>(context).isListDaySelected;
     String branchId = Provider.of<DefaultProvider>(context).branchId;
     String categoryId = Provider.of<DefaultProvider>(context).categoryId;
-    bool isDatePicked = Provider.of<DefaultProvider>(context).isDatePicked;
+    String listDayId = Provider.of<DefaultProvider>(context).listDayId;
     bool isLoading = Provider.of<DefaultProvider>(context).isLoading;
     return Padding(
       padding: const EdgeInsets.only(top: 3, left: 10, right: 10, bottom: 8),
@@ -82,20 +58,12 @@ class _DefaultTimeSlotViewState extends State<DefaultTimeSlotView> {
           const BranchDropDown(),
           const SizedBox(height: 6),
           const CategroryDropDown(),
-          const SizedBox(height: 6),
-          TextFormField(
-            controller: _dateController,
-            onTap: () {
-              _selectDate(context);
-            },
-            decoration: const InputDecoration(
-              labelText: 'Select Date',
-            ),
-            readOnly: true,
-          ),
+          const SizedBox(height: 14),
+          const ListDaysDropdown(),
           const SizedBox(height: 6),
           Visibility(
-            visible: isBranchSelected && isCategorySelected && isDatePicked,
+            visible:
+                isBranchSelected && isCategorySelected && isListDaySelected,
             child: isLoading
                 ? const Center(
                     child: SizedBox(
@@ -106,13 +74,14 @@ class _DefaultTimeSlotViewState extends State<DefaultTimeSlotView> {
                         )))
                 : Center(
                     child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(backgroundColor: primary),
                       onPressed: () {
                         Provider.of<DefaultProvider>(context, listen: false)
                             .setIsLoading(true);
                         defaultTimeSlotProvider.fetchTimeSlot(
                           branchId,
                           categoryId,
-                          _dateController.text.trim(),
+                          listDayId,
                         );
                         Future.delayed(const Duration(milliseconds: 100), () {
                           Provider.of<DefaultProvider>(context, listen: false)
@@ -126,9 +95,9 @@ class _DefaultTimeSlotViewState extends State<DefaultTimeSlotView> {
           Consumer<DefaultTimeSlotProvider>(
             builder: (context, provider, _) {
               if (provider.defaultTimeSlot != null) {
-                final timeSlots = provider.defaultTimeSlot!.data;
+                final timeSlots = provider.defaultTimeSlot!.data?.timeSlotId;
                 return SizedBox(
-                  height: height * 0.5,
+                  height: height * 0.4,
                   child: ListView.builder(
                     shrinkWrap: true,
                     physics: const BouncingScrollPhysics(),
@@ -165,6 +134,51 @@ class _DefaultTimeSlotViewState extends State<DefaultTimeSlotView> {
                                 ),
                             ],
                           ),
+                          trailing: IconButton(
+                            onPressed: () {
+                              showDialog(
+                                context: context,
+                                builder: (context) => AlertDialog(
+                                  title: const Text('Delete'),
+                                  content: const Text(
+                                      'Do you want to delete this time slot'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                      child: const Text('Cancel'),
+                                    ),
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                        DefaultTimeSlotProvider()
+                                            .deleteDefaultTimeSlot(
+                                              provider.defaultTimeSlot?.data
+                                                      ?.sId ??
+                                                  '',
+                                              timeSlot?.sId ?? '',
+                                            )
+                                            .then(
+                                              (_) => defaultTimeSlotProvider
+                                                  .fetchTimeSlot(
+                                                branchId,
+                                                categoryId,
+                                                listDayId,
+                                              ),
+                                            );
+                                      },
+                                      child: const Text('Delete'),
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
+                            icon: const Icon(
+                              Icons.delete,
+                              color: Colors.red,
+                            ),
+                          ),
                         ),
                       );
                     },
@@ -175,8 +189,9 @@ class _DefaultTimeSlotViewState extends State<DefaultTimeSlotView> {
                   child: CircularProgressIndicator(),
                 );
               } else if (provider.hasError) {
-                return const Text(
-                    'Failed to load time slot due to backend error');
+                return const Center(
+                  child: Text('No Data'),
+                );
               } else {
                 return const SizedBox();
               }

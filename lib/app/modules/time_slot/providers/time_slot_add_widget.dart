@@ -5,13 +5,15 @@ class TimeSlotProvider extends ChangeNotifier {
   String _startTimeMinute = '00';
   String _endTimeHour = '01';
   String _endTimeMinute = '00';
-  int _maxBooking = 0;
+  String _maxBooking = '0';
 
   String get startTimeHour => _startTimeHour;
   String get startTimeMinute => _startTimeMinute;
+  String get startTime => '$_startTimeHour:$_startTimeMinute';
   String get endTimeHour => _endTimeHour;
   String get endTimeMinute => _endTimeMinute;
-  int get maxBooking => _maxBooking;
+  String get endTime => '$_endTimeHour:$_endTimeMinute';
+  String get maxBooking => _maxBooking;
 
   set startTimeHour(String value) {
     _startTimeHour = value;
@@ -33,8 +35,17 @@ class TimeSlotProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  set maxBooking(int value) {
+  set maxBooking(String value) {
     _maxBooking = value;
+    notifyListeners();
+  }
+
+  void clearAll() {
+    _startTimeHour = '01';
+    _startTimeMinute = '00';
+    _endTimeHour = '01';
+    _endTimeMinute = '00';
+    _maxBooking = '0';
     notifyListeners();
   }
 }
