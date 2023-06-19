@@ -1,5 +1,6 @@
 import 'package:al_dana_admin/app/data/data.dart';
-import 'package:al_dana_admin/app/modules/default_custom_time_slot/default/providers/default_time_slot_provider.dart';
+import 'package:al_dana_admin/app/modules/default_custom_time_slot/custom/views/add_custom_time_slot.dart';
+import 'package:al_dana_admin/app/modules/default_custom_time_slot/providers/default_custom_time_slot_provider.dart';
 import 'package:al_dana_admin/app/modules/default_custom_time_slot/default/views/add_default_time_slot_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -20,7 +21,9 @@ class _DefaultCustomTimeSlotScreenState
   @override
   void initState() {
     super.initState();
-    Provider.of<DefaultProvider>(context, listen: false).clearAll();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Provider.of<DefaultCustomProvider>(context, listen: false).clearAll();
+    });
   }
 
   @override
@@ -48,7 +51,7 @@ class _DefaultCustomTimeSlotScreenState
               Tab(text: 'Custom'),
             ],
             onTap: (value) {
-              Provider.of<DefaultProvider>(context, listen: false)
+              Provider.of<DefaultCustomProvider>(context, listen: false)
                   .setTabBarIndex(value);
             },
           ),
@@ -59,7 +62,7 @@ class _DefaultCustomTimeSlotScreenState
             CustomTimeSlotView(),
           ],
         ),
-        floatingActionButton: Consumer<DefaultProvider>(
+        floatingActionButton: Consumer<DefaultCustomProvider>(
           builder: (context, tabBar, child) {
             if (tabBar.tabBarIndex == 0) {
               return FloatingActionButton.small(
@@ -77,6 +80,11 @@ class _DefaultCustomTimeSlotScreenState
                 backgroundColor: primary,
                 onPressed: () {
                   print('Custom time slot');
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const AddCustomTimeSlotScreen(),
+                    ),
+                  );
                 },
                 child: const Icon(Icons.add),
               );

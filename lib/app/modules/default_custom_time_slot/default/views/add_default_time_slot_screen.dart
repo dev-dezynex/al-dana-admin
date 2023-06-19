@@ -1,12 +1,12 @@
 import 'package:al_dana_admin/app/data/data.dart';
 import 'package:al_dana_admin/app/data/providers/default_time_slot_provider.dart';
-import 'package:al_dana_admin/app/modules/default_custom_time_slot/default/providers/default_time_slot_provider.dart';
-import 'package:al_dana_admin/app/modules/default_custom_time_slot/default/utils/branch_drop_down.dart';
-import 'package:al_dana_admin/app/modules/default_custom_time_slot/default/utils/category_drop_down.dart';
-import 'package:al_dana_admin/app/modules/default_custom_time_slot/default/utils/list_days_drop_down.dart';
-import 'package:al_dana_admin/app/modules/default_custom_time_slot/default/utils/time_slot_drop_down.dart';
+import 'package:al_dana_admin/app/modules/default_custom_time_slot/utils/category_drop_down.dart';
+import 'package:al_dana_admin/app/modules/default_custom_time_slot/utils/list_days_drop_down.dart';
+import 'package:al_dana_admin/app/modules/default_custom_time_slot/utils/time_slot_drop_down.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../../providers/default_custom_time_slot_provider.dart';
+import '../../utils/branch_drop_down.dart';
 
 class AddDefaultTimeSlotScreen extends StatelessWidget {
   const AddDefaultTimeSlotScreen({super.key});
@@ -57,28 +57,22 @@ class AddDefaultTimeSlotScreen extends StatelessWidget {
                     backgroundColor: primary2,
                   ),
                   onPressed: () {
-                    final defaultProvider =
-                        Provider.of<DefaultProvider>(context, listen: false);
-                    if (defaultProvider.isBranchSelected &&
-                        defaultProvider.isCategorySelected &&
-                        defaultProvider.isListDaySelected &&
-                        defaultProvider.isTimeSlotSelected) {
+                    final defaultCustomProvider =
+                        Provider.of<DefaultCustomProvider>(context,
+                            listen: false);
+                    if (defaultCustomProvider.isBranchSelected &&
+                        defaultCustomProvider.isCategorySelected &&
+                        defaultCustomProvider.isListDaySelected &&
+                        defaultCustomProvider.isTimeSlotSelected) {
                       DefaultTimeSlotProvider()
                           .addDefaultTimeSlot(
-                        defaultProvider.branchId,
-                        defaultProvider.listDayId,
-                        defaultProvider.categoryId,
-                        defaultProvider.timeSlotId,
+                        defaultCustomProvider.branchId,
+                        defaultCustomProvider.listDayId,
+                        defaultCustomProvider.categoryId,
+                        defaultCustomProvider.timeSlotId,
                       )
                           .then(
                         (_) {
-                          Provider.of<DefaultTimeSlotProvider>(context,
-                                  listen: false)
-                              .fetchTimeSlot(
-                            defaultProvider.branchId,
-                            defaultProvider.categoryId,
-                            defaultProvider.listDayId,
-                          );
                           Navigator.of(context).pop();
                         },
                       );
@@ -97,7 +91,6 @@ class AddDefaultTimeSlotScreen extends StatelessWidget {
               ),
             ),
           ),
-          const Spacer(),
           const Spacer(flex: 5),
         ],
       ),

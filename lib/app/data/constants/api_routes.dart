@@ -89,9 +89,14 @@ const String apiDeleteTimeSlot = "${apiBase}users/deleteTimeSlot";
 const String apiReadTimeSlot = "${apiBase}users/getTimeSlot";
 const String apiListDays = "${apiBase}users/listDays";
 //defautl time slot
-const String apiGetDefaultTimeSlotAdmin = "${apiBase}users/listDefaultTimeSlotInAdmin?";
-const String apiAddDefaultTimeSlot = "${apiBase}users/addDefaultTimeSlot?";
+const String apiGetDefaultTimeSlotAdmin =
+    "${apiBase}users/listDefaultTimeSlotInAdmin?";
+const String apiAddDefaultTimeSlot = "${apiBase}users/addDefaultTimeSlot";
 const String apiUpdateDefaultTimeSlot = "${apiBase}users/editDefaultTimeSlot";
+//custom time slot
+const String apiGetCustomTimeSlot = "${apiBase}users/listCustomTimeSlot?";
+const String apiAddCustomTimeSlot = "${apiBase}users/addCustomTimeSlot";
+const String apiUpdateCustomTimeSlot = "${apiBase}users/editCustomTimeSlot";
 //coupons
 const String apiListCoupon = "${apiBase}users/listCoupon";
 const String apipostCoupon = "${apiBase}users/addCoupon";

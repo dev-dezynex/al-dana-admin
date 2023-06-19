@@ -1,11 +1,12 @@
 import 'package:al_dana_admin/app/data/data.dart';
 import 'package:al_dana_admin/app/data/providers/default_time_slot_provider.dart';
-import 'package:al_dana_admin/app/modules/default_custom_time_slot/default/providers/default_time_slot_provider.dart';
-import 'package:al_dana_admin/app/modules/default_custom_time_slot/default/utils/category_drop_down.dart';
-import 'package:al_dana_admin/app/modules/default_custom_time_slot/default/utils/list_days_drop_down.dart';
+import 'package:al_dana_admin/app/modules/default_custom_time_slot/providers/default_custom_time_slot_provider.dart';
+import 'package:al_dana_admin/app/modules/default_custom_time_slot/utils/category_drop_down.dart';
+import 'package:al_dana_admin/app/modules/default_custom_time_slot/utils/list_days_drop_down.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../utils/branch_drop_down.dart';
+
+import '../../utils/branch_drop_down.dart';
 
 class DefaultTimeSlotView extends StatefulWidget {
   const DefaultTimeSlotView({super.key});
@@ -21,15 +22,22 @@ class _DefaultTimeSlotViewState extends State<DefaultTimeSlotView> {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       Provider.of<DefaultTimeSlotProvider>(context, listen: false)
           .clearDefaultTimeslots();
-      Provider.of<DefaultProvider>(context, listen: false)
+      Provider.of<DefaultCustomProvider>(context, listen: false)
           .setIsBranchSelected(false);
-      Provider.of<DefaultProvider>(context, listen: false)
+      Provider.of<DefaultCustomProvider>(context, listen: false)
           .setIsCategorySelected(false);
-      Provider.of<DefaultProvider>(context, listen: false)
+      Provider.of<DefaultCustomProvider>(context, listen: false)
           .setIsListDaySelected(false);
-      Provider.of<DefaultProvider>(context, listen: false).setBranchId('');
-      Provider.of<DefaultProvider>(context, listen: false).setCategoryId('');
-      Provider.of<DefaultProvider>(context, listen: false).setIsLoading(false);
+      Provider.of<DefaultCustomProvider>(context, listen: false)
+          .setIsDatePicked(false);
+      Provider.of<DefaultCustomProvider>(context, listen: false)
+          .setBranchId('');
+      Provider.of<DefaultCustomProvider>(context, listen: false)
+          .setCategoryId('');
+      Provider.of<DefaultCustomProvider>(context, listen: false)
+          .setIsLoading(false);
+      Provider.of<DefaultCustomProvider>(context, listen: false)
+          .resetPickedDate();
     });
   }
 
@@ -40,15 +48,15 @@ class _DefaultTimeSlotViewState extends State<DefaultTimeSlotView> {
     final defaultTimeSlotProvider =
         Provider.of<DefaultTimeSlotProvider>(context);
     bool isBranchSelected =
-        Provider.of<DefaultProvider>(context).isBranchSelected;
+        Provider.of<DefaultCustomProvider>(context).isBranchSelected;
     bool isCategorySelected =
-        Provider.of<DefaultProvider>(context).isCategorySelected;
+        Provider.of<DefaultCustomProvider>(context).isCategorySelected;
     bool isListDaySelected =
-        Provider.of<DefaultProvider>(context).isListDaySelected;
-    String branchId = Provider.of<DefaultProvider>(context).branchId;
-    String categoryId = Provider.of<DefaultProvider>(context).categoryId;
-    String listDayId = Provider.of<DefaultProvider>(context).listDayId;
-    bool isLoading = Provider.of<DefaultProvider>(context).isLoading;
+        Provider.of<DefaultCustomProvider>(context).isListDaySelected;
+    String branchId = Provider.of<DefaultCustomProvider>(context).branchId;
+    String categoryId = Provider.of<DefaultCustomProvider>(context).categoryId;
+    String listDayId = Provider.of<DefaultCustomProvider>(context).listDayId;
+    bool isLoading = Provider.of<DefaultCustomProvider>(context).isLoading;
     return Padding(
       padding: const EdgeInsets.only(top: 3, left: 10, right: 10, bottom: 8),
       child: ListView(
@@ -67,26 +75,33 @@ class _DefaultTimeSlotViewState extends State<DefaultTimeSlotView> {
             child: isLoading
                 ? const Center(
                     child: SizedBox(
-                        width: 10,
-                        height: 10,
-                        child: CircularProgressIndicator(
-                          strokeWidth: 2,
-                        )))
+                      width: 10,
+                      height: 10,
+                      child: CircularProgressIndicator(
+                        strokeWidth: 2,
+                      ),
+                    ),
+                  )
                 : Center(
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(backgroundColor: primary),
                       onPressed: () {
-                        Provider.of<DefaultProvider>(context, listen: false)
+                        Provider.of<DefaultCustomProvider>(context,
+                                listen: false)
                             .setIsLoading(true);
-                        defaultTimeSlotProvider.fetchTimeSlot(
+                        defaultTimeSlotProvider.fetchDefaultTimeSlot(
                           branchId,
                           categoryId,
                           listDayId,
                         );
-                        Future.delayed(const Duration(milliseconds: 100), () {
-                          Provider.of<DefaultProvider>(context, listen: false)
-                              .setIsLoading(false);
-                        });
+                        Future.delayed(
+                          const Duration(milliseconds: 100),
+                          () {
+                            Provider.of<DefaultCustomProvider>(context,
+                                    listen: false)
+                                .setIsLoading(false);
+                          },
+                        );
                       },
                       child: const Text('View available time slots'),
                     ),
@@ -161,7 +176,7 @@ class _DefaultTimeSlotViewState extends State<DefaultTimeSlotView> {
                                             )
                                             .then(
                                               (_) => defaultTimeSlotProvider
-                                                  .fetchTimeSlot(
+                                                  .fetchDefaultTimeSlot(
                                                 branchId,
                                                 categoryId,
                                                 listDayId,

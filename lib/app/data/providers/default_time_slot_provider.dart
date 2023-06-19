@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:developer';
 import 'package:al_dana_admin/app/data/models/default_time_slot.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'dart:async';
 import 'package:http/http.dart' as http;
@@ -18,7 +19,7 @@ class DefaultTimeSlotProvider extends ChangeNotifier {
   bool get isLoading => _isLoading;
   bool get hasError => _hasError;
 
-  Future<void> fetchTimeSlot(
+  Future<void> fetchDefaultTimeSlot(
     String branchId,
     String categoryId,
     String dayId,
@@ -65,6 +66,8 @@ class DefaultTimeSlotProvider extends ChangeNotifier {
       'timeSlotId': timeSlotId,
     };
     try {
+      _isLoading = true;
+      notifyListeners();
       final response = await http.post(
         Uri.parse(apiAddDefaultTimeSlot),
         body: body,
@@ -74,12 +77,15 @@ class DefaultTimeSlotProvider extends ChangeNotifier {
       );
       log(response.body);
       if (response.statusCode == 200) {
+        Get.snackbar('Success', 'Time slot added successfully');
         _isLoading = true;
         notifyListeners();
       } else {
+        Get.snackbar('Failed', 'Failed to add time slot');
         log('Failed to submit');
       }
     } catch (e) {
+      Get.snackbar('Failed', 'Failed to add time slot');
       log(e.toString());
       log('failed with exception');
     } finally {
@@ -108,11 +114,14 @@ class DefaultTimeSlotProvider extends ChangeNotifier {
         },
       );
       if (response.statusCode == 200) {
+        Get.snackbar('Success', 'Time slot deleted successfully');
         log(response.body);
       } else {
+        Get.snackbar('Failed', 'Failed to delete time slot');
         log('Failed to submit due to status code error ${response.statusCode}');
       }
     } catch (error) {
+      Get.snackbar('Failed', 'Failed to delete time slot');
       log('Failed due to $error');
     } finally {
       _isLoading = false;
