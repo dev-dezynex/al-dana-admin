@@ -12,11 +12,19 @@ class CategroryDropDown extends StatefulWidget {
 
 class _CategroryDropDownState extends State<CategroryDropDown> {
   late Future<CategoryResult> futureGetCategories;
+  List<Category>? categories;
 
   @override
   void initState() {
     super.initState();
+    categories = [];
     futureGetCategories = CategoryProvider().getCategories();
+  }
+
+  @override
+  void dispose() {
+    categories = [];
+    super.dispose();
   }
 
   @override
@@ -30,7 +38,7 @@ class _CategroryDropDownState extends State<CategroryDropDown> {
           return const Text('Error in loading category dropdown');
         } else {
           final width = MediaQuery.of(context).size.width;
-          final categories = snapshot.data?.categoryList ?? [];
+          categories = snapshot.data?.categoryList ?? [];
           return Center(
             child: SizedBox(
               width: width * 0.7,
@@ -44,7 +52,7 @@ class _CategroryDropDownState extends State<CategroryDropDown> {
                   ),
                 ),
                 child: DropdownButtonFormField<String>(
-                  items: categories.map<DropdownMenuItem<String>>((category) {
+                  items: categories?.map<DropdownMenuItem<String>>((category) {
                     return DropdownMenuItem<String>(
                       value: category.id,
                       child: Text(category.title),

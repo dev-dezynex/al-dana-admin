@@ -41,6 +41,7 @@ class CouponView extends GetView<CouponController> {
                       const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
                   itemBuilder: (con, i) {
                     return Container(
+                      height: 170,
                       margin: const EdgeInsets.only(bottom: 15),
                       child: CouponCard(
                           backgroundColor: primary.withOpacity(.3),
@@ -74,6 +75,15 @@ class CouponView extends GetView<CouponController> {
                                         color: white,
                                         weight: FontWeight.bold,
                                         size: 21)),
+                                Text(
+                                  "Code : ${controller.couponResult.value.couponList![i].couponCode}",
+                                  textAlign: TextAlign.center,
+                                  style: tsPoppins(
+                                    color: Colors.black38,
+                                    weight: FontWeight.bold,
+                                    size: 18,
+                                  ),
+                                ),
                                 Text(
                                     'Service for ${controller.couponResult.value.couponList![i].amount} and ',
                                     textAlign: TextAlign.center,

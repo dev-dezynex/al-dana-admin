@@ -1,4 +1,6 @@
 import 'package:al_dana_admin/app/data/data.dart';
+import 'package:al_dana_admin/app/data/providers/custom_time_slot_provider.dart';
+import 'package:al_dana_admin/app/data/providers/default_time_slot_provider.dart';
 import 'package:al_dana_admin/app/modules/default_custom_time_slot/custom/views/add_custom_time_slot.dart';
 import 'package:al_dana_admin/app/modules/default_custom_time_slot/providers/default_custom_time_slot_provider.dart';
 import 'package:al_dana_admin/app/modules/default_custom_time_slot/default/views/add_default_time_slot_screen.dart';
@@ -51,6 +53,13 @@ class _DefaultCustomTimeSlotScreenState
               Tab(text: 'Custom'),
             ],
             onTap: (value) {
+              if (value == 0) {
+                Provider.of<CustomTimeSlotProvider>(context, listen: false)
+                    .clearCustomTimeslots();
+              } else {
+                Provider.of<DefaultTimeSlotProvider>(context, listen: false)
+                    .clearDefaultTimeslots();
+              }
               Provider.of<DefaultCustomProvider>(context, listen: false)
                   .setTabBarIndex(value);
             },

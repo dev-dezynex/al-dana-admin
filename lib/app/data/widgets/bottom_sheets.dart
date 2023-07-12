@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -365,7 +367,8 @@ modeSelectionBottomSheet(
                                 modeList.refresh();
                               },
                               isSelect: isMultiSelect
-                                  ? selectedModeList!.any((e)=> modeList[i].id==e.id)
+                                  ? selectedModeList!
+                                      .any((e) => modeList[i].id == e.id)
                                   : selectedMode!.value == modeList[i],
                               mode: modeList[i]);
                         }),
@@ -599,6 +602,7 @@ spareSelectionBottomSheet({
                         itemCount: spareCategoryList.length,
                         itemBuilder: (context, i) {
                           var spareList = spareCategoryList[i].spareList.obs;
+                          
                           return Padding(
                             padding: const EdgeInsets.only(bottom: 15),
                             child: DropdownButtonFormField<Spare>(
@@ -619,6 +623,7 @@ spareSelectionBottomSheet({
                                             weight: FontWeight.w400)),
                                 value: spareList.value![0],
                                 items: spareList.value!.map((value) {
+                                  log(spareList.value.toString());
                                   return DropdownMenuItem<Spare>(
                                     value: value,
                                     child: Text(value.name,

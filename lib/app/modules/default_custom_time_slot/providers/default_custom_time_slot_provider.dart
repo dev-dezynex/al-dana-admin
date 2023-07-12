@@ -1,3 +1,4 @@
+import 'package:al_dana_admin/app/data/data.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -18,6 +19,7 @@ class DefaultCustomProvider extends ChangeNotifier {
   String _endTimeHour = '01';
   String _endTimeMinute = '00';
   String _timsSlotId = '';
+  List<Branch> _branches = [];
 
   int get tabBarIndex => _tabBarIndex;
   String get branchId => _branchId;

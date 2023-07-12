@@ -13,7 +13,7 @@ class CouponProvider extends GetConnect {
       'filter[customerId]': common.currentUser.id
     };
     final response = await get(apiListCoupon, headers: auth.requestHeaders);
-
+    print(response.body.toString());
     if (response.statusCode == 401) {
       auth.authFailed(response.body['message']);
     }
