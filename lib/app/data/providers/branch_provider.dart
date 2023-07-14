@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -21,13 +22,13 @@ class BranchProvider extends GetConnect {
       response = await post(apiAddBranch, branch.toPost(),
           headers: Auth().requestHeaders);
       print('path $apiAddBranch');
-    } else {
+    } else { 
       response = await put('$apiUpdateBranch/${branch.id}', branch.toPost(),
           headers: Auth().requestHeaders);
-      print('path $apiUpdateBranch/${branch.id}');
+      log('path $apiUpdateBranch/${branch.id}');
     }
-    print('body ${branch.toJson()}');
-    print('response ${response.body}');
+    log('body ${branch.toPost()}');
+    log('response ${response.body}');
 
     result = BranchResult.fromJson(response.body);
 
@@ -76,8 +77,8 @@ class BranchProvider extends GetConnect {
   Future<BranchResult> getBranches() async {
     BranchResult result;
     Map<String, dynamic> qParams = {'filter[status]': 'true'};
-    final response =
-        await get(apiListBranch, query: qParams, headers: Auth().requestHeaders);
+    final response = await get(apiListBranch,
+        query: qParams, headers: Auth().requestHeaders);
     print('auth ${Auth().requestHeaders}');
     print('qparams $qParams');
     print('path $apiListBranch');

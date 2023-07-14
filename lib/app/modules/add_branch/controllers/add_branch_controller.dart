@@ -11,7 +11,10 @@ class AddBranchController extends GetxController {
   TextEditingController nameController = TextEditingController();
   TextEditingController locationController = TextEditingController();
   TextEditingController thumbController = TextEditingController();
-
+  TextEditingController telNoController = TextEditingController();
+  TextEditingController mobNoController = TextEditingController();
+  TextEditingController postOfficeController = TextEditingController();
+  TextEditingController taxRegNoController = TextEditingController();
   var bgCardColor = const Color(0xff443a49).obs;
   var isUpdate = false.obs;
   var isLoading = false.obs;
@@ -51,8 +54,14 @@ class AddBranchController extends GetxController {
   void createBranch() async {
     String imagePath = await imageUpload();
     var result = await BranchProvider().addOrUpdateBranch(
-        branch: selectedBranch.value
-            .copyWith(name: nameController.text, image: imagePath));
+        branch: selectedBranch.value.copyWith(
+      name: nameController.text,
+      image: imagePath,
+      telPhoneNo: telNoController.text,
+      mobNo: mobNoController.text,
+      postOfficeNo: postOfficeController.text,
+      taxRegistrationNo: taxRegNoController.text,
+    ));
     if (result.status == 'success') {
       Get.back(result: true);
     } else {
@@ -66,8 +75,14 @@ class AddBranchController extends GetxController {
   void updateBranch() async {
     String imagePath = await imageUpload();
     var result = await BranchProvider().addOrUpdateBranch(
-        branch: selectedBranch.value
-            .copyWith(name: nameController.text, image: imagePath));
+        branch: selectedBranch.value.copyWith(
+      name: nameController.text,
+      image: imagePath,
+      telPhoneNo: telNoController.text,
+      mobNo: mobNoController.text,
+      postOfficeNo: postOfficeController.text,
+      taxRegistrationNo: taxRegNoController.text,
+    ));
     if (result.status == 'success') {
       Get.back(result: true);
     } else {
@@ -95,6 +110,10 @@ class AddBranchController extends GetxController {
   void setFields() {
     nameController.text = selectedBranch.value.name;
     locationController.text = selectedBranch.value.location;
+    mobNoController.text = selectedBranch.value.mobNo;
+    telNoController.text = selectedBranch.value.telPhoneNo;
+    postOfficeController.text = selectedBranch.value.postOfficeNo;
+    taxRegNoController.text = selectedBranch.value.taxRegistrationNo;
     thumbController.text = selectedBranch.value.image.split('/').last;
   }
 

@@ -14,8 +14,13 @@ class ProfileController extends GetxController {
   TextEditingController emailController = TextEditingController(text: 'harpsjoseph@gmail.com');
   TextEditingController addressController = TextEditingController(text: 'Gold Palace, UAE, Baniyas Road Dubai,');
   var isLoading = false.obs;
+  
 
-
+  @override
+  void onInit() {
+    super.onInit();
+  }
+  
 
   @override
   void onClose() {}

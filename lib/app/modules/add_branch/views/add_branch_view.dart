@@ -73,9 +73,139 @@ class AddBranchView extends GetView<AddBranchController> {
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            height: 15,
+                          const SizedBox(height: 15),
+                          TextFormField(
+                            controller: controller.telNoController,
+                            textAlignVertical: TextAlignVertical.center,
+                            keyboardType: TextInputType.text,
+                            validator: (String? value) {
+                              if (value == null || value.isEmpty) {
+                                return "Required Telephone Number";
+                              } else {
+                                return null;
+                              }
+                            },
+                            style: tsPoppins(
+                                size: 14,
+                                weight: FontWeight.w400,
+                                color: textDark80),
+                            decoration: InputDecoration(
+                              contentPadding: const EdgeInsets.only(left: 0),
+                              labelText: "Enter Telephone Number",
+                              labelStyle: tsPoppins(
+                                  size: 14,
+                                  weight: FontWeight.w400,
+                                  color: textColor02),
+                              enabledBorder: const UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: borderColor,
+                                ),
+                              ),
+                              focusedBorder: const UnderlineInputBorder(
+                                borderSide: BorderSide(color: borderColor),
+                              ),
+                            ),
                           ),
+                          const SizedBox(height: 15),
+                          TextFormField(
+                            controller: controller.mobNoController,
+                            textAlignVertical: TextAlignVertical.center,
+                            keyboardType: TextInputType.text,
+                            validator: (String? value) {
+                              if (value == null || value.isEmpty) {
+                                return "Required Mobile Number";
+                              } else {
+                                return null;
+                              }
+                            },
+                            style: tsPoppins(
+                                size: 14,
+                                weight: FontWeight.w400,
+                                color: textDark80),
+                            decoration: InputDecoration(
+                              contentPadding: const EdgeInsets.only(left: 0),
+                              labelText: "Enter Mobile Number",
+                              labelStyle: tsPoppins(
+                                  size: 14,
+                                  weight: FontWeight.w400,
+                                  color: textColor02),
+                              enabledBorder: const UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: borderColor,
+                                ),
+                              ),
+                              focusedBorder: const UnderlineInputBorder(
+                                borderSide: BorderSide(color: borderColor),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 15),
+                          TextFormField(
+                            controller: controller.postOfficeController,
+                            textAlignVertical: TextAlignVertical.center,
+                            keyboardType: TextInputType.text,
+                            validator: (String? value) {
+                              if (value == null || value.isEmpty) {
+                                return "Required Post Office Number";
+                              } else {
+                                return null;
+                              }
+                            },
+                            style: tsPoppins(
+                                size: 14,
+                                weight: FontWeight.w400,
+                                color: textDark80),
+                            decoration: InputDecoration(
+                              contentPadding: const EdgeInsets.only(left: 0),
+                              labelText: "Enter Post office Number",
+                              labelStyle: tsPoppins(
+                                  size: 14,
+                                  weight: FontWeight.w400,
+                                  color: textColor02),
+                              enabledBorder: const UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: borderColor,
+                                ),
+                              ),
+                              focusedBorder: const UnderlineInputBorder(
+                                borderSide: BorderSide(color: borderColor),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 15),
+                          TextFormField(
+                            controller: controller.taxRegNoController,
+                            textAlignVertical: TextAlignVertical.center,
+                            keyboardType: TextInputType.text,
+                            validator: (String? value) {
+                              if (value == null || value.isEmpty) {
+                                return "Required Tax Registration Number";
+                              } else {
+                                return null;
+                              }
+                            },
+                            style: tsPoppins(
+                                size: 14,
+                                weight: FontWeight.w400,
+                                color: textDark80),
+                            decoration: InputDecoration(
+                              contentPadding: const EdgeInsets.only(left: 0),
+                              labelText: "Enter Tax Registration Number",
+                              labelStyle: tsPoppins(
+                                  size: 14,
+                                  weight: FontWeight.w400,
+                                  color: textColor02),
+                              enabledBorder: const UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: borderColor,
+                                ),
+                              ),
+                              focusedBorder: const UnderlineInputBorder(
+                                borderSide: BorderSide(color: borderColor),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 15),
                           TextFormField(
                             controller: controller.locationController,
                             textAlignVertical: TextAlignVertical.center,

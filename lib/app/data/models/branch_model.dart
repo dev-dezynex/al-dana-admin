@@ -1,4 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'dart:developer';
+
 import 'package:flutter/src/material/dropdown.dart';
 
 import 'address_model.dart';
@@ -37,13 +39,25 @@ class BranchResult {
 }
 
 class Branch {
-  late String id, name, location, landmark, addressType, image;
+  late String id,
+      name,
+      telPhoneNo,
+      mobNo,
+      postOfficeNo,
+      location,
+      taxRegistrationNo,
+      landmark,
+      addressType,
+      image;
   late double latitude, longitude, distance, rating;
   List<String>? serviceList;
 
   Branch({
     this.id = '',
     this.name = '',
+    this.telPhoneNo = '',
+    this.mobNo = '',
+    this.postOfficeNo = '',
     this.location = '',
     this.landmark = '',
     this.addressType = '',
@@ -52,6 +66,7 @@ class Branch {
     this.image = '',
     this.rating = 0,
     this.distance = 0.0,
+    this.taxRegistrationNo = '',
     this.serviceList = const [],
   });
 
@@ -63,6 +78,10 @@ class Branch {
     addressType = json['addressType'] ?? "";
     latitude = json['latitude'] ?? 0.0;
     longitude = json['longitude'] ?? 0.0;
+    telPhoneNo = json['tel'] ?? '';
+    mobNo = json['mob'] ?? '';
+    postOfficeNo = json['po'] ?? '';
+    taxRegistrationNo = json['trn'] ?? '';
     image = json['image'] ?? "";
     rating =
         json['rating'] != null ? double.parse(json['rating'].toString()) : 0;
@@ -80,6 +99,10 @@ class Branch {
     data['latitude'] = latitude;
     data['image'] = image;
     data['serviceId'] = serviceList;
+    data['tel'] = telPhoneNo;
+    data['mob'] = mobNo;
+    data['po'] = postOfficeNo;
+    data['trn'] = taxRegistrationNo;
     return data;
   }
 
@@ -92,12 +115,30 @@ class Branch {
     data['latitude'] = latitude;
     data['longitude'] = longitude;
     data['image'] = image;
+    data['tel'] = telPhoneNo;
+    data['mob'] = mobNo;
+    data['po'] = postOfficeNo;
+    data['trn'] = taxRegistrationNo;
+    log('tel post');
+    log(data['tel'].toString());
     return data;
   }
 
   Branch copyWith({
-     String? id, name, location, landmark, addressType, image,
-     double? latitude, longitude, distance, rating,
+    String? id,
+    name,
+    location,
+    landmark,
+    addressType,
+    image,
+    telPhoneNo,
+    mobNo,
+    postOfficeNo,
+    taxRegistrationNo,
+    double? latitude,
+    longitude,
+    distance,
+    rating,
     List<String>? serviceList,
   }) {
     return Branch(
@@ -112,6 +153,10 @@ class Branch {
       distance: distance ?? this.distance,
       rating: rating ?? this.rating,
       serviceList: serviceList ?? this.serviceList,
+      telPhoneNo: telPhoneNo ?? this.telPhoneNo,
+      mobNo: mobNo ?? this.mobNo,
+      postOfficeNo: postOfficeNo ?? this.postOfficeNo,
+      taxRegistrationNo: taxRegistrationNo ?? this.taxRegistrationNo,
     );
   }
 
