@@ -74,7 +74,7 @@ class ProfileView extends GetView<HomeController> {
               height: 8,
             ),
             Text(
-              'Harps Joseph',
+              'Harps Joeph',
               style: tsPoppins(size: 14, color: textDark80),
             ),
             Text(

@@ -106,3 +106,6 @@ const String apiUpdateCoupon = "${apiBase}users/editCoupon/";
 const String apiListReward = "${apiBase}users/listReward";
 const String apiPostReward = "${apiBase}users/addReward";
 const String apiPutReward = "${apiBase}users/editReward";
+//profile
+const String apiGetProfile = "${apiBase}users/getProfile";
+const String apiUpdateProfile = "${apiBase}users/editProfile";

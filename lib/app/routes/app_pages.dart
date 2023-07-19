@@ -1,4 +1,3 @@
-import 'package:al_dana_admin/app/modules/coupon/views/update_view.dart';
 import 'package:get/get.dart';
 
 import '../modules/add_banner/bindings/add_banner_binding.dart';
@@ -53,8 +52,6 @@ import '../modules/map_page/bindings/map_page_binding.dart';
 import '../modules/map_page/views/map_page_view.dart';
 import '../modules/package_list/bindings/package_list_binding.dart';
 import '../modules/package_list/views/package_list_view.dart';
-import '../modules/profile/bindings/profile_binding.dart';
-import '../modules/profile/views/profile_view.dart';
 import '../modules/reward/bindings/reward_binding.dart';
 import '../modules/reward/views/reward_view.dart';
 import '../modules/service_list/bindings/service_list_binding.dart';
@@ -93,11 +90,6 @@ class AppPages {
       name: _Paths.HOME,
       page: () => HomeView(),
       binding: HomeBinding(),
-    ),
-    GetPage(
-      name: _Paths.PROFILE,
-      page: () => ProfileView(),
-      binding: ProfileBinding(),
     ),
     GetPage(
       name: _Paths.AUTH,
@@ -214,7 +206,6 @@ class AppPages {
       page: () => AddServiceModeView(),
       binding: AddServiceModeBinding(),
     ),
-    
     GetPage(
       name: _Paths.VARIANT,
       page: () => const VariantView(),
@@ -265,12 +256,10 @@ class AppPages {
       page: () => AddCouponView(),
       binding: AddCouponBinding(),
     ),
-    
     GetPage(
       name: _Paths.REWARD,
       page: () => RewardView(),
       binding: RewardBinding(),
     ),
-    
   ];
 }
