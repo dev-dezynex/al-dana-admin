@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:al_dana_admin/app/data/providers/custom_time_slot_provider.dart';
 import 'package:al_dana_admin/app/data/providers/default_time_slot_provider.dart';
 import 'package:al_dana_admin/app/data/providers/list_days_provider.dart';
+import 'package:al_dana_admin/app/modules/Vat/providers/vat_provider.dart';
 import 'package:al_dana_admin/app/modules/profile/providers/profile_provider.dart';
 import 'package:al_dana_admin/app/data/providers/time_slot_provider.dart';
 import 'package:al_dana_admin/app/modules/default_custom_time_slot/providers/default_custom_time_slot_provider.dart';
@@ -62,6 +63,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (_) => ProfileProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => VATProvider(),
         ),
       ],
       child: GetMaterialApp(

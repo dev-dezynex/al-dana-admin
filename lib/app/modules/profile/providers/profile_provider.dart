@@ -22,7 +22,7 @@ class ProfileProvider extends ChangeNotifier {
 
   Future<void> fetchProfile() async {
     _isLoading = true;
-    notifyListeners();
+
     try {
       final response = await http.get(
         Uri.parse(apiGetProfile),

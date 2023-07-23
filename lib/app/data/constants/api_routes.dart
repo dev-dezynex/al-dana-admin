@@ -109,3 +109,6 @@ const String apiPutReward = "${apiBase}users/editReward";
 //profile
 const String apiGetProfile = "${apiBase}users/getProfile";
 const String apiUpdateProfile = "${apiBase}users/editProfile";
+//vat
+const String apiGetVat = "${apiBase}users/listVat";
+const String apiEditVat = "${apiBase}users/editVat";
