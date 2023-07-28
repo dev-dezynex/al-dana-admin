@@ -132,8 +132,8 @@ class HomeController extends GetxController {
   }
 
   void getBookings() async {
-    // bookingResult.value = await BookingProvider().getBookingHistory();
-    // bookingResult.refresh();
+    bookingResult.value = await BookingProvider().getBookingHistory();
+    bookingResult.refresh();
   }
 
   //for profile
