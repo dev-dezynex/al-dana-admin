@@ -1,3 +1,4 @@
+import 'package:al_dana_admin/app/data/models/booking_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -6,6 +7,7 @@ import '../controllers/home_controller.dart';
 
 class AdminHomeView extends GetView<HomeController> {
   const AdminHomeView({Key? key}) : super(key: key);
+  
 
   @override
   Widget build(BuildContext context) {
@@ -41,25 +43,25 @@ class AdminHomeView extends GetView<HomeController> {
                             tabs: [
                               Tab(
                                 child: Text(
-                                  'New',
+                                  'Pending',
                                   style: tsPoppins(size: 14, color: textDark80),
                                 ),
                               ),
                               Tab(
                                 child: Text(
-                                  'Approved',
+                                  'Confirmed',
                                   style: tsPoppins(size: 14, color: textDark80),
                                 ),
                               ),
                               Tab(
                                 child: Text(
-                                  'OnGoing',
+                                  'Assigned',
                                   style: tsPoppins(size: 14, color: textDark80),
                                 ),
                               ),
                               Tab(
                                 child: Text(
-                                  'Completed',
+                                  'Cancelled',
                                   style: tsPoppins(size: 14, color: textDark80),
                                 ),
                               ),
@@ -159,30 +161,31 @@ class AdminHomeView extends GetView<HomeController> {
   }
 
   viewTabs(int index, bookingResult) {
-    List bookings = <Booking>[];
-    if (controller.bookingResult.value.bookingList != null &&
-        controller.bookingResult.value.bookingList!.isNotEmpty) {
+    List bookings = <Data>[];
+
+    if (controller.bookingResult.value.data != null &&
+        controller.bookingResult.value.data!.isNotEmpty) {
       switch (index) {
         case 1:
-          bookings = controller.bookingResult.value.bookingList!
+          bookings = controller.bookingResult.value.data!
               .where((element) =>
-                  element.approvalStatus!.toLowerCase() == 'approved')
+                  element.approvalStatus!.toLowerCase() == 'confirmed')
               .toList();
           break;
         case 2:
-          bookings = controller.bookingResult.value.bookingList!
+          bookings = controller.bookingResult.value.data!
               .where((element) =>
-                  element.approvalStatus!.toLowerCase() == 'ongoing')
+                  element.approvalStatus!.toLowerCase() == 'assigned')
               .toList();
           break;
         case 3:
-          bookings = controller.bookingResult.value.bookingList!
+          bookings = controller.bookingResult.value.data!
               .where((element) =>
-                  element.approvalStatus!.toLowerCase() == 'completed')
+                  element.approvalStatus!.toLowerCase() == 'cancelled')
               .toList();
           break;
         default:
-          bookings = controller.bookingResult.value.bookingList!
+          bookings = controller.bookingResult.value.data!
               .where((element) =>
                   element.approvalStatus!.toLowerCase() == 'pending')
               .toList();
@@ -195,7 +198,9 @@ class AdminHomeView extends GetView<HomeController> {
         itemCount: bookings.length,
         physics: const NeverScrollableScrollPhysics(),
         itemBuilder: (con, i) {
-          return BookingTile2(booking: bookings[i]);
+          return BookingTile2(
+            booking: bookings[i],controller: controller,
+          );
         });
   }
 }

@@ -41,6 +41,9 @@ class CustomTimeSlotProvider extends ChangeNotifier {
         _customTimeSlot = CustomTimeSlot.fromJson(
           jsonDecode(response.body),
         );
+      } else {
+        _customTimeSlot = null;
+        _hasError = true;
       }
     } catch (error) {
       _customTimeSlot = null;

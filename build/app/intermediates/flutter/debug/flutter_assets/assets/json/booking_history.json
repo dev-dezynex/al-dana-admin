@@ -3,1862 +3,832 @@
     "message": "",
     "data": [
         {
-            "_id": "1",
-            "date": "22-12-2022",
-            "slot": "10 am - 11 am",
-            "approval_status": "PENDING",
-            "price": 450.50,
-            "auto_spare_select": true,
-            "packages": [
+            "_id": "64b7d17c7467969dc59cf1c5",
+            "branchId": "64aead816a835547c5db68cf",
+            "customerId": "64af7e996a835547c5db6ab5",
+            "vehicleId": null,
+            "categoryId": "64af76146a835547c5db690f",
+            "service": [
                 {
-                    "_id": "1",
-                    "title": "Car Wash Platinum",
-                    "image": "assets/images/img_service_5.png",
-                    "price": 120.32,
-                    "bg_card_color": "#00BDFE",
-                    "services": [
-                        {
-                            "_id": "isdksdjfj12k23nnkf",
-                            "title": "Indoor Perfumery",
-                            "sub_title": "In publishing and graphic design of car wash",
-                            "description": "In publishing and graphic design of car wash",
-                            "image": "assets/images/img_service_4.png",
-                            "bg_card_color": "#FF3868",
-                            "branch": [
-                                {
-                                    "_id": "1",
-                                    "name": "Al Dana Station 1",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5908657,
-                                    "longitude": 76.8505975,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.3,
-                                    "distance": "6 Km"
-                                },
-                                {
-                                    "_id": "2",
-                                    "name": "Al Dana Station 2",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5714731,
-                                    "longitude": 76.8979696,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.2,
-                                    "distance": "8 Km"
-                                },
-                                {
-                                    "_id": "3",
-                                    "name": "Al Dana Station 3",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5678277,
-                                    "longitude": 76.8929361,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.1,
-                                    "distance": "12 Km"
-                                }
-                            ],
-                            "price": 183.23,
-                            "works": [
-                                {
-                                    "_id": "1",
-                                    "title": "washing",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "2",
-                                    "title": "soaping",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "3",
-                                    "title": "washing after soaping",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "4",
-                                    "title": "draining",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                }
-                            ]
-                        },
-                        {
-                            "_id": "isdksdjfj12k23nnkf",
-                            "title": "Interior & Exterior Washing",
-                            "sub_title": "In publishing and graphic design of car wash",
-                            "description": "In publishing and graphic design of car wash",
-                            "image": "assets/images/img_service_4.png",
-                            "bg_card_color": "#FFC643",
-                            "branch": [
-                                {
-                                    "_id": "1",
-                                    "name": "Al Dana Station 1",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5908657,
-                                    "longitude": 76.8505975,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.3,
-                                    "distance": "6 Km"
-                                },
-                                {
-                                    "_id": "2",
-                                    "name": "Al Dana Station 2",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5714731,
-                                    "longitude": 76.8979696,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.2,
-                                    "distance": "8 Km"
-                                },
-                                {
-                                    "_id": "3",
-                                    "name": "Al Dana Station 3",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5678277,
-                                    "longitude": 76.8929361,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.1,
-                                    "distance": "12 Km"
-                                }
-                            ],
-                            "price": 183.23,
-                            "works": [
-                                {
-                                    "_id": "1",
-                                    "title": "washing",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "2",
-                                    "title": "soaping",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "3",
-                                    "title": "washing after soaping",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "4",
-                                    "title": "draining",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                }
-                            ]
-                        },
-                        {
-                            "_id": "isdksdjfj12k23nnkf",
-                            "title": "Polishing the Tyre",
-                            "sub_title": "In publishing and graphic design of car wash",
-                            "description": "In publishing and graphic design of car wash",
-                            "image": "assets/images/img_service_4.png",
-                            "bg_card_color": "#06D39E",
-                            "branch": [
-                                {
-                                    "_id": "1",
-                                    "name": "Al Dana Station 1",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5908657,
-                                    "longitude": 76.8505975,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.3,
-                                    "distance": "6 Km"
-                                },
-                                {
-                                    "_id": "2",
-                                    "name": "Al Dana Station 2",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5714731,
-                                    "longitude": 76.8979696,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.2,
-                                    "distance": "8 Km"
-                                },
-                                {
-                                    "_id": "3",
-                                    "name": "Al Dana Station 3",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5678277,
-                                    "longitude": 76.8929361,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.1,
-                                    "distance": "12 Km"
-                                }
-                            ],
-                            "price": 183.23,
-                            "works": [
-                                {
-                                    "_id": "1",
-                                    "title": "washing",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "2",
-                                    "title": "soaping",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "3",
-                                    "title": "washing after soaping",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "4",
-                                    "title": "draining",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                }
-                            ]
-                        },
-                        {
-                            "_id": "isdksdjfj12k23nnkf",
-                            "title": "Doorstep car wash",
-                            "sub_title": "In publishing and graphic design of car wash",
-                            "description": "In publishing and graphic design of car wash",
-                            "image": "assets/images/img_service_4.png",
-                            "bg_card_color": "#118AB2",
-                            "branch": [
-                                {
-                                    "_id": "1",
-                                    "name": "Al Dana Station 1",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5908657,
-                                    "longitude": 76.8505975,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.3,
-                                    "distance": "6 Km"
-                                },
-                                {
-                                    "_id": "2",
-                                    "name": "Al Dana Station 2",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5714731,
-                                    "longitude": 76.8979696,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.2,
-                                    "distance": "8 Km"
-                                },
-                                {
-                                    "_id": "3",
-                                    "name": "Al Dana Station 3",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5678277,
-                                    "longitude": 76.8929361,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.1,
-                                    "distance": "12 Km"
-                                }
-                            ],
-                            "price": 183.23,
-                            "works": [
-                                {
-                                    "_id": "1",
-                                    "title": "washing",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "2",
-                                    "title": "soaping",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "3",
-                                    "title": "washing after soaping",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "4",
-                                    "title": "draining",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                }
-                            ]
-                        }
-                    ]
+                    "serviceId": {
+                        "_id": "64af76cb6a835547c5db694b",
+                        "title": "Wheel alignment ",
+                        "description": "dbdhdjsjsk",
+                        "bg_card_color": "#09ddbd",
+                        "image": "/api/v1/users/image_1689220811649.png",
+                        "duration": "30",
+                        "categoryId": "64af762a6a835547c5db6913",
+                        "servicePeriod": 35,
+                        "price": 25,
+                        
+                        "deletable": false,
+                        "createdAt": "2023-07-13T04:00:11.772Z",
+                        "updatedAt": "2023-07-13T04:00:11.772Z",
+                        "__v": 0,
+                        "spareCategoryId": "64b627fef59921b6554ed4e5"
+                    },
+                    "serviceAmount": 25,
+                    "_id": "64b7d17d7467969dc59cf1c6"
                 }
             ],
-            "services": [
+            "package": [
                 {
-                    "_id": "1",
-                    "title": "Manual Car Wash",
-                    "sub_title": "In publishing and graphic design of car wash",
-                    "description": "In publishing and graphic design of car wash",
-                    "image": "assets/images/img_service_4.png",
-                    "bg_card_color": "#FF3868",
-                    "branch": [
-                        {
-                            "_id": "1",
-                            "name": "Al Dana Station 1",
-                            "location": "Ras Al Khaimah",
-                            "latitude": 8.5908657,
-                            "longitude": 76.8505975,
-                            "image": "assets/images/img_branch_1.png",
-                            "rating": 4.3,
-                            "distance": "6 Km"
-                        },
-                        {
-                            "_id": "2",
-                            "name": "Al Dana Station 2",
-                            "location": "Ras Al Khaimah",
-                            "latitude": 8.5714731,
-                            "longitude": 76.8979696,
-                            "image": "assets/images/img_branch_1.png",
-                            "rating": 4.2,
-                            "distance": "8 Km"
-                        },
-                        {
-                            "_id": "3",
-                            "name": "Al Dana Station 3",
-                            "location": "Ras Al Khaimah",
-                            "latitude": 8.5678277,
-                            "longitude": 76.8929361,
-                            "image": "assets/images/img_branch_1.png",
-                            "rating": 4.1,
-                            "distance": "12 Km"
-                        }
-                    ],
-                    "price": 183.23,
-                    "works": [
-                        {
-                            "_id": "1",
-                            "title": "washing",
-                            "sub_title": "string",
-                            "description": "string",
-                            "price": 123.3,
-                            "is_item_change": true,
-                            "categoy_id": "string"
-                        },
-                        {
-                            "_id": "2",
-                            "title": "soaping",
-                            "sub_title": "string",
-                            "description": "string",
-                            "price": 123.3,
-                            "is_item_change": true,
-                            "categoy_id": "string"
-                        },
-                        {
-                            "_id": "3",
-                            "title": "washing after soaping",
-                            "sub_title": "string",
-                            "description": "string",
-                            "price": 123.3,
-                            "is_item_change": true,
-                            "categoy_id": "string"
-                        },
-                        {
-                            "_id": "4",
-                            "title": "draining",
-                            "sub_title": "string",
-                            "description": "string",
-                            "price": 123.3,
-                            "is_item_change": true,
-                            "categoy_id": "string"
-                        }
-                    ]
-                },
-                {
-                    "_id": "2",
-                    "title": "Oil Change",
-                    "sub_title": "In publishing and graphic design of car wash",
-                    "description": "In publishing and graphic design of car wash",
-                    "image": "assets/images/img_service_4.png",
-                    "bg_card_color": "#FF3868",
-                    "branch": [
-                        {
-                            "_id": "1",
-                            "name": "Al Dana Station 1",
-                            "location": "Ras Al Khaimah",
-                            "latitude": 8.5908657,
-                            "longitude": 76.8505975,
-                            "image": "assets/images/img_branch_1.png",
-                            "rating": 4.3,
-                            "distance": "6 Km"
-                        },
-                        {
-                            "_id": "2",
-                            "name": "Al Dana Station 2",
-                            "location": "Ras Al Khaimah",
-                            "latitude": 8.5714731,
-                            "longitude": 76.8979696,
-                            "image": "assets/images/img_branch_1.png",
-                            "rating": 4.2,
-                            "distance": "8 Km"
-                        },
-                        {
-                            "_id": "3",
-                            "name": "Al Dana Station 3",
-                            "location": "Ras Al Khaimah",
-                            "latitude": 8.5678277,
-                            "longitude": 76.8929361,
-                            "image": "assets/images/img_branch_1.png",
-                            "rating": 4.1,
-                            "distance": "12 Km"
-                        }
-                    ],
-                    "price": 183.23,
-                    "works": [
-                        {
-                            "_id": "1",
-                            "title": "washing",
-                            "sub_title": "string",
-                            "description": "string",
-                            "price": 123.3,
-                            "is_item_change": true,
-                            "categoy_id": "string"
-                        },
-                        {
-                            "_id": "2",
-                            "title": "soaping",
-                            "sub_title": "string",
-                            "description": "string",
-                            "price": 123.3,
-                            "is_item_change": true,
-                            "categoy_id": "string"
-                        },
-                        {
-                            "_id": "3",
-                            "title": "washing after soaping",
-                            "sub_title": "string",
-                            "description": "string",
-                            "price": 123.3,
-                            "is_item_change": true,
-                            "categoy_id": "string"
-                        },
-                        {
-                            "_id": "4",
-                            "title": "draining",
-                            "sub_title": "string",
-                            "description": "string",
-                            "price": 123.3,
-                            "is_item_change": true,
-                            "categoy_id": "string"
-                        }
-                    ]
+                    "packageId": {
+                        "_id": "64af77166a835547c5db698b",
+                        "title": "Car wash Gold",
+                        "description": "hdjdjdjdj",
+                        "image": "/api/v1/users/image_1689220886038.png",
+                        "price": 40,
+                        "bg_card_color": "#ff3868",
+                        
+                        "services": [
+                            {
+                                "_id": "64af76826a835547c5db6926",
+                                "title": "Manual car wash ",
+                                "description": "krkfkfkfkdkd",
+                                "bg_card_color": "#09ddbd",
+                                "image": "/api/v1/users/image_1689220738684.png",
+                                "duration": "15",
+                                "categoryId": "64af76146a835547c5db690f",
+                                "servicePeriod": 30,
+                                "price": 10,
+                                
+                                "deletable": false,
+                                "createdAt": "2023-07-13T03:58:58.831Z",
+                                "updatedAt": "2023-07-13T03:58:58.831Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "64af76cb6a835547c5db694b",
+                                "title": "Wheel alignment ",
+                                "description": "dbdhdjsjsk",
+                                "bg_card_color": "#09ddbd",
+                                "image": "/api/v1/users/image_1689220811649.png",
+                                "duration": "30",
+                                "categoryId": "64af762a6a835547c5db6913",
+                                "servicePeriod": 35,
+                                "price": 25,
+                                
+                                "deletable": false,
+                                "createdAt": "2023-07-13T04:00:11.772Z",
+                                "updatedAt": "2023-07-13T04:00:11.772Z",
+                                "__v": 0,
+                                "spareCategoryId": "64b627fef59921b6554ed4e5"
+                            },
+                            {
+                                "_id": "64af76a36a835547c5db6937",
+                                "title": "Body wash ",
+                                "description": "djsjsjsjhxhchdbdhe",
+                                "bg_card_color": "#09ddbd",
+                                "image": "/api/v1/users/image_1689220770921.png",
+                                "duration": "30",
+                                "categoryId": "64af76146a835547c5db690f",
+                                "servicePeriod": 30,
+                                "price": 15,
+                                
+                                "deletable": false,
+                                "createdAt": "2023-07-13T03:59:31.041Z",
+                                "updatedAt": "2023-07-13T03:59:31.041Z",
+                                "__v": 0
+                            }
+                        ],
+                        "deletable": false,
+                        "createdAt": "2023-07-13T04:01:26.138Z",
+                        "updatedAt": "2023-07-13T04:01:26.138Z",
+                        "__v": 0
+                    },
+                    "packageAmount": 40,
+                    "_id": "64b7d17d7467969dc59cf1c7"
                 }
             ],
-            "spares": [
+            "spare": [
                 {
-                    "_id": "1",
-                    "category_id": "",
-                    "name": "string",
-                    "price": 123.4,
-                    "image": "string"
+                    "spareId": "64b62810f59921b6554ed4f5",
+                    "spareAmount": 55,
+                    "_id": "64b7d17d7467969dc59cf1c8"
                 }
             ],
-            "vehicle": {
-                "_id": "1",
-                "brand": {
-                    "_id": "1",
-                    "name": "Abarth",
-                    "image": "assets/images/img_brand_1.png"
-                },
-                "variant": {
-                    "_id": "string",
-                    "name": "Model X"
-                },
-                "year": {
-                    "_id": "6",
-                    "name": "2015"
-                },
-                "color": {
-                    "_id": "8",
-                    "name": "Blue",
-                    "code": "#3C8AFF"
-                },
-                "plate_code": "string",
-                "plate_number": "string",
-                "image": "assets/images/img_brand_1.png"
-            },
-            "branch": {
-                "_id": "1",
-                "name": "Al Dana Station",
-                "location": "Ras Al Khaimah",
-                "latitude": 8.5908657,
-                "longitude": 76.8505975,
-                "image": "assets/images/img_branch_1.png",
-                "rating": 4.3,
-                "distance": "6 Km"
-            },
-            "mode": {
-                "_id": "1",
-                "title": "DOORSTEP",
-                "description": "In publishing and graphic design of car wash",
-                "bg_card_color": "#FF3868"
-            }
+            "serviceModeId": "64aead176a835547c5db68c9",
+            "totalAmount": 120,
+            "discountAmount": 0,
+            "approvalStatus": "Pending",
+            "timeSlotId": "64aeacc66a835547c5db68b1",
+            "bookingType": "Normal",
+            "date": "2023-07-21",
+            "deletable": false,
+            "createdAt": "2023-07-19T12:05:17.016Z",
+            "updatedAt": "2023-07-19T12:05:17.016Z",
+            "__v": 0
         },
         {
-            "_id": "2",
-            "date": "24-12-2022",
-            "slot": "10 am - 11 am",
-            "approval_status": "PENDING",
-            "price": 450.50,
-            "auto_spare_select": true,
-            "packages": [
+            "_id": "64bd3d70b0a161b516a542a4",
+            "branchId": "64aead816a835547c5db68cf",
+            "customerId": "64af7e996a835547c5db6ab5",
+            "vehicleId": null,
+            "categoryId": "64af76146a835547c5db690f",
+            "service": [
                 {
-                    "_id": "1",
-                    "title": "Car Wash Platinum",
-                    "image": "assets/images/img_service_5.png",
-                    "price": 120.32,
-                    "bg_card_color": "#00BDFE",
-                    "services": [
-                        {
-                            "_id": "isdksdjfj12k23nnkf",
-                            "title": "Indoor Perfumery",
-                            "sub_title": "In publishing and graphic design of car wash",
-                            "description": "In publishing and graphic design of car wash",
-                            "image": "assets/images/img_service_4.png",
-                            "bg_card_color": "#FF3868",
-                            "branch": [
-                                {
-                                    "_id": "1",
-                                    "name": "Al Dana Station 1",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5908657,
-                                    "longitude": 76.8505975,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.3,
-                                    "distance": "6 Km"
-                                },
-                                {
-                                    "_id": "2",
-                                    "name": "Al Dana Station 2",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5714731,
-                                    "longitude": 76.8979696,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.2,
-                                    "distance": "8 Km"
-                                },
-                                {
-                                    "_id": "3",
-                                    "name": "Al Dana Station 3",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5678277,
-                                    "longitude": 76.8929361,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.1,
-                                    "distance": "12 Km"
-                                }
-                            ],
-                            "price": 183.23,
-                            "works": [
-                                {
-                                    "_id": "1",
-                                    "title": "washing",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "2",
-                                    "title": "soaping",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "3",
-                                    "title": "washing after soaping",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "4",
-                                    "title": "draining",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                }
-                            ]
-                        },
-                        {
-                            "_id": "isdksdjfj12k23nnkf",
-                            "title": "Interior & Exterior Washing",
-                            "sub_title": "In publishing and graphic design of car wash",
-                            "description": "In publishing and graphic design of car wash",
-                            "image": "assets/images/img_service_4.png",
-                            "bg_card_color": "#FFC643",
-                            "branch": [
-                                {
-                                    "_id": "1",
-                                    "name": "Al Dana Station 1",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5908657,
-                                    "longitude": 76.8505975,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.3,
-                                    "distance": "6 Km"
-                                },
-                                {
-                                    "_id": "2",
-                                    "name": "Al Dana Station 2",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5714731,
-                                    "longitude": 76.8979696,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.2,
-                                    "distance": "8 Km"
-                                },
-                                {
-                                    "_id": "3",
-                                    "name": "Al Dana Station 3",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5678277,
-                                    "longitude": 76.8929361,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.1,
-                                    "distance": "12 Km"
-                                }
-                            ],
-                            "price": 183.23,
-                            "works": [
-                                {
-                                    "_id": "1",
-                                    "title": "washing",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "2",
-                                    "title": "soaping",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "3",
-                                    "title": "washing after soaping",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "4",
-                                    "title": "draining",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                }
-                            ]
-                        },
-                        {
-                            "_id": "isdksdjfj12k23nnkf",
-                            "title": "Polishing the Tyre",
-                            "sub_title": "In publishing and graphic design of car wash",
-                            "description": "In publishing and graphic design of car wash",
-                            "image": "assets/images/img_service_4.png",
-                            "bg_card_color": "#06D39E",
-                            "branch": [
-                                {
-                                    "_id": "1",
-                                    "name": "Al Dana Station 1",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5908657,
-                                    "longitude": 76.8505975,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.3,
-                                    "distance": "6 Km"
-                                },
-                                {
-                                    "_id": "2",
-                                    "name": "Al Dana Station 2",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5714731,
-                                    "longitude": 76.8979696,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.2,
-                                    "distance": "8 Km"
-                                },
-                                {
-                                    "_id": "3",
-                                    "name": "Al Dana Station 3",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5678277,
-                                    "longitude": 76.8929361,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.1,
-                                    "distance": "12 Km"
-                                }
-                            ],
-                            "price": 183.23,
-                            "works": [
-                                {
-                                    "_id": "1",
-                                    "title": "washing",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "2",
-                                    "title": "soaping",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "3",
-                                    "title": "washing after soaping",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "4",
-                                    "title": "draining",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                }
-                            ]
-                        },
-                        {
-                            "_id": "isdksdjfj12k23nnkf",
-                            "title": "Doorstep car wash",
-                            "sub_title": "In publishing and graphic design of car wash",
-                            "description": "In publishing and graphic design of car wash",
-                            "image": "assets/images/img_service_4.png",
-                            "bg_card_color": "#118AB2",
-                            "branch": [
-                                {
-                                    "_id": "1",
-                                    "name": "Al Dana Station 1",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5908657,
-                                    "longitude": 76.8505975,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.3,
-                                    "distance": "6 Km"
-                                },
-                                {
-                                    "_id": "2",
-                                    "name": "Al Dana Station 2",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5714731,
-                                    "longitude": 76.8979696,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.2,
-                                    "distance": "8 Km"
-                                },
-                                {
-                                    "_id": "3",
-                                    "name": "Al Dana Station 3",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5678277,
-                                    "longitude": 76.8929361,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.1,
-                                    "distance": "12 Km"
-                                }
-                            ],
-                            "price": 183.23,
-                            "works": [
-                                {
-                                    "_id": "1",
-                                    "title": "washing",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "2",
-                                    "title": "soaping",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "3",
-                                    "title": "washing after soaping",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "4",
-                                    "title": "draining",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                }
-                            ]
-                        }
-                    ]
+                    "serviceId": {
+                        "_id": "64af76cb6a835547c5db694b",
+                        "title": "Wheel alignment ",
+                        "description": "dbdhdjsjsk",
+                        "bg_card_color": "#09ddbd",
+                        "image": "/api/v1/users/image_1689220811649.png",
+                        "duration": "30",
+                        "categoryId": "64af762a6a835547c5db6913",
+                        "servicePeriod": 35,
+                        "price": 25,
+                        
+                        "deletable": false,
+                        "createdAt": "2023-07-13T04:00:11.772Z",
+                        "updatedAt": "2023-07-13T04:00:11.772Z",
+                        "__v": 0,
+                        "spareCategoryId": "64b627fef59921b6554ed4e5"
+                    },
+                    "serviceAmount": 25,
+                    "_id": "64bd3d70b0a161b516a542a5"
                 }
             ],
-            "services": [
+            "package": [
                 {
-                    "_id": "1",
-                    "title": "Manual Car Wash",
-                    "sub_title": "In publishing and graphic design of car wash",
-                    "description": "In publishing and graphic design of car wash",
-                    "image": "assets/images/img_service_4.png",
-                    "bg_card_color": "#FF3868",
-                    "station": [
-                        "12eoriu545f7g87gfg",
-                        "12eoriu545f7g87gff",
-                        "12eoriu545f7g87gfr"
-                    ],
-                    "price": 183.23,
-                    "works": [
-                        {
-                            "_id": "1",
-                            "title": "washing",
-                            "sub_title": "string",
-                            "description": "string",
-                            "price": 123.3,
-                            "is_item_change": true,
-                            "categoy_id": "string"
-                        },
-                        {
-                            "_id": "2",
-                            "title": "soaping",
-                            "sub_title": "string",
-                            "description": "string",
-                            "price": 123.3,
-                            "is_item_change": true,
-                            "categoy_id": "string"
-                        },
-                        {
-                            "_id": "3",
-                            "title": "washing after soaping",
-                            "sub_title": "string",
-                            "description": "string",
-                            "price": 123.3,
-                            "is_item_change": true,
-                            "categoy_id": "string"
-                        },
-                        {
-                            "_id": "4",
-                            "title": "draining",
-                            "sub_title": "string",
-                            "description": "string",
-                            "price": 123.3,
-                            "is_item_change": true,
-                            "categoy_id": "string"
-                        }
-                    ]
+                    "packageId": {
+                        "_id": "64af76f66a835547c5db6971",
+                        "title": "Car wash platinum",
+                        "description": "jcjdjdjd",
+                        "image": "/api/v1/users/image_1689220854665.png",
+                        "price": 30,
+                        "bg_card_color": "#ff3868",
+                        
+                        "services": [
+                            {
+                                "_id": "64af76826a835547c5db6926",
+                                "title": "Manual car wash ",
+                                "description": "krkfkfkfkdkd",
+                                "bg_card_color": "#09ddbd",
+                                "image": "/api/v1/users/image_1689220738684.png",
+                                "duration": "15",
+                                "categoryId": "64af76146a835547c5db690f",
+                                "servicePeriod": 30,
+                                "price": 10,
+                                
+                                "deletable": false,
+                                "createdAt": "2023-07-13T03:58:58.831Z",
+                                "updatedAt": "2023-07-13T03:58:58.831Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "64af76a36a835547c5db6937",
+                                "title": "Body wash ",
+                                "description": "djsjsjsjhxhchdbdhe",
+                                "bg_card_color": "#09ddbd",
+                                "image": "/api/v1/users/image_1689220770921.png",
+                                "duration": "30",
+                                "categoryId": "64af76146a835547c5db690f",
+                                "servicePeriod": 30,
+                                "price": 15,
+                                
+                                "deletable": false,
+                                "createdAt": "2023-07-13T03:59:31.041Z",
+                                "updatedAt": "2023-07-13T03:59:31.041Z",
+                                "__v": 0
+                            }
+                        ],
+                        "deletable": false,
+                        "createdAt": "2023-07-13T04:00:54.845Z",
+                        "updatedAt": "2023-07-13T04:00:54.845Z",
+                        "__v": 0
+                    },
+                    "packageAmount": 30,
+                    "_id": "64bd3d70b0a161b516a542a6"
                 }
             ],
-            "spares": [
+            "spare": [
                 {
-                    "_id": "1",
-                    "category_id": "",
-                    "name": "string",
-                    "price": 123.4,
-                    "image": "string"
+                    "spareId": "64b62810f59921b6554ed4f5",
+                    "spareAmount": 55,
+                    "_id": "64bd3d70b0a161b516a542a7"
                 }
             ],
-            "vehicle": {
-                "_id": "1",
-                "brand": {
-                    "_id": "1",
-                    "name": "Abarth",
-                    "image": "assets/images/img_brand_1.png"
-                },
-                "variant": {
-                    "_id": "string",
-                    "name": "Model X"
-                },
-                "year": {
-                    "_id": "6",
-                    "name": "2015"
-                },
-                "color": {
-                    "_id": "8",
-                    "name": "Blue",
-                    "code": "#3C8AFF"
-                },
-                "plate_code": "string",
-                "plate_number": "string",
-                "image": "assets/images/img_brand_1.png"
-            },
-            "branch": {
-                "_id": "1",
-                "name": "Al Dana Station",
-                "location": "Ras Al Khaimah",
-                "latitude": 8.5908657,
-                "longitude": 76.8505975,
-                "image": "assets/images/img_branch_1.png",
-                "rating": 4.3,
-                "distance": "6 Km"
-            },
-            "mode": {
-                "_id": "1",
-                "title": "DOORSTEP",
-                "description": "In publishing and graphic design of car wash",
-                "bg_card_color": "#FF3868"
-            }
+            "serviceModeId": "64aead176a835547c5db68c9",
+            "totalAmount": 110,
+            "discountAmount": 0,
+            "approvalStatus": "Pending",
+            "timeSlotId": "64aeacc66a835547c5db68b1",
+            "bookingType": "Normal",
+            "date": "2023-07-23",
+            "deletable": false,
+            "createdAt": "2023-07-23T14:47:12.967Z",
+            "updatedAt": "2023-07-23T14:47:12.967Z",
+            "__v": 0
         },
         {
-            "_id": "3",
-            "date": "26-12-2022",
-            "slot": "10 am - 11 am",
-            "approval_status": "PENDING",
-            "price": 450.50,
-            "auto_spare_select": true,
-            "packages": [
-                {
-                    "_id": "1",
-                    "title": "Car Wash Platinum",
-                    "image": "assets/images/img_service_5.png",
-                    "price": 120.32,
-                    "bg_card_color": "#00BDFE",
-                    "services": [
-                        {
-                            "_id": "isdksdjfj12k23nnkf",
-                            "title": "Indoor Perfumery",
-                            "sub_title": "In publishing and graphic design of car wash",
-                            "description": "In publishing and graphic design of car wash",
-                            "image": "assets/images/img_service_4.png",
-                            "bg_card_color": "#FF3868",
-                            "branch": [
-                                {
-                                    "_id": "1",
-                                    "name": "Al Dana Station 1",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5908657,
-                                    "longitude": 76.8505975,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.3,
-                                    "distance": "6 Km"
-                                },
-                                {
-                                    "_id": "2",
-                                    "name": "Al Dana Station 2",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5714731,
-                                    "longitude": 76.8979696,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.2,
-                                    "distance": "8 Km"
-                                },
-                                {
-                                    "_id": "3",
-                                    "name": "Al Dana Station 3",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5678277,
-                                    "longitude": 76.8929361,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.1,
-                                    "distance": "12 Km"
-                                }
-                            ],
-                            "price": 183.23,
-                            "works": [
-                                {
-                                    "_id": "1",
-                                    "title": "washing",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "2",
-                                    "title": "soaping",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "3",
-                                    "title": "washing after soaping",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "4",
-                                    "title": "draining",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                }
-                            ]
-                        },
-                        {
-                            "_id": "isdksdjfj12k23nnkf",
-                            "title": "Interior & Exterior Washing",
-                            "sub_title": "In publishing and graphic design of car wash",
-                            "description": "In publishing and graphic design of car wash",
-                            "image": "assets/images/img_service_4.png",
-                            "bg_card_color": "#FFC643",
-                            "branch": [
-                                {
-                                    "_id": "1",
-                                    "name": "Al Dana Station 1",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5908657,
-                                    "longitude": 76.8505975,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.3,
-                                    "distance": "6 Km"
-                                },
-                                {
-                                    "_id": "2",
-                                    "name": "Al Dana Station 2",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5714731,
-                                    "longitude": 76.8979696,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.2,
-                                    "distance": "8 Km"
-                                },
-                                {
-                                    "_id": "3",
-                                    "name": "Al Dana Station 3",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5678277,
-                                    "longitude": 76.8929361,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.1,
-                                    "distance": "12 Km"
-                                }
-                            ],
-                            "price": 183.23,
-                            "works": [
-                                {
-                                    "_id": "1",
-                                    "title": "washing",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "2",
-                                    "title": "soaping",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "3",
-                                    "title": "washing after soaping",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "4",
-                                    "title": "draining",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                }
-                            ]
-                        },
-                        {
-                            "_id": "isdksdjfj12k23nnkf",
-                            "title": "Polishing the Tyre",
-                            "sub_title": "In publishing and graphic design of car wash",
-                            "description": "In publishing and graphic design of car wash",
-                            "image": "assets/images/img_service_4.png",
-                            "bg_card_color": "#06D39E",
-                            "branch": [
-                                {
-                                    "_id": "1",
-                                    "name": "Al Dana Station 1",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5908657,
-                                    "longitude": 76.8505975,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.3,
-                                    "distance": "6 Km"
-                                },
-                                {
-                                    "_id": "2",
-                                    "name": "Al Dana Station 2",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5714731,
-                                    "longitude": 76.8979696,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.2,
-                                    "distance": "8 Km"
-                                },
-                                {
-                                    "_id": "3",
-                                    "name": "Al Dana Station 3",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5678277,
-                                    "longitude": 76.8929361,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.1,
-                                    "distance": "12 Km"
-                                }
-                            ],
-                            "price": 183.23,
-                            "works": [
-                                {
-                                    "_id": "1",
-                                    "title": "washing",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "2",
-                                    "title": "soaping",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "3",
-                                    "title": "washing after soaping",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "4",
-                                    "title": "draining",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                }
-                            ]
-                        },
-                        {
-                            "_id": "isdksdjfj12k23nnkf",
-                            "title": "Doorstep car wash",
-                            "sub_title": "In publishing and graphic design of car wash",
-                            "description": "In publishing and graphic design of car wash",
-                            "image": "assets/images/img_service_4.png",
-                            "bg_card_color": "#118AB2",
-                            "branch": [
-                                {
-                                    "_id": "1",
-                                    "name": "Al Dana Station 1",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5908657,
-                                    "longitude": 76.8505975,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.3,
-                                    "distance": "6 Km"
-                                },
-                                {
-                                    "_id": "2",
-                                    "name": "Al Dana Station 2",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5714731,
-                                    "longitude": 76.8979696,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.2,
-                                    "distance": "8 Km"
-                                },
-                                {
-                                    "_id": "3",
-                                    "name": "Al Dana Station 3",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5678277,
-                                    "longitude": 76.8929361,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.1,
-                                    "distance": "12 Km"
-                                }
-                            ],
-                            "price": 183.23,
-                            "works": [
-                                {
-                                    "_id": "1",
-                                    "title": "washing",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "2",
-                                    "title": "soaping",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "3",
-                                    "title": "washing after soaping",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "4",
-                                    "title": "draining",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ],
-            "services": [
-                {
-                    "_id": "1",
-                    "title": "Manual Car Wash",
-                    "sub_title": "In publishing and graphic design of car wash",
-                    "description": "In publishing and graphic design of car wash",
-                    "image": "assets/images/img_service_4.png",
-                    "bg_card_color": "#FF3868",
-                    "station": [
-                        "12eoriu545f7g87gfg",
-                        "12eoriu545f7g87gff",
-                        "12eoriu545f7g87gfr"
-                    ],
-                    "price": 183.23,
-                    "works": [
-                        {
-                            "_id": "1",
-                            "title": "washing",
-                            "sub_title": "string",
-                            "description": "string",
-                            "price": 123.3,
-                            "is_item_change": true,
-                            "categoy_id": "string"
-                        },
-                        {
-                            "_id": "2",
-                            "title": "soaping",
-                            "sub_title": "string",
-                            "description": "string",
-                            "price": 123.3,
-                            "is_item_change": true,
-                            "categoy_id": "string"
-                        },
-                        {
-                            "_id": "3",
-                            "title": "washing after soaping",
-                            "sub_title": "string",
-                            "description": "string",
-                            "price": 123.3,
-                            "is_item_change": true,
-                            "categoy_id": "string"
-                        },
-                        {
-                            "_id": "4",
-                            "title": "draining",
-                            "sub_title": "string",
-                            "description": "string",
-                            "price": 123.3,
-                            "is_item_change": true,
-                            "categoy_id": "string"
-                        }
-                    ]
-                }
-            ],
-            "spares": [
-                {
-                    "_id": "1",
-                    "category_id": "",
-                    "name": "string",
-                    "price": 123.4,
-                    "image": "string"
-                }
-            ],
-            "vehicle": {
-                "_id": "1",
-                "brand": {
-                    "_id": "1",
-                    "name": "Abarth",
-                    "image": "assets/images/img_brand_1.png"
-                },
-                "variant": {
-                    "_id": "string",
-                    "name": "Model X"
-                },
-                "year": {
-                    "_id": "6",
-                    "name": "2015"
-                },
+            "_id": "64bf642727a715176ce189de",
+            "branchId": "64aeadb96a835547c5db68d5",
+            "customerId": "64af7e996a835547c5db6ab5",
+            "AddressId": "64bf641f27a715176ce189d5",
+            "vehicleId": {
                 "color": {
-                    "_id": "8",
-                    "name": "Blue",
-                    "code": "#3C8AFF"
+                    "name": "rerer",
+                    "code": "FF75289B"
                 },
-                "plate_code": "string",
-                "plate_number": "string",
-                "image": "assets/images/img_brand_1.png"
+                "_id": "64be741527a715176ce18767",
+                "customerId": "64af7e996a835547c5db6ab5",
+                "carBrandId": {
+                    "_id": "64aeaffe6a835547c5db68de",
+                    "title": "Nissan",
+                    "description": "test description ",
+                    "image": "/api/v1/users/image_1689169917650.jpeg",
+                    "deletable": false,
+                    "createdAt": "2023-07-12T13:51:58.141Z",
+                    "updatedAt": "2023-07-12T13:51:58.141Z",
+                    "__v": 0
+                },
+                "carModelId": {
+                    "_id": "64aeb1466a835547c5db68e9",
+                    "title": "Patrol",
+                    "description": "test",
+                    "image": "/api/v1/users/image_1689170245720.jpeg",
+                    "carBrandId": "64aeaffe6a835547c5db68de",
+                    "deletable": false,
+                    "createdAt": "2023-07-12T13:57:26.477Z",
+                    "updatedAt": "2023-07-12T13:57:26.477Z",
+                    "__v": 0
+                },
+                "carVariantId": {
+                    "_id": "64af79ef6a835547c5db69ae",
+                    "title": "Zx",
+                    "description": "gddhdhd",
+                    "engineCapacity": 4546,
+                    "engineOilCapacity": 4546,
+                    "gearOilCapacity": 565656,
+                    "tyreSize": 12,
+                    "image": "/api/v1/users/image_1689221614876.jpeg",
+                    "carModelId": "64aeb1466a835547c5db68e9",
+                    "deletable": false,
+                    "createdAt": "2023-07-13T04:13:35.006Z",
+                    "updatedAt": "2023-07-13T04:13:35.006Z",
+                    "__v": 0
+                },
+                "plateNumber": "sdsds",
+                "image": "/api/v1/users/image_1690203157354.png",
+                "deletable": false,
+                "createdAt": "2023-07-24T12:52:37.493Z",
+                "updatedAt": "2023-07-24T12:52:37.493Z",
+                "__v": 0
             },
-            "branch": {
-                "_id": "1",
-                "name": "Al Dana Station",
-                "location": "Ras Al Khaimah",
-                "latitude": 8.5908657,
-                "longitude": 76.8505975,
-                "image": "assets/images/img_branch_1.png",
-                "rating": 4.3,
-                "distance": "6 Km"
-            },
-            "mode": {
-                "_id": "1",
-                "title": "DOORSTEP",
-                "description": "In publishing and graphic design of car wash",
-                "bg_card_color": "#FF3868"
-            }
+            "categoryId": "64af76146a835547c5db690f",
+            "service": [
+                {
+                    "serviceId": {
+                        "_id": "64af76cb6a835547c5db694b",
+                        "title": "Wheel alignment ",
+                        "description": "dbdhdjsjsk",
+                        "bg_card_color": "#09ddbd",
+                        "image": "/api/v1/users/image_1689220811649.png",
+                        "duration": "30",
+                        "categoryId": "64af762a6a835547c5db6913",
+                        "servicePeriod": 35,
+                        "price": 25,
+                        
+                        "deletable": false,
+                        "createdAt": "2023-07-13T04:00:11.772Z",
+                        "updatedAt": "2023-07-13T04:00:11.772Z",
+                        "__v": 0,
+                        "spareCategoryId": "64b627fef59921b6554ed4e5"
+                    },
+                    "serviceAmount": 25,
+                    "_id": "64bf642727a715176ce189df"
+                }
+            ],
+            "package": [
+                {
+                    "packageId": {
+                        "_id": "64af76f66a835547c5db6971",
+                        "title": "Car wash platinum",
+                        "description": "jcjdjdjd",
+                        "image": "/api/v1/users/image_1689220854665.png",
+                        "price": 30,
+                        "bg_card_color": "#ff3868",
+                        
+                        "services": [
+                            {
+                                "_id": "64af76826a835547c5db6926",
+                                "title": "Manual car wash ",
+                                "description": "krkfkfkfkdkd",
+                                "bg_card_color": "#09ddbd",
+                                "image": "/api/v1/users/image_1689220738684.png",
+                                "duration": "15",
+                                "categoryId": "64af76146a835547c5db690f",
+                                "servicePeriod": 30,
+                                "price": 10,
+                                
+                                "deletable": false,
+                                "createdAt": "2023-07-13T03:58:58.831Z",
+                                "updatedAt": "2023-07-13T03:58:58.831Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "64af76a36a835547c5db6937",
+                                "title": "Body wash ",
+                                "description": "djsjsjsjhxhchdbdhe",
+                                "bg_card_color": "#09ddbd",
+                                "image": "/api/v1/users/image_1689220770921.png",
+                                "duration": "30",
+                                "categoryId": "64af76146a835547c5db690f",
+                                "servicePeriod": 30,
+                                "price": 15,
+                                
+                                "deletable": false,
+                                "createdAt": "2023-07-13T03:59:31.041Z",
+                                "updatedAt": "2023-07-13T03:59:31.041Z",
+                                "__v": 0
+                            }
+                        ],
+                        "deletable": false,
+                        "createdAt": "2023-07-13T04:00:54.845Z",
+                        "updatedAt": "2023-07-13T04:00:54.845Z",
+                        "__v": 0
+                    },
+                    "packageAmount": 30,
+                    "_id": "64bf642727a715176ce189e0"
+                }
+            ],
+            "spare": [
+                {
+                    "spareId": "64b6285bf59921b6554ed516",
+                    "spareAmount": 15,
+                    "_id": "64bf642727a715176ce189e1"
+                }
+            ],
+            "serviceModeId": "64aead176a835547c5db68c8",
+            "totalAmount": 70,
+            "discountAmount": 0,
+            "approvalStatus": "Pending",
+            "timeSlotId": "64aeacc66a835547c5db68b2",
+            "bookingType": "Normal",
+            "date": "2023-07-25",
+            "deletable": false,
+            "createdAt": "2023-07-25T05:56:55.610Z",
+            "updatedAt": "2023-07-25T05:56:55.610Z",
+            "__v": 0
         },
         {
-            "_id": "4",
-            "date": "29-12-2022",
-            "slot": "10 am - 11 am",
-            "approval_status": "PENDING",
-            "price": 450.50,
-            "auto_spare_select": true,
-            "packages": [
-                {
-                    "_id": "1",
-                    "title": "Car Wash Platinum",
-                    "image": "assets/images/img_service_5.png",
-                    "price": 120.32,
-                    "bg_card_color": "#00BDFE",
-                    "services": [
-                        {
-                            "_id": "isdksdjfj12k23nnkf",
-                            "title": "Indoor Perfumery",
-                            "sub_title": "In publishing and graphic design of car wash",
-                            "description": "In publishing and graphic design of car wash",
-                            "image": "assets/images/img_service_4.png",
-                            "bg_card_color": "#FF3868",
-                            "branch": [
-                                {
-                                    "_id": "1",
-                                    "name": "Al Dana Station 1",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5908657,
-                                    "longitude": 76.8505975,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.3,
-                                    "distance": "6 Km"
-                                },
-                                {
-                                    "_id": "2",
-                                    "name": "Al Dana Station 2",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5714731,
-                                    "longitude": 76.8979696,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.2,
-                                    "distance": "8 Km"
-                                },
-                                {
-                                    "_id": "3",
-                                    "name": "Al Dana Station 3",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5678277,
-                                    "longitude": 76.8929361,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.1,
-                                    "distance": "12 Km"
-                                }
-                            ],
-                            "price": 183.23,
-                            "works": [
-                                {
-                                    "_id": "1",
-                                    "title": "washing",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "2",
-                                    "title": "soaping",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "3",
-                                    "title": "washing after soaping",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "4",
-                                    "title": "draining",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                }
-                            ]
-                        },
-                        {
-                            "_id": "isdksdjfj12k23nnkf",
-                            "title": "Interior & Exterior Washing",
-                            "sub_title": "In publishing and graphic design of car wash",
-                            "description": "In publishing and graphic design of car wash",
-                            "image": "assets/images/img_service_4.png",
-                            "bg_card_color": "#FFC643",
-                            "branch": [
-                                {
-                                    "_id": "1",
-                                    "name": "Al Dana Station 1",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5908657,
-                                    "longitude": 76.8505975,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.3,
-                                    "distance": "6 Km"
-                                },
-                                {
-                                    "_id": "2",
-                                    "name": "Al Dana Station 2",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5714731,
-                                    "longitude": 76.8979696,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.2,
-                                    "distance": "8 Km"
-                                },
-                                {
-                                    "_id": "3",
-                                    "name": "Al Dana Station 3",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5678277,
-                                    "longitude": 76.8929361,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.1,
-                                    "distance": "12 Km"
-                                }
-                            ],
-                            "price": 183.23,
-                            "works": [
-                                {
-                                    "_id": "1",
-                                    "title": "washing",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "2",
-                                    "title": "soaping",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "3",
-                                    "title": "washing after soaping",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "4",
-                                    "title": "draining",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                }
-                            ]
-                        },
-                        {
-                            "_id": "isdksdjfj12k23nnkf",
-                            "title": "Polishing the Tyre",
-                            "sub_title": "In publishing and graphic design of car wash",
-                            "description": "In publishing and graphic design of car wash",
-                            "image": "assets/images/img_service_4.png",
-                            "bg_card_color": "#06D39E",
-                            "branch": [
-                                {
-                                    "_id": "1",
-                                    "name": "Al Dana Station 1",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5908657,
-                                    "longitude": 76.8505975,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.3,
-                                    "distance": "6 Km"
-                                },
-                                {
-                                    "_id": "2",
-                                    "name": "Al Dana Station 2",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5714731,
-                                    "longitude": 76.8979696,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.2,
-                                    "distance": "8 Km"
-                                },
-                                {
-                                    "_id": "3",
-                                    "name": "Al Dana Station 3",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5678277,
-                                    "longitude": 76.8929361,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.1,
-                                    "distance": "12 Km"
-                                }
-                            ],
-                            "price": 183.23,
-                            "works": [
-                                {
-                                    "_id": "1",
-                                    "title": "washing",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "2",
-                                    "title": "soaping",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "3",
-                                    "title": "washing after soaping",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "4",
-                                    "title": "draining",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                }
-                            ]
-                        },
-                        {
-                            "_id": "isdksdjfj12k23nnkf",
-                            "title": "Doorstep car wash",
-                            "sub_title": "In publishing and graphic design of car wash",
-                            "description": "In publishing and graphic design of car wash",
-                            "image": "assets/images/img_service_4.png",
-                            "bg_card_color": "#118AB2",
-                            "branch": [
-                                {
-                                    "_id": "1",
-                                    "name": "Al Dana Station 1",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5908657,
-                                    "longitude": 76.8505975,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.3,
-                                    "distance": "6 Km"
-                                },
-                                {
-                                    "_id": "2",
-                                    "name": "Al Dana Station 2",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5714731,
-                                    "longitude": 76.8979696,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.2,
-                                    "distance": "8 Km"
-                                },
-                                {
-                                    "_id": "3",
-                                    "name": "Al Dana Station 3",
-                                    "location": "Ras Al Khaimah",
-                                    "latitude": 8.5678277,
-                                    "longitude": 76.8929361,
-                                    "image": "assets/images/img_branch_1.png",
-                                    "rating": 4.1,
-                                    "distance": "12 Km"
-                                }
-                            ],
-                            "price": 183.23,
-                            "works": [
-                                {
-                                    "_id": "1",
-                                    "title": "washing",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "2",
-                                    "title": "soaping",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "3",
-                                    "title": "washing after soaping",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                },
-                                {
-                                    "_id": "4",
-                                    "title": "draining",
-                                    "sub_title": "string",
-                                    "description": "string",
-                                    "price": 123.3,
-                                    "is_item_change": true,
-                                    "categoy_id": "string"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ],
-            "services": [
-                {
-                    "_id": "1",
-                    "title": "Manual Car Wash",
-                    "sub_title": "In publishing and graphic design of car wash",
-                    "description": "In publishing and graphic design of car wash",
-                    "image": "assets/images/img_service_4.png",
-                    "bg_card_color": "#FF3868",
-                    "station": [
-                        "12eoriu545f7g87gfg",
-                        "12eoriu545f7g87gff",
-                        "12eoriu545f7g87gfr"
-                    ],
-                    "price": 183.23,
-                    "works": [
-                        {
-                            "_id": "1",
-                            "title": "washing",
-                            "sub_title": "string",
-                            "description": "string",
-                            "price": 123.3,
-                            "is_item_change": true,
-                            "categoy_id": "string"
-                        },
-                        {
-                            "_id": "2",
-                            "title": "soaping",
-                            "sub_title": "string",
-                            "description": "string",
-                            "price": 123.3,
-                            "is_item_change": true,
-                            "categoy_id": "string"
-                        },
-                        {
-                            "_id": "3",
-                            "title": "washing after soaping",
-                            "sub_title": "string",
-                            "description": "string",
-                            "price": 123.3,
-                            "is_item_change": true,
-                            "categoy_id": "string"
-                        },
-                        {
-                            "_id": "4",
-                            "title": "draining",
-                            "sub_title": "string",
-                            "description": "string",
-                            "price": 123.3,
-                            "is_item_change": true,
-                            "categoy_id": "string"
-                        }
-                    ]
-                }
-            ],
-            "spares": [
-                {
-                    "_id": "1",
-                    "category_id": "",
-                    "name": "string",
-                    "price": 123.4,
-                    "image": "string"
-                }
-            ],
-            "vehicle": {
-                "_id": "1",
-                "brand": {
-                    "_id": "1",
-                    "name": "Abarth",
-                    "image": "assets/images/img_brand_1.png"
-                },
-                "variant": {
-                    "_id": "string",
-                    "name": "Model X"
-                },
-                "year": {
-                    "_id": "6",
-                    "name": "2015"
-                },
+            "_id": "64c0a28227a715176ce18b2f",
+            "branchId": "64aead816a835547c5db68cf",
+            "customerId": "64af7e996a835547c5db6ab5",
+            "AddressId": "64c0a26227a715176ce18b21",
+            "vehicleId": {
                 "color": {
-                    "_id": "8",
-                    "name": "Blue",
-                    "code": "#3C8AFF"
+                    "name": "rerer",
+                    "code": "FF75289B"
                 },
-                "plate_code": "string",
-                "plate_number": "string",
-                "image": "assets/images/img_brand_1.png"
+                "_id": "64be741527a715176ce18767",
+                "customerId": "64af7e996a835547c5db6ab5",
+                "carBrandId": {
+                    "_id": "64aeaffe6a835547c5db68de",
+                    "title": "Nissan",
+                    "description": "test description ",
+                    "image": "/api/v1/users/image_1689169917650.jpeg",
+                    "deletable": false,
+                    "createdAt": "2023-07-12T13:51:58.141Z",
+                    "updatedAt": "2023-07-12T13:51:58.141Z",
+                    "__v": 0
+                },
+                "carModelId": {
+                    "_id": "64aeb1466a835547c5db68e9",
+                    "title": "Patrol",
+                    "description": "test",
+                    "image": "/api/v1/users/image_1689170245720.jpeg",
+                    "carBrandId": "64aeaffe6a835547c5db68de",
+                    "deletable": false,
+                    "createdAt": "2023-07-12T13:57:26.477Z",
+                    "updatedAt": "2023-07-12T13:57:26.477Z",
+                    "__v": 0
+                },
+                "carVariantId": {
+                    "_id": "64af79ef6a835547c5db69ae",
+                    "title": "Zx",
+                    "description": "gddhdhd",
+                    "engineCapacity": 4546,
+                    "engineOilCapacity": 4546,
+                    "gearOilCapacity": 565656,
+                    "tyreSize": 12,
+                    "image": "/api/v1/users/image_1689221614876.jpeg",
+                    "carModelId": "64aeb1466a835547c5db68e9",
+                    "deletable": false,
+                    "createdAt": "2023-07-13T04:13:35.006Z",
+                    "updatedAt": "2023-07-13T04:13:35.006Z",
+                    "__v": 0
+                },
+                "plateNumber": "sdsds",
+                "image": "/api/v1/users/image_1690203157354.png",
+                "deletable": false,
+                "createdAt": "2023-07-24T12:52:37.493Z",
+                "updatedAt": "2023-07-24T12:52:37.493Z",
+                "__v": 0
             },
-            "branch": {
-                "_id": "1",
-                "name": "Al Dana Station",
-                "location": "Ras Al Khaimah",
-                "latitude": 8.5908657,
-                "longitude": 76.8505975,
-                "image": "assets/images/img_branch_1.png",
-                "rating": 4.3,
-                "distance": "6 Km"
+            "categoryId": "64af76146a835547c5db690f",
+            "service": [
+                {
+                    "serviceId": {
+                        "_id": "64af76cb6a835547c5db694b",
+                        "title": "Wheel alignment ",
+                        "description": "dbdhdjsjsk",
+                        "bg_card_color": "#09ddbd",
+                        "image": "/api/v1/users/image_1689220811649.png",
+                        "duration": "30",
+                        "categoryId": "64af762a6a835547c5db6913",
+                        "servicePeriod": 35,
+                        "price": 25,
+                        
+                        "deletable": false,
+                        "createdAt": "2023-07-13T04:00:11.772Z",
+                        "updatedAt": "2023-07-13T04:00:11.772Z",
+                        "__v": 0,
+                        "spareCategoryId": "64b627fef59921b6554ed4e5"
+                    },
+                    "serviceAmount": 25,
+                    "_id": "64c0a28227a715176ce18b30"
+                }
+            ],
+            "package": [
+                {
+                    "packageId": {
+                        "_id": "64af77166a835547c5db698b",
+                        "title": "Car wash Gold",
+                        "description": "hdjdjdjdj",
+                        "image": "/api/v1/users/image_1689220886038.png",
+                        "price": 40,
+                        "bg_card_color": "#ff3868",
+                        
+                        "services": [
+                            {
+                                "_id": "64af76826a835547c5db6926",
+                                "title": "Manual car wash ",
+                                "description": "krkfkfkfkdkd",
+                                "bg_card_color": "#09ddbd",
+                                "image": "/api/v1/users/image_1689220738684.png",
+                                "duration": "15",
+                                "categoryId": "64af76146a835547c5db690f",
+                                "servicePeriod": 30,
+                                "price": 10,
+                                
+                                "deletable": false,
+                                "createdAt": "2023-07-13T03:58:58.831Z",
+                                "updatedAt": "2023-07-13T03:58:58.831Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "64af76cb6a835547c5db694b",
+                                "title": "Wheel alignment ",
+                                "description": "dbdhdjsjsk",
+                                "bg_card_color": "#09ddbd",
+                                "image": "/api/v1/users/image_1689220811649.png",
+                                "duration": "30",
+                                "categoryId": "64af762a6a835547c5db6913",
+                                "servicePeriod": 35,
+                                "price": 25,
+                                
+                                "deletable": false,
+                                "createdAt": "2023-07-13T04:00:11.772Z",
+                                "updatedAt": "2023-07-13T04:00:11.772Z",
+                                "__v": 0,
+                                "spareCategoryId": "64b627fef59921b6554ed4e5"
+                            },
+                            {
+                                "_id": "64af76a36a835547c5db6937",
+                                "title": "Body wash ",
+                                "description": "djsjsjsjhxhchdbdhe",
+                                "bg_card_color": "#09ddbd",
+                                "image": "/api/v1/users/image_1689220770921.png",
+                                "duration": "30",
+                                "categoryId": "64af76146a835547c5db690f",
+                                "servicePeriod": 30,
+                                "price": 15,
+                                
+                                "deletable": false,
+                                "createdAt": "2023-07-13T03:59:31.041Z",
+                                "updatedAt": "2023-07-13T03:59:31.041Z",
+                                "__v": 0
+                            }
+                        ],
+                        "deletable": false,
+                        "createdAt": "2023-07-13T04:01:26.138Z",
+                        "updatedAt": "2023-07-13T04:01:26.138Z",
+                        "__v": 0
+                    },
+                    "packageAmount": 40,
+                    "_id": "64c0a28227a715176ce18b31"
+                }
+            ],
+            "serviceModeId": "64aead176a835547c5db68c8",
+            "totalAmount": 65,
+            "discountAmount": 0,
+            "approvalStatus": "Pending",
+            "timeSlotId": "64aeacc66a835547c5db68b1",
+            "bookingType": "Normal",
+            "date": "2023-07-27",
+            "deletable": false,
+            "spare": [],
+            "createdAt": "2023-07-26T04:35:14.380Z",
+            "updatedAt": "2023-07-26T04:35:14.380Z",
+            "__v": 0
+        },
+        {
+            "_id": "64c0c2fa27a715176ce18d84",
+            "branchId": "64aead816a835547c5db68cf",
+            "customerId": "64af7e996a835547c5db6ab5",
+            "AddressId": "64c0c2aa27a715176ce18d4f",
+            "vehicleId": {
+                "color": {
+                    "name": "rerer",
+                    "code": "FF75289B"
+                },
+                "_id": "64be741527a715176ce18767",
+                "customerId": "64af7e996a835547c5db6ab5",
+                "carBrandId": {
+                    "_id": "64aeaffe6a835547c5db68de",
+                    "title": "Nissan",
+                    "description": "test description ",
+                    "image": "/api/v1/users/image_1689169917650.jpeg",
+                    "deletable": false,
+                    "createdAt": "2023-07-12T13:51:58.141Z",
+                    "updatedAt": "2023-07-12T13:51:58.141Z",
+                    "__v": 0
+                },
+                "carModelId": {
+                    "_id": "64aeb1466a835547c5db68e9",
+                    "title": "Patrol",
+                    "description": "test",
+                    "image": "/api/v1/users/image_1689170245720.jpeg",
+                    "carBrandId": "64aeaffe6a835547c5db68de",
+                    "deletable": false,
+                    "createdAt": "2023-07-12T13:57:26.477Z",
+                    "updatedAt": "2023-07-12T13:57:26.477Z",
+                    "__v": 0
+                },
+                "carVariantId": {
+                    "_id": "64af79ef6a835547c5db69ae",
+                    "title": "Zx",
+                    "description": "gddhdhd",
+                    "engineCapacity": 4546,
+                    "engineOilCapacity": 4546,
+                    "gearOilCapacity": 565656,
+                    "tyreSize": 12,
+                    "image": "/api/v1/users/image_1689221614876.jpeg",
+                    "carModelId": "64aeb1466a835547c5db68e9",
+                    "deletable": false,
+                    "createdAt": "2023-07-13T04:13:35.006Z",
+                    "updatedAt": "2023-07-13T04:13:35.006Z",
+                    "__v": 0
+                },
+                "plateNumber": "sdsds",
+                "image": "/api/v1/users/image_1690203157354.png",
+                "deletable": false,
+                "createdAt": "2023-07-24T12:52:37.493Z",
+                "updatedAt": "2023-07-24T12:52:37.493Z",
+                "__v": 0
             },
-            "mode": {
-                "_id": "1",
-                "title": "DOORSTEP",
-                "description": "In publishing and graphic design of car wash",
-                "bg_card_color": "#FF3868"
-            }
+            "categoryId": "64af76146a835547c5db690f",
+            "service": [
+                {
+                    "serviceId": {
+                        "_id": "64af76cb6a835547c5db694b",
+                        "title": "Wheel alignment ",
+                        "description": "dbdhdjsjsk",
+                        "bg_card_color": "#09ddbd",
+                        "image": "/api/v1/users/image_1689220811649.png",
+                        "duration": "30",
+                        "categoryId": "64af762a6a835547c5db6913",
+                        "servicePeriod": 35,
+                        "price": 25,
+                        
+                        "deletable": false,
+                        "createdAt": "2023-07-13T04:00:11.772Z",
+                        "updatedAt": "2023-07-13T04:00:11.772Z",
+                        "__v": 0,
+                        "spareCategoryId": "64b627fef59921b6554ed4e5"
+                    },
+                    "serviceAmount": 25,
+                    "_id": "64c0c2fa27a715176ce18d85"
+                }
+            ],
+            "package": [
+                {
+                    "packageId": {
+                        "_id": "64af76f66a835547c5db6971",
+                        "title": "Car wash platinum",
+                        "description": "jcjdjdjd",
+                        "image": "/api/v1/users/image_1689220854665.png",
+                        "price": 30,
+                        "bg_card_color": "#ff3868",
+                        
+                        "services": [
+                            {
+                                "_id": "64af76826a835547c5db6926",
+                                "title": "Manual car wash ",
+                                "description": "krkfkfkfkdkd",
+                                "bg_card_color": "#09ddbd",
+                                "image": "/api/v1/users/image_1689220738684.png",
+                                "duration": "15",
+                                "categoryId": "64af76146a835547c5db690f",
+                                "servicePeriod": 30,
+                                "price": 10,
+                                
+                                "deletable": false,
+                                "createdAt": "2023-07-13T03:58:58.831Z",
+                                "updatedAt": "2023-07-13T03:58:58.831Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "64af76a36a835547c5db6937",
+                                "title": "Body wash ",
+                                "description": "djsjsjsjhxhchdbdhe",
+                                "bg_card_color": "#09ddbd",
+                                "image": "/api/v1/users/image_1689220770921.png",
+                                "duration": "30",
+                                "categoryId": "64af76146a835547c5db690f",
+                                "servicePeriod": 30,
+                                "price": 15,
+                                
+                                "deletable": false,
+                                "createdAt": "2023-07-13T03:59:31.041Z",
+                                "updatedAt": "2023-07-13T03:59:31.041Z",
+                                "__v": 0
+                            }
+                        ],
+                        "deletable": false,
+                        "createdAt": "2023-07-13T04:00:54.845Z",
+                        "updatedAt": "2023-07-13T04:00:54.845Z",
+                        "__v": 0
+                    },
+                    "packageAmount": 30,
+                    "_id": "64c0c2fa27a715176ce18d86"
+                }
+            ],
+            "serviceModeId": "64aead176a835547c5db68c8",
+            "totalAmount": 55,
+            "discountAmount": 0,
+            "approvalStatus": "Pending",
+            "timeSlotId": "64aeacc66a835547c5db68b1",
+            "bookingType": "Normal",
+            "date": "2023-08-01",
+            "deletable": false,
+            "spare": [],
+            "createdAt": "2023-07-26T06:53:46.882Z",
+            "updatedAt": "2023-07-26T06:53:46.882Z",
+            "__v": 0
+        },
+        {
+            "_id": "64c0c41c27a715176ce18dcc",
+            "branchId": "64aead816a835547c5db68cf",
+            "customerId": "64af7e996a835547c5db6ab5",
+            "AddressId": "64af82436a835547c5db6b17",
+            "vehicleId": {
+                "color": {
+                    "name": "rerer",
+                    "code": "FF75289B"
+                },
+                "_id": "64be741527a715176ce18767",
+                "customerId": "64af7e996a835547c5db6ab5",
+                "carBrandId": {
+                    "_id": "64aeaffe6a835547c5db68de",
+                    "title": "Nissan",
+                    "description": "test description ",
+                    "image": "/api/v1/users/image_1689169917650.jpeg",
+                    "deletable": false,
+                    "createdAt": "2023-07-12T13:51:58.141Z",
+                    "updatedAt": "2023-07-12T13:51:58.141Z",
+                    "__v": 0
+                },
+                "carModelId": {
+                    "_id": "64aeb1466a835547c5db68e9",
+                    "title": "Patrol",
+                    "description": "test",
+                    "image": "/api/v1/users/image_1689170245720.jpeg",
+                    "carBrandId": "64aeaffe6a835547c5db68de",
+                    "deletable": false,
+                    "createdAt": "2023-07-12T13:57:26.477Z",
+                    "updatedAt": "2023-07-12T13:57:26.477Z",
+                    "__v": 0
+                },
+                "carVariantId": {
+                    "_id": "64af79ef6a835547c5db69ae",
+                    "title": "Zx",
+                    "description": "gddhdhd",
+                    "engineCapacity": 4546,
+                    "engineOilCapacity": 4546,
+                    "gearOilCapacity": 565656,
+                    "tyreSize": 12,
+                    "image": "/api/v1/users/image_1689221614876.jpeg",
+                    "carModelId": "64aeb1466a835547c5db68e9",
+                    "deletable": false,
+                    "createdAt": "2023-07-13T04:13:35.006Z",
+                    "updatedAt": "2023-07-13T04:13:35.006Z",
+                    "__v": 0
+                },
+                "plateNumber": "sdsds",
+                "image": "/api/v1/users/image_1690203157354.png",
+                "deletable": false,
+                "createdAt": "2023-07-24T12:52:37.493Z",
+                "updatedAt": "2023-07-24T12:52:37.493Z",
+                "__v": 0
+            },
+            "categoryId": "64af76146a835547c5db690f",
+            "service": [
+                {
+                    "serviceId": {
+                        "_id": "64af76cb6a835547c5db694b",
+                        "title": "Wheel alignment ",
+                        "description": "dbdhdjsjsk",
+                        "bg_card_color": "#09ddbd",
+                        "image": "/api/v1/users/image_1689220811649.png",
+                        "duration": "30",
+                        "categoryId": "64af762a6a835547c5db6913",
+                        "servicePeriod": 35,
+                        "price": 25,
+                        
+                        "deletable": false,
+                        "createdAt": "2023-07-13T04:00:11.772Z",
+                        "updatedAt": "2023-07-13T04:00:11.772Z",
+                        "__v": 0,
+                        "spareCategoryId": "64b627fef59921b6554ed4e5"
+                    },
+                    "serviceAmount": 25,
+                    "_id": "64c0c41c27a715176ce18dcd"
+                }
+            ],
+            "package": [
+                {
+                    "packageId": {
+                        "_id": "64af76f66a835547c5db6971",
+                        "title": "Car wash platinum",
+                        "description": "jcjdjdjd",
+                        "image": "/api/v1/users/image_1689220854665.png",
+                        "price": 30,
+                        "bg_card_color": "#ff3868",
+                        
+                        "services": [
+                            {
+                                "_id": "64af76826a835547c5db6926",
+                                "title": "Manual car wash ",
+                                "description": "krkfkfkfkdkd",
+                                "bg_card_color": "#09ddbd",
+                                "image": "/api/v1/users/image_1689220738684.png",
+                                "duration": "15",
+                                "categoryId": "64af76146a835547c5db690f",
+                                "servicePeriod": 30,
+                                "price": 10,
+                                
+                                "deletable": false,
+                                "createdAt": "2023-07-13T03:58:58.831Z",
+                                "updatedAt": "2023-07-13T03:58:58.831Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "64af76a36a835547c5db6937",
+                                "title": "Body wash ",
+                                "description": "djsjsjsjhxhchdbdhe",
+                                "bg_card_color": "#09ddbd",
+                                "image": "/api/v1/users/image_1689220770921.png",
+                                "duration": "30",
+                                "categoryId": "64af76146a835547c5db690f",
+                                "servicePeriod": 30,
+                                "price": 15,
+                                
+                                "deletable": false,
+                                "createdAt": "2023-07-13T03:59:31.041Z",
+                                "updatedAt": "2023-07-13T03:59:31.041Z",
+                                "__v": 0
+                            }
+                        ],
+                        "deletable": false,
+                        "createdAt": "2023-07-13T04:00:54.845Z",
+                        "updatedAt": "2023-07-13T04:00:54.845Z",
+                        "__v": 0
+                    },
+                    "packageAmount": 30,
+                    "_id": "64c0c41c27a715176ce18dce"
+                }
+            ],
+            "spare": [
+                {
+                    "spareId": "64b62810f59921b6554ed4f5",
+                    "spareAmount": 55,
+                    "_id": "64c0c41c27a715176ce18dcf"
+                }
+            ],
+            "serviceModeId": "64aead176a835547c5db68c8",
+            "totalAmount": 110,
+            "discountAmount": 0,
+            "approvalStatus": "Pending",
+            "timeSlotId": "64aeacc66a835547c5db68b1",
+            "bookingType": "Normal",
+            "date": "2023-08-08",
+            "deletable": false,
+            "createdAt": "2023-07-26T06:58:36.491Z",
+            "updatedAt": "2023-07-26T06:58:36.491Z",
+            "__v": 0
         }
     ]
 }

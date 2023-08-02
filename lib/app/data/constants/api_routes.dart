@@ -112,3 +112,6 @@ const String apiUpdateProfile = "${apiBase}users/editProfile";
 //vat
 const String apiGetVat = "${apiBase}users/listVat";
 const String apiEditVat = "${apiBase}users/editVat";
+//booking
+const String apiGetListBooking = "${apiBase}users/listBooking";
+const String apiEditBooking = "${apiBase}users/editBooking";

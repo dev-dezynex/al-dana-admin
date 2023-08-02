@@ -11,7 +11,6 @@ export 'year_model.dart';
 export 'color_model.dart';
 export 'service_mode_model.dart';
 export 'branch_model.dart';
-export 'booking_model.dart';
 export 'spare_category_model.dart';
 export 'car_model_model.dart';
 export 'banner_model.dart';

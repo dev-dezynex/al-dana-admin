@@ -36,11 +36,11 @@ class UsersController extends GetxController {
     userResult.value = await UserProvider().getActiveUsers();
     print('userList ${jsonEncode(userResult.value.userList)}');
     for (User user in userResult.value.userList) {
-      switch (user.scope.toLowerCase()) {
+      switch (user.scope) {
         case "admin":
           adminList.add(user);
           break;
-        case "manager":
+        case "serviceManager":
           managerList.add(user);
           break;
         case "technician":

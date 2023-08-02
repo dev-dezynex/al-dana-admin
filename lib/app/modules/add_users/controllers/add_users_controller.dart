@@ -20,8 +20,8 @@ class AddUsersController extends GetxController {
   var thumbFile = File('').obs;
   var isUpdate = false.obs;
   var isLoading = false.obs;
-  var userTypes = ['admin', 'manager', 'technician', 'customer'];
-  var selectedUserType = 'manager'.obs;
+  var userTypes = ['admin', 'serviceManager', 'technician', 'customer'];
+  var selectedUserType = 'serviceManager'.obs;
   var selectedUser = User().obs;
 
   var branchResult = BranchResult().obs;

@@ -7,6 +7,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:location/location.dart' as loc;
 
 import '../../../data/data.dart';
+import '../../../data/models/booking_model.dart';
 import '../../../routes/app_pages.dart';
 
 class HomeController extends GetxController {
@@ -38,6 +39,7 @@ class HomeController extends GetxController {
   var isLoading = false.obs;
 
   Rx<String> currentAddress = ''.obs;
+
 // Position? _currentPosition;
   @override
   void onInit() {
@@ -136,6 +138,17 @@ class HomeController extends GetxController {
     bookingResult.refresh();
   }
 
+  void updateBookingStatus(String bookingStatus, String bookingId) async {
+    await BookingProvider()
+        .appoveBookingStatus(bookingStatus, bookingId)
+        .then((_) => getDetails());
+  }
+
+  void assignToServiceManager(String bookingId, String serviceManagerId) async {
+    await BookingProvider()
+        .assignServiceManager(bookingId, serviceManagerId)
+        .then((_) => getDetails());
+  }
   //for profile
 
   pickImage(ImageSource sourse) async {

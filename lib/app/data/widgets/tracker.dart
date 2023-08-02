@@ -1,8 +1,10 @@
+import 'package:al_dana_admin/app/data/models/booking_model.dart';
+
 import '../data.dart';
 import 'package:flutter/material.dart';
 
 class TrackerTile extends StatelessWidget {
-  final Booking booking;
+  final Data booking;
 
   const TrackerTile({Key? key, required this.booking}) : super(key: key);
 
@@ -15,7 +17,7 @@ class TrackerTile extends StatelessWidget {
           height: 4,
         );
       },
-      itemCount: booking.services!.length,
+      itemCount: booking.service!.length,
       itemBuilder: (context, serviceIndex) {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -45,7 +47,7 @@ class TrackerTile extends StatelessWidget {
                   TextSpan(
                     children: [
                       TextSpan(
-                          text: "${booking.services![serviceIndex].title} ",
+                          text: "${booking.service?[serviceIndex].serviceId?.title} ",
                           style: tsPoppins(color: black, size: 13)),
                     ],
                   ),

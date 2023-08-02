@@ -17,7 +17,7 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _scaffoldKey,
+      key: _scaffoldKey,  
       backgroundColor: bgColor1,
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
@@ -151,11 +151,21 @@ class HomeView extends GetView<HomeController> {
             },
           ),
           NavItem(
-            title: 'Manage Time Slot',
+            title: 'Manage Time Schedules',
             icon: "assets/icons/ic_nav_4.svg",
             onTap: () {
               Get.back();
               Get.to(() => const TimeSlotScreen());
+            },
+          ),
+
+          NavItem(
+            title: "Manage Default & Custom Time slot",
+            icon: "assets/icons/ic_nav_4.svg",
+            onTap: () {
+              Get.back();
+              // Get.toNamed(Routes.TIME_SLOTS);
+              Get.to(() => const DefaultCustomTimeSlotScreen());
             },
           ),
           NavItem(
@@ -164,15 +174,6 @@ class HomeView extends GetView<HomeController> {
             onTap: () {
               Get.back();
               Get.to(() => const VatScreen());
-            },
-          ),
-          NavItem(
-            title: "Manage Default & Custom Time slot",
-            icon: "assets/icons/ic_nav_4.svg",
-            onTap: () {
-              Get.back();
-              // Get.toNamed(Routes.TIME_SLOTS);
-              Get.to(() => const DefaultCustomTimeSlotScreen());
             },
           ),
           NavItem(
