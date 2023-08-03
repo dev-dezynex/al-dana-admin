@@ -2,11 +2,9 @@ import 'dart:developer';
 
 import 'package:al_dana_admin/app/data/models/booking_model.dart';
 import 'package:al_dana_admin/app/modules/home/controllers/home_controller.dart';
-import 'package:al_dana_admin/app/modules/profile/providers/profile_provider.dart';
 import 'package:al_dana_admin/app/modules/users/controllers/users_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:provider/provider.dart';
 
 import '../data.dart';
 
@@ -200,22 +198,17 @@ class BookingTile2 extends StatefulWidget {
 
 class _BookingTile2State extends State<BookingTile2> {
   final userController = Get.put(UsersController());
+  Common common = Common();
   @override
-  void initState() {
-    super.initState();
-
-    Provider.of<ProfileProvider>(context, listen: false).fetchProfile();
-    userController.getDetails();
-  }
-
   @override
   Widget build(BuildContext context) {
     final managerList = userController.managerList.toList();
     final technicianList = userController.technicianList.toList();
-    String role =
-        Provider.of<ProfileProvider>(context).profile?.data?.role ?? '';
+
+    String role = common.currentUser.scope;
     String addressLocation = widget.booking.addressId?.location ?? '';
     String? managerId;
+    String? technicianId;
     return InkWell(
       onTap: widget.onTap,
       child: Card(
@@ -426,6 +419,22 @@ class _BookingTile2State extends State<BookingTile2> {
                                               log(managerId.toString());
                                             },
                                           ),
+                                        if (role == "serviceManager")
+                                          DropdownButtonFormField<String>(
+                                            decoration: const InputDecoration(
+                                                labelText: 'Select Technician'),
+                                            items: technicianList
+                                                .map<DropdownMenuItem<String>>(
+                                                    (technician) {
+                                              return DropdownMenuItem<String>(
+                                                value: technician.id,
+                                                child: Text(technician.name),
+                                              );
+                                            }).toList(),
+                                            onChanged: (value) {
+                                              technicianId = value ?? '';
+                                            },
+                                          ),
                                         const SizedBox(height: 10),
                                         Row(
                                           mainAxisAlignment:
@@ -446,11 +455,20 @@ class _BookingTile2State extends State<BookingTile2> {
                                               style: ElevatedButton.styleFrom(
                                                   backgroundColor: bgColor38),
                                               onPressed: () {
-                                                widget.controller
-                                                    ?.assignToServiceManager(
-                                                  widget.booking.sId ?? '',
-                                                  managerId ?? '',
-                                                );
+                                                if (role == 'superAdmin' ||
+                                                    role == 'admin') {
+                                                  widget.controller
+                                                      ?.assignToServiceManager(
+                                                    widget.booking.sId ?? '',
+                                                    managerId ?? '',
+                                                  );
+                                                } else {
+                                                  widget.controller
+                                                      ?.assignToTechnician(
+                                                    widget.booking.sId ?? '',
+                                                    technicianId ?? '',
+                                                  );
+                                                }
                                                 Navigator.of(context).pop();
                                               },
                                               child: const Text('Assign'),

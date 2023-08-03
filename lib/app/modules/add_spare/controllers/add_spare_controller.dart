@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 
 import '../../../data/data.dart';
 
@@ -21,6 +22,7 @@ class AddSpareController extends GetxController {
   var selectedSpare = Spare().obs;
   var selectedBranch = Branch().obs;
   var selectedSpareCategory = SpareCategory();
+  
   @override
   void onInit() {
     super.onInit();

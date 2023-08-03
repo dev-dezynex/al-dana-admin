@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:file_picker/file_picker.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
@@ -145,7 +144,9 @@ class AddUsersController extends GetxController {
   }
 
   getBranches() async {
-    branchResult.value = await BranchProvider().getBranches();
+    if (selectedUser.value.scope == "superAdmin") {
+      branchResult.value = await BranchProvider().getBranches();
+    }
     branchResult.refresh();
   }
 

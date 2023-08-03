@@ -53,7 +53,27 @@ class BookingProvider extends GetConnect {
     if (response.statusCode == 200) {
       Get.snackbar('Sucess', 'Sucessfully assigned to respective manager');
     } else {
+      Get.snackbar('Failed', 'Failed to assign');
+    }
+  }
+
+  Future<void> assignTechnician(
+    String bookingId,
+    String technicianId,
+  ) async {
+    final body = <String, dynamic>{
+      "approvalStatus": "Assigned",
+      "technicianId": technicianId,
+    };
+    final response = await put(
+      "$apiEditBooking/$bookingId",
+      body,
+      headers: Auth().requestHeaders,
+    );
+    if (response.statusCode == 200) {
       Get.snackbar('Sucess', 'Sucessfully assigned to respective manager');
+    } else {
+      Get.snackbar('Failed', 'Failed to assign');
     }
   }
 }

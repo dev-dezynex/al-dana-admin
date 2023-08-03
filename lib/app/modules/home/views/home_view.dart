@@ -15,9 +15,11 @@ class HomeView extends GetView<HomeController> {
   HomeView({Key? key}) : super(key: key);
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
+  Common common = Common();
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _scaffoldKey,  
+      key: _scaffoldKey,
       backgroundColor: bgColor1,
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
@@ -133,23 +135,24 @@ class HomeView extends GetView<HomeController> {
           //     Get.toNamed(Routes.BOOKING_PAGE);
           //   },
           // ),
-
-          NavItem(
-            title: "Manage Branch",
-            icon: "assets/icons/ic_nav_4.svg",
-            onTap: () {
-              Get.back();
-              Get.toNamed(Routes.BRANCH_LIST);
-            },
-          ),
-          NavItem(
-            title: "Manage Service Mode",
-            icon: "assets/icons/ic_nav_4.svg",
-            onTap: () {
-              Get.back();
-              Get.toNamed(Routes.SERVICE_MODE);
-            },
-          ),
+          if (common.currentUser.scope == "superAdmin")
+            NavItem(
+              title: "Manage Branch",
+              icon: "assets/icons/ic_nav_4.svg",
+              onTap: () {
+                Get.back();
+                Get.toNamed(Routes.BRANCH_LIST);
+              },
+            ),
+          if (common.currentUser.scope == "superAdmin")
+            NavItem(
+              title: "Manage Service Mode",
+              icon: "assets/icons/ic_nav_4.svg",
+              onTap: () {
+                Get.back();
+                Get.toNamed(Routes.SERVICE_MODE);
+              },
+            ),
           NavItem(
             title: 'Manage Time Schedules',
             icon: "assets/icons/ic_nav_4.svg",

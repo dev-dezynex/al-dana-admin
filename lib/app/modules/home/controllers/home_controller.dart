@@ -149,6 +149,12 @@ class HomeController extends GetxController {
         .assignServiceManager(bookingId, serviceManagerId)
         .then((_) => getDetails());
   }
+
+  void assignToTechnician(String bookingId, String technicianId) async {
+    await BookingProvider()
+        .assignTechnician(bookingId, technicianId)
+        .then((_) => getDetails());
+  }
   //for profile
 
   pickImage(ImageSource sourse) async {
