@@ -2,10 +2,14 @@ import 'dart:developer';
 
 import 'package:al_dana_admin/app/data/models/booking_model.dart';
 import 'package:al_dana_admin/app/modules/home/controllers/home_controller.dart';
+import 'package:al_dana_admin/app/modules/tracking/views/tracking_view.dart';
 import 'package:al_dana_admin/app/modules/users/controllers/users_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 
+import '../../modules/invoice/provider/invoice_provider.dart';
+import '../../modules/invoice/views/invoice_view.dart';
 import '../data.dart';
 
 class BookingTile extends StatelessWidget {
@@ -384,7 +388,7 @@ class _BookingTile2State extends State<BookingTile2> {
                             style: ElevatedButton.styleFrom(
                                 backgroundColor: bgColor37),
                             child: Text(
-                              '  Confirmed  ',
+                              '  Confirm  ',
                               style: tsPoppins(
                                   weight: FontWeight.w600, color: white),
                             )),
@@ -488,6 +492,44 @@ class _BookingTile2State extends State<BookingTile2> {
                               style: tsPoppins(
                                   weight: FontWeight.w600, color: white),
                             )),
+                      ),
+                    if (widget.booking.approvalStatus == 'Assigned')
+                      Padding(
+                        padding: const EdgeInsets.only(right: 8),
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: bgColor37),
+                          onPressed: () {
+                            log(widget.booking.sId.toString());
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => TrackingView(
+                                bookingId: widget.booking.sId ?? '',
+                              ),
+                            ));
+                          },
+                          child: const Text('   Track   '),
+                        ),
+                      ),
+                    if (widget.booking.approvalStatus == 'Assigned')
+                      Padding(
+                        padding: const EdgeInsets.only(right: 8),
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: bgColor38),
+                          onPressed: () {
+                            log(widget.booking.sId.toString());
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => const InvoiceView(),
+                              ),
+                            );
+                            Provider.of<InvoiceProvider>(context, listen: false)
+                                .fetchInvoice(
+                              widget.booking.sId.toString(),
+                            );
+                          },
+                          child: const Text('   Invoice   '),
+                        ),
                       ),
                   ],
                 ),

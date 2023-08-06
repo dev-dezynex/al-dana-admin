@@ -7,7 +7,6 @@ import '../controllers/home_controller.dart';
 
 class AdminHomeView extends GetView<HomeController> {
   const AdminHomeView({Key? key}) : super(key: key);
-  
 
   @override
   Widget build(BuildContext context) {
@@ -103,10 +102,15 @@ class AdminHomeView extends GetView<HomeController> {
                                         SizedBox(
                                           height: Get.height * .01,
                                         ),
-                                        Text(
-                                          '15',
-                                          style:
-                                              tsPoppins(color: white, size: 20),
+                                        Obx(
+                                          () => Text(
+                                            (controller.bookingResult.value.data
+                                                        ?.length ??
+                                                    0)
+                                                .toString(),
+                                            style: tsPoppins(
+                                                color: white, size: 20),
+                                          ),
                                         )
                                       ],
                                     ),
@@ -131,10 +135,21 @@ class AdminHomeView extends GetView<HomeController> {
                                         SizedBox(
                                           height: Get.height * .01,
                                         ),
-                                        Text(
-                                          '3',
-                                          style:
-                                              tsPoppins(color: white, size: 20),
+                                        Obx(
+                                          () => Text(
+                                            (controller.bookingResult.value.data
+                                                        ?.where((element) =>
+                                                            element
+                                                                .approvalStatus!
+                                                                .toLowerCase() ==
+                                                            'assigned')
+                                                        .toList()
+                                                        .length ??
+                                                    0)
+                                                .toString(),
+                                            style: tsPoppins(
+                                                color: white, size: 20),
+                                          ),
                                         )
                                       ],
                                     ),
@@ -199,7 +214,8 @@ class AdminHomeView extends GetView<HomeController> {
         physics: const NeverScrollableScrollPhysics(),
         itemBuilder: (con, i) {
           return BookingTile2(
-            booking: bookings[i],controller: controller,
+            booking: bookings[i],
+            controller: controller,
           );
         });
   }

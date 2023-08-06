@@ -4,10 +4,12 @@ import 'package:al_dana_admin/app/data/providers/custom_time_slot_provider.dart'
 import 'package:al_dana_admin/app/data/providers/default_time_slot_provider.dart';
 import 'package:al_dana_admin/app/data/providers/list_days_provider.dart';
 import 'package:al_dana_admin/app/modules/Vat/providers/vat_provider.dart';
+import 'package:al_dana_admin/app/modules/invoice/provider/invoice_provider.dart';
 import 'package:al_dana_admin/app/modules/profile/providers/profile_provider.dart';
 import 'package:al_dana_admin/app/data/providers/time_slot_provider.dart';
 import 'package:al_dana_admin/app/modules/default_custom_time_slot/providers/default_custom_time_slot_provider.dart';
 import 'package:al_dana_admin/app/modules/time_slot/providers/time_slot_add_widget.dart';
+import 'package:al_dana_admin/app/modules/tracking/providers/tracking_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
@@ -66,6 +68,12 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (_) => VATProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => TrackingProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => InvoiceProvider(),
         ),
       ],
       child: GetMaterialApp(

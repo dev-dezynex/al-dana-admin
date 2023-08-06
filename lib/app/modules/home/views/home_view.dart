@@ -55,14 +55,14 @@ class HomeView extends GetView<HomeController> {
             ),
           ],
         ),
-        actions: [
-          IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.notifications_none_outlined,
-                color: textDark80,
-              ))
-        ],
+        // actions: [
+        //   IconButton(
+        //       onPressed: () {},
+        //       icon: const Icon(
+        //         Icons.notifications_none_outlined,
+        //         color: textDark80,
+        //       ))
+        // ],
       ),
       drawer: Drawer(
           child: ListView(
