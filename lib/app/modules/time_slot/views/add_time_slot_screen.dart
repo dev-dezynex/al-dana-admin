@@ -39,26 +39,44 @@ class AddTimeSlotScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text('Start Time:'),
+                  const Text(
+                    'Start Time : ',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
                   DropdownButton<String>(
                     value: timeSlotProvider.startTimeHour,
                     onChanged: (String? value) {
                       timeSlotProvider.startTimeHour = value!;
                     },
-                    items: List.generate(12, (index) {
+                    items: List.generate(24, (index) {
                       return DropdownMenuItem<String>(
-                        value: (index + 1).toString().padLeft(2, '0'),
-                        child: Text((index + 1).toString().padLeft(2, '0')),
+                        value: (index).toString().padLeft(2, '0'),
+                        child: Text(
+                          (index).toString().padLeft(2, '0'),
+                          style: const TextStyle(
+                            fontSize: 18,
+                          ),
+                        ),
                       );
                     }),
                   ),
-                  const Text(':'),
+                  const Text(
+                    ': ',
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                  ),
                   DropdownButton<String>(
                     value: timeSlotProvider.startTimeMinute,
                     items: List.generate(60, (index) {
                       return DropdownMenuItem(
                         value: index.toString().padLeft(2, '0'),
-                        child: Text(index.toString().padLeft(2, '0')),
+                        child: Text(
+                          index.toString().padLeft(2, '0'),
+                          style: const TextStyle(
+                            fontSize: 18,
+                          ),
+                        ),
                       );
                     }),
                     onChanged: (String? value) {
@@ -71,20 +89,33 @@ class AddTimeSlotScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text('End Time:'),
+                  const Text(
+                    'End Time : ',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
                   DropdownButton<String>(
                     value: timeSlotProvider.endTimeHour,
                     onChanged: (String? value) {
                       timeSlotProvider.endTimeHour = value!;
                     },
-                    items: List.generate(12, (index) {
+                    items: List.generate(24, (index) {
                       return DropdownMenuItem<String>(
-                        value: (index + 1).toString().padLeft(2, '0'),
-                        child: Text((index + 1).toString().padLeft(2, '0')),
+                        value: (index).toString().padLeft(2, '0'),
+                        child: Text(
+                          (index).toString().padLeft(2, '0'),
+                          style: const TextStyle(
+                            fontSize: 18,
+                          ),
+                        ),
                       );
                     }),
                   ),
-                  const Text(':'),
+                  const Text(
+                    ': ',
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                  ),
                   DropdownButton<String>(
                     value: timeSlotProvider.endTimeMinute,
                     onChanged: (String? value) {
@@ -93,7 +124,12 @@ class AddTimeSlotScreen extends StatelessWidget {
                     items: List.generate(60, (index) {
                       return DropdownMenuItem<String>(
                         value: index.toString().padLeft(2, '0'),
-                        child: Text(index.toString().padLeft(2, '0')),
+                        child: Text(
+                          index.toString().padLeft(2, '0'),
+                          style: const TextStyle(
+                            fontSize: 18,
+                          ),
+                        ),
                       );
                     }),
                   ),

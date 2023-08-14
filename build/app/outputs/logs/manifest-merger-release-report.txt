@@ -63,10 +63,10 @@ MERGED from [androidx.room:room-runtime:2.2.5] /Users/dezynextechnologysolutons/
 		INJECTED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml
 		ADDED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:5:9-42
 manifest
-ADDED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:1:1-48:12
-INJECTED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:1:1-48:12
-INJECTED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:1:1-48:12
-INJECTED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:1:1-48:12
+ADDED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:1:1-56:12
+INJECTED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:1:1-56:12
+INJECTED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:1:1-56:12
+INJECTED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:1:1-56:12
 MERGED from [:file_picker] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/file_picker/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-19:12
 MERGED from [:google_maps_flutter_android] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/google_maps_flutter_android/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
 MERGED from [:image_picker_android] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-21:12
@@ -78,6 +78,7 @@ MERGED from [:map_launcher] /Users/dezynextechnologysolutons/Documents/Developme
 MERGED from [:geocoding] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/geocoding/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
 MERGED from [:fluttertoast] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/fluttertoast/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
 MERGED from [:onesignal_flutter] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/onesignal_flutter/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
+MERGED from [:device_info_plus] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/device_info_plus/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
 MERGED from [:location] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/location/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-20:12
 MERGED from [androidx.window:window-java:1.0.0-beta04] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/246793f755122fe14a5802655438cb75/transformed/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.window:window:1.0.0-beta04] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:17:1-33:12
@@ -148,20 +149,20 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/dezynextechnologys
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/4c666c731f72bca13b96ec6fea44ce5c/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e9ca322f243d3b7ed3a19622385d8532/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/58e3540d7f5a5bac6af9a8f8fab44363/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
-INJECTED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:1:1-48:12
-INJECTED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:1:1-48:12
-INJECTED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:1:1-48:12
+INJECTED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:1:1-56:12
+INJECTED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:1:1-56:12
+INJECTED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:1:1-56:12
 	package
 		ADDED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:2:5-40
 		INJECTED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:1:1-48:12
+		ADDED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:1:1-56:12
 		INJECTED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:1:1-48:12
+		ADDED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:1:1-56:12
 		INJECTED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:1:11-69
@@ -221,6 +222,36 @@ MERGED from [androidx.work:work-runtime:2.7.1] /Users/dezynextechnologysolutons/
 MERGED from [androidx.work:work-runtime:2.7.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/b5d03bc123d0b973c47a690424759932/transformed/work-runtime-2.7.1/AndroidManifest.xml:28:5-77
 	android:name
 		ADDED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:47:22-74
+uses-permission#com.google.android.gms.permission.AD_ID
+ADDED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:48:5-78
+	android:name
+		ADDED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:48:22-76
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:49:5-50:38
+MERGED from [:file_picker] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/file_picker/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-80
+MERGED from [:file_picker] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/file_picker/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-80
+	android:maxSdkVersion
+		ADDED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:50:9-35
+	android:name
+		ADDED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:49:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:51:5-52:39
+	android:maxSdkVersion
+		ADDED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:52:9-35
+	android:name
+		ADDED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:51:22-78
+uses-permission#android.permission.READ_MEDIA_IMAGES
+ADDED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:53:5-75
+	android:name
+		ADDED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:53:22-73
+uses-permission#android.permission.READ_MEDIA_VIDEO
+ADDED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:54:5-74
+	android:name
+		ADDED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:54:22-72
+uses-permission#android.permission.READ_MEDIA_AUDIO
+ADDED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:55:5-74
+	android:name
+		ADDED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:55:22-72
 uses-sdk
 INJECTED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml
@@ -247,6 +278,8 @@ MERGED from [:fluttertoast] /Users/dezynextechnologysolutons/Documents/Developme
 MERGED from [:fluttertoast] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/fluttertoast/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
 MERGED from [:onesignal_flutter] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/onesignal_flutter/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
 MERGED from [:onesignal_flutter] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/onesignal_flutter/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:device_info_plus] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/device_info_plus/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:device_info_plus] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/device_info_plus/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
 MERGED from [:location] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/location/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
 MERGED from [:location] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/location/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.window:window-java:1.0.0-beta04] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/246793f755122fe14a5802655438cb75/transformed/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:19:5-21:41
@@ -441,10 +474,6 @@ ADDED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al
 		ADDED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:40:13-68
 	android:name
 		ADDED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:39:20-65
-uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from [:file_picker] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/file_picker/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-80
-	android:name
-		ADDED from [:file_picker] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/file_picker/intermediates/merged_manifest/release/AndroidManifest.xml:9:22-77
 queries
 ADDED from [:file_picker] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/file_picker/intermediates/merged_manifest/release/AndroidManifest.xml:11:5-17:15
 MERGED from [:map_launcher] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/map_launcher/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-25:15

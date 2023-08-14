@@ -7,10 +7,8 @@ import 'package:path_provider/path_provider.dart';
 
 import 'keys.dart';
 
-
 class FileService {
   static Map<String, Future Function()> downloadTasks = {};
-
 
   static Future<List<String>> ensureReady() async {
     await _createFolder(path_main);
@@ -26,16 +24,15 @@ class FileService {
     if (path.isNotEmpty) {
       baseDir = Directory(path);
     }
-   try {
+    try {
       await baseDir!.create(recursive: true);
     } catch (e) {
       if (kDebugMode) {
         print('in catch $e');
       }
     }
-    return baseDir!.path;
+    return baseDir?.path ?? '';
   }
-
 
   static Future<String> getBaseFilePath() async {
     Directory? baseDir;
@@ -64,7 +61,6 @@ class FileService {
     return '';
   }
 
-
   static _requestPermission(Permission permission) async {
     if (await permission.isGranted) {
       return true;
@@ -77,5 +73,4 @@ class FileService {
       }
     }
   }
-
 }

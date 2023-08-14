@@ -185,24 +185,32 @@ class AdminHomeView extends GetView<HomeController> {
           bookings = controller.bookingResult.value.data!
               .where((element) =>
                   element.approvalStatus!.toLowerCase() == 'confirmed')
+              .toList()
+              .reversed
               .toList();
           break;
         case 2:
           bookings = controller.bookingResult.value.data!
               .where((element) =>
                   element.approvalStatus!.toLowerCase() == 'assigned')
+              .toList()
+              .reversed
               .toList();
           break;
         case 3:
           bookings = controller.bookingResult.value.data!
               .where((element) =>
                   element.approvalStatus!.toLowerCase() == 'cancelled')
+              .toList()
+              .reversed
               .toList();
           break;
         default:
           bookings = controller.bookingResult.value.data!
               .where((element) =>
                   element.approvalStatus!.toLowerCase() == 'pending')
+              .toList()
+              .reversed
               .toList();
           break;
       }

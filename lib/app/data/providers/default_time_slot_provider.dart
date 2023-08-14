@@ -76,13 +76,15 @@ class DefaultTimeSlotProvider extends ChangeNotifier {
         },
       );
       log(response.body);
+      final jsonBody = jsonDecode(response.body);
       if (response.statusCode == 200) {
-        Get.snackbar('Success', 'Time slot added successfully');
+        Get.snackbar('Success', jsonBody['message']);
         _isLoading = true;
         notifyListeners();
       } else {
-        Get.snackbar('Failed', 'Failed to add time slot');
+        Get.snackbar('Failed', jsonBody['message']);
         log('Failed to submit');
+        log(jsonBody['message']);
       }
     } catch (e) {
       Get.snackbar('Failed', 'Failed to add time slot');

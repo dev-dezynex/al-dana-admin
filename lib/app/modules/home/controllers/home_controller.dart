@@ -1,11 +1,9 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:location/location.dart' as loc;
-
 import '../../../data/data.dart';
 import '../../../data/models/booking_model.dart';
 import '../../../routes/app_pages.dart';

@@ -134,6 +134,19 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
+      name="/Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android@@:device_info_plus::release"
+      jars="/Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/device_info_plus/.transforms/bc40cf7c6f2e6cf66ffac0a533bee81a/transformed/out/jars/classes.jar"
+      resolved="dev.fluttercommunity.plus.device_info:device_info_plus:unspecified"
+      folder="/Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/device_info_plus/.transforms/bc40cf7c6f2e6cf66ffac0a533bee81a/transformed/out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="/Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android@@:location::release"
       jars="/Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/location/.transforms/7ed927bf97c60ada7832da97793df446/transformed/out/jars/classes.jar"
       resolved="com.lyokone.location:location:unspecified"
@@ -957,13 +970,13 @@
       jars="/Users/dezynextechnologysolutons/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk7/1.6.10/e1c380673654a089c4f0c9f83d0ddfdc1efdb498/kotlin-stdlib-jdk7-1.6.10.jar"
       resolved="org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.10"/>
   <library
-      name="org.jetbrains.kotlin:kotlin-stdlib:1.7.10@jar"
-      jars="/Users/dezynextechnologysolutons/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.7.10/d2abf9e77736acc4450dc4a3f707fa2c10f5099d/kotlin-stdlib-1.7.10.jar"
-      resolved="org.jetbrains.kotlin:kotlin-stdlib:1.7.10"/>
+      name="org.jetbrains.kotlin:kotlin-stdlib:1.7.22@jar"
+      jars="/Users/dezynextechnologysolutons/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.7.22/9fb43bccb6cf8cfaaf3776c75f5df4f052f09b72/kotlin-stdlib-1.7.22.jar"
+      resolved="org.jetbrains.kotlin:kotlin-stdlib:1.7.22"/>
   <library
-      name="org.jetbrains.kotlin:kotlin-stdlib-common:1.7.10@jar"
-      jars="/Users/dezynextechnologysolutons/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.7.10/bac80c520d0a9e3f3673bc2658c6ed02ef45a76a/kotlin-stdlib-common-1.7.10.jar"
-      resolved="org.jetbrains.kotlin:kotlin-stdlib-common:1.7.10"/>
+      name="org.jetbrains.kotlin:kotlin-stdlib-common:1.7.22@jar"
+      jars="/Users/dezynextechnologysolutons/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.7.22/5dd2c9dcf64c94b46cf4bdb6fa4035b9bb726e2e/kotlin-stdlib-common-1.7.22.jar"
+      resolved="org.jetbrains.kotlin:kotlin-stdlib-common:1.7.22"/>
   <library
       name="org.jetbrains:annotations:13.0@jar"
       jars="/Users/dezynextechnologysolutons/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar"
