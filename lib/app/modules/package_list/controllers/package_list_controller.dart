@@ -5,6 +5,7 @@ import '../../../data/data.dart';
 class PackageListController extends GetxController {
   var isLoading = false.obs;
   var packageResult = PackageResult().obs;
+  var isEdit = false.obs;
   @override
   void onInit() {
     super.onInit();

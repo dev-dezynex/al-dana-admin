@@ -5,22 +5,25 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../data/data.dart';
-import '../../../routes/app_pages.dart';
+import '../../package_list/controllers/package_list_controller.dart';
 import '../controllers/add_package_controller.dart';
 
 class AddPackageView extends GetView<AddPackageController> {
   AddPackageView({Key? key}) : super(key: key);
   final GlobalKey<FormState> formKeyAddPdf = GlobalKey<FormState>();
   late FocusNode focusNode1, focusNode2;
+  final packageController = Get.find<PackageListController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: true,
         appBar: AppBar(
-          title: Text(
-            'Add Package',
-            style:
-                tsPoppins(size: 18, weight: FontWeight.w600, color: textDark80),
+          title: Obx(
+            () => Text(
+              packageController.isEdit.value ? 'Edit Package' : 'Add Package',
+              style: tsPoppins(
+                  size: 18, weight: FontWeight.w600, color: textDark80),
+            ),
           ),
           centerTitle: true,
           leading: const GoBack(),
@@ -149,7 +152,6 @@ class AddPackageView extends GetView<AddPackageController> {
                           const SizedBox(
                             height: 15,
                           ),
-                          
                           if (!controller.isCustomBranch.value)
                             TextFormField(
                               controller: controller.serviceModeController,

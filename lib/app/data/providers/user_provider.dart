@@ -62,10 +62,10 @@ class UserProvider extends GetConnect {
   }
 
   Future<UserResult> getActiveCustomers() async {
-    Map<String, String> qParams = {'filter[deletable]': 'false'};
-
-    final response = await get(apiListActiveCustomers,
-        headers: Auth().requestHeaders, query: qParams);
+    final response = await get(
+      apiListActiveCustomers,
+      headers: Auth().requestHeaders,
+    );
     print('auth ${Auth().requestHeaders}');
     print('path $apiListActiveUser');
     print('response ${response.body}');

@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -74,52 +72,51 @@ class AddSpareCategoryView extends GetView<AddSpareCategoryController> {
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          TextFormField(
-                            controller: controller.thumbController,
-                            textAlignVertical: TextAlignVertical.center,
-                            keyboardType: TextInputType.text,
-                            readOnly: true,
-                            style: tsPoppins(
-                                size: 14,
-                                weight: FontWeight.w400,
-                                color: textDark80),
-                            decoration: InputDecoration(
-                              prefixIcon: const Icon(
-                                Icons.photo_library_rounded,
-                                color: textDark60,
-                              ),
-                              suffix: IconButton(
-                                  onPressed: () {
-                                    controller.thumbController.text = '';
-                                    controller.thumbFile.value = File('');
-                                  },
-                                  icon: const Icon(
-                                    Icons.delete,
-                                    color: textDark60,
-                                  )),
-                              contentPadding: const EdgeInsets.only(left: 0),
-                              labelText: "Upload Thumbnail",
-                              labelStyle: tsPoppins(
-                                  size: 14,
-                                  weight: FontWeight.w400,
-                                  color: textColor02),
-                              enabledBorder: const UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: borderColor,
-                                ),
-                              ),
-                              focusedBorder: const UnderlineInputBorder(
-                                borderSide: BorderSide(color: borderColor),
-                              ),
-                            ),
-                            onTap: () {
-                              controller.pickThumb();
-                            },
-                          ),
-                          const SizedBox(height: 15),
+                          // const SizedBox(
+                          //   height: 15,
+                          // ),
+                          // TextFormField(
+                          //   controller: controller.thumbController,
+                          //   textAlignVertical: TextAlignVertical.center,
+                          //   keyboardType: TextInputType.text,
+                          //   readOnly: true,
+                          //   style: tsPoppins(
+                          //       size: 14,
+                          //       weight: FontWeight.w400,
+                          //       color: textDark80),
+                          //   decoration: InputDecoration(
+                          //     prefixIcon: const Icon(
+                          //       Icons.photo_library_rounded,
+                          //       color: textDark60,
+                          //     ),
+                          //     suffix: IconButton(
+                          //         onPressed: () {
+                          //           controller.thumbController.text = '';
+                          //           controller.thumbFile.value = File('');
+                          //         },
+                          //         icon: const Icon(
+                          //           Icons.delete,
+                          //           color: textDark60,
+                          //         )),
+                          //     contentPadding: const EdgeInsets.only(left: 0),
+                          //     labelText: "Upload Thumbnail",
+                          //     labelStyle: tsPoppins(
+                          //         size: 14,
+                          //         weight: FontWeight.w400,
+                          //         color: textColor02),
+                          //     enabledBorder: const UnderlineInputBorder(
+                          //       borderSide: BorderSide(
+                          //         color: borderColor,
+                          //       ),
+                          //     ),
+                          //     focusedBorder: const UnderlineInputBorder(
+                          //       borderSide: BorderSide(color: borderColor),
+                          //     ),
+                          //   ),
+                          //   onTap: () {
+                          //     controller.pickThumb();
+                          //   },
+                          // ),
                           const SizedBox(
                             height: 35,
                           ),

@@ -22,6 +22,7 @@ class PackageListView extends GetView<PackageListController> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
+            controller.isEdit.value = false;
             Get.toNamed(Routes.ADD_PACKAGE)!
                 .then((value) => value ? controller.getPackages() : null);
           },
@@ -46,6 +47,7 @@ class PackageListView extends GetView<PackageListController> {
                       return PackageTile(
                         isManage: true,
                         onEdit: () {
+                          controller.isEdit.value = true;
                           Get.toNamed(Routes.ADD_PACKAGE,
                                   arguments: controller
                                       .packageResult.value.packageList![i])!

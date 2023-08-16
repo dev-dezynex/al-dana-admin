@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:get/get.dart';
 
@@ -7,6 +8,7 @@ import '../../../data/data.dart';
 class UsersController extends GetxController {
   var isLoading = false.obs;
   var userResult = UserResult.list().obs;
+  var customerResult = UserResult.list().obs;
   var managerList = <User>[].obs;
   var technicianList = <User>[].obs;
   var customerList = <User>[].obs;
@@ -21,6 +23,7 @@ class UsersController extends GetxController {
   void getDetails() async {
     isLoading(true);
     await getUsers();
+    await getCustomers();
     isLoading(false);
   }
 
@@ -29,6 +32,15 @@ class UsersController extends GetxController {
     managerList.clear();
     technicianList.clear();
     customerList.clear();
+  }
+
+  getCustomers() async {
+    customerList.clear();
+    customerResult.value = await UserProvider().getActiveCustomers();
+    for (User customer in customerResult.value.userList) {
+      customerList.add(customer);
+    }
+    log('Customer called');
   }
 
   getUsers() async {
@@ -45,9 +57,6 @@ class UsersController extends GetxController {
           break;
         case "technician":
           technicianList.add(user);
-          break;
-        case "customer":
-          customerList.add(user);
           break;
       }
     }
