@@ -120,3 +120,5 @@ const String apiGetTracking = "${apiBase}users/getTracking";
 const String apiEditTracking = "${apiBase}users/editTracking";
 //invoice
 const String apiGetInvoice = "${apiBase}users/getInvoice";
+//reports
+const String apiGetInvoiceReport = "${apiBase}users/invoiceReport";

@@ -1,5 +1,6 @@
 import 'package:al_dana_admin/app/modules/Vat/views/vat_screen.dart';
 import 'package:al_dana_admin/app/modules/home/views/admin_home.dart';
+import 'package:al_dana_admin/app/modules/reports/views/report_screen.dart';
 import 'package:al_dana_admin/app/modules/time_slot/views/time_slot_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -241,6 +242,14 @@ class HomeView extends GetView<HomeController> {
             onTap: () {
               Get.back();
               Get.toNamed(Routes.PACKAGE_LIST);
+            },
+          ),
+          NavItem(
+            title: 'Reports',
+            icon: "assets/icons/ic_nav_4.svg",
+            onTap: () {
+              Get.back();
+              Get.to(const ReportScreen());
             },
           ),
           NavItem(

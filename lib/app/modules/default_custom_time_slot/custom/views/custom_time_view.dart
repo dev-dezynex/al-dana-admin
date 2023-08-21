@@ -105,94 +105,99 @@ class _CustomTimeSlotViewState extends State<CustomTimeSlotView> {
             builder: (context, provider, _) {
               if (provider.customTimeSlot != null) {
                 final timeSlots = provider.customTimeSlot!.data?.timeSlotId;
-                return SizedBox(
-                  height: height * 0.4,
-                  child: ListView.builder(
-                    shrinkWrap: true,
-                    physics: const BouncingScrollPhysics(),
-                    itemCount: timeSlots?.length,
-                    itemBuilder: (context, index) {
-                      final timeSlot = timeSlots?[index];
-                      return Card(
-                        elevation: 6,
-                        color: Colors.grey.shade100,
-                        child: ListTile(
-                          title: Text(
-                            '${timeSlot?.startTime} - ${timeSlot?.endTime}',
-                            style: const TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          subtitle: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Max Booking: ${timeSlot?.maxBooking}',
-                                style: const TextStyle(fontSize: 14),
+                final message = provider.customTimeSlot?.message;
+                if (message != "no slots available") {
+                  return SizedBox(
+                    height: height * 0.4,
+                    child: ListView.builder(
+                      shrinkWrap: true,
+                      physics: const BouncingScrollPhysics(),
+                      itemCount: timeSlots?.length,
+                      itemBuilder: (context, index) {
+                        final timeSlot = timeSlots?[index];
+                        return Card(
+                          elevation: 6,
+                          color: Colors.grey.shade100,
+                          child: ListTile(
+                            title: Text(
+                              '${timeSlot?.startTime} - ${timeSlot?.endTime}',
+                              style: const TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
                               ),
-                              if (timeSlot?.status == true)
-                                const Text(
-                                  'Status: Active',
-                                  style: TextStyle(fontSize: 14),
+                            ),
+                            subtitle: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Max Booking: ${timeSlot?.maxBooking}',
+                                  style: const TextStyle(fontSize: 14),
                                 ),
-                              if (timeSlot?.status == false)
-                                const Text(
-                                  'Status: Inactive',
-                                  style: TextStyle(fontSize: 14),
-                                ),
-                            ],
-                          ),
-                          trailing: IconButton(
-                            onPressed: () {
-                              showDialog(
-                                context: context,
-                                builder: (context) => AlertDialog(
-                                  title: const Text('Delete'),
-                                  content: const Text(
-                                      'Do you want to delete this time slot'),
-                                  actions: [
-                                    TextButton(
-                                      onPressed: () {
-                                        Navigator.of(context).pop();
-                                      },
-                                      child: const Text('Cancel'),
-                                    ),
-                                    TextButton(
-                                      onPressed: () {
-                                        Navigator.of(context).pop();
-                                        CustomTimeSlotProvider()
-                                            .deleteCustomTimeSlot(
-                                              provider.customTimeSlot?.data
-                                                      ?.sId ??
-                                                  '',
-                                              timeSlot?.sId ?? '',
-                                            )
-                                            .then(
-                                              (_) => customTimeSlotProvider
-                                                  .fetchCustomTimeSlot(
-                                                branchId,
-                                                categoryId,
-                                                pickedDate,
-                                              ),
-                                            );
-                                      },
-                                      child: const Text('Delete'),
-                                    ),
-                                  ],
-                                ),
-                              );
-                            },
-                            icon: const Icon(
-                              Icons.delete,
-                              color: Colors.red,
+                                if (timeSlot?.status == true)
+                                  const Text(
+                                    'Status: Active',
+                                    style: TextStyle(fontSize: 14),
+                                  ),
+                                if (timeSlot?.status == false)
+                                  const Text(
+                                    'Status: Inactive',
+                                    style: TextStyle(fontSize: 14),
+                                  ),
+                              ],
+                            ),
+                            trailing: IconButton(
+                              onPressed: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (context) => AlertDialog(
+                                    title: const Text('Delete'),
+                                    content: const Text(
+                                        'Do you want to delete this time slot'),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                        child: const Text('Cancel'),
+                                      ),
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                          CustomTimeSlotProvider()
+                                              .deleteCustomTimeSlot(
+                                                provider.customTimeSlot?.data
+                                                        ?.sId ??
+                                                    '',
+                                                timeSlot?.sId ?? '',
+                                              )
+                                              .then(
+                                                (_) => customTimeSlotProvider
+                                                    .fetchCustomTimeSlot(
+                                                  branchId,
+                                                  categoryId,
+                                                  pickedDate,
+                                                ),
+                                              );
+                                        },
+                                        child: const Text('Delete'),
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              },
+                              icon: const Icon(
+                                Icons.delete,
+                                color: Colors.red,
+                              ),
                             ),
                           ),
-                        ),
-                      );
-                    },
-                  ),
-                );
+                        );
+                      },
+                    ),
+                  );
+                } else {
+                  return Text(message.toString().toUpperCase());
+                }
               } else if (provider.isLoading) {
                 return const Center(
                   child: CircularProgressIndicator(),

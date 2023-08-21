@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
@@ -144,7 +145,14 @@ class AddUsersController extends GetxController {
   }
 
   getBranches() async {
-    if (selectedUser.value.scope == "superAdmin") {
+    log(Common().currentUser.scope);
+    log('get brance calle');
+    log(selectedUser.value.scope);
+
+    log('get brance calle');
+    if (selectedUser.value.scope == "superAdmin" ||
+        Common().currentUser.scope == "superAdmin") {
+      log('branch list called');
       branchResult.value = await BranchProvider().getBranches();
     }
     branchResult.refresh();
