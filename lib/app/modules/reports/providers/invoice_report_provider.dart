@@ -11,7 +11,7 @@ import '../../../data/constants/keys.dart';
 class InvoiceReportProvider extends ChangeNotifier {
   InvoiceReport? _invoiceReport;
 
-  bool _isLoading = false;
+  bool _isLoading = true;
   bool _hasError = false;
 
   InvoiceReport? get invoiceReport => _invoiceReport;
@@ -22,7 +22,6 @@ class InvoiceReportProvider extends ChangeNotifier {
     String pageNo,
   ) async {
     try {
-      _isLoading = true;
       final response = await http.get(
         Uri.parse("$apiGetInvoiceReport?page=$pageNo&perPage=8"),
         headers: <String, String>{

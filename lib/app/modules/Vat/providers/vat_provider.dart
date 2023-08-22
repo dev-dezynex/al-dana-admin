@@ -13,7 +13,7 @@ import '../../../data/constants/keys.dart';
 class VATProvider extends ChangeNotifier {
   VatList? _vatList;
 
-  bool _isLoading = false;
+  bool _isLoading = true;
   bool _hasError = false;
 
   VatList? get vatList => _vatList;

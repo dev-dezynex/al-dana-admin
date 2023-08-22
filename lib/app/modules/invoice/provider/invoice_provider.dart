@@ -7,9 +7,10 @@ import '../../../data/constants/keys.dart';
 import '../../../data/models/invoice.dart';
 import 'dart:async';
 import 'package:http/http.dart' as http;
+
 class InvoiceProvider extends ChangeNotifier {
   Invoice? _inovoice;
-  bool _isLoading = false;
+  bool _isLoading = true;
   bool _hasError = false;
 
   Invoice? get invoice => _inovoice;

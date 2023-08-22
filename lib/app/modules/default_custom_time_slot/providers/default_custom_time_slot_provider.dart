@@ -13,7 +13,7 @@ class DefaultCustomProvider extends ChangeNotifier {
   bool _isTimeSlotSelected = false;
   bool _isListDaySelected = false;
   bool _isDatePicked = false;
-  bool _isLoading = false;
+  bool _isLoading = true;
   String _startTimeHour = '01';
   String _startTimeMinute = '00';
   String _endTimeHour = '01';

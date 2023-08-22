@@ -11,7 +11,7 @@ import '../constants/keys.dart';
 
 class CustomTimeSlotProvider extends ChangeNotifier {
   CustomTimeSlot? _customTimeSlot;
-  bool _isLoading = false;
+  bool _isLoading = true;
   bool _hasError = false;
 
   CustomTimeSlot? get customTimeSlot => _customTimeSlot;

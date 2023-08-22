@@ -13,7 +13,7 @@ import '../../../data/constants/keys.dart';
 
 class ProfileProvider extends ChangeNotifier {
   Profile? _profile;
-  bool _isLoading = false;
+  bool _isLoading = true;
   bool _hasError = false;
 
   Profile? get profile => _profile;

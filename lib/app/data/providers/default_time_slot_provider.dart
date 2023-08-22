@@ -12,7 +12,7 @@ import '../constants/keys.dart';
 
 class DefaultTimeSlotProvider extends ChangeNotifier {
   DefaultTimeSlot? _defaultTimeSlot;
-  bool _isLoading = false;
+  bool _isLoading = true;
   bool _hasError = false;
 
   DefaultTimeSlot? get defaultTimeSlot => _defaultTimeSlot;

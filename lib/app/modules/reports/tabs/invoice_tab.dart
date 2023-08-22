@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'package:al_dana_admin/app/data/data.dart';
 import 'package:al_dana_admin/app/modules/reports/models/invoice_report.dart';
 import 'package:al_dana_admin/app/modules/reports/providers/invoice_report_provider.dart';
@@ -17,6 +18,7 @@ class _InvoicTabState extends State<InvoicTab> {
   bool _isLoading = false;
   int _currentPage = 1;
   final List<Data> _allInvoiceReports = [];
+
   @override
   void initState() {
     super.initState();
@@ -36,9 +38,12 @@ class _InvoicTabState extends State<InvoicTab> {
     setState(() {
       _isLoading = true;
     });
+    log('invoice');
     Future.delayed(const Duration(seconds: 1), () {
-      Provider.of<InvoiceReportProvider>(context, listen: false)
-          .fetchInvoiceReport(page);
+      if (mounted) {
+        Provider.of<InvoiceReportProvider>(context, listen: false)
+            .fetchInvoiceReport(page);
+      }
     });
   }
 
@@ -53,6 +58,7 @@ class _InvoicTabState extends State<InvoicTab> {
   @override
   void dispose() {
     _scrollController.dispose();
+    _allInvoiceReports.clear();
     super.dispose();
   }
 
@@ -74,53 +80,67 @@ class _InvoicTabState extends State<InvoicTab> {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(top: 10),
-      child: ListView.builder(
-        controller: _scrollController,
-        itemCount: _allInvoiceReports.length + (_isLoading ? 1 : 0),
-        itemBuilder: (context, index) {
-          if (index < _allInvoiceReports.length) {
-            return Padding(
-              padding: const EdgeInsets.only(left: 8, right: 8, bottom: 10),
-              child: Container(
-                height: 160,
-                padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  color: white,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                        'Invoice Number - ${_allInvoiceReports[index].invoiceNumber}'),
-                    const Spacer(),
-                    Text(
-                      'Booking Id - ${_allInvoiceReports[index].bookingId}',
-                      style: const TextStyle(overflow: TextOverflow.ellipsis),
-                    ),
-                    const Spacer(),
-                    Text(
-                        'Payment Status - ${_allInvoiceReports[index].paymentStatus}'),
-                    const Spacer(),
-                    Text(
-                        'Created on - ${DateFormat('dd-MM-yyyy, HH:mm').format(DateTime.parse(_allInvoiceReports[index].createdAt ?? ''))}'),
-                    const Spacer(),
-                    Text(
-                        'Updated on - ${DateFormat('dd-MM-yyyy, HH:mm').format(DateTime.parse(_allInvoiceReports[index].updatedAt ?? ''))}'),
-                    const Spacer(),
-                  ],
-                ),
+      child: Provider.of<InvoiceReportProvider>(context).isLoading
+          ? const Center(
+              child: CircularProgressIndicator(
+                color: primary,
               ),
-            );
-          } else {
-            return _isLoading
-                ? const Center(
-                    child: CircularProgressIndicator(),
-                  )
-                : const SizedBox.shrink();
-          }
-        },
-      ),
+            )
+          : Provider.of<InvoiceReportProvider>(context).hasError
+              ? const Center(
+                  child: Text('Error loading Invoice Reports'),
+                )
+              : ListView.builder(
+                  controller: _scrollController,
+                  itemCount: _allInvoiceReports.length + (_isLoading ? 1 : 0),
+                  itemBuilder: (context, index) {
+                    if (index < _allInvoiceReports.length) {
+                      return Padding(
+                        padding: const EdgeInsets.only(
+                            left: 8, right: 8, bottom: 10),
+                        child: Container(
+                          height: 160,
+                          padding: const EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            color: white,
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                  'Invoice Number - ${_allInvoiceReports[index].invoiceNumber}'),
+                              const Spacer(),
+                              Text(
+                                'Booking Id - ${_allInvoiceReports[index].bookingId}',
+                                style: const TextStyle(
+                                    overflow: TextOverflow.ellipsis),
+                              ),
+                              const Spacer(),
+                              Text(
+                                  'Payment Status - ${_allInvoiceReports[index].paymentStatus}'),
+                              const Spacer(),
+                              Text(
+                                  'Created on - ${DateFormat('dd-MM-yyyy, HH:mm').format(DateTime.parse(_allInvoiceReports[index].createdAt ?? ''))}'),
+                              const Spacer(),
+                              Text(
+                                  'Updated on - ${DateFormat('dd-MM-yyyy, HH:mm').format(DateTime.parse(_allInvoiceReports[index].updatedAt ?? ''))}'),
+                              const Spacer(),
+                            ],
+                          ),
+                        ),
+                      );
+                    } else {
+                      return _isLoading
+                          ? const Center(
+                              child: CircularProgressIndicator(
+                                color: primary,
+                              ),
+                            )
+                          : const SizedBox.shrink();
+                    }
+                  },
+                ),
     );
   }
 }

@@ -12,7 +12,7 @@ import '../constants/keys.dart';
 
 class TimeSlotApiProvider extends ChangeNotifier {
   TimeSlots? _timeSlots;
-  bool _isLoading = false;
+  bool _isLoading = true;
   bool _hasError = false;
 
   TimeSlots? get timeSlots => _timeSlots;

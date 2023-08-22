@@ -12,7 +12,7 @@ import '../../../data/constants/keys.dart';
 
 class TrackingProvider extends ChangeNotifier {
   Tracking? _tracking;
-  bool _isLoading = false;
+  bool _isLoading = true;
   bool _hasError = false;
 
   Tracking? get tracking => _tracking;

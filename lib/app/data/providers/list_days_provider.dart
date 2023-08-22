@@ -11,7 +11,7 @@ import '../constants/keys.dart';
 class ListDaysProvider extends ChangeNotifier {
   ListDays? _listDays;
   ListDays? get listDays => _listDays;
-  bool _isLoading = false;
+  bool _isLoading = true;
   bool _hasError = false;
 
   bool get isLoading => _isLoading;
