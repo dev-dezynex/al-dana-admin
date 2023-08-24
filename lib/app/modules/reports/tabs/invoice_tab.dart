@@ -18,6 +18,7 @@ class _InvoicTabState extends State<InvoicTab> {
   bool _isLoading = false;
   int _currentPage = 1;
   final List<Data> _allInvoiceReports = [];
+  bool _isFetched = false;
 
   @override
   void initState() {
@@ -51,6 +52,7 @@ class _InvoicTabState extends State<InvoicTab> {
     if (!_isLoading &&
         _scrollController.position.pixels ==
             _scrollController.position.maxScrollExtent) {
+      _isFetched = false;
       _fetchData(_currentPage.toString());
     }
   }
@@ -65,14 +67,17 @@ class _InvoicTabState extends State<InvoicTab> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    final invoiceReports =
-        Provider.of<InvoiceReportProvider>(context).invoiceReport?.data;
-    if (invoiceReports != null) {
-      setState(() {
-        _isLoading = false;
-        _currentPage++;
-        _allInvoiceReports.addAll(invoiceReports);
-      });
+    if (!_isFetched) {
+      final invoiceReports =
+          Provider.of<InvoiceReportProvider>(context).invoiceReport?.data;
+      if (invoiceReports != null) {
+        setState(() {
+          _isLoading = false;
+          _currentPage++;
+          _allInvoiceReports.addAll(invoiceReports);
+        });
+        _isFetched = true;
+      }
     }
   }
 
@@ -108,23 +113,64 @@ class _InvoicTabState extends State<InvoicTab> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                  'Invoice Number - ${_allInvoiceReports[index].invoiceNumber}'),
-                              const Spacer(),
-                              Text(
-                                'Booking Id - ${_allInvoiceReports[index].bookingId}',
-                                style: const TextStyle(
-                                    overflow: TextOverflow.ellipsis),
+                              Row(
+                                children: [
+                                  const Text(
+                                    'Invoice Number',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  ),
+                                  Text(
+                                      ' - ${_allInvoiceReports[index].invoiceNumber}'),
+                                ],
                               ),
                               const Spacer(),
-                              Text(
-                                  'Payment Status - ${_allInvoiceReports[index].paymentStatus}'),
+                              Row(
+                                children: [
+                                  const Text(
+                                    'Booking Id',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  ),
+                                  Text(
+                                    ' - ${_allInvoiceReports[index].bookingId}',
+                                    style: const TextStyle(
+                                        overflow: TextOverflow.ellipsis),
+                                  ),
+                                ],
+                              ),
                               const Spacer(),
-                              Text(
-                                  'Created on - ${DateFormat('dd-MM-yyyy, HH:mm').format(DateTime.parse(_allInvoiceReports[index].createdAt ?? ''))}'),
+                              Row(
+                                children: [
+                                  const Text(
+                                    'Payment Status',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  ),
+                                  Text(
+                                      ' - ${_allInvoiceReports[index].paymentStatus}'),
+                                ],
+                              ),
                               const Spacer(),
-                              Text(
-                                  'Updated on - ${DateFormat('dd-MM-yyyy, HH:mm').format(DateTime.parse(_allInvoiceReports[index].updatedAt ?? ''))}'),
+                              Row(
+                                children: [
+                                  const Text(
+                                    'Created on',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  ),
+                                  Text(
+                                      ' - ${DateFormat('dd-MM-yyyy, HH:mm').format(DateTime.parse(_allInvoiceReports[index].createdAt ?? ''))}'),
+                                ],
+                              ),
+                              const Spacer(),
+                              Row(
+                                children: [
+                                  
+                                  Text(
+                                      'Updated on - ${DateFormat('dd-MM-yyyy, HH:mm').format(DateTime.parse(_allInvoiceReports[index].updatedAt ?? ''))}'),
+                                ],
+                              ),
                               const Spacer(),
                             ],
                           ),

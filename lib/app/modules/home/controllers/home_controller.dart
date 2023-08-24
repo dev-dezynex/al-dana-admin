@@ -22,6 +22,7 @@ class HomeController extends GetxController {
   //for admin home
   var bookingResult = BookingResult().obs;
   var adminTabIndex = 0.obs;
+  var dateTime = "".obs;
 
   //for profile
   var file = File('').obs;
@@ -132,8 +133,13 @@ class HomeController extends GetxController {
   }
 
   void getBookings() async {
-    bookingResult.value = await BookingProvider().getBookingHistory();
+    bookingResult.value =
+        await BookingProvider().getBookingHistory(date: dateTime.value);
     bookingResult.refresh();
+  }
+
+  void refreshfilterBooking() {
+    getDetails();
   }
 
   void updateBookingStatus(String bookingStatus, String bookingId) async {

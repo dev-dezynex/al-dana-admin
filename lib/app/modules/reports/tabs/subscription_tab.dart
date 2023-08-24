@@ -18,6 +18,7 @@ class _SubscriptionTabState extends State<SubscriptionTab> {
   bool _isLoading = false;
   int _currentPage = 1;
   final List<Data> _allSubscriptionReports = [];
+  bool _isFetched = false;
 
   @override
   void initState() {
@@ -51,6 +52,7 @@ class _SubscriptionTabState extends State<SubscriptionTab> {
     if (!_isLoading &&
         _scrollController.position.pixels ==
             _scrollController.position.maxScrollExtent) {
+      _isFetched = false;
       _fetchData(_currentPage.toString());
     }
   }
@@ -65,15 +67,19 @@ class _SubscriptionTabState extends State<SubscriptionTab> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    final subscriptionReports = Provider.of<SubscriptionReportProvider>(context)
-        .subscriptionReport
-        ?.data;
-    if (subscriptionReports != null) {
-      setState(() {
-        _isLoading = false;
-        _currentPage++;
-        _allSubscriptionReports.addAll(subscriptionReports);
-      });
+    if (!_isFetched) {
+      final subscriptionReports =
+          Provider.of<SubscriptionReportProvider>(context)
+              .subscriptionReport
+              ?.data;
+      if (subscriptionReports != null) {
+        setState(() {
+          _isLoading = false;
+          _currentPage++;
+          _allSubscriptionReports.addAll(subscriptionReports);
+        });
+        _isFetched = true;
+      }
     }
   }
 

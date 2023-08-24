@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:al_dana_admin/app/data/constants/api_routes.dart';
 import 'package:get/get.dart';
 
@@ -5,17 +7,37 @@ import '../constants/common.dart';
 import '../models/booking_model.dart';
 
 class BookingProvider extends GetConnect {
-  Future<BookingResult> getBookingHistory() async {
+  Future<BookingResult> getBookingHistory({String date = ""}) async {
     BookingResult result;
-    final response = await get(
-      apiGetListBooking,
-      headers: Auth().requestHeaders,
-    );
-    if (response.statusCode == 200) {
-      result = BookingResult.fromJson(response.body);
+    log('With date');
+    log(date.toString());
+
+    if (date == "" || date.isEmpty || date == "null") {
+      log('without date called');
+      final response = await get(
+        apiGetListBooking,
+        headers: Auth().requestHeaders,
+      );
+      if (response.statusCode == 200) {
+        result = BookingResult.fromJson(response.body);
+        log(response.statusCode.toString());
+      } else {
+        result = BookingResult.fromJson(
+            {"status": "error", "message": "Server error !", "data": []});
+      }
     } else {
-      result = BookingResult.fromJson(
-          {"status": "error", "message": "Server error !", "data": []});
+      log('with date called');
+      final response = await get(
+        "$apiGetListBooking?filter[date]=$date",
+        headers: Auth().requestHeaders,
+      );
+      if (response.statusCode == 200) {
+        result = BookingResult.fromJson(response.body);
+        log(response.statusCode.toString());
+      } else {
+        result = BookingResult.fromJson(
+            {"status": "error", "message": "Server error !", "data": []});
+      }
     }
 
     return result;

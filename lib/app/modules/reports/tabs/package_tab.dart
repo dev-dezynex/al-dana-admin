@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:al_dana_admin/app/data/data.dart';
 import 'package:al_dana_admin/app/modules/reports/models/package_report.dart';
 import 'package:al_dana_admin/app/modules/reports/providers/package_report_provider.dart';
@@ -16,6 +18,7 @@ class _PackageTabState extends State<PackageTab> {
   bool _isLoading = false;
   int _currentPage = 1;
   final List<Data> _allPackageReports = [];
+  bool _isFetched = false;
 
   @override
   void initState() {
@@ -49,6 +52,7 @@ class _PackageTabState extends State<PackageTab> {
     if (!_isLoading &&
         _scrollController.position.pixels ==
             _scrollController.position.maxScrollExtent) {
+      _isFetched = false;
       _fetchData(_currentPage.toString());
     }
   }
@@ -56,21 +60,24 @@ class _PackageTabState extends State<PackageTab> {
   @override
   void dispose() {
     _scrollController.dispose();
-    _allPackageReports.clear();
     super.dispose();
   }
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    final packageReports =
-        Provider.of<PackageReportProvider>(context).packageReport?.data;
-    if (packageReports != null) {
-      setState(() {
-        _isLoading = false;
-        _currentPage++;
-        _allPackageReports.addAll(packageReports);
-      });
+    if (!_isFetched) {
+      final packageReports =
+          Provider.of<PackageReportProvider>(context).packageReport?.data;
+      log('called');
+      if (packageReports != null) {
+        setState(() {
+          _isLoading = false;
+          _currentPage++;
+          _allPackageReports.addAll(packageReports);
+        });
+        _isFetched = true;
+      }
     }
   }
 
@@ -108,8 +115,63 @@ class _PackageTabState extends State<PackageTab> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                  "Package Title - ${_allPackageReports[index].title}"),
+                              if (_allPackageReports[index].image != null ||
+                                  _allPackageReports[index].image != "" ||
+                                  _allPackageReports[index].image!.isNotEmpty)
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Image.network(
+                                        "$domainName${_allPackageReports[index].image}"),
+                                  ],
+                                ),
+                              const SizedBox(height: 5),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text(
+                                    'Package',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  ),
+                                  Text(
+                                    "${_allPackageReports[index].title}",
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 5),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text(
+                                    'Descripiton',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  ),
+                                  Text(
+                                    "${_allPackageReports[index].description}",
+                                    overflow: TextOverflow.ellipsis,
+                                    maxLines: 8,
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 5),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text(
+                                    'Price',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  ),
+                                  Text(
+                                    "${_allPackageReports[index].price} AED",
+                                    overflow: TextOverflow.ellipsis,
+                                    maxLines: 8,
+                                  ),
+                                ],
+                              ),
                             ],
                           ),
                         ),

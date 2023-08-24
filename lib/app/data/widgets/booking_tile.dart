@@ -265,6 +265,15 @@ class _BookingTile2State extends State<BookingTile2> {
                             ],
                           ),
                           const SizedBox(height: 5),
+                          Text(
+                            'Booking ID',
+                            style: tsPoppins(
+                                weight: FontWeight.bold, color: textDark40),
+                          ),
+                          Text(widget.booking.sId ?? '',
+                              style: tsPoppins(
+                                  weight: FontWeight.w400, color: textDark40)),
+                          const SizedBox(height: 5),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -291,9 +300,7 @@ class _BookingTile2State extends State<BookingTile2> {
                             Text(
                               widget.booking.addressId?.location ?? '',
                               style: tsPoppins(
-                                  weight: FontWeight.w400,
-                                  color: textDark40,
-                                  size: 10),
+                                  weight: FontWeight.w400, color: textDark40),
                             ),
                           if (addressLocation != "") const SizedBox(height: 5),
                           Text(
@@ -304,9 +311,7 @@ class _BookingTile2State extends State<BookingTile2> {
                           Text(
                             widget.booking.branchId?.name ?? '',
                             style: tsPoppins(
-                                weight: FontWeight.w400,
-                                color: textDark40,
-                                size: 10),
+                                weight: FontWeight.w400, color: textDark40),
                           ),
                           const SizedBox(height: 5),
                           Text(
@@ -317,9 +322,7 @@ class _BookingTile2State extends State<BookingTile2> {
                           Text(
                             '${widget.booking.timeSlotId?.startTime}-${widget.booking.timeSlotId?.endTime}',
                             style: tsPoppins(
-                                weight: FontWeight.w400,
-                                color: textDark40,
-                                size: 10),
+                                weight: FontWeight.w400, color: textDark40),
                           ),
                           Text(
                             'Customer Details',
@@ -329,23 +332,77 @@ class _BookingTile2State extends State<BookingTile2> {
                           Text(
                             'Name  ${widget.booking.customerId?.name ?? ''}',
                             style: tsPoppins(
-                                weight: FontWeight.w400,
-                                color: textDark40,
-                                size: 10),
+                                weight: FontWeight.w400, color: textDark40),
                           ),
                           Text(
                             'Email  ${widget.booking.customerId?.email ?? ''}',
                             style: tsPoppins(
-                                weight: FontWeight.w400,
-                                color: textDark40,
-                                size: 10),
+                                weight: FontWeight.w400, color: textDark40),
                           ),
                           Text(
                             'Phone  ${widget.booking.customerId?.phoneNumber ?? ''}',
                             style: tsPoppins(
-                                weight: FontWeight.w400,
-                                color: textDark40,
-                                size: 10),
+                                weight: FontWeight.w400, color: textDark40),
+                          ),
+                          if (widget.booking.package!.isNotEmpty)
+                            Text(
+                              'Package',
+                              style: tsPoppins(
+                                  weight: FontWeight.bold, color: textDark40),
+                            ),
+                          if (widget.booking.package!.isNotEmpty)
+                            ListView.builder(
+                              shrinkWrap: true,
+                              physics: const NeverScrollableScrollPhysics(),
+                              itemCount: widget.booking.package?.length,
+                              itemBuilder: (context, packageIndex) {
+                                return Text(
+                                  widget.booking.package?[packageIndex]
+                                          .packageId?.title ??
+                                      '',
+                                  style: tsPoppins(
+                                      weight: FontWeight.w400,
+                                      color: textDark40),
+                                );
+                              },
+                            ),
+                          if (widget.booking.service!.isNotEmpty)
+                            Text(
+                              'Service',
+                              style: tsPoppins(
+                                  weight: FontWeight.bold, color: textDark40),
+                            ),
+                          if (widget.booking.service!.isNotEmpty)
+                            ListView.builder(
+                              shrinkWrap: true,
+                              physics: const NeverScrollableScrollPhysics(),
+                              itemCount: widget.booking.service?.length,
+                              itemBuilder: (context, serviceIndex) {
+                                return Text(
+                                  widget.booking.service?[serviceIndex]
+                                          .serviceId?.title ??
+                                      '',
+                                  style: tsPoppins(
+                                      weight: FontWeight.w400,
+                                      color: textDark40),
+                                );
+                              },
+                            ),
+                          const SizedBox(height: 5),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Price',
+                                style: tsPoppins(
+                                    weight: FontWeight.bold, color: textDark40),
+                              ),
+                              Text(
+                                "AED ${widget.booking.totalAmount}",
+                                textAlign: TextAlign.end,
+                                style: tsPoppins(color: textDark40),
+                              ),
+                            ],
                           ),
                         ],
                       ),
