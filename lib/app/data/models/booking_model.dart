@@ -714,7 +714,7 @@ class Spare {
   Spare.fromJson(Map<String, dynamic> json) {
     spareId = json['spareId'];
     spareAmount = json['spareAmount'];
-    sId = json['_id'];
+    sId = json['_id'];  
   }
 
   Map<String, dynamic> toJson() {

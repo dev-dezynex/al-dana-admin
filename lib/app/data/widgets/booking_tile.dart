@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:al_dana_admin/app/data/models/booking_model.dart';
+import 'package:al_dana_admin/app/data/widgets/booking_details_page.dart';
 import 'package:al_dana_admin/app/modules/home/controllers/home_controller.dart';
 import 'package:al_dana_admin/app/modules/tracking/views/tracking_view.dart';
 import 'package:al_dana_admin/app/modules/users/controllers/users_controller.dart';
@@ -409,6 +410,18 @@ class _BookingTile2State extends State<BookingTile2> {
                     ),
                   )
                 ],
+              ),
+              TextButton(
+                style: TextButton.styleFrom(foregroundColor: primary),
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => BookingDetailPage(
+                      booking: widget.booking,
+                      addressLocaiton: addressLocation,
+                    ),
+                  ));
+                },
+                child: const Text('View more details'),
               ),
               if (role == 'superAdmin' ||
                   role == 'admin' ||
