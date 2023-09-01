@@ -19,7 +19,7 @@ class AdminHomeView extends GetView<HomeController> {
     return Scaffold(
       backgroundColor: bgColor1,
       body: DefaultTabController(
-        length: 4,
+        length: 5,
         initialIndex: 0,
         child: SafeArea(
           child: NestedScrollView(
@@ -67,6 +67,12 @@ class AdminHomeView extends GetView<HomeController> {
                             Tab(
                               child: Text(
                                 'Cancelled',
+                                style: tsPoppins(size: 14, color: textDark80),
+                              ),
+                            ),
+                            Tab(
+                              child: Text(
+                                'Completed',
                                 style: tsPoppins(size: 14, color: textDark80),
                               ),
                             ),
@@ -176,7 +182,7 @@ class AdminHomeView extends GetView<HomeController> {
                   padding: const EdgeInsets.only(top: 40),
                   child: TabBarView(
                     children: List.generate(
-                      4,
+                      5,
                       (index) => Obx(
                         () => viewTabs(index, controller.bookingResult),
                       ),
@@ -255,6 +261,14 @@ class AdminHomeView extends GetView<HomeController> {
           bookings = controller.bookingResult.value.data!
               .where((element) =>
                   element.approvalStatus!.toLowerCase() == 'cancelled')
+              .toList()
+              .reversed
+              .toList();
+          break;
+        case 4:
+          bookings = controller.bookingResult.value.data!
+              .where((element) =>
+                  element.approvalStatus!.toLowerCase() == 'completed')
               .toList()
               .reversed
               .toList();

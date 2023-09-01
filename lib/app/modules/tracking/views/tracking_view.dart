@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'dart:io';
 
+import 'package:al_dana_admin/app/modules/home/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
@@ -271,6 +272,7 @@ class TrackingStatusTab extends StatelessWidget {
         ),
         ElevatedButton(
           onPressed: () {
+            final homeController = Get.find<HomeController>();
             log(trackingStatus.toString());
             log(tracking!.sId!);
             if (trackingStatus.toString() == "Pending") {
@@ -288,7 +290,7 @@ class TrackingStatusTab extends StatelessWidget {
             } else if (trackingStatus.toString() == "On Progress") {
               TrackingProvider()
                   .changeTrackingStatus(tracking.sId ?? '', 'Completed');
-
+              homeController.updateBookingStatus('Completed', bookingId ?? '');
               Provider.of<TrackingProvider>(context, listen: false)
                   .fetchTracking(bookingId ?? '');
             } else {
