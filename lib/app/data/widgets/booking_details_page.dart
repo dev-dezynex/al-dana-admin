@@ -1,22 +1,41 @@
+import 'dart:developer';
+
 import 'package:al_dana_admin/app/data/data.dart';
 import 'package:al_dana_admin/app/data/models/booking_model.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:provider/provider.dart';
+
+import '../../modules/home/controllers/home_controller.dart';
+import '../../modules/invoice/provider/invoice_provider.dart';
+import '../../modules/invoice/views/invoice_view.dart';
+import '../../modules/tracking/views/tracking_view.dart';
+import '../../modules/users/controllers/users_controller.dart';
 
 class BookingDetailPage extends StatefulWidget {
   const BookingDetailPage({
     super.key,
     this.booking,
     this.addressLocaiton,
+    this.controller,
   });
   final Data? booking;
   final String? addressLocaiton;
+  final HomeController? controller;
   @override
   State<BookingDetailPage> createState() => _BookingDetailPageState();
 }
 
 class _BookingDetailPageState extends State<BookingDetailPage> {
+  Common common = Common();
+  final userController = Get.put(UsersController());
   @override
   Widget build(BuildContext context) {
+    String role = common.currentUser.scope;
+    final managerList = userController.managerList.toList();
+    final technicianList = userController.technicianList.toList();
+    String? managerId;
+    String? technicianId;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: primary,
@@ -33,6 +52,27 @@ class _BookingDetailPageState extends State<BookingDetailPage> {
         ),
         child: ListView(
           children: [
+            Container(
+              constraints:
+                  BoxConstraints(maxWidth: Get.width * .8, maxHeight: 100),
+              padding: const EdgeInsets.all(10),
+              child: widget.booking!.package!.isNotEmpty
+                  ? Image.network(
+                      "$domainName${widget.booking!.package?[0].packageId?.image}",
+                      fit: BoxFit.contain,
+                      errorBuilder: (context, error, stackTrace) {
+                        return Image.asset(
+                          'assets/images/img_placeholder.png',
+                          fit: BoxFit.contain,
+                        );
+                      },
+                    )
+                  : Image.asset(
+                      'assets/images/img_placeholder.png',
+                      fit: BoxFit.contain,
+                    ),
+            ),
+            const SizedBox(height: 5),
             Text(
               'Booking ID',
               style: tsPoppins(
@@ -42,7 +82,7 @@ class _BookingDetailPageState extends State<BookingDetailPage> {
               ),
             ),
             Text(
-              widget.booking?.sId ?? '',
+              widget.booking?.bookingId ?? '',
               style: tsPoppins(
                 weight: FontWeight.w400,
                 color: textDark40,
@@ -190,14 +230,28 @@ class _BookingDetailPageState extends State<BookingDetailPage> {
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: widget.booking?.package?.length,
                 itemBuilder: (context, packageIndex) {
-                  return Text(
-                    widget.booking?.package?[packageIndex].packageId?.title ??
-                        '',
-                    style: tsPoppins(
-                      weight: FontWeight.w400,
-                      color: textDark40,
-                      size: 16,
-                    ),
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        widget.booking?.package?[packageIndex].packageId
+                                ?.title ??
+                            '',
+                        style: tsPoppins(
+                          weight: FontWeight.w400,
+                          color: textDark40,
+                          size: 16,
+                        ),
+                      ),
+                      Text(
+                        "Price - ${widget.booking?.package?[packageIndex].packageId?.price}",
+                        style: tsPoppins(
+                          weight: FontWeight.w400,
+                          color: textDark40,
+                          size: 16,
+                        ),
+                      ),
+                    ],
                   );
                 },
               ),
@@ -216,18 +270,71 @@ class _BookingDetailPageState extends State<BookingDetailPage> {
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: widget.booking?.service?.length,
                 itemBuilder: (context, serviceIndex) {
-                  return Text(
-                    widget.booking?.service?[serviceIndex].serviceId?.title ??
-                        '',
-                    style: tsPoppins(
-                      weight: FontWeight.w400,
-                      color: textDark40,
-                      size: 16,
-                    ),
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        widget.booking?.service?[serviceIndex].serviceId
+                                ?.title ??
+                            '',
+                        style: tsPoppins(
+                          weight: FontWeight.w400,
+                          color: textDark40,
+                          size: 16,
+                        ),
+                      ),
+                      Text(
+                        "Price - ${widget.booking?.service?[serviceIndex].serviceId?.price}",
+                        style: tsPoppins(
+                          weight: FontWeight.w400,
+                          color: textDark40,
+                          size: 16,
+                        ),
+                      ),
+                    ],
                   );
                 },
               ),
-            const SizedBox(height: 5),
+            if (widget.booking!.service!.isNotEmpty) const SizedBox(height: 5),
+            if (widget.booking!.spare!.isNotEmpty)
+              Text(
+                'Spare',
+                style: tsPoppins(
+                  weight: FontWeight.bold,
+                  color: textDark40,
+                  size: 18,
+                ),
+              ),
+            if (widget.booking!.spare!.isNotEmpty)
+              ListView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: widget.booking?.spare?.length,
+                itemBuilder: (context, spareIndex) {
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        widget.booking?.spare?[spareIndex].spareId?.title ?? '',
+                        style: tsPoppins(
+                          weight: FontWeight.w400,
+                          color: textDark40,
+                          size: 16,
+                        ),
+                      ),
+                      Text(
+                        "Price - ${widget.booking?.spare?[spareIndex].spareId?.price} AED",
+                        style: tsPoppins(
+                          weight: FontWeight.w400,
+                          color: textDark40,
+                          size: 16,
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              ),
+            if (widget.booking!.spare!.isNotEmpty) const SizedBox(height: 5),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -249,6 +356,190 @@ class _BookingDetailPageState extends State<BookingDetailPage> {
                 ),
               ],
             ),
+            const SizedBox(height: 10),
+            if (role == 'superAdmin' ||
+                role == 'admin' ||
+                role == 'serviceManager')
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  if (widget.booking?.approvalStatus == 'Pending' ||
+                      widget.booking?.approvalStatus == 'Confirmed' ||
+                      widget.booking?.approvalStatus == 'Assigned')
+                    Padding(
+                      padding: const EdgeInsets.only(right: 8),
+                      child: ElevatedButton(
+                          onPressed: () {
+                            widget.controller?.updateBookingStatus(
+                                'Cancelled', widget.booking?.sId ?? '');
+                            Navigator.of(context).pop();
+                          },
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: bgColor29),
+                          child: Text(
+                            '   Cancel   ',
+                            style: tsPoppins(
+                                weight: FontWeight.w600, color: white),
+                          )),
+                    ),
+                  if (widget.booking?.approvalStatus == 'Pending')
+                    Padding(
+                      padding: const EdgeInsets.only(right: 8),
+                      child: ElevatedButton(
+                          onPressed: () {
+                            widget.controller?.updateBookingStatus(
+                                'Confirmed', widget.booking?.sId ?? '');
+                            Navigator.of(context).pop();
+                          },
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: bgColor37),
+                          child: Text(
+                            '  Confirm  ',
+                            style: tsPoppins(
+                                weight: FontWeight.w600, color: white),
+                          )),
+                    ),
+                  if (widget.booking!.approvalStatus == 'Confirmed')
+                    Padding(
+                      padding: const EdgeInsets.only(right: 8),
+                      child: ElevatedButton(
+                          onPressed: () {
+                            showDialog(
+                              context: context,
+                              builder: (context) {
+                                return AlertDialog(
+                                  content: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      if (role == 'superAdmin' ||
+                                          role == 'admin')
+                                        DropdownButtonFormField<String>(
+                                          decoration: const InputDecoration(
+                                              labelText: 'Select Manager'),
+                                          items: managerList
+                                              .map<DropdownMenuItem<String>>(
+                                                  (manager) {
+                                            return DropdownMenuItem<String>(
+                                              value: manager.id,
+                                              child: Text(manager.name),
+                                            );
+                                          }).toList(),
+                                          onChanged: (value) {
+                                            managerId = value ?? '';
+                                            log(managerId.toString());
+                                          },
+                                        ),
+                                      if (role == "serviceManager")
+                                        DropdownButtonFormField<String>(
+                                          decoration: const InputDecoration(
+                                              labelText: 'Select Technician'),
+                                          items: technicianList
+                                              .map<DropdownMenuItem<String>>(
+                                                  (technician) {
+                                            return DropdownMenuItem<String>(
+                                              value: technician.id,
+                                              child: Text(technician.name),
+                                            );
+                                          }).toList(),
+                                          onChanged: (value) {
+                                            technicianId = value ?? '';
+                                          },
+                                        ),
+                                      const SizedBox(height: 10),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: [
+                                          TextButton(
+                                            onPressed: () {
+                                              Navigator.of(context).pop();
+                                            },
+                                            child: const Text(
+                                              'Cancel',
+                                              style:
+                                                  TextStyle(color: bgColor29),
+                                            ),
+                                          ),
+                                          const SizedBox(width: 8),
+                                          ElevatedButton(
+                                            style: ElevatedButton.styleFrom(
+                                                backgroundColor: bgColor38),
+                                            onPressed: () {
+                                              if (role == 'superAdmin' ||
+                                                  role == 'admin') {
+                                                widget.controller
+                                                    ?.assignToServiceManager(
+                                                  widget.booking?.sId ?? '',
+                                                  managerId ?? '',
+                                                );
+                                              } else {
+                                                widget.controller
+                                                    ?.assignToTechnician(
+                                                  widget.booking?.sId ?? '',
+                                                  technicianId ?? '',
+                                                );
+                                              }
+                                              Navigator.of(context).pop();
+                                              Navigator.of(context).pop();
+                                            },
+                                            child: const Text('Assign'),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              },
+                            );
+                          },
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: bgColor38),
+                          child: Text(
+                            '   Assign   ',
+                            style: tsPoppins(
+                                weight: FontWeight.w600, color: white),
+                          )),
+                    ),
+                  if (widget.booking?.approvalStatus == 'Assigned')
+                    Padding(
+                      padding: const EdgeInsets.only(right: 8),
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: bgColor37),
+                        onPressed: () {
+                          log(widget.booking!.sId.toString());
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => TrackingView(
+                              bookingId: widget.booking?.sId ?? '',
+                            ),
+                          ));
+                        },
+                        child: const Text('   Track   '),
+                      ),
+                    ),
+                  if (widget.booking?.approvalStatus == 'Assigned')
+                    Padding(
+                      padding: const EdgeInsets.only(right: 8),
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: bgColor38),
+                        onPressed: () {
+                          log(widget.booking!.sId.toString());
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const InvoiceView(),
+                            ),
+                          );
+                          Provider.of<InvoiceProvider>(context, listen: false)
+                              .fetchInvoice(
+                            widget.booking!.sId.toString(),
+                          );
+                        },
+                        child: const Text('   Invoice   '),
+                      ),
+                    ),
+                ],
+              ),
           ],
         ),
       ),

@@ -1,16 +1,10 @@
-import 'dart:developer';
-
 import 'package:al_dana_admin/app/data/models/booking_model.dart';
 import 'package:al_dana_admin/app/data/widgets/booking_details_page.dart';
 import 'package:al_dana_admin/app/modules/home/controllers/home_controller.dart';
-import 'package:al_dana_admin/app/modules/tracking/views/tracking_view.dart';
 import 'package:al_dana_admin/app/modules/users/controllers/users_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:provider/provider.dart';
 
-import '../../modules/invoice/provider/invoice_provider.dart';
-import '../../modules/invoice/views/invoice_view.dart';
 import '../data.dart';
 
 class BookingTile extends StatelessWidget {
@@ -188,12 +182,10 @@ class BookingTile2 extends StatefulWidget {
   const BookingTile2({
     Key? key,
     required this.booking,
-    this.onTap,
     this.onChanged,
     this.controller,
   }) : super(key: key);
   final Data booking;
-  final GestureTapCallback? onTap;
   final void Function(bool?)? onChanged;
   final HomeController? controller;
 
@@ -207,15 +199,18 @@ class _BookingTile2State extends State<BookingTile2> {
   @override
   @override
   Widget build(BuildContext context) {
-    final managerList = userController.managerList.toList();
-    final technicianList = userController.technicianList.toList();
-
-    String role = common.currentUser.scope;
     String addressLocation = widget.booking.addressId?.location ?? '';
-    String? managerId;
-    String? technicianId;
+
     return InkWell(
-      onTap: widget.onTap,
+      onTap: () {
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => BookingDetailPage(
+            booking: widget.booking,
+            addressLocaiton: addressLocation,
+            controller: widget.controller,
+          ),
+        ));
+      },
       child: Card(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
           color: white,
@@ -271,39 +266,10 @@ class _BookingTile2State extends State<BookingTile2> {
                             style: tsPoppins(
                                 weight: FontWeight.bold, color: textDark40),
                           ),
-                          Text(widget.booking.sId ?? '',
+                          Text(widget.booking.bookingId ?? '',
                               style: tsPoppins(
                                   weight: FontWeight.w400, color: textDark40)),
                           const SizedBox(height: 5),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'Booking Type',
-                                style: tsPoppins(
-                                    color: textDark40, weight: FontWeight.bold),
-                              ),
-                              Text(
-                                widget.booking.bookingType ?? '',
-                                style: tsPoppins(
-                                    weight: FontWeight.w400, color: textDark40),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 5),
-                          if (addressLocation != "")
-                            Text(
-                              'Address',
-                              style: tsPoppins(
-                                  weight: FontWeight.bold, color: textDark40),
-                            ),
-                          if (addressLocation != "")
-                            Text(
-                              widget.booking.addressId?.location ?? '',
-                              style: tsPoppins(
-                                  weight: FontWeight.w400, color: textDark40),
-                            ),
-                          if (addressLocation != "") const SizedBox(height: 5),
                           Text(
                             'Branch',
                             style: tsPoppins(
@@ -325,70 +291,6 @@ class _BookingTile2State extends State<BookingTile2> {
                             style: tsPoppins(
                                 weight: FontWeight.w400, color: textDark40),
                           ),
-                          Text(
-                            'Customer Details',
-                            style: tsPoppins(
-                                weight: FontWeight.bold, color: textDark40),
-                          ),
-                          Text(
-                            'Name  ${widget.booking.customerId?.name ?? ''}',
-                            style: tsPoppins(
-                                weight: FontWeight.w400, color: textDark40),
-                          ),
-                          Text(
-                            'Email  ${widget.booking.customerId?.email ?? ''}',
-                            style: tsPoppins(
-                                weight: FontWeight.w400, color: textDark40),
-                          ),
-                          Text(
-                            'Phone  ${widget.booking.customerId?.phoneNumber ?? ''}',
-                            style: tsPoppins(
-                                weight: FontWeight.w400, color: textDark40),
-                          ),
-                          if (widget.booking.package!.isNotEmpty)
-                            Text(
-                              'Package',
-                              style: tsPoppins(
-                                  weight: FontWeight.bold, color: textDark40),
-                            ),
-                          if (widget.booking.package!.isNotEmpty)
-                            ListView.builder(
-                              shrinkWrap: true,
-                              physics: const NeverScrollableScrollPhysics(),
-                              itemCount: widget.booking.package?.length,
-                              itemBuilder: (context, packageIndex) {
-                                return Text(
-                                  widget.booking.package?[packageIndex]
-                                          .packageId?.title ??
-                                      '',
-                                  style: tsPoppins(
-                                      weight: FontWeight.w400,
-                                      color: textDark40),
-                                );
-                              },
-                            ),
-                          if (widget.booking.service!.isNotEmpty)
-                            Text(
-                              'Service',
-                              style: tsPoppins(
-                                  weight: FontWeight.bold, color: textDark40),
-                            ),
-                          if (widget.booking.service!.isNotEmpty)
-                            ListView.builder(
-                              shrinkWrap: true,
-                              physics: const NeverScrollableScrollPhysics(),
-                              itemCount: widget.booking.service?.length,
-                              itemBuilder: (context, serviceIndex) {
-                                return Text(
-                                  widget.booking.service?[serviceIndex]
-                                          .serviceId?.title ??
-                                      '',
-                                  style: tsPoppins(
-                                      weight: FontWeight.w400,
-                                      color: textDark40),
-                                );
-                              },
-                            ),
                           const SizedBox(height: 5),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -411,198 +313,6 @@ class _BookingTile2State extends State<BookingTile2> {
                   )
                 ],
               ),
-              TextButton(
-                style: TextButton.styleFrom(foregroundColor: primary),
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => BookingDetailPage(
-                      booking: widget.booking,
-                      addressLocaiton: addressLocation,
-                    ),
-                  ));
-                },
-                child: const Text('View more details'),
-              ),
-              if (role == 'superAdmin' ||
-                  role == 'admin' ||
-                  role == 'serviceManager')
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    if (widget.booking.approvalStatus == 'Pending' ||
-                        widget.booking.approvalStatus == 'Confirmed' ||
-                        widget.booking.approvalStatus == 'Assigned')
-                      Padding(
-                        padding: const EdgeInsets.only(right: 8),
-                        child: ElevatedButton(
-                            onPressed: () {
-                              widget.controller?.updateBookingStatus(
-                                  'Cancelled', widget.booking.sId ?? '');
-                            },
-                            style: ElevatedButton.styleFrom(
-                                backgroundColor: bgColor29),
-                            child: Text(
-                              '   Cancel   ',
-                              style: tsPoppins(
-                                  weight: FontWeight.w600, color: white),
-                            )),
-                      ),
-                    if (widget.booking.approvalStatus == 'Pending')
-                      Padding(
-                        padding: const EdgeInsets.only(right: 8),
-                        child: ElevatedButton(
-                            onPressed: () {
-                              widget.controller?.updateBookingStatus(
-                                  'Confirmed', widget.booking.sId ?? '');
-                            },
-                            style: ElevatedButton.styleFrom(
-                                backgroundColor: bgColor37),
-                            child: Text(
-                              '  Confirm  ',
-                              style: tsPoppins(
-                                  weight: FontWeight.w600, color: white),
-                            )),
-                      ),
-                    if (widget.booking.approvalStatus == 'Confirmed')
-                      Padding(
-                        padding: const EdgeInsets.only(right: 8),
-                        child: ElevatedButton(
-                            onPressed: () {
-                              showDialog(
-                                context: context,
-                                builder: (context) {
-                                  return AlertDialog(
-                                    content: Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        if (role == 'superAdmin' ||
-                                            role == 'admin')
-                                          DropdownButtonFormField<String>(
-                                            decoration: const InputDecoration(
-                                                labelText: 'Select Manager'),
-                                            items: managerList
-                                                .map<DropdownMenuItem<String>>(
-                                                    (manager) {
-                                              return DropdownMenuItem<String>(
-                                                value: manager.id,
-                                                child: Text(manager.name),
-                                              );
-                                            }).toList(),
-                                            onChanged: (value) {
-                                              managerId = value ?? '';
-                                              log(managerId.toString());
-                                            },
-                                          ),
-                                        if (role == "serviceManager")
-                                          DropdownButtonFormField<String>(
-                                            decoration: const InputDecoration(
-                                                labelText: 'Select Technician'),
-                                            items: technicianList
-                                                .map<DropdownMenuItem<String>>(
-                                                    (technician) {
-                                              return DropdownMenuItem<String>(
-                                                value: technician.id,
-                                                child: Text(technician.name),
-                                              );
-                                            }).toList(),
-                                            onChanged: (value) {
-                                              technicianId = value ?? '';
-                                            },
-                                          ),
-                                        const SizedBox(height: 10),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.end,
-                                          children: [
-                                            TextButton(
-                                              onPressed: () {
-                                                Navigator.of(context).pop();
-                                              },
-                                              child: const Text(
-                                                'Cancel',
-                                                style:
-                                                    TextStyle(color: bgColor29),
-                                              ),
-                                            ),
-                                            const SizedBox(width: 8),
-                                            ElevatedButton(
-                                              style: ElevatedButton.styleFrom(
-                                                  backgroundColor: bgColor38),
-                                              onPressed: () {
-                                                if (role == 'superAdmin' ||
-                                                    role == 'admin') {
-                                                  widget.controller
-                                                      ?.assignToServiceManager(
-                                                    widget.booking.sId ?? '',
-                                                    managerId ?? '',
-                                                  );
-                                                } else {
-                                                  widget.controller
-                                                      ?.assignToTechnician(
-                                                    widget.booking.sId ?? '',
-                                                    technicianId ?? '',
-                                                  );
-                                                }
-                                                Navigator.of(context).pop();
-                                              },
-                                              child: const Text('Assign'),
-                                            ),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                  );
-                                },
-                              );
-                            },
-                            style: ElevatedButton.styleFrom(
-                                backgroundColor: bgColor38),
-                            child: Text(
-                              '   Assign   ',
-                              style: tsPoppins(
-                                  weight: FontWeight.w600, color: white),
-                            )),
-                      ),
-                    if (widget.booking.approvalStatus == 'Assigned')
-                      Padding(
-                        padding: const EdgeInsets.only(right: 8),
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: bgColor37),
-                          onPressed: () {
-                            log(widget.booking.sId.toString());
-                            Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => TrackingView(
-                                bookingId: widget.booking.sId ?? '',
-                              ),
-                            ));
-                          },
-                          child: const Text('   Track   '),
-                        ),
-                      ),
-                    if (widget.booking.approvalStatus == 'Assigned')
-                      Padding(
-                        padding: const EdgeInsets.only(right: 8),
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: bgColor38),
-                          onPressed: () {
-                            log(widget.booking.sId.toString());
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) => const InvoiceView(),
-                              ),
-                            );
-                            Provider.of<InvoiceProvider>(context, listen: false)
-                                .fetchInvoice(
-                              widget.booking.sId.toString(),
-                            );
-                          },
-                          child: const Text('   Invoice   '),
-                        ),
-                      ),
-                  ],
-                ),
               const SizedBox(
                 height: 10,
               )

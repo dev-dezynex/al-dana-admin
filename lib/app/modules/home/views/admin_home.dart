@@ -1,8 +1,12 @@
 import 'dart:developer';
 
 import 'package:al_dana_admin/app/data/models/booking_model.dart';
+import 'package:al_dana_admin/app/modules/default_custom_time_slot/providers/default_custom_time_slot_provider.dart';
+import 'package:al_dana_admin/app/modules/default_custom_time_slot/utils/branch_drop_down.dart';
+import 'package:al_dana_admin/app/modules/default_custom_time_slot/utils/select_date.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 
 import '../../../data/data.dart';
 import '../controllers/home_controller.dart';
@@ -166,11 +170,41 @@ class AdminHomeView extends GetView<HomeController> {
                 ),
               ];
             },
-            body: TabBarView(
-                children: List.generate(
-                    4,
-                    (index) =>
-                        Obx(() => viewTabs(index, controller.bookingResult)))),
+            body: Stack(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 40),
+                  child: TabBarView(
+                    children: List.generate(
+                      4,
+                      (index) => Obx(
+                        () => viewTabs(index, controller.bookingResult),
+                      ),
+                    ),
+                  ),
+                ),
+                Positioned(
+                  right: 2,
+                  top: 0,
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 12),
+                    child: IconButton(
+                      onPressed: () {
+                        Provider.of<DefaultCustomProvider>(context,
+                                listen: false)
+                            .clearAll();
+
+                        showDialog(
+                          context: context,
+                          builder: (context) => const FilterMenu(),
+                        );
+                      },
+                      icon: const Icon(Icons.filter_list),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -238,6 +272,7 @@ class AdminHomeView extends GetView<HomeController> {
     return RefreshIndicator(
       onRefresh: () async {
         controller.dateTime.value = "";
+        controller.filterBranchId.value = '';
         await Future.delayed(
           const Duration(seconds: 1),
         );
@@ -249,11 +284,139 @@ class AdminHomeView extends GetView<HomeController> {
           itemCount: bookings.length,
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (con, i) {
-            return BookingTile2(
-              booking: bookings[i],
-              controller: controller,
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: BookingTile2(
+                booking: bookings[i],
+                controller: controller,
+              ),
             );
           }),
+    );
+  }
+}
+
+class FilterMenu extends StatelessWidget {
+  const FilterMenu({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final controller = Get.find<HomeController>();
+    Common common = Common();
+    return AlertDialog(
+      title: const Text('Filter by'),
+      actions: [
+        TextButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          child: const Text(
+            'Close',
+            style: TextStyle(color: primary),
+          ),
+        ),
+      ],
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          ListTile(
+            title: const Text('Date'),
+            onTap: () {
+              controller.dateTime.value = '';
+              Navigator.of(context).pop();
+              showDialog(
+                context: context,
+                builder: (context) => AlertDialog(
+                  title: const Text('Select Date'),
+                  content: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: const [
+                      SelectDateForBooking(),
+                    ],
+                  ),
+                  actions: [
+                    if (Provider.of<DefaultCustomProvider>(context)
+                            .pickedDate !=
+                        '')
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                          controller.dateTime.value =
+                              Provider.of<DefaultCustomProvider>(context,
+                                      listen: false)
+                                  .pickedDate;
+                          controller.getDetails();
+                        },
+                        child: const Text(
+                          'Filter',
+                          style: TextStyle(color: primary),
+                        ),
+                      ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: const Text(
+                        'Cancel',
+                        style: TextStyle(color: primary),
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
+          if (common.currentUser.scope == "superAdmin")
+            ListTile(
+              title: const Text('Branch ID'),
+              onTap: () {
+                controller.filterBranchId.value = '';
+                Navigator.of(context).pop();
+                showDialog(
+                  context: context,
+                  builder: (context) => AlertDialog(
+                    title: const Text('Select Branch'),
+                    content: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: const [
+                        BranchDropDown(),
+                      ],
+                    ),
+                    actions: [
+                      if (Provider.of<DefaultCustomProvider>(context)
+                              .branchId !=
+                          "")
+                        TextButton(
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                              controller.filterBranchId.value =
+                                  Provider.of<DefaultCustomProvider>(context,
+                                          listen: false)
+                                      .branchId;
+                              log('after filter');
+                              log(controller.filterBranchId.value);
+                              controller.getDetails();
+                            },
+                            child: const Text(
+                              'Filter',
+                              style: TextStyle(color: primary),
+                            )),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: const Text(
+                          'Close',
+                          style: TextStyle(color: primary),
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              },
+            ),
+        ],
+      ),
     );
   }
 }

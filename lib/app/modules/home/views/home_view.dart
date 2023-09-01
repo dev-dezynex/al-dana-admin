@@ -71,8 +71,8 @@ class HomeView extends GetView<HomeController> {
         shrinkWrap: true,
         children: [
           NavHeader(
-            name: controller.common.currentUser.name,
-            image: controller.common.currentUser.image,
+            name: controller.common.value.currentUser.name,
+            image: controller.common.value.currentUser.image,
           ),
           // NavItem(
           //   title: "Work Manager",

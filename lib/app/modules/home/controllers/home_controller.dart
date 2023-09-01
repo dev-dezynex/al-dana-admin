@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
@@ -9,7 +10,7 @@ import '../../../data/models/booking_model.dart';
 import '../../../routes/app_pages.dart';
 
 class HomeController extends GetxController {
-  var common = Common();
+  var common = Common().obs;
   var bottomBarIndex = 1.obs;
   var bannerIndex = 0.obs;
   var categoryResult = CategoryResult().obs;
@@ -23,6 +24,7 @@ class HomeController extends GetxController {
   var bookingResult = BookingResult().obs;
   var adminTabIndex = 0.obs;
   var dateTime = "".obs;
+  var filterBranchId = "".obs;
 
   //for profile
   var file = File('').obs;
@@ -50,10 +52,13 @@ class HomeController extends GetxController {
   void onClose() {}
 
   getDetails() {
-    // if (common.currentUser.scope == 'admin') {
-    getBookings();
-    // }
-    getService();
+    log("scope ${common.value.currentUser.scope}");
+    if (common.value.currentUser.scope == 'superAdmin') {
+      getBookings(branchId: filterBranchId.value,);
+    } else {
+      log('My branch id - ${common.value.currentUser.branchId}');
+      getBookings(branchId: common.value.currentUser.branchId);
+    }
     getVehicles();
     getCurrentLocation();
   }
@@ -132,9 +137,11 @@ class HomeController extends GetxController {
     );
   }
 
-  void getBookings() async {
-    bookingResult.value =
-        await BookingProvider().getBookingHistory(date: dateTime.value);
+  void getBookings({String? branchId}) async {
+    bookingResult.value = await BookingProvider()
+        .getBookingHistory(date: dateTime.value, branchId: branchId ?? '');
+    log("date ${dateTime.value}");
+    log('branch id $branchId');
     bookingResult.refresh();
   }
 

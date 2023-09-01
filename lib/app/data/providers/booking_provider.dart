@@ -7,15 +7,43 @@ import '../constants/common.dart';
 import '../models/booking_model.dart';
 
 class BookingProvider extends GetConnect {
-  Future<BookingResult> getBookingHistory({String date = ""}) async {
+  Future<BookingResult> getBookingHistory({
+    String date = "",
+    String branchId = "",
+  }) async {
     BookingResult result;
     log('With date');
     log(date.toString());
 
-    if (date == "" || date.isEmpty || date == "null") {
+    if ((date == "" || date.isEmpty || date == "null") &&
+        (branchId == "" || branchId.isEmpty || branchId == "null")) {
       log('without date called');
       final response = await get(
         apiGetListBooking,
+        headers: Auth().requestHeaders,
+      );
+      if (response.statusCode == 200) {
+        result = BookingResult.fromJson(response.body);
+        log(response.statusCode.toString());
+      } else {
+        result = BookingResult.fromJson(
+            {"status": "error", "message": "Server error !", "data": []});
+      }
+    } else if (branchId != "" && date == "") {
+      final response = await get(
+        "$apiGetListBooking?filter[branchId]=$branchId",
+        headers: Auth().requestHeaders,
+      );
+      if (response.statusCode == 200) {
+        result = BookingResult.fromJson(response.body);
+        log(response.statusCode.toString());
+      } else {
+        result = BookingResult.fromJson(
+            {"status": "error", "message": "Server error !", "data": []});
+      }
+    } else if (branchId != "" && date != "") {
+      final response = await get(
+        "$apiGetListBooking?filter[date]=$date&filter[branchId]=$branchId",
         headers: Auth().requestHeaders,
       );
       if (response.statusCode == 200) {
