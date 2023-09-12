@@ -124,3 +124,5 @@ const String apiGetInvoice = "${apiBase}users/getInvoice";
 const String apiGetInvoiceReport = "${apiBase}users/invoiceReport";
 const String apiGetSubscriptionReport = "${apiBase}users/subscriptionReport";
 const String apiGetPackageReport = "${apiBase}users/packageReport";
+const String apiGetBookingReport = "${apiBase}users/bookingReport";
+const String apiGetJobReport = "${apiBase}users/jobOrderReport";

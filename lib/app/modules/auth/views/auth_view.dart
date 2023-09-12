@@ -65,7 +65,7 @@ class AuthView extends GetView<AuthController> {
                       SizedBox(
                           width: Get.width * .7,
                           child: Text(
-                            'Please enter your email and\n password to verify',
+                            'Please enter your username and\n password to verify',
                             textAlign: TextAlign.center,
                             style: tsPoppins(
                                 color: white,
@@ -101,7 +101,7 @@ class AuthView extends GetView<AuthController> {
                                         weight: FontWeight.w400),
                                     contentPadding: const EdgeInsets.symmetric(
                                         vertical: 15),
-                                    labelText: 'Email',
+                                    labelText: 'Username',
                                     labelStyle: tsPoppins(
                                         color: textDark40,
                                         size: 14,

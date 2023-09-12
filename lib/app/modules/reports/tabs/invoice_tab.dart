@@ -102,7 +102,10 @@ class _InvoicTabState extends State<InvoicTab> {
                     if (index < _allInvoiceReports.length) {
                       return Padding(
                         padding: const EdgeInsets.only(
-                            left: 8, right: 8, bottom: 10),
+                          left: 8,
+                          right: 8,
+                          bottom: 10,
+                        ),
                         child: Container(
                           height: 160,
                           padding: const EdgeInsets.all(10),
@@ -166,7 +169,6 @@ class _InvoicTabState extends State<InvoicTab> {
                               const Spacer(),
                               Row(
                                 children: [
-                                  
                                   Text(
                                       'Updated on - ${DateFormat('dd-MM-yyyy, HH:mm').format(DateTime.parse(_allInvoiceReports[index].updatedAt ?? ''))}'),
                                 ],

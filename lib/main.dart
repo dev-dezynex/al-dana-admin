@@ -7,7 +7,9 @@ import 'package:al_dana_admin/app/modules/invoice/provider/invoice_provider.dart
 import 'package:al_dana_admin/app/modules/profile/providers/profile_provider.dart';
 import 'package:al_dana_admin/app/data/providers/time_slot_provider.dart';
 import 'package:al_dana_admin/app/modules/default_custom_time_slot/providers/default_custom_time_slot_provider.dart';
+import 'package:al_dana_admin/app/modules/reports/providers/booking_report_provider.dart';
 import 'package:al_dana_admin/app/modules/reports/providers/invoice_report_provider.dart';
+import 'package:al_dana_admin/app/modules/reports/providers/job_report_provider.dart';
 import 'package:al_dana_admin/app/modules/reports/providers/package_report_provider.dart';
 import 'package:al_dana_admin/app/modules/reports/providers/subscription_report_provider.dart';
 import 'package:al_dana_admin/app/modules/time_slot/providers/time_slot_add_widget.dart';
@@ -85,6 +87,12 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (_) => PackageReportProvider(),
         ),
+        ChangeNotifierProvider(
+          create: (_) => BookingReportProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => JobReportProvider(),
+        )
       ],
       child: GetMaterialApp(
         title: "Al Dana Admin",

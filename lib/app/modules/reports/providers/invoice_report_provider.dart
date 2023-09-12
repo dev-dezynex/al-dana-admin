@@ -1,16 +1,13 @@
 import 'dart:convert';
-
 import 'package:al_dana_admin/app/data/constants/api_routes.dart';
 import 'package:al_dana_admin/app/modules/reports/models/invoice_report.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-
 import '../../../data/constants/common.dart';
 import '../../../data/constants/keys.dart';
 
 class InvoiceReportProvider extends ChangeNotifier {
   InvoiceReport? _invoiceReport;
-
   bool _isLoading = true;
   bool _hasError = false;
 

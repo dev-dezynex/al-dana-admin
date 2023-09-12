@@ -214,24 +214,24 @@ class AdminHomeView extends GetView<HomeController> {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton.small(
-        backgroundColor: primary.withOpacity(0.8),
-        onPressed: () async {
-          final DateTime? dateTime = await showDatePicker(
-            context: context,
-            initialDate: DateTime.now(),
-            firstDate: DateTime(2023),
-            lastDate: DateTime.now(),
-          );
-          if (dateTime != null) {
-            controller.dateTime.value =
-                "${dateTime.year}-${dateTime.month}-${dateTime.day}";
-            log("${dateTime.year}-${dateTime.month}-${dateTime.day}");
-            controller.refreshfilterBooking();
-          }
-        },
-        child: const Icon(Icons.filter_alt),
-      ),
+      // floatingActionButton: FloatingActionButton.small(
+      //   backgroundColor: primary.withOpacity(0.8),
+      //   onPressed: () async {
+      //     final DateTime? dateTime = await showDatePicker(
+      //       context: context,
+      //       initialDate: DateTime.now(),
+      //       firstDate: DateTime(2023),
+      //       lastDate: DateTime.now(),
+      //     );
+      //     if (dateTime != null) {
+      //       controller.dateTime.value =
+      //           "${dateTime.year}-${dateTime.month}-${dateTime.day}";
+      //       log("${dateTime.year}-${dateTime.month}-${dateTime.day}");
+      //       controller.refreshfilterBooking();
+      //     }
+      //   },
+      //   child: const Icon(Icons.filter_alt),
+      // ),
     );
   }
 
