@@ -52,9 +52,11 @@ class HomeController extends GetxController {
   void onClose() {}
 
   getDetails() {
-    log("scope ${common.value.currentUser.scope}");
+    log("scope id ${common.value.currentUser.id}");
     if (common.value.currentUser.scope == 'superAdmin') {
-      getBookings(branchId: filterBranchId.value,);
+      getBookings(
+        branchId: filterBranchId.value,
+      );
     } else {
       log('My branch id - ${common.value.currentUser.branchId}');
       getBookings(branchId: common.value.currentUser.branchId);
@@ -138,8 +140,24 @@ class HomeController extends GetxController {
   }
 
   void getBookings({String? branchId}) async {
-    bookingResult.value = await BookingProvider()
-        .getBookingHistory(date: dateTime.value, branchId: branchId ?? '');
+    if (currentUser.value.scope == 'serviceManager') {
+      bookingResult.value = await BookingProvider().getBookingHistory(
+        date: dateTime.value,
+        branchId: branchId ?? '',
+        serviceManagerId: currentUser.value.id,
+      );
+    } else if (currentUser.value.scope == 'technician') {
+      bookingResult.value = await BookingProvider().getBookingHistory(
+        date: dateTime.value,
+        branchId: branchId ?? '',
+        technicianId: currentUser.value.id,
+      );
+    } else {
+      bookingResult.value = await BookingProvider().getBookingHistory(
+        date: dateTime.value,
+        branchId: branchId ?? '',
+      );
+    }
     log("date ${dateTime.value}");
     log('branch id $branchId');
     bookingResult.refresh();

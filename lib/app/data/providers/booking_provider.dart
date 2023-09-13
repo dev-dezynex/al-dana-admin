@@ -10,64 +10,179 @@ class BookingProvider extends GetConnect {
   Future<BookingResult> getBookingHistory({
     String date = "",
     String branchId = "",
+    String serviceManagerId = "",
+    String technicianId = "",
   }) async {
     BookingResult result;
     log('With date');
     log(date.toString());
 
-    if ((date == "" || date.isEmpty || date == "null") &&
-        (branchId == "" || branchId.isEmpty || branchId == "null")) {
-      log('without date called');
-      final response = await get(
-        apiGetListBooking,
-        headers: Auth().requestHeaders,
-      );
-      if (response.statusCode == 200) {
-        result = BookingResult.fromJson(response.body);
-        log(response.statusCode.toString());
+    if (serviceManagerId != "") {
+      if ((date == "" || date.isEmpty || date == "null") &&
+          (branchId == "" || branchId.isEmpty || branchId == "null")) {
+        log('without date called');
+        final response = await get(
+          "$apiGetListBooking?filter[serviceManagerId]=$serviceManagerId",
+          headers: Auth().requestHeaders,
+        );
+        if (response.statusCode == 200) {
+          result = BookingResult.fromJson(response.body);
+          log(response.statusCode.toString());
+        } else {
+          result = BookingResult.fromJson(
+              {"status": "error", "message": "Server error !", "data": []});
+        }
+      } else if (branchId != "" && date == "") {
+        final response = await get(
+          "$apiGetListBooking?filter[branchId]=$branchId&filter[serviceManagerId]=$serviceManagerId",
+          headers: Auth().requestHeaders,
+        );
+        if (response.statusCode == 200) {
+          result = BookingResult.fromJson(response.body);
+          log(response.statusCode.toString());
+        } else {
+          result = BookingResult.fromJson(
+              {"status": "error", "message": "Server error !", "data": []});
+        }
+      } else if (branchId != "" && date != "") {
+        final response = await get(
+          "$apiGetListBooking?filter[date]=$date&filter[branchId]=$branchId&filter[serviceManagerId]=$serviceManagerId",
+          headers: Auth().requestHeaders,
+        );
+        if (response.statusCode == 200) {
+          result = BookingResult.fromJson(response.body);
+          log(response.statusCode.toString());
+        } else {
+          result = BookingResult.fromJson(
+              {"status": "error", "message": "Server error !", "data": []});
+        }
       } else {
-        result = BookingResult.fromJson(
-            {"status": "error", "message": "Server error !", "data": []});
+        log('with date called');
+        final response = await get(
+          "$apiGetListBooking?filter[date]=$date&filter[serviceManagerId]=$serviceManagerId",
+          headers: Auth().requestHeaders,
+        );
+        if (response.statusCode == 200) {
+          result = BookingResult.fromJson(response.body);
+          log(response.statusCode.toString());
+        } else {
+          result = BookingResult.fromJson(
+              {"status": "error", "message": "Server error !", "data": []});
+        }
       }
-    } else if (branchId != "" && date == "") {
-      final response = await get(
-        "$apiGetListBooking?filter[branchId]=$branchId",
-        headers: Auth().requestHeaders,
-      );
-      if (response.statusCode == 200) {
-        result = BookingResult.fromJson(response.body);
-        log(response.statusCode.toString());
+    }
+    // else if
+    else if (technicianId != "") {
+      if ((date == "" || date.isEmpty || date == "null") &&
+          (branchId == "" || branchId.isEmpty || branchId == "null")) {
+        log('without date called');
+        final response = await get(
+          "$apiGetListBooking?filter[technicianId]=$technicianId",
+          headers: Auth().requestHeaders,
+        );
+        if (response.statusCode == 200) {
+          result = BookingResult.fromJson(response.body);
+          log(response.statusCode.toString());
+        } else {
+          result = BookingResult.fromJson(
+              {"status": "error", "message": "Server error !", "data": []});
+        }
+      } else if (branchId != "" && date == "") {
+        final response = await get(
+          "$apiGetListBooking?filter[branchId]=$branchId&filter[technicianId]=$technicianId",
+          headers: Auth().requestHeaders,
+        );
+        if (response.statusCode == 200) {
+          result = BookingResult.fromJson(response.body);
+          log(response.statusCode.toString());
+        } else {
+          result = BookingResult.fromJson(
+              {"status": "error", "message": "Server error !", "data": []});
+        }
+      } else if (branchId != "" && date != "") {
+        final response = await get(
+          "$apiGetListBooking?filter[date]=$date&filter[branchId]=$branchId&filter[technicianId]=$technicianId",
+          headers: Auth().requestHeaders,
+        );
+        if (response.statusCode == 200) {
+          result = BookingResult.fromJson(response.body);
+          log(response.statusCode.toString());
+        } else {
+          result = BookingResult.fromJson(
+              {"status": "error", "message": "Server error !", "data": []});
+        }
       } else {
-        result = BookingResult.fromJson(
-            {"status": "error", "message": "Server error !", "data": []});
+        log('with date called');
+        final response = await get(
+          "$apiGetListBooking?filter[date]=$date&filter[technicianId]=$technicianId",
+          headers: Auth().requestHeaders,
+        );
+        if (response.statusCode == 200) {
+          result = BookingResult.fromJson(response.body);
+          log(response.statusCode.toString());
+        } else {
+          result = BookingResult.fromJson(
+              {"status": "error", "message": "Server error !", "data": []});
+        }
       }
-    } else if (branchId != "" && date != "") {
-      final response = await get(
-        "$apiGetListBooking?filter[date]=$date&filter[branchId]=$branchId",
-        headers: Auth().requestHeaders,
-      );
-      if (response.statusCode == 200) {
-        result = BookingResult.fromJson(response.body);
-        log(response.statusCode.toString());
+    }
+    //else
+    else {
+      if ((date == "" || date.isEmpty || date == "null") &&
+          (branchId == "" || branchId.isEmpty || branchId == "null")) {
+        log('without date called');
+        final response = await get( 
+          apiGetListBooking,
+          headers: Auth().requestHeaders,
+        );
+        if (response.statusCode == 200) {
+          result = BookingResult.fromJson(response.body);
+          log(response.statusCode.toString());
+        } else {
+          result = BookingResult.fromJson(
+              {"status": "error", "message": "Server error !", "data": []});
+        }
+      } else if (branchId != "" && date == "") {
+        final response = await get(
+          "$apiGetListBooking?filter[branchId]=$branchId",
+          headers: Auth().requestHeaders,
+        );
+        if (response.statusCode == 200) {
+          result = BookingResult.fromJson(response.body);
+          log(response.statusCode.toString());
+        } else {
+          result = BookingResult.fromJson(
+              {"status": "error", "message": "Server error !", "data": []});
+        }
+      } else if (branchId != "" && date != "") {
+        final response = await get(
+          "$apiGetListBooking?filter[date]=$date&filter[branchId]=$branchId",
+          headers: Auth().requestHeaders,
+        );
+        if (response.statusCode == 200) {
+          result = BookingResult.fromJson(response.body);
+          log(response.statusCode.toString());
+        } else {
+          result = BookingResult.fromJson(
+              {"status": "error", "message": "Server error !", "data": []});
+        }
       } else {
-        result = BookingResult.fromJson(
-            {"status": "error", "message": "Server error !", "data": []});
-      }
-    } else {
-      log('with date called');
-      final response = await get(
-        "$apiGetListBooking?filter[date]=$date",
-        headers: Auth().requestHeaders,
-      );
-      if (response.statusCode == 200) {
-        result = BookingResult.fromJson(response.body);
-        log(response.statusCode.toString());
-      } else {
-        result = BookingResult.fromJson(
-            {"status": "error", "message": "Server error !", "data": []});
+        log('with date called');
+        final response = await get(
+          "$apiGetListBooking?filter[date]=$date",
+          headers: Auth().requestHeaders,
+        );
+        if (response.statusCode == 200) {
+          result = BookingResult.fromJson(response.body);
+          log(response.statusCode.toString());
+        } else {
+          result = BookingResult.fromJson(
+              {"status": "error", "message": "Server error !", "data": []});
+        }
       }
     }
 
+    // else
     return result;
   }
 

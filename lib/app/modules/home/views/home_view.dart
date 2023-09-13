@@ -245,6 +245,14 @@ class HomeView extends GetView<HomeController> {
             },
           ),
           NavItem(
+            title: 'Manage Extra Charge',
+            icon: "assets/icons/ic_nav_4.svg",
+            onTap: () {
+              Get.back();
+              Get.toNamed(Routes.EXTRA_CHARGE);
+            },
+          ),
+          NavItem(
             title: 'Reports',
             icon: "assets/icons/ic_nav_4.svg",
             onTap: () {
