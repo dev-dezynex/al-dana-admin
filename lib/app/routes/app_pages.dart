@@ -46,8 +46,6 @@ import '../modules/coupon/bindings/coupon_binding.dart';
 import '../modules/coupon/views/coupon_view.dart';
 import '../modules/custom_price/bindings/custom_price_binding.dart';
 import '../modules/custom_price/views/custom_price_view.dart';
-import '../modules/extra_charge/bindings/extra_charge_binding.dart';
-import '../modules/extra_charge/views/extra_charge_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/map_page/bindings/map_page_binding.dart';
@@ -263,10 +261,6 @@ class AppPages {
       page: () => RewardView(),
       binding: RewardBinding(),
     ),
-    GetPage(
-      name: _Paths.EXTRA_CHARGE,
-      page: () => const ExtraChargeView(),
-      binding: ExtraChargeBinding(),
-    ),
+    
   ];
 }

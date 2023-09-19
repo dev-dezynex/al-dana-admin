@@ -3,6 +3,7 @@ import 'package:al_dana_admin/app/data/providers/custom_time_slot_provider.dart'
 import 'package:al_dana_admin/app/data/providers/default_time_slot_provider.dart';
 import 'package:al_dana_admin/app/data/providers/list_days_provider.dart';
 import 'package:al_dana_admin/app/modules/Vat/providers/vat_provider.dart';
+import 'package:al_dana_admin/app/modules/extra_charge/provider/extra_charge_provider.dart';
 import 'package:al_dana_admin/app/modules/invoice/provider/invoice_provider.dart';
 import 'package:al_dana_admin/app/modules/profile/providers/profile_provider.dart';
 import 'package:al_dana_admin/app/data/providers/time_slot_provider.dart';
@@ -22,6 +23,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:provider/provider.dart';
 import 'app/data/data.dart';
+import 'app/modules/extra_charge/provider/service_mode_list_provider.dart';
 import 'app/routes/app_pages.dart';
 
 void main() async {
@@ -92,6 +94,12 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (_) => JobReportProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => ExtraChargeProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => ServiceModeListProvider(),
         )
       ],
       child: GetMaterialApp(

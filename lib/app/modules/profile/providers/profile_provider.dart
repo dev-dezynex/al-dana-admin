@@ -21,9 +21,8 @@ class ProfileProvider extends ChangeNotifier {
   bool get hasError => _hasError;
 
   Future<void> fetchProfile() async {
-    _isLoading = true;
-
     try {
+      _isLoading = true;
       final response = await http.get(
         Uri.parse(apiGetProfile),
         headers: <String, String>{
@@ -35,6 +34,9 @@ class ProfileProvider extends ChangeNotifier {
         _profile = Profile.fromJson(
           jsonDecode(response.body),
         );
+      } else {
+        _profile = null;
+        _hasError = true;
       }
     } catch (error) {
       _profile = null;

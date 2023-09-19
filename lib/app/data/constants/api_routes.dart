@@ -126,3 +126,8 @@ const String apiGetSubscriptionReport = "${apiBase}users/subscriptionReport";
 const String apiGetPackageReport = "${apiBase}users/packageReport";
 const String apiGetBookingReport = "${apiBase}users/bookingReport";
 const String apiGetJobReport = "${apiBase}users/jobOrderReport";
+//extra charge
+const String apiGetExtraCharge = "${apiBase}users/listExtraCharge";
+const String apiAddExtraCharge = "${apiBase}users/addExtraCharge";
+const String apiEditExtraCharge = "${apiBase}users/editExtraCharge";
+const String apiDeleteExtraCharge = "${apiBase}users/deleteExtraCharge";
