@@ -17,6 +17,7 @@ class ExtraChargeScreen extends StatefulWidget {
 class _ExtraChargeScreenState extends State<ExtraChargeScreen> {
   final TextEditingController distanceController = TextEditingController();
   final TextEditingController amountController = TextEditingController();
+  final TextEditingController rangeController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   @override
   void initState() {
@@ -132,7 +133,7 @@ class _ExtraChargeScreenState extends State<ExtraChargeScreen> {
                           controller: distanceController,
                           keyboardType: TextInputType.number,
                           decoration: const InputDecoration(
-                            labelText: 'Minimum Distance(KM)',
+                            labelText: 'Minimum Distance(Km)',
                           ),
                         ),
                         const SizedBox(height: 12),
@@ -147,6 +148,20 @@ class _ExtraChargeScreenState extends State<ExtraChargeScreen> {
                           keyboardType: TextInputType.number,
                           decoration: const InputDecoration(
                             labelText: 'Amount (AED)',
+                          ),
+                        ),
+                        const SizedBox(height: 12),
+                        TextFormField(
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Please enter range';
+                            }
+                            return null;
+                          },
+                          controller: rangeController,
+                          keyboardType: TextInputType.number,
+                          decoration: const InputDecoration(
+                            labelText: 'Range (Km)',
                           ),
                         ),
                         const SizedBox(height: 12),
@@ -170,16 +185,19 @@ class _ExtraChargeScreenState extends State<ExtraChargeScreen> {
                                   Provider.of<ExtraChargeProvider>(context,
                                           listen: false)
                                       .addExtraCharge(
-                                        serviceListProvider.serviceModeId,
-                                        amountController.text,
-                                        distanceController.text,
-                                      )
-                                      .then(
-                                        (_) => Provider.of<ExtraChargeProvider>(
-                                                context,
-                                                listen: false)
-                                            .fetchExtraCharge(),
-                                      );
+                                    serviceListProvider.serviceModeId,
+                                    amountController.text,
+                                    distanceController.text,
+                                    rangeController.text,
+                                  )
+                                      .then((_) {
+                                    Provider.of<ExtraChargeProvider>(context,
+                                            listen: false)
+                                        .fetchExtraCharge();
+                                    amountController.clear();
+                                    distanceController.clear();
+                                    rangeController.clear();
+                                  });
                                 }
                               },
                               style: ElevatedButton.styleFrom(
@@ -223,6 +241,7 @@ class ExtraChargeTile extends StatefulWidget {
 class _ExtraChargeTileState extends State<ExtraChargeTile> {
   final TextEditingController _distanceController = TextEditingController();
   final TextEditingController _amountController = TextEditingController();
+  final TextEditingController _rangeController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -287,6 +306,19 @@ class _ExtraChargeTileState extends State<ExtraChargeTile> {
                 ),
                 Text(
                   "${widget.extraChargeProvider.extraCharge?.data?[widget.index].amount} AED",
+                  style: const TextStyle(fontSize: 18),
+                ),
+              ],
+            ),
+            const SizedBox(height: 10),
+            Row(
+              children: [
+                const Text(
+                  'Range - ',
+                  style: TextStyle(fontSize: 18),
+                ),
+                Text(
+                  "${widget.extraChargeProvider.extraCharge?.data?[widget.index].range} Km",
                   style: const TextStyle(fontSize: 18),
                 ),
               ],
@@ -384,6 +416,20 @@ class _ExtraChargeTileState extends State<ExtraChargeTile> {
                                   ),
                                 ),
                                 const SizedBox(height: 5),
+                                TextFormField(
+                                  validator: (value) {
+                                    if (value == null || value.isEmpty) {
+                                      return 'Please enter range';
+                                    }
+                                    return null;
+                                  },
+                                  controller: _rangeController,
+                                  keyboardType: TextInputType.number,
+                                  decoration: const InputDecoration(
+                                    labelText: 'Range (Km)',
+                                  ),
+                                ),
+                                const SizedBox(height: 5),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
@@ -405,24 +451,27 @@ class _ExtraChargeTileState extends State<ExtraChargeTile> {
                                                   context,
                                                   listen: false)
                                               .editExtraCharge(
-                                                widget
-                                                        .extraChargeProvider
-                                                        .extraCharge
-                                                        ?.data?[widget.index]
-                                                        .sId ??
-                                                    '',
-                                                widget.serviceModeListProvider
-                                                    .serviceModeId,
-                                                _amountController.text,
-                                                _distanceController.text,
-                                              )
-                                              .then(
-                                                (_) => Provider.of<
-                                                            ExtraChargeProvider>(
-                                                        context,
-                                                        listen: false)
-                                                    .fetchExtraCharge(),
-                                              );
+                                            widget
+                                                    .extraChargeProvider
+                                                    .extraCharge
+                                                    ?.data?[widget.index]
+                                                    .sId ??
+                                                '',
+                                            widget.serviceModeListProvider
+                                                .serviceModeId,
+                                            _amountController.text,
+                                            _distanceController.text,
+                                            _rangeController.text,
+                                          )
+                                              .then((_) {
+                                            Provider.of<ExtraChargeProvider>(
+                                                    context,
+                                                    listen: false)
+                                                .fetchExtraCharge();
+                                            _amountController.clear();
+                                            _distanceController.clear();
+                                            _rangeController.clear();
+                                          });
                                         }
                                       },
                                       style: ElevatedButton.styleFrom(

@@ -9,10 +9,9 @@ import '../../../routes/app_pages.dart';
 class AuthController extends GetxController {
   var isLoading = false.obs;
   String contryCode = '971';
-  TextEditingController usernameController =
-      TextEditingController(text: 'superAdmin');
-  TextEditingController passwordController =
-      TextEditingController(text: 'superAdmin123');
+  TextEditingController usernameController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  var isPasswordVissible = true.obs;
 
   @override
   void onClose() {}
@@ -24,7 +23,6 @@ class AuthController extends GetxController {
         username: usernameController.text, password: passwordController.text);
     print('result ${jsonEncode(result)}');
     if (result.status == 'success') {
-      
       result = await UserProvider().getProfile();
       if (result.status == 'success') {
         storage.write(is_login, true);

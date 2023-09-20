@@ -36,6 +36,7 @@ class Data {
   String? createdAt;
   String? updatedAt;
   int? iV;
+  String? range;
 
   Data(
       {this.sId,
@@ -45,7 +46,8 @@ class Data {
       this.deletable,
       this.createdAt,
       this.updatedAt,
-      this.iV});
+      this.iV,
+      this.range});
 
   Data.fromJson(Map<String, dynamic> json) {
     sId = json['_id'];
@@ -58,6 +60,7 @@ class Data {
     createdAt = json['createdAt'];
     updatedAt = json['updatedAt'];
     iV = json['__v'];
+    range = json['range'];
   }
 
   Map<String, dynamic> toJson() {
@@ -72,6 +75,7 @@ class Data {
     data['createdAt'] = createdAt;
     data['updatedAt'] = updatedAt;
     data['__v'] = iV;
+    data['range'] = range;
     return data;
   }
 }

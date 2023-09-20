@@ -44,11 +44,13 @@ class ExtraChargeProvider extends ChangeNotifier {
     String serviceModeId,
     String amount,
     String minimumDistance,
+    String range,
   ) async {
     final body = <String, dynamic>{
       "serviceModeId": serviceModeId,
       "amount": amount,
       "minimumDistance": minimumDistance,
+      "range": range,
     };
 
     final response = await http.post(Uri.parse(apiAddExtraCharge),
@@ -73,11 +75,13 @@ class ExtraChargeProvider extends ChangeNotifier {
     String serviceModeId,
     String amount,
     String minimumDistance,
+    String range,
   ) async {
     final body = <String, dynamic>{
       "serviceModeId": serviceModeId,
       "amount": amount,
       "minimumDistance": minimumDistance,
+      "range": range
     };
     final response = await http.put(
       Uri.parse("$apiEditExtraCharge/$extraChargeId"),

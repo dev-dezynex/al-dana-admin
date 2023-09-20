@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
@@ -130,50 +132,72 @@ class AuthView extends GetView<AuthController> {
                                 const SizedBox(
                                   height: 15,
                                 ),
-                                TextFormField(
-                                  controller: controller.passwordController,
-                                  keyboardType: TextInputType.visiblePassword,
-                                  obscureText: true,
-                                  validator: (value) =>
-                                      (value != null && value.isNotEmpty)
-                                          ? null
-                                          : '*Required',
-                                  style: tsPoppins(
-                                      color: white,
-                                      size: 14,
-                                      weight: FontWeight.w400),
-                                  decoration: InputDecoration(
-                                    iconColor: textDark40,
-                                    counterStyle: tsPoppins(
-                                        color: textDark60,
+                                Obx(
+                                  () => TextFormField(
+                                    controller: controller.passwordController,
+                                    keyboardType: TextInputType.visiblePassword,
+                                    obscureText:
+                                        controller.isPasswordVissible.value,
+                                    validator: (value) =>
+                                        (value != null && value.isNotEmpty)
+                                            ? null
+                                            : '*Required',
+                                    style: tsPoppins(
+                                        color: white,
                                         size: 14,
                                         weight: FontWeight.w400),
-                                    contentPadding: const EdgeInsets.symmetric(
-                                        vertical: 15),
-                                    labelText: 'Password',
-                                    labelStyle: tsPoppins(
-                                        color: textDark40,
-                                        size: 14,
-                                        weight: FontWeight.w400),
-                                    border: const UnderlineInputBorder(
-                                        borderSide:
-                                            BorderSide(color: textDark20)),
-                                    focusedBorder: const UnderlineInputBorder(
-                                        borderSide:
-                                            BorderSide(color: textDark20)),
-                                    errorBorder: const UnderlineInputBorder(
-                                        borderSide:
-                                            BorderSide(color: Colors.red)),
-                                    focusedErrorBorder:
-                                        const UnderlineInputBorder(
-                                            borderSide:
-                                                BorderSide(color: Colors.red)),
-                                    enabledBorder: const UnderlineInputBorder(
-                                        borderSide:
-                                            BorderSide(color: textDark20)),
-                                    disabledBorder: const UnderlineInputBorder(
-                                        borderSide:
-                                            BorderSide(color: textDark20)),
+                                    decoration: InputDecoration(
+                                      suffixIcon: IconButton(
+                                        onPressed: () {
+                                          log(controller
+                                              .isPasswordVissible.value
+                                              .toString());
+                                          controller.isPasswordVissible.value =
+                                              !controller
+                                                  .isPasswordVissible.value;
+                                        },
+                                        icon: Icon(
+                                          controller.isPasswordVissible.value ==
+                                                  true
+                                              ? Icons.visibility
+                                              : Icons.visibility_off,
+                                          color: white,
+                                        ),
+                                      ),
+                                      iconColor: textDark40,
+                                      counterStyle: tsPoppins(
+                                          color: textDark60,
+                                          size: 14,
+                                          weight: FontWeight.w400),
+                                      contentPadding:
+                                          const EdgeInsets.symmetric(
+                                              vertical: 15),
+                                      labelText: 'Password',
+                                      labelStyle: tsPoppins(
+                                          color: textDark40,
+                                          size: 14,
+                                          weight: FontWeight.w400),
+                                      border: const UnderlineInputBorder(
+                                          borderSide:
+                                              BorderSide(color: textDark20)),
+                                      focusedBorder: const UnderlineInputBorder(
+                                          borderSide:
+                                              BorderSide(color: textDark20)),
+                                      errorBorder: const UnderlineInputBorder(
+                                          borderSide:
+                                              BorderSide(color: Colors.red)),
+                                      focusedErrorBorder:
+                                          const UnderlineInputBorder(
+                                              borderSide: BorderSide(
+                                                  color: Colors.red)),
+                                      enabledBorder: const UnderlineInputBorder(
+                                          borderSide:
+                                              BorderSide(color: textDark20)),
+                                      disabledBorder:
+                                          const UnderlineInputBorder(
+                                              borderSide: BorderSide(
+                                                  color: textDark20)),
+                                    ),
                                   ),
                                 ),
                               ],
