@@ -211,7 +211,7 @@
 95-->[androidx.core:core:1.8.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/d363e3b5616f580c766e3e2b3c05f27d/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
 96        android:icon="@mipmap/ic_launcher"
 96-->/Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:6:9-43
-97        android:label="al_dana_admin"
+97        android:label="Al-Dana Admin"
 97-->/Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:4:9-38
 98        android:requestLegacyExternalStorage="true"
 98-->/Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:8:9-52

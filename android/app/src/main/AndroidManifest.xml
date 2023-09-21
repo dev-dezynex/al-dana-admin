@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dezynex.al_dana_admin">
     <application
-        android:label="al_dana_admin"
+        android:label="Al-Dana Admin"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         android:usesCleartextTraffic="true"
