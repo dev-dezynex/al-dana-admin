@@ -212,7 +212,7 @@
 99-->[androidx.core:core:1.8.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/d363e3b5616f580c766e3e2b3c05f27d/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
 100        android:debuggable="true"
 101        android:icon="@mipmap/ic_launcher"
-102        android:label="al_dana_admin"
+102        android:label="Al-Dana Admin"
 103        android:requestLegacyExternalStorage="true"
 104        android:usesCleartextTraffic="true" >
 105        <activity
@@ -253,7 +253,7 @@
 140            android:value="2" />
 141        <meta-data
 142            android:name="com.google.android.geo.API_KEY"
-143            android:value="AIzaSyBaZF1ks831cshYzJ7sWQ8sz-LsgrgFF9Y" />
+143            android:value="AIzaSyAZhyWZFJMPbZXMYgfkJlMoy77WQ4RxVzk" />
 144
 145        <provider
 145-->[:image_picker_android] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-18:20

@@ -64,12 +64,16 @@ class AddDefaultTimeSlotScreen extends StatelessWidget {
                         defaultCustomProvider.isCategorySelected &&
                         defaultCustomProvider.isListDaySelected &&
                         defaultCustomProvider.isTimeSlotSelected) {
-                      DefaultTimeSlotProvider().addDefaultTimeSlot(
-                        defaultCustomProvider.branchId,
-                        defaultCustomProvider.listDayId,
-                        defaultCustomProvider.categoryId,
-                        defaultCustomProvider.timeSlotId,
-                      );
+                      DefaultTimeSlotProvider()
+                          .addDefaultTimeSlot(
+                            defaultCustomProvider.branchId,
+                            defaultCustomProvider.listDayId,
+                            defaultCustomProvider.categoryId,
+                            defaultCustomProvider.timeSlotId,
+                          )
+                          .then(
+                            (_) => Navigator.of(context).pop(),
+                          );
                     }
                   },
                   child: const Text('Add'),
