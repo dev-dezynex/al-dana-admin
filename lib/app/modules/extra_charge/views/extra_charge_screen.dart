@@ -253,6 +253,8 @@ class _ExtraChargeTileState extends State<ExtraChargeTile> {
     _amountController.text =
         widget.extraChargeProvider.extraCharge?.data?[widget.index].amount ??
             '';
+    _rangeController.text =
+        widget.extraChargeProvider.extraCharge?.data?[widget.index].range ?? '';
   }
 
   @override
@@ -330,6 +332,10 @@ class _ExtraChargeTileState extends State<ExtraChargeTile> {
                 GestureDetector(
                   onTap: () {
                     log('Edit button clicked');
+                    final serviceModeList = widget.serviceModeListProvider
+                        .serviceModeResult?.serviceModeList;
+                    serviceModeList?.removeWhere(
+                        (element) => element.title == "DRIVE-THRU");
                     showDialog(
                       context: context,
                       builder: (context) {
@@ -361,8 +367,7 @@ class _ExtraChargeTileState extends State<ExtraChargeTile> {
                                       }
                                       return null;
                                     },
-                                    items: widget.serviceModeListProvider
-                                        .serviceModeResult?.serviceModeList
+                                    items: serviceModeList
                                         ?.map<DropdownMenuItem<String>>(
                                             (serviceMode) {
                                       return DropdownMenuItem<String>(

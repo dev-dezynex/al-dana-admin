@@ -1,10 +1,8 @@
 // change the domain name if you want
 // const String domainName = "http://192.168.1.17:4000";
-const String domainName = "http://3.110.151.156:3000";
+const String domainName = "http://15.206.212.160:3000";
 const String apiVersion = "/api/v1/";
-
 const String apiBase = domainName + apiVersion;
-
 const String apiSignin = "${apiBase}users/login";
 const String apiSignup = "${apiBase}users/signup";
 const String apiReadUser = "${apiBase}users/getProfile";
