@@ -29,6 +29,7 @@ class BookingDetailPage extends StatefulWidget {
 class _BookingDetailPageState extends State<BookingDetailPage> {
   Common common = Common();
   final userController = Get.put(UsersController());
+  
   @override
   Widget build(BuildContext context) {
     String role = common.currentUser.scope;

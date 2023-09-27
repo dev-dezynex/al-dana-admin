@@ -73,6 +73,10 @@ class _ExtraChargeScreenState extends State<ExtraChargeScreen> {
             isScrollControlled: true,
             context: context,
             builder: (context) {
+              final serviceModeList =
+                  serviceListProvider.serviceModeResult?.serviceModeList;
+              serviceModeList
+                  ?.removeWhere((element) => element.title == "DRIVE-THRU");
               return Padding(
                 padding: EdgeInsets.only(
                     bottom: MediaQuery.of(context).viewInsets.bottom),
@@ -103,8 +107,7 @@ class _ExtraChargeScreenState extends State<ExtraChargeScreen> {
                               }
                               return null;
                             },
-                            items: serviceListProvider
-                                .serviceModeResult?.serviceModeList
+                            items: serviceModeList
                                 ?.map<DropdownMenuItem<String>>((serviceMode) {
                               return DropdownMenuItem<String>(
                                 value: serviceMode.id,
