@@ -5,6 +5,7 @@ import 'package:al_dana_admin/app/data/providers/list_days_provider.dart';
 import 'package:al_dana_admin/app/modules/Vat/providers/vat_provider.dart';
 import 'package:al_dana_admin/app/modules/extra_charge/provider/extra_charge_provider.dart';
 import 'package:al_dana_admin/app/modules/invoice/provider/invoice_provider.dart';
+import 'package:al_dana_admin/app/modules/manual_spare_add/provider/manual_spare_category_provider.dart';
 import 'package:al_dana_admin/app/modules/profile/providers/profile_provider.dart';
 import 'package:al_dana_admin/app/data/providers/time_slot_provider.dart';
 import 'package:al_dana_admin/app/modules/default_custom_time_slot/providers/default_custom_time_slot_provider.dart';
@@ -24,6 +25,7 @@ import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:provider/provider.dart';
 import 'app/data/data.dart';
 import 'app/modules/extra_charge/provider/service_mode_list_provider.dart';
+import 'app/modules/manual_spare_add/provider/manual_spare_provider.dart';
 import 'app/routes/app_pages.dart';
 
 void main() async {
@@ -100,7 +102,13 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (_) => ServiceModeListProvider(),
-        )
+        ),
+        ChangeNotifierProvider(
+          create: (_) => ManualSpareCategoryProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => ManualSpareListProvider(),
+        ),
       ],
       child: GetMaterialApp(
         title: "Al Dana Admin",

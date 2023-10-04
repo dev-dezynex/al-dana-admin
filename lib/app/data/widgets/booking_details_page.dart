@@ -2,10 +2,10 @@ import 'dart:developer';
 
 import 'package:al_dana_admin/app/data/data.dart';
 import 'package:al_dana_admin/app/data/models/booking_model.dart';
+import 'package:al_dana_admin/app/modules/manual_spare_add/views/manual_spare_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
-
 import '../../modules/home/controllers/home_controller.dart';
 import '../../modules/invoice/provider/invoice_provider.dart';
 import '../../modules/invoice/views/invoice_view.dart';
@@ -29,7 +29,7 @@ class BookingDetailPage extends StatefulWidget {
 class _BookingDetailPageState extends State<BookingDetailPage> {
   Common common = Common();
   final userController = Get.put(UsersController());
-  
+
   @override
   Widget build(BuildContext context) {
     String role = common.currentUser.scope;
@@ -399,6 +399,26 @@ class _BookingDetailPageState extends State<BookingDetailPage> {
                             style: tsPoppins(
                                 weight: FontWeight.w600, color: white),
                           )),
+                    ),
+                  if (widget.booking!.approvalStatus == 'Confirmed' &&
+                      widget.booking!.spare!.isEmpty)
+                    Padding(
+                      padding: const EdgeInsets.only(right: 8),
+                      child: ElevatedButton(
+                        onPressed: () async {
+                          // add spare comment
+
+                          bool refresh = await Navigator.of(context)
+                              .push(MaterialPageRoute(
+                            builder: (context) => const ManualSpareScreen(),
+                          ));
+                        },
+                        child: Text(
+                          '  Add Spare  ',
+                          style:
+                              tsPoppins(weight: FontWeight.w600, color: white),
+                        ),
+                      ),
                     ),
                   if (widget.booking!.approvalStatus == 'Confirmed')
                     Padding(
