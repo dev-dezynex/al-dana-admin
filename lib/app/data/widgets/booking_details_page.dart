@@ -405,12 +405,15 @@ class _BookingDetailPageState extends State<BookingDetailPage> {
                     Padding(
                       padding: const EdgeInsets.only(right: 8),
                       child: ElevatedButton(
-                        onPressed: () async {
+                        onPressed: () {
                           // add spare comment
 
-                          bool refresh = await Navigator.of(context)
-                              .push(MaterialPageRoute(
-                            builder: (context) => const ManualSpareScreen(),
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => ManualSpareScreen(
+                              bookingId: widget.booking?.sId ?? '',
+                              totalAmount:
+                                  widget.booking?.totalAmount.toString() ?? '',
+                            ),
                           ));
                         },
                         child: Text(

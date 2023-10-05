@@ -131,7 +131,7 @@ class BookingProvider extends GetConnect {
       if ((date == "" || date.isEmpty || date == "null") &&
           (branchId == "" || branchId.isEmpty || branchId == "null")) {
         log('without date called');
-        final response = await get( 
+        final response = await get(
           apiGetListBooking,
           headers: Auth().requestHeaders,
         );
@@ -215,6 +215,7 @@ class BookingProvider extends GetConnect {
       body,
       headers: Auth().requestHeaders,
     );
+    log(response.body.toString());
     if (response.statusCode == 200) {
       Get.snackbar('Sucess', 'Sucessfully assigned to respective manager');
     } else {
