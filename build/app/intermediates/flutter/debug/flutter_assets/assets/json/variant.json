@@ -1,0 +1,10 @@
+{
+    "status": "success",
+    "message": "",
+    "data": [
+        {
+            "_id": "1",
+            "name": "Model x"
+        }
+    ]
+}
