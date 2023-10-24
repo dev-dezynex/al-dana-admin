@@ -46,7 +46,7 @@ class UsersController extends GetxController {
   getUsers() async {
     clearLists();
     userResult.value = await UserProvider().getActiveUsers();
-    print('userList ${jsonEncode(userResult.value.userList)}');
+    // print('userList ${jsonEncode(userResult.value.userList)}');
     for (User user in userResult.value.userList) {
       switch (user.scope) {
         case "admin":

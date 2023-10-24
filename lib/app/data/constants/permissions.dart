@@ -6,7 +6,6 @@ import 'package:permission_handler/permission_handler.dart';
 
 class Permissions {
   static setup() async {
-    final deviceInfo = await DeviceInfoPlugin().androidInfo;
     try {
       // await Permission.contacts.request();
       // await Permission.camera.request();
@@ -15,6 +14,7 @@ class Permissions {
       await Permission.location.request();
 
       if (Platform.isAndroid) {
+        final deviceInfo = await DeviceInfoPlugin().androidInfo;
         if (deviceInfo.version.sdkInt > 32) {
           await Permission.photos.request();
         } else {

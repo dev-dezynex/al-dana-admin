@@ -1,0 +1,156 @@
+{
+    "status": "success",
+    "message": "",
+    "data": [
+        {
+            "_id": "1",
+            "title": "CAR WASH",
+            "description": "In publishing and graphic design of car wash",
+            "image": "assets/images/img_service_1.png",
+            "bg_card_color": "#FF3868",
+            "service_mode": [
+                {
+                    "_id": "1",
+                    "title": "DOORSTEP",
+                    "description": "In publishing and graphic design of car wash",
+                    "bg_card_color": "#FF3868"
+                },
+                {
+                    "_id": "2",
+                    "title": "DRIVE-THRU",
+                    "description": "In publishing and graphic design of car wash",
+                    "bg_card_color": "#06D39E"
+                },
+                {
+                    "_id": "3",
+                    "title": "PICK UP & DROP",
+                    "description": "In publishing and graphic design of car wash",
+                    "bg_card_color": "#118AB2"
+                }
+            ]
+        },
+        {
+            "_id": "2",
+            "title": "Detailing",
+            "description": "In publishing and graphic design of car wash",
+            "image": "assets/images/img_service_2.png",
+            "bg_card_color": "#FFC643",
+            "service_mode": [
+                {
+                    "_id": "2",
+                    "title": "DRIVE-THRU",
+                    "description": "In publishing and graphic design of car wash",
+                    "bg_card_color": "#06D39E"
+                },
+                {
+                    "_id": "3",
+                    "title": "PICK UP & DROP",
+                    "description": "In publishing and graphic design of car wash",
+                    "bg_card_color": "#118AB2"
+                }
+            ]
+        },
+        {
+            "_id": "3",
+            "title": "Recovery",
+            "description": "In publishing and graphic design of car wash",
+            "image": "assets/images/img_service_3.png",
+            "bg_card_color": "#06D39E",
+            "service_mode": [
+                {
+                    "_id": "1",
+                    "title": "DOORSTEP",
+                    "description": "In publishing and graphic design of car wash",
+                    "bg_card_color": "#FF3868"
+                },
+                {
+                    "_id": "2",
+                    "title": "DRIVE-THRU",
+                    "description": "In publishing and graphic design of car wash",
+                    "bg_card_color": "#06D39E"
+                },
+                {
+                    "_id": "3",
+                    "title": "PICK UP & DROP",
+                    "description": "In publishing and graphic design of car wash",
+                    "bg_card_color": "#118AB2"
+                }
+            ]
+        },
+        {
+            "_id": "4",
+            "title": "Maintenance",
+            "description": "In publishing and graphic design of car wash",
+            "image": "assets/images/img_service_1.png",
+            "bg_card_color": "#118AB2",
+            "service_mode": [
+                {
+                    "_id": "2",
+                    "title": "DRIVE-THRU",
+                    "description": "In publishing and graphic design of car wash",
+                    "bg_card_color": "#06D39E"
+                },
+                {
+                    "_id": "3",
+                    "title": "PICK UP & DROP",
+                    "description": "In publishing and graphic design of car wash",
+                    "bg_card_color": "#118AB2"
+                }
+            ]
+        },
+        {
+            "_id": "5",
+            "title": "CAR WASH",
+            "description": "In publishing and graphic design of car wash",
+            "image": "assets/images/img_service_2.png",
+            "bg_card_color": "#FF3868",
+            "service_mode": [
+                {
+                    "_id": "1",
+                    "title": "DOORSTEP",
+                    "description": "In publishing and graphic design of car wash",
+                    "bg_card_color": "#FF3868"
+                },
+                {
+                    "_id": "2",
+                    "title": "DRIVE-THRU",
+                    "description": "In publishing and graphic design of car wash",
+                    "bg_card_color": "#06D39E"
+                },
+                {
+                    "_id": "3",
+                    "title": "PICK UP & DROP",
+                    "description": "In publishing and graphic design of car wash",
+                    "bg_card_color": "#118AB2"
+                }
+            ]
+        },
+        {
+            "_id": "6",
+            "title": "CAR WASH",
+            "description": "In publishing and graphic design of car wash",
+            "image": "assets/images/img_service_3.png",
+            "bg_card_color": "#FF3868",
+            "service_mode": [
+                {
+                    "_id": "1",
+                    "title": "DOORSTEP",
+                    "description": "In publishing and graphic design of car wash",
+                    "bg_card_color": "#FF3868"
+                },
+                {
+                    "_id": "2",
+                    "title": "DRIVE-THRU",
+                    "description": "In publishing and graphic design of car wash",
+                    "bg_card_color": "#06D39E"
+                },
+                {
+                    "_id": "3",
+                    "title": "PICK UP & DROP",
+                    "description": "In publishing and graphic design of car wash",
+                    "bg_card_color": "#118AB2"
+                }
+            ]
+        }
+    ]
+}

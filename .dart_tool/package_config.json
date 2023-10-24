@@ -356,12 +356,6 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "onesignal_flutter",
-      "rootUri": "file:///Users/dezynextechnologysolutons/.pub-cache/hosted/pub.dev/onesignal_flutter-3.5.1",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "order_tracker",
       "rootUri": "file:///Users/dezynextechnologysolutons/.pub-cache/hosted/pub.dev/order_tracker-0.0.2",
       "packageUri": "lib/",
@@ -566,7 +560,7 @@
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2023-10-13T09:37:07.384089Z",
+  "generated": "2023-10-22T10:44:52.646535Z",
   "generator": "pub",
   "generatorVersion": "2.19.2"
 }

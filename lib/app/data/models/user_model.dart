@@ -70,7 +70,7 @@ class User {
     name = json['name'] ?? '';
     username = json['username'] ?? '';
     password = json['password'] ?? '';
-    mobile = json['phoneNumber'] ?? '';
+    mobile = json['phoneNumber'].toString();
     email = json['email'] ?? '';
     image = json['image'] ?? '';
     branchId = json['branchId'] ?? '';
