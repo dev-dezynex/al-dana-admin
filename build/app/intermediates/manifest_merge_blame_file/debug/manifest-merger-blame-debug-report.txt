@@ -1,7 +1,7 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.dezynex.al_dana_admin"
-4    android:versionCode="1"
+4    android:versionCode="2"
 5    android:versionName="1.0.0" >
 6
 7    <uses-sdk
@@ -113,27 +113,27 @@
 53    </queries>
 54
 55    <uses-feature
-55-->[com.google.android.gms:play-services-maps:18.1.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:26:5-28:35
+55-->[com.google.android.gms:play-services-maps:18.1.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/285f216ecfd6c36a7b54d97b17071d59/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:26:5-28:35
 56        android:glEsVersion="0x00020000"
-56-->[com.google.android.gms:play-services-maps:18.1.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:27:9-41
+56-->[com.google.android.gms:play-services-maps:18.1.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/285f216ecfd6c36a7b54d97b17071d59/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:27:9-41
 57        android:required="true" />
-57-->[com.google.android.gms:play-services-maps:18.1.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:28:9-32
+57-->[com.google.android.gms:play-services-maps:18.1.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/285f216ecfd6c36a7b54d97b17071d59/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:28:9-32
 58
 59    <permission
-59-->[androidx.core:core:1.9.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/6710ee2e3546b398da00e75003abfc33/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+59-->[androidx.core:core:1.9.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/ac8a46d0c0b7f3a33e6ea3aa55626a23/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
 60        android:name="com.dezynex.al_dana_admin.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-60-->[androidx.core:core:1.9.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/6710ee2e3546b398da00e75003abfc33/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+60-->[androidx.core:core:1.9.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/ac8a46d0c0b7f3a33e6ea3aa55626a23/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
 61        android:protectionLevel="signature" />
-61-->[androidx.core:core:1.9.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/6710ee2e3546b398da00e75003abfc33/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+61-->[androidx.core:core:1.9.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/ac8a46d0c0b7f3a33e6ea3aa55626a23/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
 62
 63    <uses-permission android:name="com.dezynex.al_dana_admin.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-63-->[androidx.core:core:1.9.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/6710ee2e3546b398da00e75003abfc33/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
-63-->[androidx.core:core:1.9.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/6710ee2e3546b398da00e75003abfc33/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+63-->[androidx.core:core:1.9.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/ac8a46d0c0b7f3a33e6ea3aa55626a23/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+63-->[androidx.core:core:1.9.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/ac8a46d0c0b7f3a33e6ea3aa55626a23/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
 64
 65    <application
 66        android:name="android.app.Application"
 67        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-67-->[androidx.core:core:1.9.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/6710ee2e3546b398da00e75003abfc33/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
+67-->[androidx.core:core:1.9.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/ac8a46d0c0b7f3a33e6ea3aa55626a23/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
 68        android:debuggable="true"
 69        android:icon="@mipmap/ic_launcher"
 70        android:label="Al-Dana Admin"
@@ -208,104 +208,104 @@
 127            android:foregroundServiceType="location" /> <!-- Needs to be explicitly declared on P+ -->
 127-->[:location] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/location/intermediates/merged_manifest/debug/AndroidManifest.xml:17:13-53
 128        <uses-library
-128-->[com.google.android.gms:play-services-maps:18.1.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:39:9-41:40
+128-->[com.google.android.gms:play-services-maps:18.1.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/285f216ecfd6c36a7b54d97b17071d59/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:39:9-41:40
 129            android:name="org.apache.http.legacy"
-129-->[com.google.android.gms:play-services-maps:18.1.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:40:13-50
+129-->[com.google.android.gms:play-services-maps:18.1.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/285f216ecfd6c36a7b54d97b17071d59/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:40:13-50
 130            android:required="false" />
-130-->[com.google.android.gms:play-services-maps:18.1.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:41:13-37
+130-->[com.google.android.gms:play-services-maps:18.1.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/285f216ecfd6c36a7b54d97b17071d59/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:41:13-37
 131
 132        <activity
-132-->[com.google.android.gms:play-services-base:18.0.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/3ff720be07735976176520d1c05fb799/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+132-->[com.google.android.gms:play-services-base:18.0.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a99382bd16082f300bdfbe4cedd061ba/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
 133            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-133-->[com.google.android.gms:play-services-base:18.0.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/3ff720be07735976176520d1c05fb799/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+133-->[com.google.android.gms:play-services-base:18.0.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a99382bd16082f300bdfbe4cedd061ba/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
 134            android:exported="false"
-134-->[com.google.android.gms:play-services-base:18.0.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/3ff720be07735976176520d1c05fb799/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+134-->[com.google.android.gms:play-services-base:18.0.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a99382bd16082f300bdfbe4cedd061ba/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
 135            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-135-->[com.google.android.gms:play-services-base:18.0.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/3ff720be07735976176520d1c05fb799/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+135-->[com.google.android.gms:play-services-base:18.0.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a99382bd16082f300bdfbe4cedd061ba/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
 136
 137        <meta-data
-137-->[com.google.android.gms:play-services-basement:18.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/601d4158b382ad9f634d3bbb23a34c83/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:21:9-23:69
+137-->[com.google.android.gms:play-services-basement:18.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/ab1f2ab9bcece2004aaa4d193002a64b/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:21:9-23:69
 138            android:name="com.google.android.gms.version"
-138-->[com.google.android.gms:play-services-basement:18.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/601d4158b382ad9f634d3bbb23a34c83/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:22:13-58
+138-->[com.google.android.gms:play-services-basement:18.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/ab1f2ab9bcece2004aaa4d193002a64b/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:22:13-58
 139            android:value="@integer/google_play_services_version" />
-139-->[com.google.android.gms:play-services-basement:18.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/601d4158b382ad9f634d3bbb23a34c83/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:23:13-66
+139-->[com.google.android.gms:play-services-basement:18.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/ab1f2ab9bcece2004aaa4d193002a64b/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:23:13-66
 140
 141        <provider
-141-->[androidx.emoji2:emoji2:1.2.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/9fc546b4b41c30406c1c6f8de93a0c6d/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+141-->[androidx.emoji2:emoji2:1.2.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e6acde8247786183b2ee28d1a4c213ed/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
 142            android:name="androidx.startup.InitializationProvider"
-142-->[androidx.emoji2:emoji2:1.2.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/9fc546b4b41c30406c1c6f8de93a0c6d/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
+142-->[androidx.emoji2:emoji2:1.2.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e6acde8247786183b2ee28d1a4c213ed/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
 143            android:authorities="com.dezynex.al_dana_admin.androidx-startup"
-143-->[androidx.emoji2:emoji2:1.2.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/9fc546b4b41c30406c1c6f8de93a0c6d/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
+143-->[androidx.emoji2:emoji2:1.2.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e6acde8247786183b2ee28d1a4c213ed/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
 144            android:exported="false" >
-144-->[androidx.emoji2:emoji2:1.2.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/9fc546b4b41c30406c1c6f8de93a0c6d/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
+144-->[androidx.emoji2:emoji2:1.2.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e6acde8247786183b2ee28d1a4c213ed/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
 145            <meta-data
-145-->[androidx.emoji2:emoji2:1.2.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/9fc546b4b41c30406c1c6f8de93a0c6d/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+145-->[androidx.emoji2:emoji2:1.2.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e6acde8247786183b2ee28d1a4c213ed/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
 146                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-146-->[androidx.emoji2:emoji2:1.2.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/9fc546b4b41c30406c1c6f8de93a0c6d/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+146-->[androidx.emoji2:emoji2:1.2.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e6acde8247786183b2ee28d1a4c213ed/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
 147                android:value="androidx.startup" />
-147-->[androidx.emoji2:emoji2:1.2.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/9fc546b4b41c30406c1c6f8de93a0c6d/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+147-->[androidx.emoji2:emoji2:1.2.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e6acde8247786183b2ee28d1a4c213ed/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
 148            <meta-data
-148-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/157674638920b811d9071945634c1728/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:29:13-31:52
+148-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/311dcc400f873f9ae50febc867c04565/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:29:13-31:52
 149                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-149-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/157674638920b811d9071945634c1728/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:30:17-78
+149-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/311dcc400f873f9ae50febc867c04565/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:30:17-78
 150                android:value="androidx.startup" />
-150-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/157674638920b811d9071945634c1728/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:31:17-49
+150-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/311dcc400f873f9ae50febc867c04565/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:31:17-49
 151            <meta-data
-151-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e52778726f62c338c4e0f2bdd8825ff8/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+151-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a70093bed5d1a0764977ca1dfb5a42a4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
 152                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-152-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e52778726f62c338c4e0f2bdd8825ff8/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+152-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a70093bed5d1a0764977ca1dfb5a42a4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
 153                android:value="androidx.startup" />
-153-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e52778726f62c338c4e0f2bdd8825ff8/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+153-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a70093bed5d1a0764977ca1dfb5a42a4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
 154        </provider>
 155
 156        <uses-library
-156-->[androidx.window:window:1.0.0-beta04] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+156-->[androidx.window:window:1.0.0-beta04] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/1ef43e594bfdd4d324a6fd61443b5f22/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
 157            android:name="androidx.window.extensions"
-157-->[androidx.window:window:1.0.0-beta04] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+157-->[androidx.window:window:1.0.0-beta04] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/1ef43e594bfdd4d324a6fd61443b5f22/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
 158            android:required="false" />
-158-->[androidx.window:window:1.0.0-beta04] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+158-->[androidx.window:window:1.0.0-beta04] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/1ef43e594bfdd4d324a6fd61443b5f22/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
 159        <uses-library
-159-->[androidx.window:window:1.0.0-beta04] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+159-->[androidx.window:window:1.0.0-beta04] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/1ef43e594bfdd4d324a6fd61443b5f22/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
 160            android:name="androidx.window.sidecar"
-160-->[androidx.window:window:1.0.0-beta04] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+160-->[androidx.window:window:1.0.0-beta04] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/1ef43e594bfdd4d324a6fd61443b5f22/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
 161            android:required="false" />
-161-->[androidx.window:window:1.0.0-beta04] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+161-->[androidx.window:window:1.0.0-beta04] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/1ef43e594bfdd4d324a6fd61443b5f22/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
 162
 163        <receiver
-163-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e52778726f62c338c4e0f2bdd8825ff8/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+163-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a70093bed5d1a0764977ca1dfb5a42a4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
 164            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-164-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e52778726f62c338c4e0f2bdd8825ff8/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+164-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a70093bed5d1a0764977ca1dfb5a42a4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
 165            android:directBootAware="false"
-165-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e52778726f62c338c4e0f2bdd8825ff8/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+165-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a70093bed5d1a0764977ca1dfb5a42a4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
 166            android:enabled="true"
-166-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e52778726f62c338c4e0f2bdd8825ff8/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+166-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a70093bed5d1a0764977ca1dfb5a42a4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
 167            android:exported="true"
-167-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e52778726f62c338c4e0f2bdd8825ff8/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+167-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a70093bed5d1a0764977ca1dfb5a42a4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
 168            android:permission="android.permission.DUMP" >
-168-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e52778726f62c338c4e0f2bdd8825ff8/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+168-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a70093bed5d1a0764977ca1dfb5a42a4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
 169            <intent-filter>
-169-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e52778726f62c338c4e0f2bdd8825ff8/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+169-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a70093bed5d1a0764977ca1dfb5a42a4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
 170                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-170-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e52778726f62c338c4e0f2bdd8825ff8/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
-170-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e52778726f62c338c4e0f2bdd8825ff8/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+170-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a70093bed5d1a0764977ca1dfb5a42a4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+170-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a70093bed5d1a0764977ca1dfb5a42a4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
 171            </intent-filter>
 172            <intent-filter>
-172-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e52778726f62c338c4e0f2bdd8825ff8/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+172-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a70093bed5d1a0764977ca1dfb5a42a4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
 173                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-173-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e52778726f62c338c4e0f2bdd8825ff8/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
-173-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e52778726f62c338c4e0f2bdd8825ff8/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+173-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a70093bed5d1a0764977ca1dfb5a42a4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+173-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a70093bed5d1a0764977ca1dfb5a42a4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
 174            </intent-filter>
 175            <intent-filter>
-175-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e52778726f62c338c4e0f2bdd8825ff8/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+175-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a70093bed5d1a0764977ca1dfb5a42a4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
 176                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-176-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e52778726f62c338c4e0f2bdd8825ff8/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
-176-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e52778726f62c338c4e0f2bdd8825ff8/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+176-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a70093bed5d1a0764977ca1dfb5a42a4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+176-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a70093bed5d1a0764977ca1dfb5a42a4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
 177            </intent-filter>
 178            <intent-filter>
-178-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e52778726f62c338c4e0f2bdd8825ff8/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+178-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a70093bed5d1a0764977ca1dfb5a42a4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
 179                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-179-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e52778726f62c338c4e0f2bdd8825ff8/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
-179-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e52778726f62c338c4e0f2bdd8825ff8/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+179-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a70093bed5d1a0764977ca1dfb5a42a4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+179-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a70093bed5d1a0764977ca1dfb5a42a4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
 180            </intent-filter>
 181        </receiver>
 182    </application>
