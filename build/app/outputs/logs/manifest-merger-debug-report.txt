@@ -3,6 +3,8 @@ application
 INJECTED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/main/AndroidManifest.xml:3:5-41:19
 MERGED from [:image_picker_android] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-19:19
 MERGED from [:image_picker_android] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-19:19
+MERGED from [:open_file] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/open_file/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-21:19
+MERGED from [:open_file] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/open_file/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-21:19
 MERGED from [:location] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/location/intermediates/merged_manifest/debug/AndroidManifest.xml:12:5-18:19
 MERGED from [:location] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/location/intermediates/merged_manifest/debug/AndroidManifest.xml:12:5-18:19
 MERGED from [com.google.android.material:material:1.10.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/4df82213f5d0aabab3dfd8c51d199ca1/transformed/material-1.10.0/AndroidManifest.xml:22:5-20
@@ -54,6 +56,7 @@ MERGED from [:image_cropper] /Users/dezynextechnologysolutons/Documents/Developm
 MERGED from [:permission_handler_android] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/permission_handler_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:map_launcher] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/map_launcher/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-27:12
 MERGED from [:geocoding] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/geocoding/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:open_file] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/open_file/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-23:12
 MERGED from [:fluttertoast] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/fluttertoast/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:device_info_plus] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/device_info_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:location] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/location/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-20:12
@@ -63,6 +66,7 @@ MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/dezynextec
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/f50cfae7c7e8cfd933cecb1be7e05ff3/transformed/jetified-appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/96e27d5033c327d0fae9e3d6be93cb01/transformed/appcompat-1.6.1/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services-maps:18.1.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/285f216ecfd6c36a7b54d97b17071d59/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:17:1-44:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/5fda07e7c6dd41d90ea410c27c88f358/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/d312f726aa14c630f9d5bd38dd9d504f/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-location:16.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/5326a28d54e234ad5dab5fdc66c38ee3/transformed/jetified-play-services-location-16.0.0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a99382bd16082f300bdfbe4cedd061ba/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:16:1-24:12
@@ -71,14 +75,15 @@ MERGED from [com.google.android.gms:play-services-tasks:18.0.1] /Users/dezynexte
 MERGED from [com.google.android.gms:play-services-basement:18.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/ab1f2ab9bcece2004aaa4d193002a64b/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:16:1-26:12
 MERGED from [androidx.fragment:fragment:1.3.6] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/088f22c6a203ba4fd3ad751790f35266/transformed/fragment-1.3.6/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.8.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a095e61875b2cf001b83a2b08d27e5fb/transformed/jetified-activity-1.8.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/55aa3ac69f656cc98e142a73efc3253c/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/af0bee5d831ef8143ae32fca03a81133/transformed/legacy-support-core-ui-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/118e98042b7c90525022aa5483cddb35/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/95c4fd6bca068356d168e5eddd081b3f/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/9dc5e99a72bdfd2baa47ebb5ab61694a/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a395bc75d495e4c6799f484f8f72ef26/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e6acde8247786183b2ee28d1a4c213ed/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:17:1-35:12
-MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/55aa3ac69f656cc98e142a73efc3253c/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/118e98042b7c90525022aa5483cddb35/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.loader:loader:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/95c4fd6bca068356d168e5eddd081b3f/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/ceb24f10448b278b89cd7ff1b31d13aa/transformed/lifecycle-livedata-2.6.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/311dcc400f873f9ae50febc867c04565/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/ceb24f10448b278b89cd7ff1b31d13aa/transformed/lifecycle-livedata-2.6.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/aeb5ab745554012c4ef7aac6997cfa39/transformed/lifecycle-livedata-core-2.6.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/35e150877783c1038abcaa1df118ef5b/transformed/lifecycle-viewmodel-2.6.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/442bd804fcb20495d213caad54cd21bb/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
@@ -87,10 +92,14 @@ MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/dezyn
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/cb9d82c389cca33cb46d43016854c2ff/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.window:window-java:1.0.0-beta04] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/61c49aceffb05c0cfb6d693f959a7b39/transformed/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.transition:transition:1.4.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/29ec42be3e4a42ea5560bd870eb440c1/transformed/transition-1.4.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.media:media:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/c75f9e40c5938404a15ba24a6e75f147/transformed/media-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/00c780e79f03e315938702e5ca227a66/transformed/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/21b0aaad540bdaa047a55e45e3ee5013/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/cc4a27b55f9529f93c47777d01bc67ea/transformed/slidingpanelayout-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.customview:customview:1.1.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/c82f7a2edbac9e7e762a55779dd297bc/transformed/customview-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.window:window:1.0.0-beta04] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/1ef43e594bfdd4d324a6fd61443b5f22/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a58bceaabddc9fa4adb31bedbdc24caf/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/ccb712c881134248e745078fdda9f12a/transformed/asynclayoutinflater-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.core:core-ktx:1.9.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/88121f100988a55cf0bfa7575c0dfebf/transformed/jetified-core-ktx-1.9.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.core:core:1.9.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/ac8a46d0c0b7f3a33e6ea3aa55626a23/transformed/core-1.9.0/AndroidManifest.xml:17:1-30:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a88d2a382db92b6fb1e85c28eae5c957/transformed/lifecycle-runtime-2.6.1/AndroidManifest.xml:2:1-7:12
@@ -102,11 +111,11 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/dezynextechnologysol
 MERGED from [androidx.tracing:tracing:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/472b00505ac40dac901c82daeb5e65c8/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/241a1370991ef8797d9cedc8d895e91d/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/99f8f67e8328b4e73d971779ce05f2a1/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
-MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/f4443457140b0c59f4a08a4c070fc5f7/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/7b5f4dc0ae6a667767ade152989d41db/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/fb1e0141ec46f31e6259a26f8f201337/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/ca6bab1c60d20856c38945422ea84aa2/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a3abdcf7d36ff50dc48c4c414166cd3e/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/f4443457140b0c59f4a08a4c070fc5f7/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/f517a2a23a5bb7a1b2ca6a0129b16c2f/transformed/jetified-annotation-experimental-1.3.0/AndroidManifest.xml:17:1-22:12
 INJECTED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/debug/AndroidManifest.xml:1:1-8:12
 INJECTED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/debug/AndroidManifest.xml:1:1-8:12
@@ -207,6 +216,8 @@ MERGED from [:map_launcher] /Users/dezynextechnologysolutons/Documents/Developme
 MERGED from [:map_launcher] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/map_launcher/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:geocoding] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/geocoding/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:geocoding] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/geocoding/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:open_file] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/open_file/intermediates/merged_manifest/debug/AndroidManifest.xml:6:5-8:41
+MERGED from [:open_file] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/open_file/intermediates/merged_manifest/debug/AndroidManifest.xml:6:5-8:41
 MERGED from [:fluttertoast] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/fluttertoast/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:fluttertoast] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/fluttertoast/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:device_info_plus] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/device_info_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
@@ -225,6 +236,8 @@ MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/dezynextechnologysoluton
 MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/96e27d5033c327d0fae9e3d6be93cb01/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-maps:18.1.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/285f216ecfd6c36a7b54d97b17071d59/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-maps:18.1.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/285f216ecfd6c36a7b54d97b17071d59/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/5fda07e7c6dd41d90ea410c27c88f358/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/5fda07e7c6dd41d90ea410c27c88f358/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/d312f726aa14c630f9d5bd38dd9d504f/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/d312f726aa14c630f9d5bd38dd9d504f/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.gms:play-services-location:16.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/5326a28d54e234ad5dab5fdc66c38ee3/transformed/jetified-play-services-location-16.0.0/AndroidManifest.xml:5:5-44
@@ -241,22 +254,24 @@ MERGED from [androidx.fragment:fragment:1.3.6] /Users/dezynextechnologysolutons/
 MERGED from [androidx.fragment:fragment:1.3.6] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/088f22c6a203ba4fd3ad751790f35266/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.activity:activity:1.8.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a095e61875b2cf001b83a2b08d27e5fb/transformed/jetified-activity-1.8.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity:1.8.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a095e61875b2cf001b83a2b08d27e5fb/transformed/jetified-activity-1.8.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/55aa3ac69f656cc98e142a73efc3253c/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/55aa3ac69f656cc98e142a73efc3253c/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/af0bee5d831ef8143ae32fca03a81133/transformed/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/af0bee5d831ef8143ae32fca03a81133/transformed/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/118e98042b7c90525022aa5483cddb35/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/118e98042b7c90525022aa5483cddb35/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/95c4fd6bca068356d168e5eddd081b3f/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/95c4fd6bca068356d168e5eddd081b3f/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/9dc5e99a72bdfd2baa47ebb5ab61694a/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/9dc5e99a72bdfd2baa47ebb5ab61694a/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a395bc75d495e4c6799f484f8f72ef26/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a395bc75d495e4c6799f484f8f72ef26/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e6acde8247786183b2ee28d1a4c213ed/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:21:5-44
 MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/e6acde8247786183b2ee28d1a4c213ed/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:21:5-44
-MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/55aa3ac69f656cc98e142a73efc3253c/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/55aa3ac69f656cc98e142a73efc3253c/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/118e98042b7c90525022aa5483cddb35/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/118e98042b7c90525022aa5483cddb35/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/95c4fd6bca068356d168e5eddd081b3f/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/95c4fd6bca068356d168e5eddd081b3f/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/ceb24f10448b278b89cd7ff1b31d13aa/transformed/lifecycle-livedata-2.6.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/ceb24f10448b278b89cd7ff1b31d13aa/transformed/lifecycle-livedata-2.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/311dcc400f873f9ae50febc867c04565/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:21:5-44
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/311dcc400f873f9ae50febc867c04565/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/ceb24f10448b278b89cd7ff1b31d13aa/transformed/lifecycle-livedata-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/ceb24f10448b278b89cd7ff1b31d13aa/transformed/lifecycle-livedata-2.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/aeb5ab745554012c4ef7aac6997cfa39/transformed/lifecycle-livedata-core-2.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/aeb5ab745554012c4ef7aac6997cfa39/transformed/lifecycle-livedata-core-2.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/35e150877783c1038abcaa1df118ef5b/transformed/lifecycle-viewmodel-2.6.1/AndroidManifest.xml:20:5-44
@@ -273,14 +288,22 @@ MERGED from [androidx.window:window-java:1.0.0-beta04] /Users/dezynextechnologys
 MERGED from [androidx.window:window-java:1.0.0-beta04] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/61c49aceffb05c0cfb6d693f959a7b39/transformed/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.transition:transition:1.4.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/29ec42be3e4a42ea5560bd870eb440c1/transformed/transition-1.4.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.transition:transition:1.4.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/29ec42be3e4a42ea5560bd870eb440c1/transformed/transition-1.4.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.media:media:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/c75f9e40c5938404a15ba24a6e75f147/transformed/media-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/c75f9e40c5938404a15ba24a6e75f147/transformed/media-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/00c780e79f03e315938702e5ca227a66/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/00c780e79f03e315938702e5ca227a66/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/21b0aaad540bdaa047a55e45e3ee5013/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/21b0aaad540bdaa047a55e45e3ee5013/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/cc4a27b55f9529f93c47777d01bc67ea/transformed/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/cc4a27b55f9529f93c47777d01bc67ea/transformed/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview:1.1.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/c82f7a2edbac9e7e762a55779dd297bc/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.customview:customview:1.1.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/c82f7a2edbac9e7e762a55779dd297bc/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.window:window:1.0.0-beta04] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/1ef43e594bfdd4d324a6fd61443b5f22/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.window:window:1.0.0-beta04] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/1ef43e594bfdd4d324a6fd61443b5f22/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a58bceaabddc9fa4adb31bedbdc24caf/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a58bceaabddc9fa4adb31bedbdc24caf/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/ccb712c881134248e745078fdda9f12a/transformed/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/ccb712c881134248e745078fdda9f12a/transformed/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core-ktx:1.9.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/88121f100988a55cf0bfa7575c0dfebf/transformed/jetified-core-ktx-1.9.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.core:core-ktx:1.9.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/88121f100988a55cf0bfa7575c0dfebf/transformed/jetified-core-ktx-1.9.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.core:core:1.9.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/ac8a46d0c0b7f3a33e6ea3aa55626a23/transformed/core-1.9.0/AndroidManifest.xml:20:5-44
@@ -303,8 +326,6 @@ MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/dezynextechnolog
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/241a1370991ef8797d9cedc8d895e91d/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/99f8f67e8328b4e73d971779ce05f2a1/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/99f8f67e8328b4e73d971779ce05f2a1/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/f4443457140b0c59f4a08a4c070fc5f7/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/f4443457140b0c59f4a08a4c070fc5f7/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/7b5f4dc0ae6a667767ade152989d41db/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/7b5f4dc0ae6a667767ade152989d41db/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/fb1e0141ec46f31e6259a26f8f201337/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
@@ -313,6 +334,8 @@ MERGED from [androidx.print:print:1.0.0] /Users/dezynextechnologysolutons/.gradl
 MERGED from [androidx.print:print:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/ca6bab1c60d20856c38945422ea84aa2/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a3abdcf7d36ff50dc48c4c414166cd3e/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/a3abdcf7d36ff50dc48c4c414166cd3e/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/f4443457140b0c59f4a08a4c070fc5f7/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/f4443457140b0c59f4a08a4c070fc5f7/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/f517a2a23a5bb7a1b2ca6a0129b16c2f/transformed/jetified-annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/dezynextechnologysolutons/.gradle/caches/transforms-3/f517a2a23a5bb7a1b2ca6a0129b16c2f/transformed/jetified-annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
 INJECTED from /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/android/app/src/debug/AndroidManifest.xml
@@ -417,6 +440,18 @@ package#com.huawei.maps.app
 ADDED from [:map_launcher] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/map_launcher/intermediates/merged_manifest/debug/AndroidManifest.xml:24:9-55
 	android:name
 		ADDED from [:map_launcher] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/map_launcher/intermediates/merged_manifest/debug/AndroidManifest.xml:24:18-52
+provider#com.crazecoder.openfile.FileProvider
+ADDED from [:open_file] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/open_file/intermediates/merged_manifest/debug/AndroidManifest.xml:11:9-20:20
+	android:grantUriPermissions
+		ADDED from [:open_file] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/open_file/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-47
+	android:authorities
+		ADDED from [:open_file] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/open_file/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-88
+	android:exported
+		ADDED from [:open_file] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/open_file/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-37
+	tools:replace
+		ADDED from [:open_file] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/open_file/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-48
+	android:name
+		ADDED from [:open_file] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/open_file/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-64
 service#com.lyokone.location.FlutterLocationService
 ADDED from [:location] /Users/dezynextechnologysolutons/Documents/Development/flutter/git/al_dana_admin/build/location/intermediates/merged_manifest/debug/AndroidManifest.xml:13:9-17:56
 	android:enabled

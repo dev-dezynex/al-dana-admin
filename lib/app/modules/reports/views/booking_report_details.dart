@@ -1,4 +1,5 @@
 import 'package:al_dana_admin/app/data/data.dart';
+import 'package:al_dana_admin/app/modules/reports/api/booking_pdf_api.dart';
 import 'package:al_dana_admin/app/modules/reports/models/booking_report.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -306,6 +307,18 @@ class DetailBookingReport extends StatelessWidget {
                   style: const TextStyle(fontSize: 18),
                 ),
               ],
+            ),
+            const SizedBox(height: 10),
+            TextButton(
+              onPressed: () async {
+                final pdfFile = await BookingReportPdfApi.generateBookingReport(
+                    bookingReport);
+                BookingReportPdfApi.openFile(pdfFile);
+              },
+              child: const Text(
+                'Download Pdf',
+                style: TextStyle(color: primary),
+              ),
             ),
           ],
         ),
