@@ -1,3 +1,6 @@
+import 'package:al_dana_admin/app/data/data.dart';
+import 'package:al_dana_admin/app/modules/invoice/api/pdf_api.dart';
+import 'package:al_dana_admin/app/modules/invoice/api/pdf_invoice_api.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
@@ -36,11 +39,15 @@ class _InvoiceViewState extends State<InvoiceView> {
     String invoiceDate =
         dateTime != null ? DateFormat('dd-MM-yyyy').format(dateTime) : '';
     final vehicleDetails = invoiceDetails?.bookingId?.vehicleId;
-    double vatPercentage = double.parse(Provider.of<VATProvider>(context)
-        .vatList!
-        .data![0]
-        .percentage
-        .toString());
+
+    int? percentage =
+        Provider.of<VATProvider>(context).vatList?.data?[0].percentage;
+    double vatPercentage;
+    if (percentage != null) {
+      vatPercentage = percentage.toDouble();
+    } else {
+      vatPercentage = 0.0;
+    }
 
     return Scaffold(
       backgroundColor: const Color(0xffF3F3F3),
@@ -341,26 +348,21 @@ class _InvoiceViewState extends State<InvoiceView> {
                         ),
                       ),
                       const InvoiceSpacer(),
-                      // Align(
-                      //   alignment: Alignment.centerRight,
-                      //   child: Padding(
-                      //     padding: const EdgeInsets.only(right: 20, bottom: 20),
-                      //     child: ElevatedButton(
-                      //         style: ElevatedButton.styleFrom(
-                      //             backgroundColor: primary),
-                      //         onPressed: () {
-                      //           generatePDFAndOpen();
-                      //         },
-                      //         child: Row(
-                      //           mainAxisSize: MainAxisSize.min,
-                      //           children: const [
-                      //             Icon(Icons.picture_as_pdf),
-                      //             SizedBox(width: 5),
-                      //             Text('Download'),
-                      //           ],
-                      //         )),
-                      //   ),
-                      // )
+                      ElevatedButton(
+                        onPressed: () async {
+                          final pdfFile = await PDFInvoiceApi.generate(
+                            invoice,
+                            vatPercentage,
+                          );
+
+                          PdfApi.openFile(pdfFile);
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: primary,
+                        ),
+                        child: const Text('Download PDF'),
+                      ),
+                      const InvoiceSpacer(),
                     ],
                   ),
                 ),
