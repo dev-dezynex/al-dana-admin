@@ -11,6 +11,11 @@ class PDFInvoiceApi {
     final pdf = Document();
 
     pdf.addPage(MultiPage(
+      pageFormat: const PdfPageFormat(
+        80.0 * PdfPageFormat.mm,
+        297.0 * PdfPageFormat.mm,
+        marginAll: 8.0,
+      ),
       build: (context) => [
         header(invoice),
         subDetails(invoice),
@@ -27,6 +32,34 @@ class PDFInvoiceApi {
   static Widget header(InvoiceProvider invoice) {
     final invoiceDetails = invoice.invoice?.data?.invoiceDetails?[0];
     final branchAddress = invoice.invoice?.data?.branchAddress;
+    String filterString(String input) {
+      String filteredString = '';
+
+      for (int i = 0; i < input.length; i++) {
+        final char = input[i];
+        final codeUnit = char.codeUnitAt(0);
+
+        if ((codeUnit >= 65 && codeUnit <= 90) ||
+            (codeUnit >= 97 && codeUnit <= 122) ||
+            (codeUnit >= 48 && codeUnit <= 57) ||
+            ' !@#\$%^&*()_+={}[]:;"\',.<>?/\\|`~'.contains(char)) {
+          filteredString += char;
+        }
+      }
+      return filteredString;
+    }
+
+    String filteredString = filterString(branchAddress?.location ?? '');
+    String cleanString(String input) {
+      final cleanedString = input.replaceAll(RegExp(r'\s+'), ' ');
+
+      final finalCleanedString =
+          cleanedString.replaceAll(RegExp(r',{2,}'), ',');
+
+      return finalCleanedString.trim();
+    }
+
+    final address = cleanString(filteredString);
     return SizedBox(
       width: double.infinity,
       child: Column(
@@ -36,26 +69,26 @@ class PDFInvoiceApi {
             invoiceDetails?.bookingId?.branchId?.name?.toUpperCase() ?? '',
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 24,
+              fontSize: 16,
             ),
           ),
-          SizedBox(height: 10),
+          SizedBox(height: 8),
           Text(
             'Mob No: ${branchAddress?.mob}, P.O: ${branchAddress?.po}',
-            style: const TextStyle(fontSize: 18),
+            style: const TextStyle(fontSize: 12),
           ),
-          SizedBox(height: 10),
+          SizedBox(height: 8),
           Text(
-            branchAddress?.location ?? '',
+            address.trim().replaceAll(',', '').replaceAll('  ', ','),
             style: const TextStyle(
-              fontSize: 18,
+              fontSize: 12,
             ),
           ),
-          SizedBox(height: 10),
+          SizedBox(height: 8),
           Text(
             'TRN: ${branchAddress?.trn}',
             style: const TextStyle(
-              fontSize: 18,
+              fontSize: 12,
             ),
           ),
         ],
@@ -79,7 +112,7 @@ class PDFInvoiceApi {
         Text(
           'TAX INVOICE',
           style: TextStyle(
-            fontSize: 22,
+            fontSize: 14,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -91,25 +124,25 @@ class PDFInvoiceApi {
             children: [
               Text(
                 'Inv No:${invoiceDetails?.invoiceNumber}',
-                style: const TextStyle(fontSize: 18),
+                style: const TextStyle(fontSize: 12),
               ),
               Text(
                 'Date: $invoiceDate',
-                style: const TextStyle(fontSize: 18),
+                style: const TextStyle(fontSize: 12),
               )
             ],
           ),
         ),
         Divider(),
-        SizedBox(height: 10),
+        SizedBox(height: 8),
         Text(
           'Customer:  ${vehicleDetails?.plateNumber} ${vehicleDetails?.carBrandId?.title} ${vehicleDetails?.carModelId?.title}',
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 20,
+            fontSize: 14,
           ),
         ),
-        SizedBox(height: 10),
+        SizedBox(height: 8),
         Divider(),
       ],
     );
@@ -182,11 +215,11 @@ class PDFInvoiceApi {
     return Table.fromTextArray(
       border: null,
       headerStyle: TextStyle(
-        fontSize: 18,
+        fontSize: 10,
         fontWeight: FontWeight.bold,
       ),
       cellStyle: const TextStyle(
-        fontSize: 18,
+        fontSize: 10,
       ),
       headers: headers,
       headerDecoration: const BoxDecoration(color: PdfColors.grey300),
@@ -206,27 +239,27 @@ class PDFInvoiceApi {
       width: double.infinity,
       child: Column(
         children: [
-          SizedBox(height: 10),
+          SizedBox(height: 8),
           Divider(),
           Row(
             children: [
               Text(
                 'Invoice Discount',
-                style: const TextStyle(fontSize: 18),
+                style: const TextStyle(fontSize: 12),
               ),
               Spacer(),
               Text(
                 invoiceDetails!.bookingId!.discountAmount!.toStringAsFixed(3),
-                style: const TextStyle(fontSize: 18),
+                style: const TextStyle(fontSize: 12),
               ),
             ],
           ),
-          SizedBox(height: 10),
+          SizedBox(height: 8),
           Row(
             children: [
               Text(
                 'Total Before VAT',
-                style: const TextStyle(fontSize: 18),
+                style: const TextStyle(fontSize: 12),
               ),
               Spacer(),
               Text(
@@ -235,11 +268,11 @@ class PDFInvoiceApi {
                             (100 + vatPercentage)) -
                         (invoiceDetails.bookingId!.discountAmount!))
                     .toStringAsFixed(3),
-                style: const TextStyle(fontSize: 18),
+                style: const TextStyle(fontSize: 12),
               ),
             ],
           ),
-          SizedBox(height: 10),
+          SizedBox(height: 8),
           Row(
             children: [
               Text(
@@ -252,36 +285,36 @@ class PDFInvoiceApi {
                         vatPercentage /
                         (100 + vatPercentage))
                     .toStringAsFixed(3),
-                style: const TextStyle(fontSize: 18),
+                style: const TextStyle(fontSize: 12),
               ),
             ],
           ),
-          SizedBox(height: 10),
+          SizedBox(height: 8),
           Row(
             children: [
               Spacer(),
               Text(
                 "AED ${invoiceDetails.bookingId!.totalAmount!.toStringAsFixed(3)}",
-                style: const TextStyle(fontSize: 18),
+                style: const TextStyle(fontSize: 12),
               ),
             ],
           ),
-          SizedBox(height: 10),
+          SizedBox(height: 8),
           Divider(),
           Row(
             children: [
               Text(
                 'BILL AMOUNT',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
               ),
               Spacer(),
               Text(
                 "AED ${invoiceDetails.bookingId!.totalAmount!.toStringAsFixed(3)}",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
               ),
             ],
           ),
-          SizedBox(height: 10),
+          SizedBox(height: 8),
           Divider()
         ],
       ),
