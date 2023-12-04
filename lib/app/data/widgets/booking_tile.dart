@@ -222,9 +222,9 @@ class _BookingTile2State extends State<BookingTile2> {
                     constraints: BoxConstraints(
                         maxWidth: Get.width * .3, maxHeight: 100),
                     padding: const EdgeInsets.all(10),
-                    child: widget.booking.package!.isNotEmpty
+                    child: widget.booking.vehicleId?.image != ''
                         ? Image.network(
-                            "$domainName${widget.booking.package?[0].packageId?.image}",
+                            "$domainName${widget.booking.vehicleId?.image}",
                             fit: BoxFit.contain,
                             errorBuilder: (context, error, stackTrace) {
                               return Image.asset(

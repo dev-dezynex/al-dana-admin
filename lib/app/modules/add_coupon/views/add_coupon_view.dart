@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+import 'package:flutter_datetime_picker_plus/flutter_datetime_picker_plus.dart';
 
 import 'package:get/get.dart';
 
@@ -161,7 +161,7 @@ class AddCouponView extends GetView<AddCouponController> {
                                       showTitleActions: true,
                                       minTime: DateTime.now(),
                                       maxTime: DateTime.now()
-                                          .add(Duration(days: 365)),
+                                          .add(const Duration(days: 365)),
                                       onChanged: (date) {
                                         print('change $date');
                                       },
@@ -190,7 +190,7 @@ class AddCouponView extends GetView<AddCouponController> {
                                         showTitleActions: true,
                                         minTime: DateTime.now(),
                                         maxTime: DateTime.now()
-                                            .add(Duration(days: 365)),
+                                            .add(const Duration(days: 365)),
                                         onChanged: (date) {
                                       print('change $date');
                                     }, onConfirm: (date) {
